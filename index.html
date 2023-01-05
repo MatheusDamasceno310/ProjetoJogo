@@ -8,18 +8,38 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <button onclick="mudar()">Sorteiar</button>
+    <button onclick="mudar()">Upar</button>
     <main>
         <section class="levelDoPet">
             <div class="level">
                 <h1>LEVEL:</h1>
                 <h1 id="level">1</h1>
             </div>
-            <abbr id="mostrarPorcentagemDeLevel" title="0%">
+            <abbr id="mPorcentagemDeLevel" title="0%">
                 <div id="barraDoLevel">
                     <div id="progressao">
                     </div>
                 </div>
+            </abbr>
+        </section>
+        <section class="statusDoPet">
+            <abbr title="Saúde: 100%">
+                <div id="vidaDoPet"><img src="Imagens/Status/heart-shape-rounded-edges-variant-with-white-details.png" alt="Saúde"></div>
+            </abbr>
+            <abbr title="Alimentação: 100%">
+                <div id="fomeDoPet"><img src="Imagens/Status/apple.png" alt="Alimentação"></div>
+            </abbr>
+            <abbr id="mPorcentagemDaEnergia" title="Energia: 0%">
+                <div id="energiaDoPet"><img src="Imagens/Status/energy.png" alt="Energia"></div>
+            </abbr>
+            <abbr title="Inteligência: 0%">
+                <div id="inteligenciaDoPet"><img src="Imagens/Status/book.png" alt="Inteligência"></div>
+            </abbr>
+            <abbr title="Felicidade: 100%">
+                <div id="felicidadeDoPet"><img src="Imagens/Status/happy-face.png" alt="Felicidade"></div>
+            </abbr>
+            <abbr title="Higiene: 100%">
+                <div id="necessidadesDoPet"><img src="Imagens/Status/toilet.png" alt=""></div>
             </abbr>
         </section>
         
