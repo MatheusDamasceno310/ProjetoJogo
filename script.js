@@ -1,16 +1,12 @@
 
 let c = parseFloat(localStorage.getItem("progressaoDoLevel"))
 let level =  parseInt(localStorage.getItem("levelUp"))
+let dinheiro = parseFloat(localStorage.getItem("dinehiro"))
 let porcantagemLevel = parseFloat(localStorage.getItem("porcentagemLevel"))
 let contStatusEnergia = parseFloat(localStorage.getItem("contStatusEnergia"))
 let statusEnergiaRgb = parseFloat(localStorage.getItem("statusEnergiaRgb"))
 let statusEnergiarGb = parseFloat(localStorage.getItem("statusEnergiarGb"))
-let convPorcentagemEnergia = parseFloat(localStorage.getItem("convPorcentagemEnergia")) 
-
-let contStatusSaude = parseFloat(localStorage.getItem("contStatusSaude"))
-let statusSaudeRgb = parseFloat(localStorage.getItem("statusSaudeRgb"))
-let statusSauderGb = parseFloat(localStorage.getItem("statusSauderGb"))
-let convPorcentagemSaude = parseFloat(localStorage.getItem("convPorcentagemSaude")) 
+let convPorcentagemEnergia = parseFloat(localStorage.getItem("convPorcentagemEnergia"))
 
 
 if (localStorage.length > 0) {
@@ -20,37 +16,90 @@ if (localStorage.length > 0) {
 
     localStorage.setItem("porcentagemLevel", "0%")
     localStorage.setItem("levelUp", "1")
+    localStorage.setItem("dinehiro", "0")
     localStorage.setItem("progressaoDoLevel" , "-100")
     localStorage.setItem("barraDeLevel", "translateX(-100%)")
+
     localStorage.setItem("contStatusEnergia", "0")
     localStorage.setItem("statusEnergiaRgb", "0")
-    localStorage.setItem("statusEnergiarGb", "255")
-    localStorage.setItem("statusDeEnergia", "linear-gradient(rgba(255, 255, 255, 0) 0%,rgb(0, 255, 0) 0%)")
+    localStorage.setItem("statusEnergiarGb", "250")
+    localStorage.setItem("statusDeEnergia", "linear-gradient(rgba(255, 255, 255, 0) 0%,rgb(0, 220, 0) 0%)")
     localStorage.setItem("convPorcentagemEnergia", "100")
-
-    localStorage.setItem("contStatusSaude", "0")
-    localStorage.setItem("statusSaudeRgb", "0")
-    localStorage.setItem("statusSauderGb", "255")
-    localStorage.setItem("statusDeSaude", "linear-gradient(rgba(255, 255, 255, 0) 0%,rgb(0, 255, 0) 0%)")
-    localStorage.setItem("convPorcentagemSaude", "100")
     
 }
-
-document.getElementById('mPorcentagemDeLevel').title = localStorage.getItem("porcentagemLevel");
-
-document.getElementById('mPorcentagemDaEnergia').title = "Energia: "+ localStorage.getItem("convPorcentagemEnergia") +"%"
-
-document.getElementById('mPorcentagemDaSaude').title = "Saúde: "+ localStorage.getItem("convPorcentagemSaude") +"%"
-
 document.getElementById('level').innerText = localStorage.getItem("levelUp");
-
+document.getElementById('dinheiro').innerText = dinheiro;
+document.getElementById('mPorcentagemDeLevel').title = localStorage.getItem("porcentagemLevel");
 document.getElementById('progressao').style.transform = localStorage.getItem("barraDeLevel");
+
+
+document.getElementById('mPorcentagemDaEnergia').title = "Energia: "+ localStorage.getItem("convPorcentagemEnergia") +"%";
 
 document.getElementById("energiaDoPet").style.background = localStorage.getItem("statusDeEnergia")
 
-document.getElementById("saudeDoPet").style.background = localStorage.getItem("statusDeSaude")
+/**Geladeira */
+
+let geladeiraAberta = 0
+
+if(geladeiraAberta == 0) {
+    const geladeiraClick = document.querySelector('#geladeiraClick');
+
+    geladeiraClick.addEventListener('mouseenter', () => {
+        geladeiraClick.style.opacity = "1";
+    })
+    geladeiraClick.addEventListener('mouseleave', () => {
+        geladeiraClick.style.opacity = "0";
+    });
+}
+    
+
+function abrirGeladeira() {
+    document.getElementById('geladeira').style.display = "block";
+
+    document.getElementById('geladeiraClick').style.display = "none"
+    geladeiraAberta = 1
+}
+function fecharGeladeira() {
+    document.getElementById('geladeira').style.display = "none";
+
+    document.getElementById('geladeiraClick').style.display = "block"
+    
+    const geladeiraClick = document.querySelector('#geladeiraClick');
+
+    geladeiraClick.addEventListener('mouseenter', () => {
+        geladeiraClick.style.opacity = "1";
+    })
+    geladeiraClick.addEventListener('mouseleave', () => {
+        geladeiraClick.style.opacity = "0";
+    });
+}
 
 function mudar() {
+
+        if (contStatusEnergia >= 10 && contStatusEnergia <= 100 ) {
+        contStatusEnergia = contStatusEnergia - 10
+
+        localStorage.setItem("contStatusEnergia", contStatusEnergia.toString())
+
+
+        if(statusEnergiarGb >= 0 && statusEnergiarGb <= 200) {
+            statusEnergiarGb += 50
+
+            localStorage.setItem("statusEnergiarGb", statusEnergiarGb.toString())
+        }
+
+        if (contStatusEnergia < 25) {
+            
+            if(statusEnergiaRgb >= 100 && statusEnergiaRgb <= 250) {
+                statusEnergiaRgb -= 100
+    
+                localStorage.setItem("statusEnergiaRgb", statusEnergiaRgb.toString())
+            }
+
+        }
+        
+    }
+
         if (c == 0) {
 
             if(level == 0) {
@@ -58,6 +107,11 @@ function mudar() {
             }
 
             level++
+            dinheiro = dinheiro + ((level - 1) * 10)
+
+            document.getElementById('dinheiro').innerText = dinheiro
+
+            localStorage.setItem("dinehiro", dinheiro);
 
             localStorage.setItem("levelUp", level.toString())
 
@@ -123,10 +177,13 @@ function mudar() {
 
 setInterval(function() {
     
-    if (contStatusEnergia < 100) {
+    if (contStatusEnergia >= 0 && contStatusEnergia < 100) {
 
-        statusEnergiaRgb += 5
-        localStorage.setItem("statusEnergiaRgb", statusEnergiaRgb.toString())
+        if(statusEnergiaRgb >= 0 && statusEnergiaRgb <= 245) {
+            statusEnergiaRgb += 5
+
+            localStorage.setItem("statusEnergiaRgb", statusEnergiaRgb.toString())
+        }
 
         contStatusEnergia++
 
@@ -144,20 +201,23 @@ setInterval(function() {
 
         localStorage.setItem("contStatusEnergia", contStatusEnergia.toString())
 
-        const StringTemp = contStatusEnergia + "%"
+        const StringTempEnergia = contStatusEnergia + "%"
 
         if (contStatusEnergia <= 65) {
 
-            const porcentagemDaEnergia = "linear-gradient(rgba(255, 255, 255, 0) "+ StringTemp +",rgb("+ statusEnergiaRgb.toString() +","+ statusEnergiarGb.toString() +", 0) 0%)"
+            const porcentagemDaEnergia = "linear-gradient(rgba(255, 255, 255, 0) "+ StringTempEnergia +",rgb("+ statusEnergiaRgb.toString() +","+ statusEnergiarGb.toString() +", 0) 0%)"
 
             localStorage.setItem("statusDeEnergia", porcentagemDaEnergia)
 
         } else {
-            
-            statusEnergiarGb -= 15
-            localStorage.setItem("statusEnergiarGb", statusEnergiarGb.toString())
 
-            const porcentagemDaEnergia = "linear-gradient(rgba(255, 255, 255, 0) "+ StringTemp +",rgb("+ statusEnergiaRgb.toString() +","+ statusEnergiarGb.toString() +", 0) 0%)"
+            if(statusEnergiarGb >= 10 && statusEnergiarGb <= 250) {
+                statusEnergiarGb -= 10
+    
+                localStorage.setItem("statusEnergiarGb", statusEnergiarGb.toString())
+            }
+
+            const porcentagemDaEnergia = "linear-gradient(rgba(255, 255, 255, 0) "+ StringTempEnergia +",rgb("+ statusEnergiaRgb.toString() +","+ statusEnergiarGb.toString() +", 0) 0%)"
 
             localStorage.setItem("statusDeEnergia", porcentagemDaEnergia)
         }
@@ -166,59 +226,80 @@ setInterval(function() {
     
     document.getElementById("energiaDoPet").style.background = localStorage.getItem("statusDeEnergia")
 
-} , 60000);
+} , 500);
 
 /**Status de Energia Zerado */
 
-setInterval(function() {
-    
-    if (contStatusEnergia == 100) {
-        if (contStatusSaude < 100) {
+/**Dormir */
 
-            statusSaudeRgb += 5
-            localStorage.setItem("statusSaudeRgb", statusSaudeRgb.toString())
+let limiteEnergia = 0
+
+function dormir() {
+    limiteEnergia = 0
+
+    if (contStatusEnergia >= 60) {
+        setInterval(function() {
     
-            contStatusSaude++
+        if (contStatusEnergia > 0 && contStatusEnergia <= 100 && limiteEnergia == 0) {
     
-            let porcantagemSaudeSoma = contStatusSaude - 100 
+            if(statusEnergiarGb >= 0 && statusEnergiarGb <= 245) {
+                statusEnergiarGb += 5
     
-            let convPorcentagemSaude = porcantagemSaudeSoma * -1
-    
-            if (contStatusSaude == 0) {
-                convPorcentagemSaude = 100
+                localStorage.setItem("statusEnergiarGb", statusEnergiarGb.toString())
+            }
+
+            if (contStatusEnergia < 25) {
+                
+                if(statusEnergiaRgb >= 10 && statusEnergiaRgb <= 250) {
+                    statusEnergiaRgb -= 10
+        
+                    localStorage.setItem("statusEnergiaRgb", statusEnergiaRgb.toString())
+                }
+
             }
     
-            localStorage.setItem("convPorcentagemSaude", convPorcentagemSaude.toString())
+            --contStatusEnergia
+            let porcantagemEnergiaSoma = contStatusEnergia - 100 
     
-            document.getElementById('mPorcentagemDaSaude').title = "Saúde: "+ localStorage.getItem("convPorcentagemSaude") +"%"
+            let convPorcentagemEnergia = porcantagemEnergiaSoma * -1
     
-            localStorage.setItem("contStatusSaude", contStatusSaude.toString())
+            if (contStatusEnergia == 0) {
+                convPorcentagemEnergia = 100
+            }
     
-            const StringTemp = contStatusSaude + "%"
+            localStorage.setItem("convPorcentagemEnergia", convPorcentagemEnergia.toString())
     
-            if (contStatusSaude <= 65) {
+            document.getElementById('mPorcentagemDaEnergia').title = "Energia: "+ localStorage.getItem("convPorcentagemEnergia") +"%"
     
-                const porcentagemDaSaude = "linear-gradient(rgba(255, 255, 255, 0) "+ StringTemp +",rgb("+ statusSaudeRgb.toString() +","+ statusSauderGb.toString() +", 0) 0%)"
+            localStorage.setItem("contStatusEnergia", contStatusEnergia.toString())
     
-                localStorage.setItem("statusDeSaude", porcentagemDaSaude)
+            const StringTempEnergia = contStatusEnergia + "%"
+    
+            if (contStatusEnergia <= 65) {
+    
+                const porcentagemDaEnergia = "linear-gradient(rgba(255, 255, 255, 0) "+ StringTempEnergia +",rgb("+ statusEnergiaRgb.toString() +","+ statusEnergiarGb.toString() +", 0) 0%)"
+    
+                localStorage.setItem("statusDeEnergia", porcentagemDaEnergia)
     
             } else {
-                
-                statusSauderGb -= 15
-                localStorage.setItem("statusSauderGb", statusSauderGb.toString())
+
     
-                const porcentagemDaSaude = "linear-gradient(rgba(255, 255, 255, 0) "+ StringTemp +",rgb("+ statusSaudeRgb.toString() +","+ statusSauderGb.toString() +", 0) 0%)"
+                const porcentagemDaEnergia = "linear-gradient(rgba(255, 255, 255, 0) "+ StringTempEnergia +",rgb("+ statusEnergiaRgb.toString() +","+ statusEnergiarGb.toString() +", 0) 0%)"
     
-                localStorage.setItem("statusDeSaude", porcentagemDaSaude)
+                localStorage.setItem("statusDeEnergia", porcentagemDaEnergia)
             }
     
         }
-        
-        document.getElementById("saudeDoPet").style.background = localStorage.getItem("statusDeSaude")
+
+        document.getElementById("energiaDoPet").style.background = localStorage.getItem("statusDeEnergia")
+    
+        if (contStatusEnergia == 0) {
+            limiteEnergia = 1
+        }
+
+    } , 100);
     }
-
     
 
-} , 5000);
-    
 
+}

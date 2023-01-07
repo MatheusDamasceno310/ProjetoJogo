@@ -43,6 +43,33 @@ body {
     background: linear-gradient(to bottom, green, lime);
 }
 
+/*Dinheiro do Pet*/
+
+#dinheiroDoPet {
+    position: absolute;
+    border: 0.1rem solid black;
+    border-radius: 3rem;
+    right: 0;
+    height: 2rem;
+    width: 10rem;
+    margin: 1rem 1rem 0 0;
+    display: flex;
+}
+#dinheiroDoPet img {
+    height: 3rem;
+    width: 3rem;
+    margin-top: -0.6rem;
+}
+.dinheiro {
+    height: 1rem;
+    width: 20rem;
+    display: flex;
+    margin-top: 0.5rem;
+}
+#dinheiro {
+    margin-left: 0.5rem;
+}
+
 /*Status do Pet*/
 
 .statusDoPet img {
@@ -93,7 +120,56 @@ button {
     margin-top: 10rem;
     background: rgb(0, 255, 0);
 }
-#cozinha img {
+.dormir {
+    margin-left: 5rem;
+}
+.cozinha {
     height: 100vh;
     width: 100vw;
+}
+
+#geladeiraClick {
+    position: absolute;
+    cursor: pointer;
+    height: 51.6vh;
+    width: 15.3vw;
+    margin-top: -78.7vh;
+    margin-left: 22.6vw;
+    border-radius: 0.7rem 0.7rem 0 0;
+    opacity: 0;
+}
+#geladeiraClick img {
+    margin-top: 18vh;
+    margin-left: 5vw;
+    height: 5rem;
+    width: 5rem;
+}
+#geladeira {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+    height: 100vh;
+    display: none;
+}
+#geladeira img{
+    margin-top: -2vh;
+    height: 100vh;
+}
+#fecharGeladeira {
+    position: absolute;
+    margin-top: -4.5vh;
+    margin-left: 50%;
+    font-size: 2rem;
+    text-align: center;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 2rem;
+    border: 2px solid rgb(255, 0, 0);
+    color: white;
+    cursor: pointer;
+}
+#fecharGeladeira p {
+    margin-top: -6px;
 }

@@ -9,6 +9,7 @@
 </head>
 <body>
     <button onclick="mudar()">Upar</button>
+    <button class="dormir" onclick="dormir()">Dormir</button>
     <main>
         <section class="levelDoPet">
             <div class="level">
@@ -21,6 +22,10 @@
                     </div>
                 </div>
             </abbr>
+        </section>
+        <section id="dinheiroDoPet">
+            <img src="Imagens/25498-removebg-preview.png" alt="">
+            <div class="dinheiro"><p>R$</p><p id="dinheiro">0</p></div>
         </section>
         <section class="statusDoPet">
             <abbr id="mPorcentagemDaSaude" title="Saúde: 100%">
@@ -35,7 +40,7 @@
             <abbr title="Inteligência: 0%">
                 <div id="inteligenciaDoPet"><img src="Imagens/Status/book.png" alt="Inteligência"></div>
             </abbr>
-            <abbr title="Felicidade: 100%">
+            <abbr id="mPorcentagemDaFelicidade" title="Felicidade: 100%">
                 <div id="felicidadeDoPet"><img src="Imagens/Status/happy-face.png" alt="Felicidade"></div>
             </abbr>
             <abbr title="Higiene: 100%">
@@ -44,7 +49,20 @@
         </section>
         
         <section id="cozinha">
-            <img src="Imagens/Cozinha/design-de-interiores-de-cozinha-com-moveis-e-decoracoes_1308-76245.webp" alt="cozinha">
+            <img class="cozinha" src="Imagens/Cozinha/design-de-interiores-de-cozinha-com-moveis-e-decoracoes_1308-76245.webp" alt="cozinha">
+
+            <div id="geladeiraClick" onclick="abrirGeladeira()">
+                <img src="Imagens/Captura_de_tela_20230107_141446-removebg-preview.png" alt="">
+            </div>
+            <div id="geladeira">
+                <img src="Imagens/Cozinha/25538317_3cik_rq5f_220304-removebg-preview.png" alt="">
+                <div id="fecharGeladeira" onclick="fecharGeladeira()">
+                        <p>x</p>
+                    </div>
+                </div>
+            </div>
+            
+            
         </section>
 
 
