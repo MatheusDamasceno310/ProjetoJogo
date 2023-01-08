@@ -10,7 +10,7 @@ body {
 }
 /*Leve do Pet*/
 
-.levelDoPet {
+#levelDoPet {
     position: absolute;
     height: 8rem;
     width: 30rem;
@@ -54,17 +54,21 @@ body {
     width: 10rem;
     margin: 1rem 1rem 0 0;
     display: flex;
+    background: white;
 }
 #dinheiroDoPet img {
     height: 3rem;
     width: 3rem;
     margin-top: -0.6rem;
+    margin-left: -0.5rem;
+    cursor: pointer;
 }
 .dinheiro {
     height: 1rem;
     width: 20rem;
     display: flex;
-    margin-top: 0.5rem;
+    margin-top: 0.4rem;
+    cursor: default;
 }
 #dinheiro {
     margin-left: 0.5rem;
@@ -72,13 +76,7 @@ body {
 
 /*Status do Pet*/
 
-.statusDoPet img {
-    height: 2.5rem;
-    margin-top: 0.5rem;
-    margin-left: 0.5rem;
-    position: absolute;
-}
-.statusDoPet {
+#statusDoPet {
     position: absolute;
     height: 5rem;
     width: 30rem;
@@ -86,6 +84,12 @@ body {
     margin: 4.5rem 0 0 1rem;
     display: flex;
     justify-content: space-around;
+}
+#statusDoPet img {
+    height: 2.5rem;
+    margin-top: 0.5rem;
+    margin-left: 0.5rem;
+    position: absolute;
 }
 #saudeDoPet, #fomeDoPet, #energiaDoPet, #inteligenciaDoPet, #felicidadeDoPet, #necessidadesDoPet {
     height: 4rem;
@@ -96,7 +100,7 @@ body {
 }
 
 #saudeDoPet {
-    background: linear-gradient(rgba(255, 255, 255, 0) 0%,rgb(0, 255, 0) 0%);
+    background: linear-gradient(rgba(255, 255, 255, 0) 100%,rgb(0, 255, 0) 0%);
 }
 #fomeDoPet {
     background: linear-gradient(rgba(255, 255, 255, 0) 0%,rgb(0, 255, 0) 0%);
@@ -123,7 +127,7 @@ button {
 .dormir {
     margin-left: 5rem;
 }
-.cozinha {
+#cozinhaFundo {
     height: 100vh;
     width: 100vw;
 }
