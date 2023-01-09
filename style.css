@@ -91,7 +91,7 @@ body {
     margin-left: 0.5rem;
     position: absolute;
 }
-#saudeDoPet, #fomeDoPet, #energiaDoPet, #inteligenciaDoPet, #felicidadeDoPet, #necessidadesDoPet {
+#saudeDoPet, #alimentacaoDoPet, #energiaDoPet, #inteligenciaDoPet, #felicidadeDoPet, #higieneDoPet {
     height: 4rem;
     width: 4rem;
     border: 3px solid black;
@@ -102,8 +102,8 @@ body {
 #saudeDoPet {
     background: linear-gradient(rgba(255, 255, 255, 0) 100%,rgb(0, 255, 0) 0%);
 }
-#fomeDoPet {
-    background: linear-gradient(rgba(255, 255, 255, 0) 0%,rgb(0, 255, 0) 0%);
+#alimentacaoDoPet {
+    background: linear-gradient(rgba(255, 255, 255, 0) 100%,rgb(0, 255, 0) 0%);
 }
 #energiaDoPet {
     background: linear-gradient(rgba(255, 255, 255, 0) 100%,rgb(0, 255, 0) 0%);
@@ -114,7 +114,7 @@ body {
 #felicidadeDoPet {
     background: linear-gradient(rgba(255, 255, 255, 0) 0%,rgb(0, 255, 0) 0%);
 }
-#necessidadesDoPet {
+#higieneDoPet {
     background: linear-gradient(rgba(255, 255, 255, 0) 0%,rgb(0, 255, 0) 0%);
 }
 
@@ -131,7 +131,6 @@ button {
     height: 100vh;
     width: 100vw;
 }
-
 #geladeiraClick {
     position: absolute;
     cursor: pointer;

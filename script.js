@@ -18,6 +18,26 @@ let statusSaudeRgb = parseFloat(localStorage.getItem("statusSaudeRgb"))
 let statusSauderGb = parseFloat(localStorage.getItem("statusSauderGb"))
 let convPorcentagemSaude = parseFloat(localStorage.getItem("convPorcentagemSaude"))
 
+/** Status Alimentacao */
+
+let contStatusAlimentacao = parseFloat(localStorage.getItem("contStatusAlimentacao"))
+let statusAlimentacaoRgb = parseFloat(localStorage.getItem("statusAlimentacaoRgb"))
+let statusAlimentacaorGb = parseFloat(localStorage.getItem("statusAlimentacaorGb"))
+let convPorcentagemAlimentacao = parseFloat(localStorage.getItem("convPorcentagemAlimentacao"))
+
+/** Status Inteligencia */
+
+
+
+/** Status Felicidade */
+
+let contStatusFelicidade = parseFloat(localStorage.getItem("contStatusFelicidade"))
+let statusFelicidadeRgb = parseFloat(localStorage.getItem("statusFelicidadeRgb"))
+let statusFelicidaderGb = parseFloat(localStorage.getItem("statusFelicidaderGb"))
+let convPorcentagemFelicidade = parseFloat(localStorage.getItem("convPorcentagemFelicidade"))
+let rostoStatus = localStorage.getItem("rostoStatus")
+
+
 /** LocalStorage  */
 if (localStorage.length > 0) {
 
@@ -45,8 +65,32 @@ if (localStorage.length > 0) {
     localStorage.setItem("statusSauderGb", "250")
     localStorage.setItem("statusDeSaude", "linear-gradient(rgba(255, 255, 255, 0) 0%,rgb(0, 250, 0) 0%)")
     localStorage.setItem("convPorcentagemSaude", "100")
+
+    /** Status Alimentacao */
+
+    localStorage.setItem("contStatusAlimentacao", "0")
+    localStorage.setItem("statusAlimentacaoRgb", "0")
+    localStorage.setItem("statusAlimentacaorGb", "250")
+    localStorage.setItem("statusDeAlimentacao", "linear-gradient(rgba(255, 255, 255, 0) 0%,rgb(0, 250, 0) 0%)")
+    localStorage.setItem("convPorcentagemAlimentacao", "100")
     
+    /** Status Inteligencia */
+
+
+
+    /** Status Felicidade */
+
+    localStorage.setItem("contStatusFelicidade", "0")
+    localStorage.setItem("statusFelicidadeRgb", "0")
+    localStorage.setItem("statusFelicidaderGb", "250")
+    localStorage.setItem("statusDeFelicidade", "linear-gradient(rgba(255, 255, 255, 0) 0%,rgb(0, 250, 0) 0%)")
+    localStorage.setItem("convPorcentagemFelicidade", "100")
+    localStorage.setItem("rostoStatus", "Imagens/Status/happy-face.png")
+
 }
+
+/** Status de Level */
+
 document.getElementById('level').innerText = localStorage.getItem("levelUp");
 document.getElementById('dinheiro').innerText = dinheiro;
 document.getElementById('mPorcentagemDeLevel').title = localStorage.getItem("porcentagemLevel");
@@ -63,6 +107,24 @@ document.getElementById("energiaDoPet").style.background = localStorage.getItem(
 document.getElementById('mPorcentagemDaSaude').title = "Saúde: "+ localStorage.getItem("convPorcentagemSaude") +"%";
 
 document.getElementById("saudeDoPet").style.background = localStorage.getItem("statusDeSaude")
+
+/** Status Alimentacao */
+
+document.getElementById('mPorcentagemDaAlimentacao').title = "Alimentação: "+ localStorage.getItem("convPorcentagemAlimentacao") +"%";
+
+document.getElementById("alimentacaoDoPet").style.background = localStorage.getItem("statusDeAlimentacao")
+
+/** Status Inteligencia */
+
+
+
+/** Status Felicidade */
+
+document.getElementById('mPorcentagemDaFelicidade').title = "Felicidade: "+ localStorage.getItem("convPorcentagemFelicidade") +"%";
+
+document.getElementById("felicidadeDoPet").style.background = localStorage.getItem("statusDeFelicidade")
+
+document.getElementById('rostoStatus').src = localStorage.getItem("rostoStatus")
 
 /** Cozinha Opaca */
 
@@ -118,24 +180,24 @@ function fecharGeladeira() {
 }
 
 function mudar() {
-        if (contStatusEnergia >= 10 && contStatusEnergia <= 100 ) {
-        contStatusEnergia = contStatusEnergia - 10
+        if (contStatusAlimentacao >= 10 && contStatusAlimentacao <= 100 ) {
+        contStatusAlimentacao = contStatusAlimentacao - 10
 
-        localStorage.setItem("contStatusEnergia", contStatusEnergia.toString())
+        localStorage.setItem("contStatusAlimentacao", contStatusAlimentacao.toString())
 
 
-        if(statusEnergiarGb >= 0 && statusEnergiarGb <= 200) {
-            statusEnergiarGb += 50
+        if(statusAlimentacaorGb >= 0 && statusAlimentacaorGb <= 200) {
+            statusAlimentacaorGb += 50
 
-            localStorage.setItem("statusEnergiarGb", statusEnergiarGb.toString())
+            localStorage.setItem("statusAlimentacaorGb", statusAlimentacaorGb.toString())
         }
 
-        if (contStatusEnergia < 25) {
+        if (contStatusAlimentacao < 25) {
             
-            if(statusEnergiaRgb >= 100 && statusEnergiaRgb <= 250) {
-                statusEnergiaRgb -= 100
+            if(statusAlimentacaoRgb >= 100 && statusAlimentacaoRgb <= 250) {
+                statusAlimentacaoRgb -= 100
     
-                localStorage.setItem("statusEnergiaRgb", statusEnergiaRgb.toString())
+                localStorage.setItem("statusAlimentacaoRgb", statusAlimentacaoRgb.toString())
             }
 
         }
@@ -214,6 +276,10 @@ function mudar() {
 
 /**Status Energia */
 
+let limiteEnergia = 0
+
+/** Queda */
+
 setInterval(function() {
     
     if (contStatusEnergia >= 0 && contStatusEnergia < 100) {
@@ -258,118 +324,298 @@ setInterval(function() {
     
     document.getElementById("energiaDoPet").style.background = localStorage.getItem("statusDeEnergia")
 
-} , 200);
+} , 60000);
 
 /** Status de Saude */
 
-    setInterval(function() {
-        if (contStatusEnergia >= 99) {
-        if (contStatusSaude >= 0 && contStatusSaude < 95) {
+let limiteSaude = 0
+
+/** Queda */
+
+setInterval(function() {
+    if (contStatusEnergia >= 100 || contStatusAlimentacao >= 100) {
+    if (contStatusSaude >= 0 && contStatusSaude < 95) {
+
+        if(statusSaudeRgb >= 0 && statusSaudeRgb <= 245) {
+            statusSaudeRgb += 5
+
+            localStorage.setItem("statusSaudeRgb", statusSaudeRgb.toString())
+        }
+
+        contStatusSaude++
+
+        let porcantagemSaudeSoma = contStatusSaude - 100 
+
+        let convPorcentagemSaude = porcantagemSaudeSoma * -1
+
+        if (contStatusSaude == 0) {
+            convPorcentagemSaude = 100
+        }
+
+        localStorage.setItem("convPorcentagemSaude", convPorcentagemSaude.toString())
+
+        document.getElementById('mPorcentagemDaSaude').title = "Saúde: "+ localStorage.getItem("convPorcentagemSaude") +"%"
+
+        localStorage.setItem("contStatusSaude", contStatusSaude.toString())
+
+        const StringTempSaude = contStatusSaude + "%"
+
+        if (contStatusSaude > 65) {
+            if(statusSauderGb >= 10 && statusSauderGb <= 250) {
+            statusSauderGb -= 10
+
+            localStorage.setItem("statusSauderGb", statusSauderGb.toString())
+        }
+        }
+
+            const porcentagemDaSaude = "linear-gradient(rgba(255, 255, 255, 0) "+ StringTempSaude +",rgb("+ statusSaudeRgb.toString() +","+ statusSauderGb.toString() +", 0) 0%)"
+
+            localStorage.setItem("statusDeSaude", porcentagemDaSaude)
+
+    }
     
-            if(statusSaudeRgb >= 0 && statusSaudeRgb <= 245) {
-                statusSaudeRgb += 5
+    document.getElementById("saudeDoPet").style.background = localStorage.getItem("statusDeSaude")
+    }
+
+    if (contStatusSaude == 0) {
+        limiteSaude = 1
+    }
+} , 1000);
+
+/** Subida */
+
+setInterval(function() {
+    if (contStatusEnergia <= 30 && contStatusAlimentacao <= 30) {
+    if (contStatusSaude >= 1 && contStatusSaude <= 100 && limiteSaude == 0) {
+
+        if(statusSauderGb >= 0 && statusSauderGb <= 245) {
+            statusSauderGb += 5
+
+            localStorage.setItem("statusSauderGb", statusSauderGb.toString())
+        }
+
+        --contStatusSaude
+
+        let porcantagemSaudeSoma = contStatusSaude - 100 
+
+        let convPorcentagemSaude = porcantagemSaudeSoma * -1
+
+        if (contStatusSaude == 0) {
+            convPorcentagemSaude = 100
+        }
+
+        localStorage.setItem("convPorcentagemSaude", convPorcentagemSaude.toString())
+
+        document.getElementById('mPorcentagemDaSaude').title = "Saúde: "+ localStorage.getItem("convPorcentagemSaude") +"%"
+
+        localStorage.setItem("contStatusSaude", contStatusSaude.toString())
+
+        const StringTempSaude = contStatusSaude + "%"
+
+        if (contStatusSaude < 25) {
+    
+            if(statusSaudeRgb >= 10 && statusSaudeRgb <= 250) {
+                statusSaudeRgb -= 10
     
                 localStorage.setItem("statusSaudeRgb", statusSaudeRgb.toString())
             }
-    
-            contStatusSaude++
-    
-            let porcantagemSaudeSoma = contStatusSaude - 100 
-    
-            let convPorcentagemSaude = porcantagemSaudeSoma * -1
-    
-            if (contStatusSaude == 0) {
-                convPorcentagemSaude = 100
-            }
-    
-            localStorage.setItem("convPorcentagemSaude", convPorcentagemSaude.toString())
-    
-            document.getElementById('mPorcentagemDaSaude').title = "Saúde: "+ localStorage.getItem("convPorcentagemSaude") +"%"
-    
-            localStorage.setItem("contStatusSaude", contStatusSaude.toString())
-    
-            const StringTempSaude = contStatusSaude + "%"
-    
-            if (contStatusSaude > 65) {
-                if(statusSauderGb >= 10 && statusSauderGb <= 250) {
-                statusSauderGb -= 10
-    
-                localStorage.setItem("statusSauderGb", statusSauderGb.toString())
-            }
-            }
-    
-                const porcentagemDaSaude = "linear-gradient(rgba(255, 255, 255, 0) "+ StringTempSaude +",rgb("+ statusSaudeRgb.toString() +","+ statusSauderGb.toString() +", 0) 0%)"
-    
-                localStorage.setItem("statusDeSaude", porcentagemDaSaude)
-    
-        }
-        
-        document.getElementById("saudeDoPet").style.background = localStorage.getItem("statusDeSaude")
+
         }
 
-        if (contStatusSaude == 0) {
-            limiteSaude = 1
-        }
-    } , 200);
+            const porcentagemDaSaude = "linear-gradient(rgba(255, 255, 255, 0) "+ StringTempSaude +",rgb("+ statusSaudeRgb.toString() +","+ statusSauderGb.toString() +", 0) 0%)"
 
-let limiteSaude = 0
+            localStorage.setItem("statusDeSaude", porcentagemDaSaude)
 
-        setInterval(function() {
-            if (contStatusEnergia <= 30) {
-            if (contStatusSaude >= 1 && contStatusSaude <= 100 && limiteSaude == 0) {
+    }
+    document.getElementById("saudeDoPet").style.background = localStorage.getItem("statusDeSaude")
+}
+}, 400);
+
+
+/** Status Alimentacao */
+
+let limiteAlimentacao = 0
+
+/** Queda */
+
+setInterval(function() {
     
-                if(statusSauderGb >= 0 && statusSauderGb <= 245) {
-                    statusSauderGb += 5
-        
-                    localStorage.setItem("statusSauderGb", statusSauderGb.toString())
-                }
-        
-                --contStatusSaude
-        
-                let porcantagemSaudeSoma = contStatusSaude - 100 
-        
-                let convPorcentagemSaude = porcantagemSaudeSoma * -1
-        
-                if (contStatusSaude == 0) {
-                    convPorcentagemSaude = 100
-                }
-        
-                localStorage.setItem("convPorcentagemSaude", convPorcentagemSaude.toString())
-        
-                document.getElementById('mPorcentagemDaSaude').title = "Saúde: "+ localStorage.getItem("convPorcentagemSaude") +"%"
-        
-                localStorage.setItem("contStatusSaude", contStatusSaude.toString())
-        
-                const StringTempSaude = contStatusSaude + "%"
-        
-                if (contStatusSaude < 25) {
-            
-                    if(statusSaudeRgb >= 10 && statusSaudeRgb <= 250) {
-                        statusSaudeRgb -= 10
-            
-                        localStorage.setItem("statusSaudeRgb", statusSaudeRgb.toString())
-                    }
-        
-                }
-        
-                    const porcentagemDaSaude = "linear-gradient(rgba(255, 255, 255, 0) "+ StringTempSaude +",rgb("+ statusSaudeRgb.toString() +","+ statusSauderGb.toString() +", 0) 0%)"
-        
-                    localStorage.setItem("statusDeSaude", porcentagemDaSaude)
-        
+    if (contStatusAlimentacao >= 0 && contStatusAlimentacao < 100) {
+
+        if(statusAlimentacaoRgb >= 0 && statusAlimentacaoRgb <= 245) {
+            statusAlimentacaoRgb += 5
+
+            localStorage.setItem("statusAlimentacaoRgb", statusAlimentacaoRgb.toString())
+        }
+
+        contStatusAlimentacao++
+
+        let porcantagemAlimentacaoSoma = contStatusAlimentacao - 100 
+
+        let convPorcentagemAlimentacao = porcantagemAlimentacaoSoma * -1
+
+        if (contStatusAlimentacao == 0) {
+            convPorcentagemAlimentacao = 100
+        }
+
+        localStorage.setItem("convPorcentagemAlimentacao", convPorcentagemAlimentacao.toString())
+
+        document.getElementById('mPorcentagemDaAlimentacao').title = "Alimentação: "+ localStorage.getItem("convPorcentagemAlimentacao") +"%"
+
+        localStorage.setItem("contStatusAlimentacao", contStatusAlimentacao.toString())
+
+        const StringTempAlimentacao = contStatusAlimentacao + "%"
+
+        if (contStatusAlimentacao > 65) {
+            if(statusAlimentacaorGb >= 10 && statusAlimentacaorGb <= 250) {
+            statusAlimentacaorGb -= 10
+
+            localStorage.setItem("statusAlimentacaorGb", statusAlimentacaorGb.toString())
+        }
+        }
+
+            const porcentagemDaAlimentacao = "linear-gradient(rgba(255, 255, 255, 0) "+ StringTempAlimentacao +",rgb("+ statusAlimentacaoRgb.toString() +","+ statusAlimentacaorGb.toString() +", 0) 0%)"
+
+            localStorage.setItem("statusDeAlimentacao", porcentagemDaAlimentacao)
+
+    }
+    
+    document.getElementById("alimentacaoDoPet").style.background = localStorage.getItem("statusDeAlimentacao")
+
+} , 10000);
+
+/** Status Inteligencia */
+
+
+
+/** Status Felicidade */
+
+let limiteFelicidade = 0
+
+/** Queda */
+
+setInterval(function() {
+    if (contStatusEnergia >= 100 || contStatusAlimentacao >= 100) {
+    if (contStatusFelicidade >= 0 && contStatusFelicidade < 100) {
+
+        if(statusFelicidadeRgb >= 0 && statusFelicidadeRgb <= 245) {
+            statusFelicidadeRgb += 5
+
+            localStorage.setItem("statusFelicidadeRgb", statusFelicidadeRgb.toString())
+        }
+
+        contStatusFelicidade++
+
+        let porcantagemFelicidadeSoma = contStatusFelicidade - 100 
+
+        let convPorcentagemFelicidade = porcantagemFelicidadeSoma * -1
+
+        if (contStatusFelicidade == 0) {
+            convPorcentagemFelicidade = 100
+        }
+
+        localStorage.setItem("convPorcentagemFelicidade", convPorcentagemFelicidade.toString())
+
+        document.getElementById('mPorcentagemDaFelicidade').title = "Felicidade: "+ localStorage.getItem("convPorcentagemFelicidade") +"%"
+
+        localStorage.setItem("contStatusFelicidade", contStatusFelicidade.toString())
+
+        const StringTempFelicidade = contStatusFelicidade + "%"
+
+        if (contStatusFelicidade > 65) {
+            if(statusFelicidaderGb >= 10 && statusFelicidaderGb <= 250) {
+            statusFelicidaderGb -= 10
+
+            localStorage.setItem("statusFelicidaderGb", statusFelicidaderGb.toString())
+        }
+        }
+
+            const porcentagemDaFelicidade = "linear-gradient(rgba(255, 255, 255, 0) "+ StringTempFelicidade +",rgb("+ statusFelicidadeRgb.toString() +","+ statusFelicidaderGb.toString() +", 0) 0%)"
+
+            localStorage.setItem("statusDeFelicidade", porcentagemDaFelicidade)
+
+    }
+    
+    document.getElementById("felicidadeDoPet").style.background = localStorage.getItem("statusDeFelicidade")
+    }
+    
+    if (contStatusFelicidade >= 60) {
+        localStorage.setItem("rostoStatus", "Imagens/Status/sad-face.png")
+    } else {
+        localStorage.setItem("rostoStatus", "Imagens/Status/happy-face.png")
+    }
+
+    document.getElementById("rostoStatus").src = localStorage.getItem("rostoStatus") 
+
+    if (contStatusFelicidade == 0) {
+        limiteFelicidade = 1
+    }
+} , 1000);
+
+/** Subida */
+
+setInterval(function() {
+    if (contStatusEnergia <= 30 && contStatusAlimentacao <= 30) {
+    if (contStatusFelicidade >= 1 && contStatusFelicidade <= 100 && limiteFelicidade == 0) {
+
+        if(statusFelicidaderGb >= 0 && statusFelicidaderGb <= 245) {
+            statusFelicidaderGb += 5
+
+            localStorage.setItem("statusFelicidaderGb", statusFelicidaderGb.toString())
+        }
+
+        --contStatusFelicidade
+
+        let porcantagemFelicidadeSoma = contStatusFelicidade - 100 
+
+        let convPorcentagemFelicidade = porcantagemFelicidadeSoma * -1
+
+        if (contStatusFelicidade == 0) {
+            convPorcentagemFelicidade = 100
+        }
+
+        localStorage.setItem("convPorcentagemFelicidade", convPorcentagemFelicidade.toString())
+
+        document.getElementById('mPorcentagemDaFelicidade').title = "Felicidade: "+ localStorage.getItem("convPorcentagemFelicidade") +"%"
+
+        localStorage.setItem("contStatusFelicidade", contStatusFelicidade.toString())
+
+        const StringTempFelicidade = contStatusFelicidade + "%"
+
+        if (contStatusFelicidade < 25) {
+    
+            if(statusFelicidadeRgb >= 10 && statusFelicidadeRgb <= 250) {
+                statusFelicidadeRgb -= 10
+    
+                localStorage.setItem("statuFelicidadeRgb", statusFelicidadeRgb.toString())
             }
-            document.getElementById("saudeDoPet").style.background = localStorage.getItem("statusDeSaude")
-        }
-        }, 50);
-    
 
+        }
+
+            const porcentagemDaFelicidade = "linear-gradient(rgba(255, 255, 255, 0) "+ StringTempFelicidade +",rgb("+ statusFelicidadeRgb.toString() +","+ statusFelicidaderGb.toString() +", 0) 0%)"
+
+            localStorage.setItem("statusDeFelicidade", porcentagemDaFelicidade)
+
+    }
+    document.getElementById("felicidadeDoPet").style.background = localStorage.getItem("statusDeFelicidade")
+
+    if (contStatusFelicidade >= 60) {
+        localStorage.setItem("rostoStatus", "Imagens/Status/sad-face.png")
+    } else {
+        localStorage.setItem("rostoStatus", "Imagens/Status/happy-face.png")
+    }
+
+    document.getElementById("rostoStatus").src = localStorage.getItem("rostoStatus")    
+
+}
+}, 400);
 
 /**Dormir */
-
-let limiteEnergia = 0
 
 function dormir() {
     limiteEnergia = 0
     limiteSaude = 0
+    limiteFelicidade = 0
 
     if (contStatusEnergia >= 60) {
         setInterval(function() {
@@ -430,7 +676,7 @@ function dormir() {
         if (contStatusEnergia == 0) {
             limiteEnergia = 1
         }
-    } , 50);
+    } , 200);
     }
     
 }
