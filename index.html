@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <button onclick="mudar()">Upar</button>
+    <button class="upar" onclick="mudar()">Upar</button>
     <button class="dormir" onclick="dormir()">Dormir</button>
     <main>
         <section id="levelDoPet">
@@ -47,22 +47,124 @@
                 <div id="higieneDoPet"><img src="Imagens/Status/toilet.png" alt="Higiene"></div>
             </abbr>
         </section>
+        <section id="botaoLoja">
+            <img id="placaDaLoja" src="Imagens/Loja/imagem_2023-01-09_182625297-removebg-preview.png" alt="PlacaDaLoja">
+            <div class="conteudoDaPlaca" onclick="abrirLoja()">
+                <p>LOJA</p>
+            </div>
+        </section>
+        <section id="loja">
+            <div class="placaLoja">
+                <img src="Imagens/Loja/46171-removebg-preview.png" alt="placaloja">
+                <p>LOJA</p>
+            </div>
+            <div class="cartegoriasLoja">
+                <ul>
+                    <li id="mostrarAcogue" onclick="mostrar()">Açougue</li>
+                    <li id="mostrarBebidas" onclick="mostrar()">Bebidas</li>
+                    <li id="mostrarCereais" onclick="mostrar()">Cereais</li>
+                    <li id="mostrarCongelados" onclick="mostrarCongelados()">Congelados</li>
+                    <li id="mostrarEnlatados" onclick="mostrar()">Enlatados</li>
+                </ul>
+                <ul>
+                    <li id="mostrarFrios" onclick="mostrar()">Frios</li>
+                    <li id="mostrarHortifruti" onclick="mostrar()">Hortifrúti</li>
+                    <li id="mostrarLaticinios" onclick="mostrar()">Laticínios</li>
+                    <li id="mostrarPadaria" onclick="mostrar()">Padaria</li>
+                    <li id="mostrarPeixaria" onclick="mostrar()">Peixaria</li>
+                </ul>
+            </div>
+            <div id="acogue">
+                
+            </div>
+            <div id="">
+
+            </div>
+            <div id="cereais">
+
+            </div>
+            <div id="congelados">
+                <div class="itemLoja">
+                    <p>Sorvete de Blueberry</p>
+                    <img src="Imagens/Loja/Congelados/Captura_de_tela_20230110_204015-removebg-preview.png" alt="">
+                    <p>R$ 20,00</p>
+                    <div id="botaoComprar">
+                        <button class="comprar" onclick="comprarCongelado1()">Comprar</button>
+                        <button class="adicionarAoCarrinho" onclick="carrinhoCongelado1()">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+                <div class="itemLoja">
+                    <p>Sorvete de Strawberry</p>
+                    <img src="Imagens/Loja/Congelados/Captura_de_tela_20230110_204459-removebg-preview.png" alt="">
+                    <p>R$ 20,00</p>
+                    <div id="botaoComprar">
+                        <button class="comprar" onclick="comprarCongelado2()">Comprar</button>
+                        <button class="adicionarAoCarrinho" onclick="carrinhoCongelado2()">Adicionar ao Carrinho</button>  
+                    </div>
+                </div>
+            </div>
+            <div id="">
+
+            </div>
+            <div id="">
+
+            </div>
+            <div id="">
+
+            </div>
+            <div id="">
+
+            </div>
+            <div id="">
+
+            </div>
+            <div id="">
+
+            </div>
+
+            <div id="carrinho">
+                <h1>Carrinho</h1>
+                <div id="itensDoCarrinho">
+                   
+                </div>
+            </div>
+
+            <div class="cancelar" id="fecharLoja" onclick="fecharLoja()">
+                <p>x</p>
+            </div>
+        </div>
+            
+        </section>
+
         
         <section id="cozinha">
             <img id="cozinhaFundo" src="Imagens/Cozinha/design-de-interiores-de-cozinha-com-moveis-e-decoracoes_1308-76245.webp" alt="cozinha">
 
-            <div id="geladeiraClick" onclick="abrirGeladeira()">
+            <div id="geladeiraHover" onclick="abrirGeladeira()">
                 <img src="Imagens/Captura_de_tela_20230107_141446-removebg-preview.png" alt="">
             </div>
             <div id="geladeira">
-                <img src="Imagens/Cozinha/25538317_3cik_rq5f_220304-removebg-preview.png" alt="">
-                <div id="fecharGeladeira" onclick="fecharGeladeira()">
+                <img class="geladeira" src="Imagens/Cozinha/25538317_3cik_rq5f_220304-removebg-preview.png" alt="">
+                <div class="itensNaGeladeira1">
+                    <div id="item1">
+                        <img src="Imagens/Loja/Congelados/Captura_de_tela_20230110_204015-removebg-preview.png" alt="">
+                    </div>
+                    <div id="item2">
+                        <img src="Imagens/Loja/Congelados/Captura_de_tela_20230110_204459-removebg-preview.png" alt="">
+                    </div>
+                </div>
+                <div class="cancelar" id="fecharGeladeira" onclick="fecharGeladeira()">
                         <p>x</p>
                     </div>
                 </div>
             </div>
-            
-            
+            <div id="fogaoHover">
+                <img src="Imagens/Captura_de_tela_20230110_211317-removebg-preview.png" alt="">
+            </div>
+            <div id="microondasHover">
+                <img src="Imagens/Captura_de_tela_20230110_211317-removebg-preview.png" alt="">
+            </div>
+
         </section>
 
 

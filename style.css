@@ -112,26 +112,200 @@ body {
     background: linear-gradient(rgba(255, 255, 255, 0) 100%,rgb(0, 255, 0) 0%);
 }
 #felicidadeDoPet {
-    background: linear-gradient(rgba(255, 255, 255, 0) 0%,rgb(0, 255, 0) 0%);
+    background: linear-gradient(rgba(255, 255, 255, 0) 100%,rgb(0, 255, 0) 0%);
 }
 #higieneDoPet {
     background: linear-gradient(rgba(255, 255, 255, 0) 0%,rgb(0, 255, 0) 0%);
 }
 
+#botaoLoja {
+    position: absolute;
+    right: 1.7rem;
+    top: 3rem;
+}
+#placaDaLoja {
+    height: 6rem;
+}
+#botaoLoja .conteudoDaPlaca p {
+    position: absolute;
+    margin-top: -4rem;
+    margin-left: 0.5rem;
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 0.7rem 1.6rem;
+}
+#loja {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    height: 80vh;
+    width: 78vw;
+    z-index: 5;
+    border: 5px solid red;
+    border-radius: 10px;
+}
+.placaLoja {
+    position: absolute;
+    height: 8rem;
+    width: 11vw;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.placaLoja img {
+    position: absolute;
+    height: 8rem;
+    width: 11vw;
+    top: -1.2rem;
+}
+.placaLoja p {
+    position: absolute;
+    left: 3.7vw;
+    top: 0.3vh;
+    font-size: 1.5vw;
+    cursor: default;
+}
 
-button {
+/* Loja */
+
+.cartegoriasLoja {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1rem;
+    background: linear-gradient(to top, red, white);
+}
+.cartegoriasLoja ul {
+    display: flex;
+    width: 33vw;
+    flex-wrap: wrap;
+    text-align: center;
+    padding-bottom: 4px;
+}
+.cartegoriasLoja ul li {
+    list-style-type: none;
+    width: 5.6rem;
+    text-align: center;
+    margin: 0 auto;
+    cursor: pointer;
+    color: white;
+    border-bottom: 2px solid white;
+}
+.cartegoriasLoja ul li:hover {
+    font-weight: bold;
+    border-bottom: 4px solid white;
+}
+
+/* Itens da Loja */
+
+#congelados {
+    display: flex;
+    flex-wrap: wrap;  
+}
+.itemLoja {
+    margin: 0.5rem;
+    padding: 0.5rem;
+    text-align: center;
+    cursor: pointer;
+    width: 12vw;
+}
+#congelados .itemLoja:hover {
+    background: rgba(255, 0, 0, 0.273);
+}
+#botaoComprar {
+    position: absolute;
+    display: flex;
+    opacity: 0;
+    height: 6rem;
+    flex-direction: column;
+    justify-content: space-around;
+    top: 16vh;
+    margin-left: 0.5rem;
+    padding: 1rem 0;
+}
+#botaoComprar button {
+    border: 2px solid rgb(255, 0, 0);
+    color: red;
+    cursor: pointer;
+    box-shadow: inset 1px 1px 5px rgba(255, 0, 0, 0.453), inset -1px -1px 5px rgba(255, 0, 0, 0.453);
+    background: white;
+    padding: 0.1rem;
+    width: 10vw;
+}
+#botaoComprar button:hover {
+    background: rgba(255, 0, 0, 0.537);
+    border-color: white;
+    box-shadow: inset 1px 1px 20px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255);
+    color: white;
+    font-weight: bold;
+}
+#congelados #botaoComprar:hover {
+    opacity: 1;
+}
+
+
+/* Fechar Loja */
+
+#fecharLoja {
+    position: absolute;
+    top: -1rem;
+    right: -1rem;
+    font-size: 2rem;
+    text-align: center;
+    height: 2rem;
+    width: 2rem;
+}
+
+/* Carrinho */
+
+#carrinho {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 38rem;
+    width: 30vw;
+    background: rgb(255, 255, 255);
+    border: 2px solid red;
+    border-radius: 1rem;
+}
+#carrinho h1 {
+    text-align: center;
+    margin: 1rem;
+    font-size: 2rem;
+}
+.tabelaCarrinho {
+    background: red;
+    position: absolute;
+    top: 13%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 23vw;
+}
+.tabelaCarrinho td:nth-child(1) {
+    background: white;
+}
+
+
+.upar {
     position: absolute;
     margin-top: 10rem;
-    background: rgb(0, 255, 0);
 }
 .dormir {
+    position: absolute;
+    margin-top: 10rem;
     margin-left: 5rem;
 }
 #cozinhaFundo {
     height: 100vh;
     width: 100vw;
 }
-#geladeiraClick {
+
+/* Geladeira */
+
+#geladeiraHover {
     position: absolute;
     cursor: pointer;
     height: 51.6vh;
@@ -141,7 +315,7 @@ button {
     border-radius: 0.7rem 0.7rem 0 0;
     opacity: 0;
 }
-#geladeiraClick img {
+#geladeiraHover img {
     margin-top: 18vh;
     margin-left: 5vw;
     height: 5rem;
@@ -156,10 +330,28 @@ button {
     height: 100vh;
     display: none;
 }
-#geladeira img{
+.geladeira {
     margin-top: -2vh;
     height: 100vh;
 }
+
+/* Itens na Geladeira */
+
+.itensNaGeladeira1 {
+    position: absolute;
+    height: 13vh;
+    width: 19.5vw;
+    left: 2vw;
+    top: 4.1rem;
+    display: flex;
+}
+.itensNaGeladeira1 img {
+    height: 4.5rem;
+    margin-top: 1.3rem;
+}
+
+/* Fechar Geladeira */
+
 #fecharGeladeira {
     position: absolute;
     margin-top: -4.5vh;
@@ -168,11 +360,67 @@ button {
     text-align: center;
     height: 2rem;
     width: 2rem;
+}
+
+
+/* Fogao */
+
+#fogaoHover {
+    position: absolute;
+    cursor: pointer;
+    height: 29vh;
+    width: 13.3vw;
+    margin-top: -57vh;
+    margin-left: 62.5vw;
+    border-radius: 0.7rem 0.7rem 0 0;
+    background: rgba(255, 255, 255, 0.314);
+    opacity: 0;
+}
+#fogaoHover img {
+    margin-top: 9vh;
+    margin-left: 4.8vw;
+    height: 4rem;
+    width: 4rem;
+    opacity: 0.8;
+}
+
+/* Micro-ondas */
+
+#microondasHover {
+    position: absolute;
+    cursor: pointer;
+    height: 10.5vh;
+    width: 9vw;
+    margin-top: -67vh;
+    margin-left: 80.4vw;
+    border-radius: 1.1rem 1.3rem 0.2rem 0.2rem;
+    background: rgba(255, 255, 255, 0.314);
+    opacity: 0;
+}
+#microondasHover img {
+    margin-top: 2.5vh;
+    margin-left: 3vw;
+    height: 3rem;
+    width: 3rem;
+    opacity: 0.8;
+}
+.cancelar {
+    font-size: 2rem;
+    text-align: center;
+    height: 2rem;
+    width: 2rem;
     border-radius: 2rem;
     border: 2px solid rgb(255, 0, 0);
-    color: white;
+    color: red;
     cursor: pointer;
+    box-shadow: inset 1px 1px 5px rgba(255, 0, 0, 0.453), inset -1px -1px 5px rgba(255, 0, 0, 0.453);
+    background: white;
 }
-#fecharGeladeira p {
+.cancelar:hover {
+    background: red;
+    box-shadow: inset 1px 1px 20px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255);
+    color: white;
+}
+.cancelar p {
     margin-top: -6px;
 }

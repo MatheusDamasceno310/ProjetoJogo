@@ -139,18 +139,18 @@ function CozinhaOpacaN() {
     document.getElementById('statusDoPet').style.opacity = "1";
 }
 
-/**Geladeira */
+/** Geladeira */
 
 let geladeiraAberta = 0
 
 if(geladeiraAberta == 0) {
-    const geladeiraClick = document.querySelector('#geladeiraClick');
+    const geladeiraHover = document.querySelector('#geladeiraHover');
 
-    geladeiraClick.addEventListener('mouseenter', () => {
-        geladeiraClick.style.opacity = "1";
+    geladeiraHover.addEventListener('mouseenter', () => {
+        geladeiraHover.style.opacity = "1";
     })
-    geladeiraClick.addEventListener('mouseleave', () => {
-        geladeiraClick.style.opacity = "0";
+    geladeiraHover.addEventListener('mouseleave', () => {
+        geladeiraHover.style.opacity = "0";
     });
 }
     
@@ -159,7 +159,7 @@ function abrirGeladeira() {
     document.getElementById('geladeira').style.display = "block";
     CozinhaOpacaY()
 
-    document.getElementById('geladeiraClick').style.display = "none"
+    document.getElementById('geladeiraHover').style.display = "none"
     geladeiraAberta = 1
 }
 
@@ -167,24 +167,60 @@ function fecharGeladeira() {
     document.getElementById('geladeira').style.display = "none";
     CozinhaOpacaN()
 
-    document.getElementById('geladeiraClick').style.display = "block"
+    document.getElementById('geladeiraHover').style.display = "block"
     
-    const geladeiraClick = document.querySelector('#geladeiraClick');
+    const geladeiraHover = document.querySelector('#geladeiraHover');
 
-    geladeiraClick.addEventListener('mouseenter', () => {
-        geladeiraClick.style.opacity = "1";
+    geladeiraHover.addEventListener('mouseenter', () => {
+        geladeiraHover.style.opacity = "1";
     })
-    geladeiraClick.addEventListener('mouseleave', () => {
-        geladeiraClick.style.opacity = "0";
+    geladeiraHover.addEventListener('mouseleave', () => {
+        geladeiraHover.style.opacity = "0";
     });
 }
 
+/** Fogão */
+
+const fogaoHover = document.querySelector('#fogaoHover');
+
+fogaoHover.addEventListener('mouseenter', () => {
+    fogaoHover.style.opacity = "1";
+})
+fogaoHover.addEventListener('mouseleave', () => {
+    fogaoHover.style.opacity = "0";
+});
+
+/** Micro-ondas */
+
+const microondasHover = document.querySelector('#microondasHover');
+
+microondasHover.addEventListener('mouseenter', () => {
+    microondasHover.style.opacity = "1";
+})
+microondasHover.addEventListener('mouseleave', () => {
+    microondasHover.style.opacity = "0";
+});
+
 function mudar() {
+
         if (contStatusAlimentacao >= 10 && contStatusAlimentacao <= 100 ) {
         contStatusAlimentacao = contStatusAlimentacao - 10
 
-        localStorage.setItem("contStatusAlimentacao", contStatusAlimentacao.toString())
+        let porcantagemAlimentacaoSoma = contStatusAlimentacao - 100 
 
+        let convPorcentagemAlimentacao = porcantagemAlimentacaoSoma * -1
+
+        if (contStatusAlimentacao == 0) {
+            convPorcentagemAlimentacao = 100
+        }
+
+        localStorage.setItem("convPorcentagemAlimentacao", convPorcentagemAlimentacao.toString())
+
+        document.getElementById('mPorcentagemDaAlimentacao').title = "Alimentação: "+ localStorage.getItem("convPorcentagemAlimentacao") +"%"
+
+        const StringTempAlimentacao = contStatusAlimentacao + "%"
+
+        localStorage.setItem("contStatusAlimentacao", contStatusAlimentacao.toString())
 
         if(statusAlimentacaorGb >= 0 && statusAlimentacaorGb <= 200) {
             statusAlimentacaorGb += 50
@@ -199,8 +235,13 @@ function mudar() {
     
                 localStorage.setItem("statusAlimentacaoRgb", statusAlimentacaoRgb.toString())
             }
-
         }
+
+        const porcentagemDaAlimentacao = "linear-gradient(rgba(255, 255, 255, 0) "+ StringTempAlimentacao +",rgb("+ statusAlimentacaoRgb.toString() +","+ statusAlimentacaorGb.toString() +", 0) 0%)"
+
+        localStorage.setItem("statusDeAlimentacao", porcentagemDaAlimentacao)
+
+        document.getElementById("alimentacaoDoPet").style.background = localStorage.getItem("statusDeAlimentacao")
         
     }
 
@@ -482,7 +523,8 @@ setInterval(function() {
     
     document.getElementById("alimentacaoDoPet").style.background = localStorage.getItem("statusDeAlimentacao")
 
-} , 10000);
+} , 5000);
+
 
 /** Status Inteligencia */
 
@@ -550,13 +592,13 @@ setInterval(function() {
     if (contStatusFelicidade == 0) {
         limiteFelicidade = 1
     }
-} , 1000);
+} , 80);
 
 /** Subida */
 
 setInterval(function() {
-    if (contStatusEnergia <= 30 && contStatusAlimentacao <= 30) {
-    if (contStatusFelicidade >= 1 && contStatusFelicidade <= 100 && limiteFelicidade == 0) {
+    /*alterar*/if (contStatusEnergia <= 30 && contStatusAlimentacao <= 30) {
+    if (contStatusFelicidade > 60 && contStatusFelicidade <= 100 && limiteFelicidade == 0) {
 
         if(statusFelicidaderGb >= 0 && statusFelicidaderGb <= 245) {
             statusFelicidaderGb += 5
@@ -617,7 +659,7 @@ function dormir() {
     limiteSaude = 0
     limiteFelicidade = 0
 
-    if (contStatusEnergia >= 60) {
+    if (contStatusEnergia <= 90) {
         setInterval(function() {
     
         if (contStatusEnergia > 0 && contStatusEnergia <= 100 && limiteEnergia == 0) {
@@ -680,3 +722,46 @@ function dormir() {
     }
     
 }
+
+/** Loja */
+
+function abrirLoja() {
+    document.getElementById('loja').style.display = "block"
+}
+
+function fecharLoja() {
+    document.getElementById('loja').style.display = "none"
+}
+
+/** Itens da Loja */
+
+function mostrarCongelados() {
+    document.getElementById('congelados').style.display = "flex"
+}
+
+/** Tabela Carrinho */ 
+
+const itensDoCarrinho = document.getElementById('itensDoCarrinho');
+const table = document.createElement("table");
+table.classList.add("tabelaCarrinho");
+
+
+const carrinhoItem = document.createElement("td");
+const carrinhoQuantidade = document.createElement("td");
+const carrinhoPreco = document.createElement("td");
+
+table.appendChild(carrinhoItem);
+table.appendChild(carrinhoQuantidade);
+table.appendChild(carrinhoPreco);
+
+carrinhoItem.innerHTML = "Item";
+carrinhoQuantidade.innerHTML = "Quantidade";
+carrinhoPreco.innerHTML = "Preço";
+
+itensDoCarrinho.appendChild(table);
+
+/*table.removeChild(row2);*/
+
+
+
+
