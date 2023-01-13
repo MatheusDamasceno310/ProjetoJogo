@@ -11,130 +11,172 @@
     <button class="upar" onclick="mudar()">Upar</button>
     <button class="dormir" onclick="dormir()">Dormir</button>
     <main>
-        <section id="levelDoPet">
-            <div class="level">
-                <h1>LEVEL:</h1>
-                <h1 id="level">1</h1>
-            </div>
-            <abbr id="mPorcentagemDeLevel" title="0%">
-                <div id="barraDoLevel">
-                    <div id="progressao">
-                    </div>
+        <section id="principaisCoisas">
+            <section id="levelDoPet">
+                <div class="level">
+                    <h1>LEVEL:</h1>
+                    <h1 id="level">1</h1>
                 </div>
-            </abbr>
-        </section>
-        <section id="dinheiroDoPet">
-            <img src="Imagens/25498-removebg-preview.png" alt="">
-            <div class="dinheiro"><p>R$</p><p id="dinheiro">0</p></div>
-        </section>
-        <section id="statusDoPet">
-            <abbr id="mPorcentagemDaSaude" title="Saúde: 0%">
-                <div id="saudeDoPet"><img src="Imagens/Status/heart-shape-rounded-edges-variant-with-white-details.png" alt="Saúde"></div>
-            </abbr>
-            <abbr id="mPorcentagemDaAlimentacao" title="Alimentação: 0%">
-                <div id="alimentacaoDoPet"><img src="Imagens/Status/apple.png" alt="Alimentação"></div>
-            </abbr>
-            <abbr id="mPorcentagemDaEnergia" title="Energia: 0%">
-                <div id="energiaDoPet"><img src="Imagens/Status/energy.png" alt="Energia"></div>
-            </abbr>
-            <abbr title="Inteligência: 0%">
-                <div id="inteligenciaDoPet"><img src="Imagens/Status/book.png" alt="Inteligência"></div>
-            </abbr>
-            <abbr id="mPorcentagemDaFelicidade" title="Felicidade: 100%">
-                <div id="felicidadeDoPet"><img id="rostoStatus" src="Imagens/Status/happy-face.png" alt=""></div>
-            </abbr>
-            <abbr title="Higiene: 100%">
-                <div id="higieneDoPet"><img src="Imagens/Status/toilet.png" alt="Higiene"></div>
-            </abbr>
-        </section>
-        <section id="botaoLoja">
-            <img id="placaDaLoja" src="Imagens/Loja/imagem_2023-01-09_182625297-removebg-preview.png" alt="PlacaDaLoja">
-            <div class="conteudoDaPlaca" onclick="abrirLoja()">
-                <p>LOJA</p>
-            </div>
-        </section>
-        <section id="loja">
-            <div class="placaLoja">
-                <img src="Imagens/Loja/46171-removebg-preview.png" alt="placaloja">
-                <p>LOJA</p>
-            </div>
-            <div class="cartegoriasLoja">
-                <ul>
-                    <li id="mostrarAcogue" onclick="mostrar()">Açougue</li>
-                    <li id="mostrarBebidas" onclick="mostrar()">Bebidas</li>
-                    <li id="mostrarCereais" onclick="mostrar()">Cereais</li>
-                    <li id="mostrarCongelados" onclick="mostrarCongelados()">Congelados</li>
-                    <li id="mostrarEnlatados" onclick="mostrar()">Enlatados</li>
-                </ul>
-                <ul>
-                    <li id="mostrarFrios" onclick="mostrar()">Frios</li>
-                    <li id="mostrarHortifruti" onclick="mostrar()">Hortifrúti</li>
-                    <li id="mostrarLaticinios" onclick="mostrar()">Laticínios</li>
-                    <li id="mostrarPadaria" onclick="mostrar()">Padaria</li>
-                    <li id="mostrarPeixaria" onclick="mostrar()">Peixaria</li>
-                </ul>
-            </div>
-            <div id="acogue">
+                <abbr id="mPorcentagemDeLevel" title="0%">
+                    <div id="barraDoLevel">
+                        <div id="progressao">
+                        </div>
+                    </div>
+                </abbr>
+            </section>
+            <section id="dinheiroDoPet">
+                <img src="Imagens/25498-removebg-preview.png" alt="">
+                <div class="dinheiro"><p>R$</p><p id="dinheiro">0</p></div>
+            </section>
+            <section id="statusDoPet">
+                <abbr id="mPorcentagemDaSaude" title="Saúde: 0%">
+                    <div id="saudeDoPet"><img src="Imagens/Status/heart-shape-rounded-edges-variant-with-white-details.png" alt="Saúde"></div>
+                </abbr>
+                <abbr id="mPorcentagemDaAlimentacao" title="Alimentação: 0%">
+                    <div id="alimentacaoDoPet"><img src="Imagens/Status/apple.png" alt="Alimentação"></div>
+                </abbr>
+                <abbr id="mPorcentagemDaEnergia" title="Energia: 0%">
+                    <div id="energiaDoPet"><img src="Imagens/Status/energy.png" alt="Energia"></div>
+                </abbr>
+                <abbr title="Inteligência: 0%">
+                    <div id="inteligenciaDoPet"><img src="Imagens/Status/book.png" alt="Inteligência"></div>
+                </abbr>
+                <abbr id="mPorcentagemDaFelicidade" title="Felicidade: 100%">
+                    <div id="felicidadeDoPet"><img id="rostoStatus" src="Imagens/Status/happy-face.png" alt=""></div>
+                </abbr>
+                <abbr title="Higiene: 100%">
+                    <div id="higieneDoPet"><img src="Imagens/Status/toilet.png" alt="Higiene"></div>
+                </abbr>
+            </section>
+            <section id="botaoLoja">
+                <img id="placaDaLoja" src="Imagens/Loja/imagem_2023-01-09_182625297-removebg-preview.png" alt="PlacaDaLoja">
+                <div class="conteudoDaPlaca" onclick="abrirLoja()">
+                    <p>LOJA</p>
+                </div>
+            </section>
+            <section id="sacolaDeCompras" onclick="mostrarSacola()">
+                <img src="Imagens/Imagem_do_WhatsApp_de_2023-01-10_à_s__19.04.56-removebg-preview.png" alt="">
+            </section>
+            <div id="sacola">
+                <h1>Sacola</h1>
+                <div class="todaTabelaSacola">
+                    <div class="titulosTabela">
+                        <p>Item</p>
+                        <p>Quantidade</p>
+                        <p>Preço</p>
+                    </div>
+                    <div id="itensDaSacola">
                 
-            </div>
-            <div id="">
-
-            </div>
-            <div id="cereais">
-
-            </div>
-            <div id="congelados">
-                <div class="itemLoja">
-                    <p>Sorvete de Blueberry</p>
-                    <img src="Imagens/Loja/Congelados/Captura_de_tela_20230110_204015-removebg-preview.png" alt="">
-                    <p>R$ 20,00</p>
-                    <div id="botaoComprar">
-                        <button class="comprar" onclick="comprarCongelado1()">Comprar</button>
-                        <button class="adicionarAoCarrinho" onclick="carrinhoCongelado1()">Adicionar ao Carrinho</button>
                     </div>
                 </div>
-                <div class="itemLoja">
-                    <p>Sorvete de Strawberry</p>
-                    <img src="Imagens/Loja/Congelados/Captura_de_tela_20230110_204459-removebg-preview.png" alt="">
-                    <p>R$ 20,00</p>
-                    <div id="botaoComprar">
-                        <button class="comprar" onclick="comprarCongelado2()">Comprar</button>
-                        <button class="adicionarAoCarrinho" onclick="carrinhoCongelado2()">Adicionar ao Carrinho</button>  
+                <button class="coletarSacola" onclick="coletarSacola()">Receber</button>
+                <div class="cancelar fecharSacola" onclick="fecharSacola()">
+                    <p>x</p>
+                </div>
+            </div>
+            <section id="loja">
+                <div class="placaLoja">
+                    <img src="Imagens/Loja/46171-removebg-preview.png" alt="placaloja">
+                    <p>LOJA</p>
+                </div>
+                <div class="cartegoriasLoja">
+                    <ul>
+                        <li id="mostrarAcogue" onclick="mostrar()">Açougue</li>
+                        <li id="mostrarBebidas" onclick="mostrar()">Bebidas</li>
+                        <li id="mostrarCereais" onclick="mostrar()">Cereais</li>
+                        <li id="mostrarCongelados" onclick="mostrarCongelados()">Congelados</li>
+                        <li id="mostrarEnlatados" onclick="mostrar()">Enlatados</li>
+                    </ul>
+                    <ul>
+                        <li id="mostrarFrios" onclick="mostrar()">Frios</li>
+                        <li id="mostrarHortifruti" onclick="mostrar()">Hortifrúti</li>
+                        <li id="mostrarLaticinios" onclick="mostrar()">Laticínios</li>
+                        <li id="mostrarPadaria" onclick="mostrar()">Padaria</li>
+                        <li id="mostrarPeixaria" onclick="mostrar()">Peixaria</li>
+                    </ul>
+                </div>
+                <div id="acogue">
+                    
+                </div>
+                <div id="">
+    
+                </div>
+                <div id="cereais">
+    
+                </div>
+                <div id="congelados">
+                    <div class="itemLoja">
+                        <p>Sorvete de Blueberry</p>
+                        <img src="Imagens/Loja/Congelados/Captura_de_tela_20230110_204015-removebg-preview.png" alt="">
+                        <p>R$ 20,00</p>
+                        <div id="botaoComprar">
+                            <button class="comprar" onclick="comprarCongelado1()">Comprar</button>
+                            <div class="botaoQuantidade">
+                                <button onclick="menosCongelado1()">-</button>
+                                <p id="quantidadeCongelado1">1</p>
+                                <button onclick="maisCongelado1()">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="itemLoja">
+                        <p>Sorvete de Strawberry</p>
+                        <img src="Imagens/Loja/Congelados/Captura_de_tela_20230110_204459-removebg-preview.png" alt="">
+                        <p>R$ 20,00</p>
+                        <div id="botaoComprar">
+                            <button class="comprar" onclick="comprarCongelado2()">Comprar</button>
+                            <div class="botaoQuantidade">
+                                <button onclick="menosItem2()">-</button>
+                                <p id="quantidadeCongelado2">1</p>
+                                <button onclick="maisItem2()">+</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div id="">
-
-            </div>
-            <div id="">
-
-            </div>
-            <div id="">
-
-            </div>
-            <div id="">
-
-            </div>
-            <div id="">
-
-            </div>
-            <div id="">
-
-            </div>
-
-            <div id="carrinho">
-                <h1>Carrinho</h1>
-                <div id="itensDoCarrinho">
-                   
+                <div id="">
+    
+                </div>
+                <div id="">
+    
+                </div>
+                <div id="">
+    
+                </div>
+                <div id="">
+    
+                </div>
+                <div id="">
+    
+                </div>
+                <div id="">
+    
+                </div>
+                <div id="compraItem">
+                    <h3>Confirmação da Compra</h3>
+                    <div class="itemASerComprado">
+                        <h1>R$</h1>
+                        <h1 id="precoSoma">0</h1>
+                    </div>
+                    <button class="comprar" onclick="confirmarCompra()">Comprar</button>
+                    <div class="cancelar" onclick="fecharConfirmarCompra()">
+                        <p>x</p>
+                    </div>
+                </div>
+                <div id="compraAviso">
+                    <h3>Aviso</h3>
+                    <div class="aviso">
+                        <h1>Dinheiro Insuficiente</h1>
+                    </div>
+                    <div class="cancelar" onclick="fecharAviso()">
+                        <p>x</p>
+                    </div>
+                </div>
+                <div class="cancelar" id="fecharLoja" onclick="fecharLoja()">
+                    <p>x</p>
                 </div>
             </div>
-
-            <div class="cancelar" id="fecharLoja" onclick="fecharLoja()">
-                <p>x</p>
-            </div>
-        </div>
-            
+            </section>
         </section>
+        
 
         
         <section id="cozinha">
@@ -144,8 +186,9 @@
                 <img src="Imagens/Captura_de_tela_20230107_141446-removebg-preview.png" alt="">
             </div>
             <div id="geladeira">
-                <img class="geladeira" src="Imagens/Cozinha/25538317_3cik_rq5f_220304-removebg-preview.png" alt="">
-                <div class="itensNaGeladeira1">
+                <img class="geladeira" src="Imagens/Cozinha/geladeiraVazia.png" alt="">
+                <img id="tampaGeladeira" src="Imagens/Cozinha/tapaDaParteDeBaixoDaGeladeira.png" alt="">
+                <div class="itensNaGeladeira1" onclick="abrirTampaGeladeira()">
                     <div id="item1">
                         <img src="Imagens/Loja/Congelados/Captura_de_tela_20230110_204015-removebg-preview.png" alt="">
                     </div>
@@ -153,7 +196,7 @@
                         <img src="Imagens/Loja/Congelados/Captura_de_tela_20230110_204459-removebg-preview.png" alt="">
                     </div>
                 </div>
-                <div class="cancelar" id="fecharGeladeira" onclick="fecharGeladeira()">
+                <div id="fecharGeladeira" onclick="fecharGeladeira()">
                         <p>x</p>
                     </div>
                 </div>

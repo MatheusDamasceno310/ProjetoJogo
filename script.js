@@ -1,7 +1,7 @@
 
 let c = parseFloat(localStorage.getItem("progressaoDoLevel"))
 let level =  parseInt(localStorage.getItem("levelUp"))
-let dinheiro = parseFloat(localStorage.getItem("dinehiro"))
+let dinheiro = parseFloat(localStorage.getItem("dinheiro"))
 let porcantagemLevel = parseFloat(localStorage.getItem("porcentagemLevel"))
 
 /** Status Energia */
@@ -46,7 +46,7 @@ if (localStorage.length > 0) {
 
     localStorage.setItem("porcentagemLevel", "0%")
     localStorage.setItem("levelUp", "1")
-    localStorage.setItem("dinehiro", "0")
+    localStorage.setItem("dinheiro", "0")
     localStorage.setItem("progressaoDoLevel" , "-100")
     localStorage.setItem("barraDeLevel", "translateX(-100%)")
 
@@ -126,19 +126,6 @@ document.getElementById("felicidadeDoPet").style.background = localStorage.getIt
 
 document.getElementById('rostoStatus').src = localStorage.getItem("rostoStatus")
 
-/** Cozinha Opaca */
-
-function CozinhaOpacaY() {
-    document.getElementById('cozinhaFundo').style.opacity = "0.5";
-    document.getElementById('levelDoPet').style.opacity = "0.5";
-    document.getElementById('statusDoPet').style.opacity = "0.5";
-}
-function CozinhaOpacaN() {
-    document.getElementById('cozinhaFundo').style.opacity = "1";
-    document.getElementById('levelDoPet').style.opacity = "1";
-    document.getElementById('statusDoPet').style.opacity = "1";
-}
-
 /** Geladeira */
 
 let geladeiraAberta = 0
@@ -157,7 +144,8 @@ if(geladeiraAberta == 0) {
 
 function abrirGeladeira() {
     document.getElementById('geladeira').style.display = "block";
-    CozinhaOpacaY()
+    document.getElementById('cozinhaFundo').style.opacity = "0.5";
+    document.getElementById('alimentacaoDoPet').style.opacity = "1"
 
     document.getElementById('geladeiraHover').style.display = "none"
     geladeiraAberta = 1
@@ -165,7 +153,9 @@ function abrirGeladeira() {
 
 function fecharGeladeira() {
     document.getElementById('geladeira').style.display = "none";
-    CozinhaOpacaN()
+    document.getElementById('cozinhaFundo').style.opacity = "1";
+    document.getElementById('principaisCoisas').style.opacity = "1";
+    document.getElementById('tampaGeladeira').style.display = "block"
 
     document.getElementById('geladeiraHover').style.display = "block"
     
@@ -177,6 +167,10 @@ function fecharGeladeira() {
     geladeiraHover.addEventListener('mouseleave', () => {
         geladeiraHover.style.opacity = "0";
     });
+}
+
+function abrirTampaGeladeira() {
+    document.getElementById('tampaGeladeira').style.display = "none"
 }
 
 /** Fogão */
@@ -256,7 +250,7 @@ function mudar() {
 
             document.getElementById('dinheiro').innerText = dinheiro
 
-            localStorage.setItem("dinehiro", dinheiro);
+            localStorage.setItem("dinheiro", dinheiro);
 
             localStorage.setItem("levelUp", level.toString())
 
@@ -659,7 +653,7 @@ function dormir() {
     limiteSaude = 0
     limiteFelicidade = 0
 
-    if (contStatusEnergia <= 90) {
+    if (contStatusEnergia >= 70) {
         setInterval(function() {
     
         if (contStatusEnergia > 0 && contStatusEnergia <= 100 && limiteEnergia == 0) {
@@ -705,7 +699,6 @@ function dormir() {
     
             } else {
 
-    
                 const porcentagemDaEnergia = "linear-gradient(rgba(255, 255, 255, 0) "+ StringTempEnergia +",rgb("+ statusEnergiaRgb.toString() +","+ statusEnergiarGb.toString() +", 0) 0%)"
     
                 localStorage.setItem("statusDeEnergia", porcentagemDaEnergia)
@@ -727,10 +720,19 @@ function dormir() {
 
 function abrirLoja() {
     document.getElementById('loja').style.display = "block"
+    document.getElementById('cozinhaFundo').style.opacity = "0.5";
+    document.getElementById('levelDoPet').style.opacity = "0.5";
+    document.getElementById('statusDoPet').style.opacity = "0.5";
+    document.getElementById('dinheiroDoPet').style.zIndex = "3"
 }
 
 function fecharLoja() {
     document.getElementById('loja').style.display = "none"
+    document.getElementById('compraItem').style.display = "none"
+    document.getElementById('precoSoma').innerText = 0
+    document.getElementById('cozinhaFundo').style.opacity = "1";
+    document.getElementById('levelDoPet').style.opacity = "1";
+    document.getElementById('statusDoPet').style.opacity = "1";
 }
 
 /** Itens da Loja */
@@ -739,29 +741,174 @@ function mostrarCongelados() {
     document.getElementById('congelados').style.display = "flex"
 }
 
-/** Tabela Carrinho */ 
+/** Compra de Itens */
 
-const itensDoCarrinho = document.getElementById('itensDoCarrinho');
-const table = document.createElement("table");
-table.classList.add("tabelaCarrinho");
+let nomeDoItem = ""
+let quantidadeDoItem = 0
+let precoDoItem = 0
 
+/** Congelados 1 */
 
-const carrinhoItem = document.createElement("td");
-const carrinhoQuantidade = document.createElement("td");
-const carrinhoPreco = document.createElement("td");
+let quantidadeCongelado1 = 1
 
-table.appendChild(carrinhoItem);
-table.appendChild(carrinhoQuantidade);
-table.appendChild(carrinhoPreco);
+function menosCongelado1() {
+    if (quantidadeCongelado1 > 1) {
+        --quantidadeCongelado1
+        document.getElementById('quantidadeCongelado1').innerText = quantidadeCongelado1;
+    }
+}
 
-carrinhoItem.innerHTML = "Item";
-carrinhoQuantidade.innerHTML = "Quantidade";
-carrinhoPreco.innerHTML = "Preço";
+function maisCongelado1() {
+    quantidadeCongelado1++
+    document.getElementById('quantidadeCongelado1').innerText = quantidadeCongelado1;
+}
 
-itensDoCarrinho.appendChild(table);
+function comprarCongelado1() {
 
-/*table.removeChild(row2);*/
+    const precoSoma = 20 * quantidadeCongelado1
+    
+    document.getElementById('precoSoma').innerText = precoSoma
 
+    nomeDoItem = "Sorvete de Blueberry"
+    quantidadeDoItem = quantidadeCongelado1
+    precoDoItem = precoSoma
+    
+    if (precoSoma > dinheiro) {
+        document.getElementById('compraAviso').style.display = "block"
+    } else {
+        document.getElementById('compraItem').style.display = "block";
+    }
 
+    quantidadeCongelado1 = 1
+    document.getElementById('quantidadeCongelado1').innerText = quantidadeCongelado1;
+}
 
+/** Congelados 2 */
+
+let quantidadeCongelado2 = 1
+
+function menosCongelado2() {
+    if (quantidadeCongelado2 > 1) {
+        --quantidadeCongelado2
+        document.getElementById('quantidadeCongelado2').innerText = quantidadeCongelado2;
+    }
+}
+
+function maisCongelado2() {
+    quantidadeCongelado2++
+    document.getElementById('quantidadeCongelado2').innerText = quantidadeCongelado2;
+}
+
+function comprarCongelado2() {
+
+    const precoSoma = 20 * quantidadeCongelado2
+    
+    document.getElementById('precoSoma').innerText = precoSoma
+
+    nomeDoItem = "Sorvete de Strawberry"
+    quantidadeDoItem = quantidadeCongelado2
+    precoDoItem = precoSoma
+    
+    if (precoSoma > dinheiro) {
+        document.getElementById('compraAviso').style.display = "block"
+    } else {
+        document.getElementById('compraItem').style.display = "block";
+    }
+
+    quantidadeCongelado2 = 1
+    document.getElementById('quantidadeCongelado2').innerText = quantidadeCongelado2;
+}
+
+/** Confirmar Compra */
+
+let nomesDosItens = []
+let quantidadesDosItens = []
+let precosDosItens = []
+
+function confirmarCompra() {
+
+    nomesDosItens.push(nomeDoItem)
+    quantidadesDosItens.push(quantidadeDoItem)
+    precosDosItens.push(precoDoItem)
+
+    dinheiro -= precoDoItem
+
+    document.getElementById('dinheiro').innerText = dinheiro
+
+    localStorage.setItem("dinheiro", dinheiro.toString())
+
+    nomeDoItem = ""
+    quantidadeDoItem = 0
+    precoDoItem = 0
+
+    document.getElementById('quantidadeCongelado1').innerText = 1
+    document.getElementById('compraItem').style.display = "none"
+    document.getElementById('precoSoma').innerText = 0
+
+}
+
+/** Fechar Confirmacao de  Compra */
+
+function fecharConfirmarCompra() {
+    document.getElementById('compraItem').style.display = "none"
+    document.getElementById('precoSoma').innerText = 0
+}
+
+/** Fechar Aviso */
+
+function fecharAviso() {
+    document.getElementById('compraAviso').style.display = "none"
+}
+
+/** Mostar Sacola */
+ 
+function mostrarSacola() {
+    document.getElementById('sacola').style.display = "block"
+    document.getElementById('cozinhaFundo').style.opacity = "0.5";
+    document.getElementById('levelDoPet').style.opacity = "0.5";
+    document.getElementById('statusDoPet').style.opacity = "0.5";
+    table.innerHTML = "";
+
+    for (let i = 0; i < nomesDosItens.length; i++) {
+        
+        const tabelaRow = document.createElement("tr");
+
+        const item = document.createElement("td");
+        const quantidade = document.createElement("td");
+        const preco = document.createElement("td");
+
+        tabelaRow.appendChild(item);
+        tabelaRow.appendChild(quantidade);
+        tabelaRow.appendChild(preco);
+
+        item.innerHTML = nomesDosItens[i];
+        quantidade.innerHTML = quantidadesDosItens[i];
+        preco.innerHTML = "R$" + precosDosItens[i];
+
+        table.appendChild(tabelaRow);
+        itensDaSacola.appendChild(table);
+
+    }
+
+}
+
+/** Tabela Sacola */
+
+const itensDaSacola = document.getElementById('itensDaSacola');
+let table = document.createElement("table");
+table.classList.add("tabelaSacola");
+
+itensDaSacola.appendChild(table);
+
+/** Fechar Sacola */
+
+function fecharSacola() {
+    document.getElementById('sacola').style.display = "none"
+    document.getElementById('cozinhaFundo').style.opacity = "1";
+    document.getElementById('levelDoPet').style.opacity = "1";
+    document.getElementById('statusDoPet').style.opacity = "1";
+
+    table.innerHTML = "";
+
+}
 
