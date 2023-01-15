@@ -14,7 +14,7 @@
         <section id="principaisCoisas">
             <section id="levelDoPet">
                 <div class="level">
-                    <h1>LEVEL:</h1>
+                    <h1>Nível:</h1>
                     <h1 id="level">1</h1>
                 </div>
                 <abbr id="mPorcentagemDeLevel" title="0%">
@@ -83,25 +83,45 @@
                     <ul>
                         <li id="mostrarAcogue" onclick="mostrar()">Açougue</li>
                         <li id="mostrarBebidas" onclick="mostrar()">Bebidas</li>
-                        <li id="mostrarCereais" onclick="mostrar()">Cereais</li>
                         <li id="mostrarCongelados" onclick="mostrarCongelados()">Congelados</li>
                         <li id="mostrarEnlatados" onclick="mostrar()">Enlatados</li>
                     </ul>
                     <ul>
-                        <li id="mostrarFrios" onclick="mostrar()">Frios</li>
                         <li id="mostrarHortifruti" onclick="mostrar()">Hortifrúti</li>
                         <li id="mostrarLaticinios" onclick="mostrar()">Laticínios</li>
                         <li id="mostrarPadaria" onclick="mostrar()">Padaria</li>
                         <li id="mostrarPeixaria" onclick="mostrar()">Peixaria</li>
                     </ul>
                 </div>
-                <div id="acogue">
-                    
+                <div id="acougue">
+                    <div class="itemLoja">
+                        <p>Sorvete de Blueberry</p>
+                        <img src="Imagens/Loja/Congelados/Captura_de_tela_20230110_204015-removebg-preview.png" alt="">
+                        <p>R$ 20,00</p>
+                        <div id="botaoComprar">
+                            <button class="comprar" onclick="comprarCongelado1()">Comprar</button>
+                            <div class="botaoQuantidade">
+                                <button onclick="menosCongelado1()">-</button>
+                                <p id="quantidadeCongelado1">1</p>
+                                <button onclick="maisCongelado1()">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="itemLoja">
+                        <p>Sorvete de Strawberry</p>
+                        <img src="Imagens/Loja/Congelados/Captura_de_tela_20230110_204459-removebg-preview.png" alt="">
+                        <p>R$ 20,00</p>
+                        <div id="botaoComprar">
+                            <button class="comprar" onclick="comprarCongelado2()">Comprar</button>
+                            <div class="botaoQuantidade">
+                                <button onclick="menosItem2()">-</button>
+                                <p id="quantidadeCongelado2">1</p>
+                                <button onclick="maisItem2()">+</button>
+                            </div>
+                        </div>
+                    </div>                    
                 </div>
-                <div id="">
-    
-                </div>
-                <div id="cereais">
+                <div id="bebidas">
     
                 </div>
                 <div id="congelados">
@@ -144,8 +164,33 @@
                 <div id="">
     
                 </div>
-                <div id="">
-    
+                <div id="padaria">
+                    <div class="itemLoja">
+                        <p>Sorvete de Blueberry</p>
+                        <img src="Imagens/Loja/Congelados/Captura_de_tela_20230110_204015-removebg-preview.png" alt="">
+                        <p>R$ 20,00</p>
+                        <div id="botaoComprar">
+                            <button class="comprar" onclick="comprarCongelado1()">Comprar</button>
+                            <div class="botaoQuantidade">
+                                <button onclick="menosCongelado1()">-</button>
+                                <p id="quantidadeCongelado1">1</p>
+                                <button onclick="maisCongelado1()">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="itemLoja">
+                        <p>Sorvete de Strawberry</p>
+                        <img src="Imagens/Loja/Congelados/Captura_de_tela_20230110_204459-removebg-preview.png" alt="">
+                        <p>R$ 20,00</p>
+                        <div id="botaoComprar">
+                            <button class="comprar" onclick="comprarCongelado2()">Comprar</button>
+                            <div class="botaoQuantidade">
+                                <button onclick="menosItem2()">-</button>
+                                <p id="quantidadeCongelado2">1</p>
+                                <button onclick="maisItem2()">+</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div id="">
     
@@ -175,6 +220,27 @@
                 </div>
             </div>
             </section>
+            <section id="levelUp">
+                <div class="tituloLevelUp">
+                    <img class="setaLevelUp" src="Imagens/Captura_de_tela_20230113_165715-removebg-preview.png" alt="">
+                    <h1>LevelUp</h1>
+                </div>
+                <h2>Recompensas:</h2>
+                <div class="recompensas">
+                    <div class="novoNivel">
+                        <h3>Novo Nível:</h3>
+                        <h4 id="novoNivel">1</h4>
+                    </div>
+                    <div class="maisMoedas">
+                        <h3>Moedas:</h3>
+                        <div class="maisMoedasComRs">
+                            <h4>R$</h4>
+                            <h4 id="maisMoedas">0</h4>
+                        </div>
+                    </div>
+                </div>
+                <button class="receberLv" onclick="receberLv()">Receber</button>
+            </section>
         </section>
         
 
@@ -187,15 +253,32 @@
             </div>
             <div id="geladeira">
                 <img class="geladeira" src="Imagens/Cozinha/geladeiraVazia.png" alt="">
-                <img id="tampaGeladeira" src="Imagens/Cozinha/tapaDaParteDeBaixoDaGeladeira.png" alt="">
-                <div class="itensNaGeladeira1" onclick="abrirTampaGeladeira()">
+                
+                <div class="itensNaGeladeira1">
                     <div id="item1">
-                        <img src="Imagens/Loja/Congelados/Captura_de_tela_20230110_204015-removebg-preview.png" alt="">
+                        <img src="Imagens/Loja/Açougue/Captura_de_tela_2023-01-15_005328-removebg-preview.png" alt="">
                     </div>
                     <div id="item2">
+                        <img src="Imagens/Loja/Açougue/Captura_de_tela_2023-01-15_005215-removebg-preview.png" alt="">
+                    </div>
+                    <div id="item3">
+                        <img src="Imagens/Loja/Peixaria/Captura_de_tela_20230115_005901-removebg-preview.png" alt="">
+                    </div>
+                    <div id="item4">
+                        <img src="Imagens/Loja/Peixaria/Captura_de_tela_20230115_005815-removebg-preview.png" alt="">
+                    </div>
+                </div>
+
+                <div class="itensNaGeladeira2">
+                    <div id="item5">
+                        <img src="Imagens/Loja/Congelados/Captura_de_tela_20230110_204015-removebg-preview.png" alt="">
+                    </div>
+                    <div id="item6">
                         <img src="Imagens/Loja/Congelados/Captura_de_tela_20230110_204459-removebg-preview.png" alt="">
                     </div>
                 </div>
+
+                
                 <div id="fecharGeladeira" onclick="fecharGeladeira()">
                         <p>x</p>
                     </div>
@@ -213,13 +296,6 @@
 
 
     </main>
-
-    
-    
-    
-
-    
-    
 
     <script src="script.js"></script>
 </body>

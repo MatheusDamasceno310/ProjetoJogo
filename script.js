@@ -141,23 +141,25 @@ if(geladeiraAberta == 0) {
     });
 }
     
-
 function abrirGeladeira() {
     document.getElementById('geladeira').style.display = "block";
     document.getElementById('cozinhaFundo').style.opacity = "0.5";
     document.getElementById('alimentacaoDoPet').style.opacity = "1"
 
     document.getElementById('geladeiraHover').style.display = "none"
-    geladeiraAberta = 1
+    document.getElementById('fogaoHover').style.display = "none"
+    document.getElementById('microondasHover').style.display = "none"
+
 }
 
 function fecharGeladeira() {
     document.getElementById('geladeira').style.display = "none";
     document.getElementById('cozinhaFundo').style.opacity = "1";
     document.getElementById('principaisCoisas').style.opacity = "1";
-    document.getElementById('tampaGeladeira').style.display = "block"
 
     document.getElementById('geladeiraHover').style.display = "block"
+    document.getElementById('fogaoHover').style.display = "block"
+    document.getElementById('microondasHover').style.display = "block"
     
     const geladeiraHover = document.querySelector('#geladeiraHover');
 
@@ -167,10 +169,24 @@ function fecharGeladeira() {
     geladeiraHover.addEventListener('mouseleave', () => {
         geladeiraHover.style.opacity = "0";
     });
-}
 
-function abrirTampaGeladeira() {
-    document.getElementById('tampaGeladeira').style.display = "none"
+    const fogaoHover = document.querySelector('#fogaoHover');
+
+    fogaoHover.addEventListener('mouseenter', () => {
+    fogaoHover.style.opacity = "1";
+    })
+    fogaoHover.addEventListener('mouseleave', () => {
+    fogaoHover.style.opacity = "0";
+    });  
+
+    const microondasHover = document.querySelector('#microondasHover');
+
+    microondasHover.addEventListener('mouseenter', () => {
+        microondasHover.style.opacity = "1";
+    })
+    microondasHover.addEventListener('mouseleave', () => {
+        microondasHover.style.opacity = "0";
+    }); 
 }
 
 /** Fogão */
@@ -178,11 +194,12 @@ function abrirTampaGeladeira() {
 const fogaoHover = document.querySelector('#fogaoHover');
 
 fogaoHover.addEventListener('mouseenter', () => {
-    fogaoHover.style.opacity = "1";
+fogaoHover.style.opacity = "1";
 })
 fogaoHover.addEventListener('mouseleave', () => {
-    fogaoHover.style.opacity = "0";
+fogaoHover.style.opacity = "0";
 });
+
 
 /** Micro-ondas */
 
@@ -193,7 +210,40 @@ microondasHover.addEventListener('mouseenter', () => {
 })
 microondasHover.addEventListener('mouseleave', () => {
     microondasHover.style.opacity = "0";
-});
+});   
+
+
+function receberLv() {
+
+    const somMoeda = new Audio("EfeitosSonoros/Som moeda.m4a");
+    somMoeda.play();
+    document.getElementById('dinheiro').innerText = dinheiro
+    document.getElementById('level').innerText = localStorage.getItem("levelUp");
+    document.getElementById('mPorcentagemDeLevel').title = porcantagemLevel;
+    document.getElementById('progressao').style.transform = localStorage.getItem("barraDeLevel");
+    document.getElementById('levelUp').style.display = "none"
+
+}
+
+let entrega = 0
+
+setInterval(function() {
+    
+    if (entrega >= 1 && entrega <= 10) {    
+        entrega++
+
+        if(entrega == 6) {
+            const somLevel = new Audio("EfeitosSonoros/Som i food.m4a");
+            somLevel.play();
+        }
+        if(entrega == 10) {
+            document.getElementById('sacolaDeCompras').style.display = "block"
+        }
+        
+
+    }
+
+} , 1000);
 
 function mudar() {
 
@@ -239,7 +289,12 @@ function mudar() {
         
     }
 
-        if (c == 0) {
+        if (c >= 0) {
+
+            const somLevel = new Audio("EfeitosSonoros/Som Level Up.m4a");
+            somLevel.play();
+
+            c = -100
 
             if(level == 0) {
                 level = 2
@@ -248,15 +303,12 @@ function mudar() {
             level++
             dinheiro = dinheiro + ((level - 1) * 10)
 
-            document.getElementById('dinheiro').innerText = dinheiro
+            document.getElementById('novoNivel').innerText = level
+            document.getElementById('maisMoedas').innerText = ((level - 1) * 10)
 
             localStorage.setItem("dinheiro", dinheiro);
 
             localStorage.setItem("levelUp", level.toString())
-
-            document.getElementById('level').innerText = localStorage.getItem("levelUp");
-
-            c = -100
 
             let porcantagemLevelSoma = c + 100
 
@@ -266,8 +318,6 @@ function mudar() {
 
             porcantagemLevel = porcantagemLevelSoma.toString() + "%"
 
-            document.getElementById('mPorcentagemDeLevel').title = porcantagemLevel;
-
             localStorage.setItem("porcentagemLevel", porcantagemLevel)
             
             localStorage.setItem("progressaoDoLevel" , c.toString())
@@ -276,9 +326,9 @@ function mudar() {
 
             const progressao = "translateX(" + stringAumento + ")";
 
-            document.getElementById('progressao').style.transform = progressao;
-
             localStorage.setItem("barraDeLevel", progressao)
+
+            document.getElementById('levelUp').style.display = "block"
 
         } else {
            
@@ -724,6 +774,10 @@ function abrirLoja() {
     document.getElementById('levelDoPet').style.opacity = "0.5";
     document.getElementById('statusDoPet').style.opacity = "0.5";
     document.getElementById('dinheiroDoPet').style.zIndex = "3"
+
+    document.getElementById('geladeiraHover').style.display = "none"
+    document.getElementById('fogaoHover').style.display = "none"
+    document.getElementById('microondasHover').style.display = "none"
 }
 
 function fecharLoja() {
@@ -733,11 +787,49 @@ function fecharLoja() {
     document.getElementById('cozinhaFundo').style.opacity = "1";
     document.getElementById('levelDoPet').style.opacity = "1";
     document.getElementById('statusDoPet').style.opacity = "1";
+
+    document.getElementById('geladeiraHover').style.display = "block"
+    document.getElementById('fogaoHover').style.display = "block"
+    document.getElementById('microondasHover').style.display = "block"
+
+    const geladeiraHover = document.querySelector('#geladeiraHover');
+
+    geladeiraHover.addEventListener('mouseenter', () => {
+        geladeiraHover.style.opacity = "1";
+    })
+    geladeiraHover.addEventListener('mouseleave', () => {
+        geladeiraHover.style.opacity = "0";
+    });
+
+    const fogaoHover = document.querySelector('#fogaoHover');
+
+    fogaoHover.addEventListener('mouseenter', () => {
+    fogaoHover.style.opacity = "1";
+    })
+    fogaoHover.addEventListener('mouseleave', () => {
+    fogaoHover.style.opacity = "0";
+    });  
+
+    const microondasHover = document.querySelector('#microondasHover');
+
+    microondasHover.addEventListener('mouseenter', () => {
+        microondasHover.style.opacity = "1";
+    })
+    microondasHover.addEventListener('mouseleave', () => {
+        microondasHover.style.opacity = "0";
+    }); 
 }
 
 /** Itens da Loja */
 
+function mostrarAcougue() {
+    document.getElementById('acougue').style.display = "flex"
+    document.getElementById('congelados').style.display = "none"
+
+}
+
 function mostrarCongelados() {
+    document.getElementById('acougue').style.display = "none"
     document.getElementById('congelados').style.display = "flex"
 }
 
@@ -845,6 +937,7 @@ function confirmarCompra() {
     document.getElementById('compraItem').style.display = "none"
     document.getElementById('precoSoma').innerText = 0
 
+    entrega = 1
 }
 
 /** Fechar Confirmacao de  Compra */
@@ -867,6 +960,11 @@ function mostrarSacola() {
     document.getElementById('cozinhaFundo').style.opacity = "0.5";
     document.getElementById('levelDoPet').style.opacity = "0.5";
     document.getElementById('statusDoPet').style.opacity = "0.5";
+
+    document.getElementById('geladeiraHover').style.display = "none"
+    document.getElementById('fogaoHover').style.display = "none"
+    document.getElementById('microondasHover').style.display = "none"
+
     table.innerHTML = "";
 
     for (let i = 0; i < nomesDosItens.length; i++) {
@@ -907,6 +1005,37 @@ function fecharSacola() {
     document.getElementById('cozinhaFundo').style.opacity = "1";
     document.getElementById('levelDoPet').style.opacity = "1";
     document.getElementById('statusDoPet').style.opacity = "1";
+
+    document.getElementById('geladeiraHover').style.display = "block"
+    document.getElementById('fogaoHover').style.display = "block"
+    document.getElementById('microondasHover').style.display = "block"
+    
+    const geladeiraHover = document.querySelector('#geladeiraHover');
+
+    geladeiraHover.addEventListener('mouseenter', () => {
+        geladeiraHover.style.opacity = "1";
+    })
+    geladeiraHover.addEventListener('mouseleave', () => {
+        geladeiraHover.style.opacity = "0";
+    });
+
+    const fogaoHover = document.querySelector('#fogaoHover');
+
+    fogaoHover.addEventListener('mouseenter', () => {
+    fogaoHover.style.opacity = "1";
+    })
+    fogaoHover.addEventListener('mouseleave', () => {
+    fogaoHover.style.opacity = "0";
+    });  
+
+    const microondasHover = document.querySelector('#microondasHover');
+
+    microondasHover.addEventListener('mouseenter', () => {
+        microondasHover.style.opacity = "1";
+    })
+    microondasHover.addEventListener('mouseleave', () => {
+        microondasHover.style.opacity = "0";
+    }); 
 
     table.innerHTML = "";
 
