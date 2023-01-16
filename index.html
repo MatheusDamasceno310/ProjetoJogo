@@ -81,46 +81,50 @@
                 </div>
                 <div class="cartegoriasLoja">
                     <ul>
-                        <li id="mostrarAcogue" onclick="mostrar()">Açougue</li>
-                        <li id="mostrarBebidas" onclick="mostrar()">Bebidas</li>
+                        <li id="mostrarAcogue" onclick="mostrarAcougue()">Açougue</li>
+                        <li id="mostrarBebidas" onclick="mostrarBebidas()">Bebidas</li>
                         <li id="mostrarCongelados" onclick="mostrarCongelados()">Congelados</li>
                         <li id="mostrarEnlatados" onclick="mostrar()">Enlatados</li>
                     </ul>
                     <ul>
-                        <li id="mostrarHortifruti" onclick="mostrar()">Hortifrúti</li>
-                        <li id="mostrarLaticinios" onclick="mostrar()">Laticínios</li>
-                        <li id="mostrarPadaria" onclick="mostrar()">Padaria</li>
-                        <li id="mostrarPeixaria" onclick="mostrar()">Peixaria</li>
+                        <li id="mostrarHortifruti" onclick="mostrarHortifruti()">Hortifrúti</li>
+                        <li id="mostrarLaticinios" onclick="mostrarLaticinios()">Laticínios</li>
+                        <li id="mostrarPadaria" onclick="mostrarPadaria()">Padaria</li>
+                        <li id="mostrarPeixaria" onclick="mostrarPeixaria()">Peixaria</li>
                     </ul>
                 </div>
+                
+                <img class="prateleira" src="Imagens/Loja/Captura_de_tela_20230115_181309-removebg-preview.png" alt="">
+
                 <div id="acougue">
                     <div class="itemLoja">
-                        <p>Sorvete de Blueberry</p>
-                        <img src="Imagens/Loja/Congelados/Captura_de_tela_20230110_204015-removebg-preview.png" alt="">
+                        <p>Coxa de Boi</p>
+                        <img src="Imagens/Loja/Açougue/Captura_de_tela_2023-01-15_005328-removebg-preview.png" alt="">
                         <p>R$ 20,00</p>
                         <div id="botaoComprar">
-                            <button class="comprar" onclick="comprarCongelado1()">Comprar</button>
+                            <button class="comprar" onclick="comprarAcougue1()">Comprar</button>
                             <div class="botaoQuantidade">
-                                <button onclick="menosCongelado1()">-</button>
-                                <p id="quantidadeCongelado1">1</p>
-                                <button onclick="maisCongelado1()">+</button>
+                                <button onclick="menosAcougue1()">-</button>
+                                <p id="quantidadeAcougue1">1</p>
+                                <button onclick="maisAcougue1()">+</button>
                             </div>
                         </div>
                     </div>
                     <div class="itemLoja">
-                        <p>Sorvete de Strawberry</p>
-                        <img src="Imagens/Loja/Congelados/Captura_de_tela_20230110_204459-removebg-preview.png" alt="">
+                        <p>Cubos de Carne</p>
+                        <img src="Imagens/Loja/Açougue/Captura_de_tela_2023-01-15_005215-removebg-preview.png" alt="">
                         <p>R$ 20,00</p>
                         <div id="botaoComprar">
-                            <button class="comprar" onclick="comprarCongelado2()">Comprar</button>
+                            <button class="comprar" onclick="comprarAcougue2()">Comprar</button>
                             <div class="botaoQuantidade">
-                                <button onclick="menosItem2()">-</button>
-                                <p id="quantidadeCongelado2">1</p>
-                                <button onclick="maisItem2()">+</button>
+                                <button onclick="Acougue2()">-</button>
+                                <p id="quantidadeAcougue2">1</p>
+                                <button onclick="Acougue2()">+</button>
                             </div>
                         </div>
                     </div>                    
                 </div>
+
                 <div id="bebidas">
     
                 </div>
@@ -145,56 +149,131 @@
                         <div id="botaoComprar">
                             <button class="comprar" onclick="comprarCongelado2()">Comprar</button>
                             <div class="botaoQuantidade">
-                                <button onclick="menosItem2()">-</button>
+                                <button onclick="menosCongelado2()">-</button>
                                 <p id="quantidadeCongelado2">1</p>
-                                <button onclick="maisItem2()">+</button>
+                                <button onclick="maisCongelado2()">+</button>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div id="">
+                <div id="enlatados">
     
                 </div>
-                <div id="">
+                <div id="hortifruti">
     
                 </div>
-                <div id="">
-    
-                </div>
-                <div id="">
-    
+                <div id="laticinios">
+                    <div class="itemLoja">
+                        <p>Cubo de Queijo</p>
+                        <img src="Imagens/Loja/Laticínios/Captura_de_tela_20230115_182251-removebg-preview.png" alt="">
+                        <p>R$ 20,00</p>
+                        <div id="botaoComprar">
+                            <button class="comprar" onclick="comprarLaticinios1()">Comprar</button>
+                            <div class="botaoQuantidade">
+                                <button onclick="menosLaticinios1()">-</button>
+                                <p id="quantidadeLaticinios1">1</p>
+                                <button onclick="maisLaticinios1()">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="itemLoja">
+                        <p>Queijo Gouda</p>
+                        <img src="Imagens/Loja/Laticínios/Captura_de_tela_20230115_182308-removebg-preview.png" alt="">
+                        <p>R$ 20,00</p>
+                        <div id="botaoComprar">
+                            <button class="comprar" onclick="comprarLaticinios2()">Comprar</button>
+                            <div class="botaoQuantidade">
+                                <button onclick="menosLaticinios2()">-</button>
+                                <p id="quantidadeLaticinios2">1</p>
+                                <button onclick="maisLaticinios2()">+</button>
+                            </div>
+                        </div>                       
+                    </div>
+                    <div class="itemLoja">
+                        <p>Fatias de Queijo</p>
+                        <img src="Imagens/Loja/Laticínios/Captura_de_tela_20230115_182317-removebg-preview.png" alt="">
+                        <p>R$ 20,00</p>
+                        <div id="botaoComprar">
+                            <button class="comprar" onclick="comprarLaticinios3()">Comprar</button>
+                            <div class="botaoQuantidade">
+                                <button onclick="menosLaticinios3()">-</button>
+                                <p id="quantidadeLaticinios3">1</p>
+                                <button onclick="maisLaticinios3()">+</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div id="padaria">
                     <div class="itemLoja">
-                        <p>Sorvete de Blueberry</p>
-                        <img src="Imagens/Loja/Congelados/Captura_de_tela_20230110_204015-removebg-preview.png" alt="">
+                        <p>Pão</p>
+                        <img src="Imagens/Loja/Padaria/j0ee_0a4i_201117-removebg-preview.png" alt="">
                         <p>R$ 20,00</p>
                         <div id="botaoComprar">
-                            <button class="comprar" onclick="comprarCongelado1()">Comprar</button>
+                            <button class="comprar" onclick="comprarPadaria1()">Comprar</button>
                             <div class="botaoQuantidade">
-                                <button onclick="menosCongelado1()">-</button>
-                                <p id="quantidadeCongelado1">1</p>
-                                <button onclick="maisCongelado1()">+</button>
+                                <button onclick="menosPadaria1()">-</button>
+                                <p id="quantidadePadaria1">1</p>
+                                <button onclick="maisPadaria1()">+</button>
                             </div>
                         </div>
                     </div>
                     <div class="itemLoja">
-                        <p>Sorvete de Strawberry</p>
-                        <img src="Imagens/Loja/Congelados/Captura_de_tela_20230110_204459-removebg-preview.png" alt="">
+                        <p>Bolo de Morango</p>
+                        <img src="Imagens/Loja/Padaria/Captura_de_tela_20230115_010118-removebg-preview.png" alt="">
                         <p>R$ 20,00</p>
                         <div id="botaoComprar">
-                            <button class="comprar" onclick="comprarCongelado2()">Comprar</button>
+                            <button class="comprar" onclick="comprarPadaria2()">Comprar</button>
                             <div class="botaoQuantidade">
-                                <button onclick="menosItem2()">-</button>
-                                <p id="quantidadeCongelado2">1</p>
-                                <button onclick="maisItem2()">+</button>
+                                <button onclick="menosPadaria2()">-</button>
+                                <p id="quantidadePadaria2">1</p>
+                                <button onclick="maisPadaria2()">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="itemLoja">
+                        <p>Bolo de Chocolate</p>
+                        <img src="Imagens/Loja/Padaria/Captura_de_tela_20230115_010138-removebg-preview.png" alt="">
+                        <p>R$ 20,00</p>
+                        <div id="botaoComprar">
+                            <button class="comprar" onclick="comprarPadaria3()">Comprar</button>
+                            <div class="botaoQuantidade">
+                                <button onclick="menosPadaria3()">-</button>
+                                <p id="quantidadePadaria3">1</p>
+                                <button onclick="maisPadaria3()">+</button>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div id="">
-    
+            
+                <div id="peixaria">
+                    <div class="itemLoja">
+                        <p>Peixe</p>
+                        <img src="Imagens/Loja/Peixaria/Captura_de_tela_20230115_005815-removebg-preview.png" alt="">
+                        <p>R$ 20,00</p>
+                        <div id="botaoComprar">
+                            <button class="comprar" onclick="comprarPeixaria1()">Comprar</button>
+                            <div class="botaoQuantidade">
+                                <button onclick="menosPeixaria1()">-</button>
+                                <p id="quantidadePeixaria1">1</p>
+                                <button onclick="maisPeixaria1()">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="itemLoja">
+                        <p>Sushi</p>
+                        <img src="Imagens/Loja/Peixaria/Captura_de_tela_20230115_005901-removebg-preview.png" alt="">
+                        <p>R$ 20,00</p>
+                        <div id="botaoComprar">
+                            <button class="comprar" onclick="comprarPeixaria2()">Comprar</button>
+                            <div class="botaoQuantidade">
+                                <button onclick="menosPeixaria2()">-</button>
+                                <p id="quantidadePeixaria2">1</p>
+                                <button onclick="maisPeixaria2()">+</button>
+                            </div>
+                        </div>
+                    </div>    
                 </div>
+
                 <div id="compraItem">
                     <h3>Confirmação da Compra</h3>
                     <div class="itemASerComprado">
@@ -278,6 +357,32 @@
                     </div>
                 </div>
 
+                <div class="itensNaGeladeira3">
+                    <div id="item7">
+                        <img src="Imagens/Loja/Laticínios/Captura_de_tela_20230115_182251-removebg-preview.png" alt="">
+                    </div>
+                    <div id="item8">
+                        <img src="Imagens/Loja/Laticínios/Captura_de_tela_20230115_182308-removebg-preview.png" alt="">
+                    </div>
+                    <div id="item9">
+                        <img src="Imagens/Loja/Laticínios/Captura_de_tela_20230115_182317-removebg-preview.png" alt="">
+                    </div>
+                    <div id="item10">
+                        <img src="Imagens/Loja/Padaria/j0ee_0a4i_201117-removebg-preview.png" alt="">
+                    </div>
+                </div>
+
+                <div class="itensNaGeladeira4">
+                    <div id="item11">
+                        <img src="Imagens/Loja/Padaria/Captura_de_tela_20230115_010118-removebg-preview.png" alt="">
+                    </div>
+                    <div id="item12">
+                        <img src="Imagens/Loja/Padaria/Captura_de_tela_20230115_010138-removebg-preview.png" alt="">
+                    </div>
+                    <div id="item13">
+                        <img src="Imagens/Loja/Bebidas/Captura_de_tela_20230114_164237-removebg-preview.png" alt="">
+                    </div>
+                </div>
                 
                 <div id="fecharGeladeira" onclick="fecharGeladeira()">
                         <p>x</p>

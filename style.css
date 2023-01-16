@@ -212,6 +212,8 @@ body {
     background: linear-gradient(rgba(255, 255, 255, 0) 0%,rgb(0, 255, 0) 0%);
 }
 
+/* Loja */
+
 #botaoLoja {
     position: absolute;
     right: 1.7rem;
@@ -229,7 +231,7 @@ body {
     padding: 0.7rem 1.6rem;
 }
 #loja {
-    display: none;
+    display: block;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -261,6 +263,214 @@ body {
     top: 0.3vh;
     font-size: 1.5vw;
     cursor: default;
+}
+.cartegoriasLoja {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1rem;
+    background: linear-gradient(to top, red, white);
+}
+.cartegoriasLoja ul {
+    display: flex;
+    width: 33vw;
+    flex-wrap: wrap;
+    text-align: center;
+    padding-bottom: 4px;
+}
+.cartegoriasLoja ul li {
+    list-style-type: none;
+    width: 5.6rem;
+    text-align: center;
+    margin: 0 auto;
+    cursor: pointer;
+    color: white;
+    border-bottom: 2px solid white;
+}
+.cartegoriasLoja ul li:hover {
+    font-weight: bold;
+    border-bottom: 4px solid white;
+}
+
+.prateleira{
+    position: absolute;
+    z-index: 1;
+    top: 8rem;
+    height: 14vh;
+    width: 77.4vw;
+}
+
+/* Itens da Loja */
+
+#acougue {
+    display: none;
+    flex-wrap: wrap;  
+    position: absolute;
+    z-index: 2;
+}
+
+#congelados {
+    display: none;
+    flex-wrap: wrap;  
+    position: absolute;
+    z-index: 2;
+}
+#laticinios {
+    display: none;
+    flex-wrap: wrap;
+    position: absolute;
+    z-index: 2;
+}
+#padaria {
+    display: none;
+    flex-wrap: wrap;
+    position: absolute;
+    z-index: 2;
+}
+#peixaria {
+    display: none;
+    flex-wrap: wrap;
+    position: absolute;
+    z-index: 2;
+}
+#acougue .itemLoja:hover, #congelados .itemLoja:hover, #laticinios .itemLoja:hover, #padaria .itemLoja:hover, #peixaria .itemLoja:hover {
+    background: rgba(255, 0, 0, 0.273);
+    border-radius: 0.3rem;
+    border-color: white;
+    box-shadow: inset 1px 1px 20px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 20px red, -1px -1px 5px red;
+}
+.itemLoja {
+    margin: 0.5rem;
+    padding: 0.5rem;
+    text-align: center;
+    cursor: pointer;
+    height: 24vh;
+    width: 12vw;
+}
+.itemLoja img {
+    height: 12vh;
+    margin: 2vh 0 2vh 0;
+}
+#acougue .itemLoja:nth-child(1) img, #padaria .itemLoja:nth-child(1) img, #peixaria .itemLoja:nth-child(1) img {
+    height: 9.8vh;
+    margin: 3vh 0 3vh 0;
+}
+.itemLoja p:nth-child(3) {
+    background: rgba(255, 255, 255, 0.848);
+    box-shadow: inset 1px 1px 20px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 20px red, -1px -1px 15px red;
+}
+#botaoComprar {
+    position: absolute;
+    display: flex;
+    opacity: 0;
+    height: 6rem;
+    flex-direction: column;
+    justify-content: space-around;
+    top: 10vh;
+    margin-left: 0.5rem;
+    padding: 1rem 0;
+}
+.botaoQuantidade {
+    width: 10vw;
+    display: flex;
+}
+.botaoQuantidade p:nth-child(2) {
+    width: 50vw;
+    background: white;
+    color: red;
+    border: 2px solid red;
+    border-radius: 0.5rem;
+    height: 1.5rem;
+    margin-top: 0.5rem;
+    cursor: default;
+}
+.botaoQuantidade button {
+    border-radius: 100%;
+    height: 1.4rem;
+    width: 2rem;
+    margin: 0.5rem;
+    font-weight: bold;
+}
+#botaoComprar button {
+    border: 2px solid rgb(255, 0, 0);
+    color: red;
+    cursor: pointer;
+    box-shadow: inset 1px 1px 5px rgba(255, 0, 0, 0.453), inset -1px -1px 5px rgba(255, 0, 0, 0.453);
+    background: white;
+    padding: 0.1rem;
+    width: 10vw;
+    border-radius: 0.5rem;
+}
+#botaoComprar button:hover {
+    background: red;
+    border-color: white;
+    box-shadow: inset 1px 1px 20px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 20px red, -1px -1px 5px red;
+    color: white;
+    font-weight: bold;
+}
+#acougue #botaoComprar:hover, #congelados #botaoComprar:hover, #laticinios #botaoComprar:hover, #padaria #botaoComprar:hover, #peixaria .itemLoja:hover {
+    opacity: 1;
+}
+
+/* Compra Item */
+
+#compraItem, #compraAviso {
+    display: none;
+    border: 2px solid red;
+    border-radius: 0.5rem;
+    height: 8rem;
+    width: 50vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: red;
+}
+#compraItem h3, #compraAviso h3 {
+    background: red;
+    color: white;
+    border-radius: 0.5rem 0.5rem 0 0;
+    padding: 0.2rem;
+}
+.itemASerComprado {
+    background: white;
+    margin-top: 0.2rem;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    height: 4.3rem;
+}
+.aviso {
+    background: white;
+    margin-top: 0.2rem;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    height: 4.8rem;
+}
+.itemASerComprado h1, .aviso h1 {
+    margin-top: 1.6rem;
+}
+#precoSoma {
+    margin-left: 0.5rem;
+}
+#compraItem button {
+    border: 2px solid rgb(255, 0, 0);
+    color: red;
+    cursor: pointer;
+    box-shadow: inset 1px 1px 5px rgba(255, 0, 0, 0.453), inset -1px -1px 5px rgba(255, 0, 0, 0.453);
+    background: white;
+    padding: 0.1rem;
+    width: 10vw;
+    margin: 0.1rem 0 0 0;
+    margin-left: 30%;
+    border-radius: 0.5rem;
+}
+#compraItem button:hover {
+    background: rgba(255, 0, 0, 0.537);
+    border-color: white;
+    box-shadow: inset 1px 1px 20px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 20px red, -1px -1px 5px red;
+    color: white;
+    font-weight: bold;
 }
 
 /* Sacola de Compras */
@@ -294,7 +504,6 @@ body {
     margin: 1rem;
     font-size: 2rem;
 }
-
 .todaTabelaSacola {
     position: absolute;
     top: 19rem;
@@ -311,7 +520,6 @@ body {
     text-align: center;
     background: rgb(255, 0, 0);
     box-shadow: inset 1px 1px 30px rgba(6, 6, 6, 0.453), inset -1px -1px 5px rgba(6, 6, 6, 0.453);
-    
 }
 .titulosTabela p:nth-child(1) {
     width: 11.5vw;
@@ -386,181 +594,6 @@ body {
     font-weight: bold;
 }
 
-/* Loja */
-
-.cartegoriasLoja {
-    display: flex;
-    justify-content: space-between;
-    padding-top: 1rem;
-    background: linear-gradient(to top, red, white);
-}
-.cartegoriasLoja ul {
-    display: flex;
-    width: 33vw;
-    flex-wrap: wrap;
-    text-align: center;
-    padding-bottom: 4px;
-}
-.cartegoriasLoja ul li {
-    list-style-type: none;
-    width: 5.6rem;
-    text-align: center;
-    margin: 0 auto;
-    cursor: pointer;
-    color: white;
-    border-bottom: 2px solid white;
-}
-.cartegoriasLoja ul li:hover {
-    font-weight: bold;
-    border-bottom: 4px solid white;
-}
-
-/* Itens da Loja */
-
-#acougue {
-    display: none;
-    flex-wrap: wrap;  
-}
-
-#congelados {
-    display: none;
-    flex-wrap: wrap;  
-}
-
-#padaria {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.itemLoja {
-    margin: 0.5rem;
-    padding: 0.5rem;
-    text-align: center;
-    cursor: pointer;
-    width: 12vw;
-}
-#congelados .itemLoja:hover {
-    background: rgba(255, 0, 0, 0.273);
-    border-radius: 0.3rem;
-    border-color: white;
-    box-shadow: inset 1px 1px 20px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 20px red, -1px -1px 5px red;
-}
-#botaoComprar {
-    position: absolute;
-    display: flex;
-    opacity: 0;
-    height: 6rem;
-    flex-direction: column;
-    justify-content: space-around;
-    top: 16vh;
-    margin-left: 0.5rem;
-    padding: 1rem 0;
-}
-.botaoQuantidade {
-    width: 10vw;
-    display: flex;
-}
-.botaoQuantidade p:nth-child(2) {
-    width: 50vw;
-    background: white;
-    color: red;
-    border: 2px solid red;
-    border-radius: 0.5rem;
-    height: 1.5rem;
-    margin-top: 0.5rem;
-    cursor: default;
-}
-.botaoQuantidade button {
-    border-radius: 100%;
-    height: 1.4rem;
-    width: 2rem;
-    margin: 0.5rem;
-    font-weight: bold;
-}
-#botaoComprar button {
-    border: 2px solid rgb(255, 0, 0);
-    color: red;
-    cursor: pointer;
-    box-shadow: inset 1px 1px 5px rgba(255, 0, 0, 0.453), inset -1px -1px 5px rgba(255, 0, 0, 0.453);
-    background: white;
-    padding: 0.1rem;
-    width: 10vw;
-    border-radius: 0.5rem;
-}
-#botaoComprar button:hover {
-    background: red;
-    border-color: white;
-    box-shadow: inset 1px 1px 20px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 20px red, -1px -1px 5px red;
-    color: white;
-    font-weight: bold;
-}
-#congelados #botaoComprar:hover {
-    opacity: 1;
-}
-
-/* Compra Item */
-
-#compraItem, #compraAviso {
-    display: none;
-    border: 2px solid red;
-    border-radius: 0.5rem;
-    height: 8rem;
-    width: 50vh;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: red;
-}
-#compraItem h3, #compraAviso h3 {
-    background: red;
-    color: white;
-    border-radius: 0.5rem 0.5rem 0 0;
-    padding: 0.2rem;
-}
-.itemASerComprado {
-    background: white;
-    margin-top: 0.2rem;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    height: 4.3rem;
-}
-.aviso {
-    background: white;
-    margin-top: 0.2rem;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    height: 4.8rem;
-}
-.itemASerComprado h1, .aviso h1 {
-    margin-top: 1.6rem;
-}
-#precoSoma {
-    margin-left: 0.5rem;
-}
-#compraItem button {
-    border: 2px solid rgb(255, 0, 0);
-    color: red;
-    cursor: pointer;
-    box-shadow: inset 1px 1px 5px rgba(255, 0, 0, 0.453), inset -1px -1px 5px rgba(255, 0, 0, 0.453);
-    background: white;
-    padding: 0.1rem;
-    width: 10vw;
-    margin: 0.1rem 0 0 0;
-    margin-left: 30%;
-    border-radius: 0.5rem;
-}
-#compraItem button:hover {
-    background: rgba(255, 0, 0, 0.537);
-    border-color: white;
-    box-shadow: inset 1px 1px 20px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 20px red, -1px -1px 5px red;
-    color: white;
-    font-weight: bold;
-}
-
-
 
 
 
@@ -618,10 +651,7 @@ body {
     width: 19rem;
     top: 4.5rem;
     left: 1rem;
-    display: flex;
-    justify-content: space-around;
     margin-top: 1.2rem;
-    opacity: 0.3;
 }
 .itensNaGeladeira1 #item1 {
     position: absolute;
@@ -673,7 +703,6 @@ body {
     display: flex;
     justify-content: space-around;
     margin-top: 1.2rem;
-    opacity: 0.3;
 }
 .itensNaGeladeira2 #item5 {
     height: 4.6rem;
@@ -683,6 +712,98 @@ body {
 }
 .itensNaGeladeira2 img {
     height: 4.5rem;
+}
+
+.itensNaGeladeira3 {
+    position: absolute;
+    height: 5.5rem;
+    width: 18rem;
+    top: 18.5rem;
+    left: 2rem;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1.2rem;
+}
+.itensNaGeladeira3 #item7 {
+    position: absolute;
+    height: 3rem;
+    width: 5rem;
+    top: 2.9rem;
+    left: 0rem;
+}
+.itensNaGeladeira3 #item7 img {
+    height: 3rem;
+}
+.itensNaGeladeira3 #item8 {
+    position: absolute;
+    height: 4rem;
+    width: 3.1rem;
+    top: 2.1rem;
+    left: 2.2rem;
+}
+.itensNaGeladeira3 #item8 img {
+    height: 4rem;
+}
+.itensNaGeladeira3 #item9 {
+    position: absolute;
+    height: 3rem;
+    width: 5rem;
+    top: 2.9rem;
+    left: 5rem;
+}
+.itensNaGeladeira3 #item9 img {
+    height: 3rem;
+}
+.itensNaGeladeira3 #item10 {
+    position: absolute;
+    height: 3.5rem;
+    width: 8.4rem;
+    top: 2.4rem;
+    left: 9.4rem;
+}
+.itensNaGeladeira3 #item10 img {
+    height: 3.5rem;
+}
+
+.itensNaGeladeira4 {
+    position: absolute;
+    height: 5rem;
+    width: 18rem;
+    top: 24.7rem;
+    left: 2rem;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1.2rem;
+}
+.itensNaGeladeira4 #item11 {
+    position: absolute;
+    height: 4rem;
+    width: 7.5rem;
+    top: 1.3rem;
+    left: 0rem;
+}
+.itensNaGeladeira4 #item11 img {
+    height: 4rem;
+}
+.itensNaGeladeira4 #item12 {
+    position: absolute;
+    height: 4rem;
+    width: 7.5rem;
+    top: 1.3rem;
+    left: 7rem;
+}
+.itensNaGeladeira4 #item12 img {
+    height: 4rem;
+}
+.itensNaGeladeira4 #item13 {
+    position: absolute;
+    height: 5rem;
+    width: 3.7rem;
+    top: 0.3rem;
+    left: 14.2rem;
+}
+.itensNaGeladeira4 #item13 img {
+    height: 5rem;
 }
 
 /* Fechar Geladeira */

@@ -824,13 +824,90 @@ function fecharLoja() {
 
 function mostrarAcougue() {
     document.getElementById('acougue').style.display = "flex"
+    document.getElementById('bebidas').style.display = "none"
     document.getElementById('congelados').style.display = "none"
+    document.getElementById('enlatados').style.display = "none"
+    document.getElementById('hortifruti').style.display = "none"
+    document.getElementById('laticinios').style.display = "none"
+    document.getElementById('padaria').style.display = "none"
+    document.getElementById('peixaria').style.display = "none"
+}
 
+function mostrarBebidas() {
+    document.getElementById('acougue').style.display = "none"
+    document.getElementById('bebidas').style.display = "flex"
+    document.getElementById('congelados').style.display = "none"
+    document.getElementById('enlatados').style.display = "none"
+    document.getElementById('hortifruti').style.display = "none"
+    document.getElementById('laticinios').style.display = "none"
+    document.getElementById('padaria').style.display = "none"
+    document.getElementById('peixaria').style.display = "none"
 }
 
 function mostrarCongelados() {
     document.getElementById('acougue').style.display = "none"
+    document.getElementById('bebidas').style.display = "none"
     document.getElementById('congelados').style.display = "flex"
+    document.getElementById('enlatados').style.display = "none"
+    document.getElementById('hortifruti').style.display = "none"
+    document.getElementById('laticinios').style.display = "none"
+    document.getElementById('padaria').style.display = "none"
+    document.getElementById('peixaria').style.display = "none"
+}
+
+function mostrarEnlatados() {
+    document.getElementById('acougue').style.display = "none"
+    document.getElementById('bebidas').style.display = "none"
+    document.getElementById('congelados').style.display = "none"
+    document.getElementById('enlatados').style.display = "flex"
+    document.getElementById('hortifruti').style.display = "none"
+    document.getElementById('laticinios').style.display = "none"
+    document.getElementById('padaria').style.display = "none"
+    document.getElementById('peixaria').style.display = "none"
+}
+
+function mostrarHortifruti() {
+    document.getElementById('acougue').style.display = "none"
+    document.getElementById('bebidas').style.display = "none"
+    document.getElementById('congelados').style.display = "none"
+    document.getElementById('enlatados').style.display = "none"
+    document.getElementById('hortifruti').style.display = "flex"
+    document.getElementById('laticinios').style.display = "none"
+    document.getElementById('padaria').style.display = "none"
+    document.getElementById('peixaria').style.display = "none"
+}
+
+function mostrarLaticinios() {
+    document.getElementById('acougue').style.display = "none"
+    document.getElementById('bebidas').style.display = "none"
+    document.getElementById('congelados').style.display = "none"
+    document.getElementById('enlatados').style.display = "none"
+    document.getElementById('hortifruti').style.display = "none"
+    document.getElementById('laticinios').style.display = "flex"
+    document.getElementById('padaria').style.display = "none"
+    document.getElementById('peixaria').style.display = "none"
+}
+
+function mostrarPadaria() {
+    document.getElementById('acougue').style.display = "none"
+    document.getElementById('bebidas').style.display = "none"
+    document.getElementById('congelados').style.display = "none"
+    document.getElementById('enlatados').style.display = "none"
+    document.getElementById('hortifruti').style.display = "none"
+    document.getElementById('laticinios').style.display = "none"
+    document.getElementById('padaria').style.display = "flex"
+    document.getElementById('peixaria').style.display = "none"
+}
+
+function mostrarPeixaria() {
+    document.getElementById('acougue').style.display = "none"
+    document.getElementById('bebidas').style.display = "none"
+    document.getElementById('congelados').style.display = "none"
+    document.getElementById('enlatados').style.display = "none"
+    document.getElementById('hortifruti').style.display = "none"
+    document.getElementById('laticinios').style.display = "none"
+    document.getElementById('padaria').style.display = "none"
+    document.getElementById('peixaria').style.display = "flex"
 }
 
 /** Compra de Itens */
