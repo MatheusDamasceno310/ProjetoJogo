@@ -145,11 +145,15 @@ function abrirGeladeira() {
     document.getElementById('geladeira').style.display = "block";
     document.getElementById('cozinhaFundo').style.opacity = "0.5";
     document.getElementById('alimentacaoDoPet').style.opacity = "1"
-
+    document.getElementById('tampaGeladeira').style.display = "block"
     document.getElementById('geladeiraHover').style.display = "none"
     document.getElementById('fogaoHover').style.display = "none"
     document.getElementById('microondasHover').style.display = "none"
 
+}
+
+function abrirTampaGeladeira() {
+    document.getElementById('tampaGeladeira').style.display = "none"
 }
 
 function fecharGeladeira() {
@@ -823,7 +827,7 @@ function fecharLoja() {
 /** Itens da Loja */
 
 function mostrarAcougue() {
-    document.getElementById('acougue').style.display = "flex"
+    document.getElementById('acougue').style.display = "grid"
     document.getElementById('bebidas').style.display = "none"
     document.getElementById('congelados').style.display = "none"
     document.getElementById('enlatados').style.display = "none"
@@ -835,7 +839,7 @@ function mostrarAcougue() {
 
 function mostrarBebidas() {
     document.getElementById('acougue').style.display = "none"
-    document.getElementById('bebidas').style.display = "flex"
+    document.getElementById('bebidas').style.display = "grid"
     document.getElementById('congelados').style.display = "none"
     document.getElementById('enlatados').style.display = "none"
     document.getElementById('hortifruti').style.display = "none"
@@ -847,7 +851,7 @@ function mostrarBebidas() {
 function mostrarCongelados() {
     document.getElementById('acougue').style.display = "none"
     document.getElementById('bebidas').style.display = "none"
-    document.getElementById('congelados').style.display = "flex"
+    document.getElementById('congelados').style.display = "grid"
     document.getElementById('enlatados').style.display = "none"
     document.getElementById('hortifruti').style.display = "none"
     document.getElementById('laticinios').style.display = "none"
@@ -859,7 +863,7 @@ function mostrarEnlatados() {
     document.getElementById('acougue').style.display = "none"
     document.getElementById('bebidas').style.display = "none"
     document.getElementById('congelados').style.display = "none"
-    document.getElementById('enlatados').style.display = "flex"
+    document.getElementById('enlatados').style.display = "grid"
     document.getElementById('hortifruti').style.display = "none"
     document.getElementById('laticinios').style.display = "none"
     document.getElementById('padaria').style.display = "none"
@@ -871,7 +875,7 @@ function mostrarHortifruti() {
     document.getElementById('bebidas').style.display = "none"
     document.getElementById('congelados').style.display = "none"
     document.getElementById('enlatados').style.display = "none"
-    document.getElementById('hortifruti').style.display = "flex"
+    document.getElementById('hortifruti').style.display = "grid"
     document.getElementById('laticinios').style.display = "none"
     document.getElementById('padaria').style.display = "none"
     document.getElementById('peixaria').style.display = "none"
@@ -883,7 +887,7 @@ function mostrarLaticinios() {
     document.getElementById('congelados').style.display = "none"
     document.getElementById('enlatados').style.display = "none"
     document.getElementById('hortifruti').style.display = "none"
-    document.getElementById('laticinios').style.display = "flex"
+    document.getElementById('laticinios').style.display = "grid"
     document.getElementById('padaria').style.display = "none"
     document.getElementById('peixaria').style.display = "none"
 }
@@ -895,7 +899,7 @@ function mostrarPadaria() {
     document.getElementById('enlatados').style.display = "none"
     document.getElementById('hortifruti').style.display = "none"
     document.getElementById('laticinios').style.display = "none"
-    document.getElementById('padaria').style.display = "flex"
+    document.getElementById('padaria').style.display = "grid"
     document.getElementById('peixaria').style.display = "none"
 }
 
@@ -907,7 +911,7 @@ function mostrarPeixaria() {
     document.getElementById('hortifruti').style.display = "none"
     document.getElementById('laticinios').style.display = "none"
     document.getElementById('padaria').style.display = "none"
-    document.getElementById('peixaria').style.display = "flex"
+    document.getElementById('peixaria').style.display = "grid"
 }
 
 /** Compra de Itens */
@@ -915,6 +919,186 @@ function mostrarPeixaria() {
 let nomeDoItem = ""
 let quantidadeDoItem = 0
 let precoDoItem = 0
+
+/** Acougue 1 */
+
+let quantidadeAcougue1 = 1
+
+function menosAcougue1() {
+    if (quantidadeAcougue1 > 1) {
+        --quantidadeAcougue1
+        document.getElementById('quantidadeAcougue1').innerText = quantidadeAcougue1;
+    }
+}
+
+function maisAcougue1() {
+    quantidadeAcougue1++
+    document.getElementById('quantidadeAcougue1').innerText = quantidadeAcougue1;
+}
+
+function comprarAcougue1() {
+
+    const precoSoma = 55 * quantidadeAcougue1
+    
+    document.getElementById('precoSoma').innerText = precoSoma
+
+    nomeDoItem = "Coxa de Boi"
+    quantidadeDoItem = quantidadeAcougue1
+    precoDoItem = precoSoma
+    
+    if (precoSoma > dinheiro) {
+        document.getElementById('compraAviso').style.display = "block"
+    } else {
+        document.getElementById('compraItem').style.display = "block";
+    }
+
+    quantidadeAcougue1 = 1
+    document.getElementById('quantidadeAcougue1').innerText = quantidadeAcougue1;
+}
+
+/** Acougue 2 */
+
+let quantidadeAcougue2 = 1
+
+function menosAcougue2() {
+    if (quantidadeAcougue2 > 1) {
+        --quantidadeAcougue2
+        document.getElementById('quantidadeAcougue2').innerText = quantidadeAcougue2;
+    }
+}
+
+function maisAcougue2() {
+    quantidadeAcougue2++
+    document.getElementById('quantidadeAcougue2').innerText = quantidadeAcougue2;
+}
+
+function comprarAcougue2() {
+
+    const precoSoma = 5 * quantidadeAcougue2
+    
+    document.getElementById('precoSoma').innerText = precoSoma
+
+    nomeDoItem = "Cubos de Carne"
+    quantidadeDoItem = quantidadeAcougue2
+    precoDoItem = precoSoma
+    
+    if (precoSoma > dinheiro) {
+        document.getElementById('compraAviso').style.display = "block"
+    } else {
+        document.getElementById('compraItem').style.display = "block";
+    }
+
+    quantidadeAcougue2 = 1
+    document.getElementById('quantidadeAcougue2').innerText = quantidadeAcougue2;
+}
+
+/** Bebida 1 */
+
+let quantidadeBebida1 = 1
+
+function menosBebida1() {
+    if (quantidadeBebida1 > 1) {
+        --quantidadeBebida1
+        document.getElementById('quantidadeBebida1').innerText = quantidadeBebida1;
+    }
+}
+
+function maisBebida1() {
+    quantidadeBebida1++
+    document.getElementById('quantidadeBebida1').innerText = quantidadeBebida1;
+}
+
+function comprarBebida1() {
+
+    const precoSoma = 0.50 * quantidadeBebida1
+    
+    document.getElementById('precoSoma').innerText = precoSoma
+
+    nomeDoItem = "Agua"
+    quantidadeDoItem = quantidadeBebida1
+    precoDoItem = precoSoma
+    
+    if (precoSoma > dinheiro) {
+        document.getElementById('compraAviso').style.display = "block"
+    } else {
+        document.getElementById('compraItem').style.display = "block";
+    }
+
+    quantidadeBebida1 = 1
+    document.getElementById('quantidadeBebida1').innerText = quantidadeBebida1;
+}
+
+/** Bebida 2 */
+
+let quantidadeBebida2 = 1
+
+function menosBebida2() {
+    if (quantidadeBebida2 > 1) {
+        --quantidadeBebida2
+        document.getElementById('quantidadeBebida2').innerText = quantidadeBebida2;
+    }
+}
+
+function maisBebida2() {
+    quantidadeBebida2++
+    document.getElementById('quantidadeBebida2').innerText = quantidadeBebida2;
+}
+
+function comprarBebida2() {
+
+    const precoSoma = 9 * quantidadeBebida2
+    
+    document.getElementById('precoSoma').innerText = precoSoma
+
+    nomeDoItem = "Leite"
+    quantidadeDoItem = quantidadeBebida2
+    precoDoItem = precoSoma
+    
+    if (precoSoma > dinheiro) {
+        document.getElementById('compraAviso').style.display = "block"
+    } else {
+        document.getElementById('compraItem').style.display = "block";
+    }
+
+    quantidadeBebida2 = 1
+    document.getElementById('quantidadeBebida2').innerText = quantidadeBebida2;
+}
+
+/** Bebida 3 */
+
+let quantidadeBebida3 = 1
+
+function menosBebida3() {
+    if (quantidadeBebida3 > 1) {
+        --quantidadeBebida3
+        document.getElementById('quantidadeBebida3').innerText = quantidadeBebida3;
+    }
+}
+
+function maisBebida3() {
+    quantidadeBebida3++
+    document.getElementById('quantidadeBebida3').innerText = quantidadeBebida3;
+}
+
+function comprarBebida3() {
+
+    const precoSoma = 5 * quantidadeBebida2
+    
+    document.getElementById('precoSoma').innerText = precoSoma
+
+    nomeDoItem = "Refrigerante"
+    quantidadeDoItem = quantidadeBebida3
+    precoDoItem = precoSoma
+    
+    if (precoSoma > dinheiro) {
+        document.getElementById('compraAviso').style.display = "block"
+    } else {
+        document.getElementById('compraItem').style.display = "block";
+    }
+
+    quantidadeBebida3 = 1
+    document.getElementById('quantidadeBebida3').innerText = quantidadeBebida3;
+}
 
 /** Congelados 1 */
 
@@ -986,6 +1170,690 @@ function comprarCongelado2() {
 
     quantidadeCongelado2 = 1
     document.getElementById('quantidadeCongelado2').innerText = quantidadeCongelado2;
+}
+
+/** Enlatado 1 */
+
+let quantidadeEnlatado1 = 1
+
+function menosEnlatado1() {
+    if (quantidadeEnlatado1 > 1) {
+        --quantidadeEnlatado1
+        document.getElementById('quantidadeEnlatado1').innerText = quantidadeEnlatado1;
+    }
+}
+
+function maisEnlatado1() {
+    quantidadeEnlatado1++
+    document.getElementById('quantidadeEnlatado1').innerText = quantidadeEnlatado1;
+}
+
+function comprarEnlatado1() {
+
+    const precoSoma = 6 * quantidadeEnlatado1
+    
+    document.getElementById('precoSoma').innerText = precoSoma
+
+    nomeDoItem = "Lata de Atum"
+    quantidadeDoItem = quantidadeEnlatado1
+    precoDoItem = precoSoma
+    
+    if (precoSoma > dinheiro) {
+        document.getElementById('compraAviso').style.display = "block"
+    } else {
+        document.getElementById('compraItem').style.display = "block";
+    }
+
+    quantidadeEnlatado1 = 1
+    document.getElementById('quantidadeEnlatado1').innerText = quantidadeEnlatado1;
+}
+
+/** Enlatado 2 */
+
+let quantidadeEnlatado2 = 1
+
+function menosEnlatado2() {
+    if (quantidadeEnlatado2 > 1) {
+        --quantidadeEnlatado2
+        document.getElementById('quantidadeEnlatado2').innerText = quantidadeEnlatado2;
+    }
+}
+
+function maisEnlatado2() {
+    quantidadeEnlatado2++
+    document.getElementById('quantidadeEnlatado2').innerText = quantidadeEnlatado2;
+}
+
+function comprarEnlatado2() {
+
+    const precoSoma = 5 * quantidadeEnlatado2
+    
+    document.getElementById('precoSoma').innerText = precoSoma
+
+    nomeDoItem = "Poupa de Manga"
+    quantidadeDoItem = quantidadeEnlatado2
+    precoDoItem = precoSoma
+    
+    if (precoSoma > dinheiro) {
+        document.getElementById('compraAviso').style.display = "block"
+    } else {
+        document.getElementById('compraItem').style.display = "block";
+    }
+
+    quantidadeEnlatado2 = 1
+    document.getElementById('quantidadeEnlatado2').innerText = quantidadeEnlatado2;
+}
+
+/** Enlatado 3 */
+
+let quantidadeEnlatado3 = 1
+
+function menosEnlatado3() {
+    if (quantidadeEnlatado3 > 1) {
+        --quantidadeEnlatado3
+        document.getElementById('quantidadeEnlatado3').innerText = quantidadeEnlatado3;
+    }
+}
+
+function maisEnlatado3() {
+    quantidadeEnlatado3++
+    document.getElementById('quantidadeEnlatado3').innerText = quantidadeEnlatado3;
+}
+
+function comprarEnlatado3() {
+
+    const precoSoma = 6 * quantidadeEnlatado3
+    
+    document.getElementById('precoSoma').innerText = precoSoma
+
+    nomeDoItem = "Espaguete"
+    quantidadeDoItem = quantidadeEnlatado3
+    precoDoItem = precoSoma
+    
+    if (precoSoma > dinheiro) {
+        document.getElementById('compraAviso').style.display = "block"
+    } else {
+        document.getElementById('compraItem').style.display = "block";
+    }
+
+    quantidadeEnlatado3 = 1
+    document.getElementById('quantidadeEnlatado3').innerText = quantidadeEnlatado3;
+}
+
+/** Enlatado 4 */
+
+let quantidadeEnlatado4 = 1
+
+function menosEnlatado4() {
+    if (quantidadeEnlatado4 > 1) {
+        --quantidadeEnlatado4
+        document.getElementById('quantidadeEnlatado4').innerText = quantidadeEnlatado4;
+    }
+}
+
+function maisEnlatado4() {
+    quantidadeEnlatado4++
+    document.getElementById('quantidadeEnlatado4').innerText = quantidadeEnlatado4;
+}
+
+function comprarEnlatado4() {
+
+    const precoSoma = 5 * quantidadeEnlatado4
+    
+    document.getElementById('precoSoma').innerText = precoSoma
+
+    nomeDoItem = "Sopa de Tomate"
+    quantidadeDoItem = quantidadeEnlatado4
+    precoDoItem = precoSoma
+    
+    if (precoSoma > dinheiro) {
+        document.getElementById('compraAviso').style.display = "block"
+    } else {
+        document.getElementById('compraItem').style.display = "block";
+    }
+
+    quantidadeEnlatado4 = 1
+    document.getElementById('quantidadeEnlatado4').innerText = quantidadeEnlatado4;
+}
+
+/** Enlatado 5 */
+
+let quantidadeEnlatado5 = 1
+
+function menosEnlatado5() {
+    if (quantidadeEnlatado5 > 1) {
+        --quantidadeEnlatado5
+        document.getElementById('quantidadeEnlatado5').innerText = quantidadeEnlatado5;
+    }
+}
+
+function maisEnlatado5() {
+    quantidadeEnlatado5++
+    document.getElementById('quantidadeEnlatado5').innerText = quantidadeEnlatado5;
+}
+
+function comprarEnlatado5() {
+
+    const precoSoma = 6 * quantidadeEnlatado5
+    
+    document.getElementById('precoSoma').innerText = precoSoma
+
+    nomeDoItem = "Almondegas"
+    quantidadeDoItem = quantidadeEnlatado5
+    precoDoItem = precoSoma
+    
+    if (precoSoma > dinheiro) {
+        document.getElementById('compraAviso').style.display = "block"
+    } else {
+        document.getElementById('compraItem').style.display = "block";
+    }
+
+    quantidadeEnlatado5 = 1
+    document.getElementById('quantidadeEnlatado5').innerText = quantidadeEnlatado5;
+}
+
+/** Enlatado 6 */
+
+let quantidadeEnlatado6 = 1
+
+function menosEnlatado6() {
+    if (quantidadeEnlatado6 > 1) {
+        --quantidadeEnlatado6
+        document.getElementById('quantidadeEnlatado6').innerText = quantidadeEnlatado6;
+    }
+}
+
+function maisEnlatado6() {
+    quantidadeEnlatado6++
+    document.getElementById('quantidadeEnlatado6').innerText = quantidadeEnlatado6;
+}
+
+function comprarEnlatado6() {
+
+    const precoSoma = 6 * quantidadeEnlatado6
+    
+    document.getElementById('precoSoma').innerText = precoSoma
+
+    nomeDoItem = "Presunto"
+    quantidadeDoItem = quantidadeEnlatado6
+    precoDoItem = precoSoma
+    
+    if (precoSoma > dinheiro) {
+        document.getElementById('compraAviso').style.display = "block"
+    } else {
+        document.getElementById('compraItem').style.display = "block";
+    }
+
+    quantidadeEnlatado6 = 1
+    document.getElementById('quantidadeEnlatado6').innerText = quantidadeEnlatado6;
+}
+
+/** Hortifruti 1 */
+
+let quantidadeHortifruti1 = 1
+
+function menosHortifruti1() {
+    if (quantidadeHortifruti1 > 1) {
+        --quantidadeHortifruti1
+        document.getElementById('quantidadeHortifruti1').innerText = quantidadeHortifruti1;
+    }
+}
+
+function maisHortifruti1() {
+    quantidadeHortifruti1++
+    document.getElementById('quantidadeHortifruti1').innerText = quantidadeHortifruti1;
+}
+
+function comprarHortifruti1() {
+
+    const precoSoma = 4 * quantidadeHortifruti1
+    
+    document.getElementById('precoSoma').innerText = precoSoma
+
+    nomeDoItem = "Brocolis"
+    quantidadeDoItem = quantidadeHortifruti1
+    precoDoItem = precoSoma
+    
+    if (precoSoma > dinheiro) {
+        document.getElementById('compraAviso').style.display = "block"
+    } else {
+        document.getElementById('compraItem').style.display = "block";
+    }
+
+    quantidadeHortifruti1 = 1
+    document.getElementById('quantidadeHortifruti1').innerText = quantidadeHortifruti1;
+}
+
+/** Hortifruti 2 */
+
+let quantidadeHortifruti2 = 1
+
+function menosHortifruti2() {
+    if (quantidadeHortifruti2 > 1) {
+        --quantidadeHortifruti2
+        document.getElementById('quantidadeHortifruti2').innerText = quantidadeHortifruti2;
+    }
+}
+
+function maisHortifruti2() {
+    quantidadeHortifruti2++
+    document.getElementById('quantidadeHortifruti2').innerText = quantidadeHortifruti2;
+}
+
+function comprarHortifruti2() {
+
+    const precoSoma = 2.5 * quantidadeHortifruti2
+    
+    document.getElementById('precoSoma').innerText = precoSoma
+
+    nomeDoItem = "Maca"
+    quantidadeDoItem = quantidadeHortifruti2
+    precoDoItem = precoSoma
+    
+    if (precoSoma > dinheiro) {
+        document.getElementById('compraAviso').style.display = "block"
+    } else {
+        document.getElementById('compraItem').style.display = "block";
+    }
+
+    quantidadeHortifruti2 = 1
+    document.getElementById('quantidadeHortifruti2').innerText = quantidadeHortifruti2;
+}
+
+/** Hortifruti 3 */
+
+let quantidadeHortifruti3 = 1
+
+function menosHortifruti3() {
+    if (quantidadeHortifruti3 > 1) {
+        --quantidadeHortifruti3
+        document.getElementById('quantidadeHortifruti3').innerText = quantidadeHortifruti3;
+    }
+}
+
+function maisHortifruti3() {
+    quantidadeHortifruti3++
+    document.getElementById('quantidadeHortifruti3').innerText = quantidadeHortifruti3;
+}
+
+function comprarHortifruti3() {
+
+    const precoSoma = 2.5 * quantidadeHortifruti3
+    
+    document.getElementById('precoSoma').innerText = precoSoma
+
+    nomeDoItem = "Laranja"
+    quantidadeDoItem = quantidadeHortifruti3
+    precoDoItem = precoSoma
+    
+    if (precoSoma > dinheiro) {
+        document.getElementById('compraAviso').style.display = "block"
+    } else {
+        document.getElementById('compraItem').style.display = "block";
+    }
+
+    quantidadeHortifruti3 = 1
+    document.getElementById('quantidadeHortifruti3').innerText = quantidadeHortifruti3;
+}
+
+/** Hortifruti 4 */
+
+let quantidadeHortifruti4 = 1
+
+function menosHortifruti4() {
+    if (quantidadeHortifruti4 > 1) {
+        --quantidadeHortifruti4
+        document.getElementById('quantidadeHortifruti4').innerText = quantidadeHortifruti4;
+    }
+}
+
+function maisHortifruti4() {
+    quantidadeHortifruti4++
+    document.getElementById('quantidadeHortifruti4').innerText = quantidadeHortifruti4;
+}
+
+function comprarHortifruti4() {
+
+    const precoSoma = 4 * quantidadeHortifruti4
+    
+    document.getElementById('precoSoma').innerText = precoSoma
+
+    nomeDoItem = "Repolho"
+    quantidadeDoItem = quantidadeHortifruti4
+    precoDoItem = precoSoma
+    
+    if (precoSoma > dinheiro) {
+        document.getElementById('compraAviso').style.display = "block"
+    } else {
+        document.getElementById('compraItem').style.display = "block";
+    }
+
+    quantidadeHortifruti4 = 1
+    document.getElementById('quantidadeHortifruti4').innerText = quantidadeHortifruti4;
+}
+
+/** Hortifruti 5 */
+
+let quantidadeHortifruti5 = 1
+
+function menosHortifruti5() {
+    if (quantidadeHortifruti5 > 1) {
+        --quantidadeHortifruti5
+        document.getElementById('quantidadeHortifruti5').innerText = quantidadeHortifruti5;
+    }
+}
+
+function maisHortifruti5() {
+    quantidadeHortifruti5++
+    document.getElementById('quantidadeHortifruti5').innerText = quantidadeHortifruti5;
+}
+
+function comprarHortifruti5() {
+
+    const precoSoma = 5 * quantidadeHortifruti5
+    
+    document.getElementById('precoSoma').innerText = precoSoma
+
+    nomeDoItem = "Cenoura"
+    quantidadeDoItem = quantidadeHortifruti5
+    precoDoItem = precoSoma
+    
+    if (precoSoma > dinheiro) {
+        document.getElementById('compraAviso').style.display = "block"
+    } else {
+        document.getElementById('compraItem').style.display = "block";
+    }
+
+    quantidadeHortifruti5 = 1
+    document.getElementById('quantidadeHortifruti5').innerText = quantidadeHortifruti5;
+}
+
+/** Laticinio 1 */
+
+let quantidadeLaticinio1 = 1
+
+function menosLaticinio1() {
+    if (quantidadeLaticinio1 > 1) {
+        --quantidadeLaticinio1
+        document.getElementById('quantidadeLaticinio1').innerText = quantidadeLaticinio1;
+    }
+}
+
+function maisLaticinio1() {
+    quantidadeLaticinio1++
+    document.getElementById('quantidadeLaticinio1').innerText = quantidadeLaticinio1;
+}
+
+function comprarLaticinio1() {
+
+    const precoSoma = 10 * quantidadeLaticinio1
+    
+    document.getElementById('precoSoma').innerText = precoSoma
+
+    nomeDoItem = "Cubos de Queijo"
+    quantidadeDoItem = quantidadeLaticinio1
+    precoDoItem = precoSoma
+    
+    if (precoSoma > dinheiro) {
+        document.getElementById('compraAviso').style.display = "block"
+    } else {
+        document.getElementById('compraItem').style.display = "block";
+    }
+
+    quantidadeLaticinio1 = 1
+    document.getElementById('quantidadeLaticinio1').innerText = quantidadeLaticinio1;
+}
+
+/** Laticinio 2 */
+
+let quantidadeLaticinio2 = 1
+
+function menosLaticinio2() {
+    if (quantidadeLaticinio2 > 1) {
+        --quantidadeLaticinio2
+        document.getElementById('quantidadeLaticinio2').innerText = quantidadeLaticinio2;
+    }
+}
+
+function maisLaticinio2() {
+    quantidadeLaticinio2++
+    document.getElementById('quantidadeLaticinio2').innerText = quantidadeLaticinio2;
+}
+
+function comprarLaticinio2() {
+
+    const precoSoma = 25 * quantidadeLaticinio2
+    
+    document.getElementById('precoSoma').innerText = precoSoma
+
+    nomeDoItem = "Queijo Gouda"
+    quantidadeDoItem = quantidadeLaticinio2
+    precoDoItem = precoSoma
+    
+    if (precoSoma > dinheiro) {
+        document.getElementById('compraAviso').style.display = "block"
+    } else {
+        document.getElementById('compraItem').style.display = "block";
+    }
+
+    quantidadeLaticinio2 = 1
+    document.getElementById('quantidadeLaticinio2').innerText = quantidadeLaticinio2;
+}
+
+/** Laticinio 3 */
+
+let quantidadeLaticinio3 = 1
+
+function menosLaticinio3() {
+    if (quantidadeLaticinio3 > 1) {
+        --quantidadeLaticinio3
+        document.getElementById('quantidadeLaticinio3').innerText = quantidadeLaticinio3;
+    }
+}
+
+function maisLaticinio3() {
+    quantidadeLaticinio3++
+    document.getElementById('quantidadeLaticinio3').innerText = quantidadeLaticinio3;
+}
+
+function comprarLaticinio3() {
+
+    const precoSoma = 15 * quantidadeLaticinio3
+    
+    document.getElementById('precoSoma').innerText = precoSoma
+
+    nomeDoItem = "Fatias de Queijo"
+    quantidadeDoItem = quantidadeLaticinio3
+    precoDoItem = precoSoma
+    
+    if (precoSoma > dinheiro) {
+        document.getElementById('compraAviso').style.display = "block"
+    } else {
+        document.getElementById('compraItem').style.display = "block";
+    }
+
+    quantidadeLaticinio3 = 1
+    document.getElementById('quantidadeLaticinio3').innerText = quantidadeLaticinio3;
+}
+
+/** Padaria 1 */
+
+let quantidadePadaria1 = 1
+
+function menosPadaria1() {
+    if (quantidadePadaria1 > 1) {
+        --quantidadePadaria1
+        document.getElementById('quantidadePadaria1').innerText = quantidadePadaria1;
+    }
+}
+
+function maisPadaria1() {
+    quantidadePadaria1++
+    document.getElementById('quantidadePadaria1').innerText = quantidadePadaria1;
+}
+
+function comprarPadaria1() {
+
+    const precoSoma = 1 * quantidadePadaria1
+    
+    document.getElementById('precoSoma').innerText = precoSoma
+
+    nomeDoItem = "Pao"
+    quantidadeDoItem = quantidadePadaria1
+    precoDoItem = precoSoma
+    
+    if (precoSoma > dinheiro) {
+        document.getElementById('compraAviso').style.display = "block"
+    } else {
+        document.getElementById('compraItem').style.display = "block";
+    }
+
+    quantidadePadaria1 = 1
+    document.getElementById('quantidadePadaria1').innerText = quantidadePadaria1;
+}
+
+/** Padaria 2 */
+
+let quantidadePadaria2 = 1
+
+function menosPadaria2() {
+    if (quantidadePadaria2 > 1) {
+        --quantidadePadaria2
+        document.getElementById('quantidadePadaria2').innerText = quantidadePadaria2;
+    }
+}
+
+function maisPadaria2() {
+    quantidadePadaria2++
+    document.getElementById('quantidadePadaria2').innerText = quantidadePadaria2;
+}
+
+function comprarPadaria2() {
+
+    const precoSoma = 30 * quantidadePadaria2
+    
+    document.getElementById('precoSoma').innerText = precoSoma
+
+    nomeDoItem = "Bolo de Morango"
+    quantidadeDoItem = quantidadePadaria2
+    precoDoItem = precoSoma
+    
+    if (precoSoma > dinheiro) {
+        document.getElementById('compraAviso').style.display = "block"
+    } else {
+        document.getElementById('compraItem').style.display = "block";
+    }
+
+    quantidadePadaria2 = 1
+    document.getElementById('quantidadePadaria2').innerText = quantidadePadaria2;
+}
+
+/** Padaria 3 */
+
+let quantidadePadaria3 = 1
+
+function menosPadaria3() {
+    if (quantidadePadaria3 > 1) {
+        --quantidadePadaria3
+        document.getElementById('quantidadePadaria3').innerText = quantidadePadaria3;
+    }
+}
+
+function maisPadaria3() {
+    quantidadePadaria3++
+    document.getElementById('quantidadePadaria3').innerText = quantidadePadaria3;
+}
+
+function comprarPadaria3() {
+
+    const precoSoma = 30 * quantidadePadaria3
+    
+    document.getElementById('precoSoma').innerText = precoSoma
+
+    nomeDoItem = "Bolo de Chocolate"
+    quantidadeDoItem = quantidadePadaria3
+    precoDoItem = precoSoma
+    
+    if (precoSoma > dinheiro) {
+        document.getElementById('compraAviso').style.display = "block"
+    } else {
+        document.getElementById('compraItem').style.display = "block";
+    }
+
+    quantidadePadaria3 = 1
+    document.getElementById('quantidadePadaria3').innerText = quantidadePadaria3;
+}
+
+/** Peixaria 1 */
+
+let quantidadePeixaria1 = 1
+
+function menosPeixaria1() {
+    if (quantidadePeixaria1 > 1) {
+        --quantidadePeixaria1
+        document.getElementById('quantidadePeixaria1').innerText = quantidadePeixaria1;
+    }
+}
+
+function maisPeixaria1() {
+    quantidadePeixaria1++
+    document.getElementById('quantidadePeixaria1').innerText = quantidadePeixaria1;
+}
+
+function comprarPeixaria1() {
+
+    const precoSoma = 15 * quantidadePeixaria1
+    
+    document.getElementById('precoSoma').innerText = precoSoma
+
+    nomeDoItem = "Peixe"
+    quantidadeDoItem = quantidadePeixaria1
+    precoDoItem = precoSoma
+    
+    if (precoSoma > dinheiro) {
+        document.getElementById('compraAviso').style.display = "block"
+    } else {
+        document.getElementById('compraItem').style.display = "block";
+    }
+
+    quantidadePeixaria1 = 1
+    document.getElementById('quantidadePeixaria1').innerText = quantidadePeixaria1;
+}
+
+/** Peixaria 2 */
+
+let quantidadePeixaria2 = 1
+
+function menosPeixaria2() {
+    if (quantidadePeixaria2 > 1) {
+        --quantidadePeixaria2
+        document.getElementById('quantidadePeixaria2').innerText = quantidadePeixaria2;
+    }
+}
+
+function maisPeixaria2() {
+    quantidadePeixaria2++
+    document.getElementById('quantidadePeixaria2').innerText = quantidadePeixaria2;
+}
+
+function comprarPeixaria2() {
+
+    const precoSoma = 10 * quantidadePeixaria2
+    
+    document.getElementById('precoSoma').innerText = precoSoma
+
+    nomeDoItem = "Sushi"
+    quantidadeDoItem = quantidadePeixaria2
+    precoDoItem = precoSoma
+    
+    if (precoSoma > dinheiro) {
+        document.getElementById('compraAviso').style.display = "block"
+    } else {
+        document.getElementById('compraItem').style.display = "block";
+    }
+
+    quantidadePeixaria2 = 1
+    document.getElementById('quantidadePeixaria2').innerText = quantidadePeixaria2;
 }
 
 /** Confirmar Compra */

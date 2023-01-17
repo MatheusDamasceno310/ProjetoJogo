@@ -233,46 +233,57 @@ body {
 #loja {
     display: block;
     position: absolute;
-    top: 50%;
+    top: 53%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: white;
-    height: 80vh;
-    width: 78vw;
+    height: 38rem;
+    width: 78rem;
     z-index: 5;
     border: 5px solid red;
+    box-shadow: inset 1px 1px 20px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 20px red, -1px -1px 5px red;
     border-radius: 10px;
+}
+.lojaFundo {
+    height: 34.9rem;
+    width: 77.4rem;
+    top: 2.5rem;
+    z-index: 1;
+    position: absolute;
 }
 .placaLoja {
     position: absolute;
     height: 8rem;
-    width: 11vw;
+    width: 10.4rem;
     top: 0%;
     left: 50%;
     transform: translate(-50%, -50%);
+    z-index: 2;
 }
 .placaLoja img {
     position: absolute;
     height: 8rem;
-    width: 11vw;
+    width: 10.4rem;
     top: -1.2rem;
 }
 .placaLoja p {
     position: absolute;
-    left: 3.7vw;
-    top: 0.3vh;
-    font-size: 1.5vw;
+    left: 3.2rem;
+    top: 0.1rem;
+    font-size: 1.5rem;
     cursor: default;
 }
 .cartegoriasLoja {
     display: flex;
     justify-content: space-between;
     padding-top: 1rem;
+    width: 77.4rem;
     background: linear-gradient(to top, red, white);
+    box-shadow: inset 1px 1px 20px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 20px red, -1px -1px 5px red;
+    z-index: 2;
 }
 .cartegoriasLoja ul {
     display: flex;
-    width: 33vw;
+    width: 33rem;
     flex-wrap: wrap;
     text-align: center;
     padding-bottom: 4px;
@@ -291,55 +302,46 @@ body {
     border-bottom: 4px solid white;
 }
 
-.prateleira{
+.prateleira1 {
     position: absolute;
     z-index: 1;
-    top: 8rem;
-    height: 14vh;
-    width: 77.4vw;
+    top: 7.5rem;
+    height: 7rem;
+    width: 77.4rem;
+}
+.prateleira2 {
+    position: absolute;
+    z-index: 1;
+    top: 18.8rem;
+    height: 7rem;
+    width: 77.4rem;
+}
+.prateleira3 {
+    position: absolute;
+    z-index: 1;
+    top: 30rem;
+    height: 7rem;
+    width: 77.4rem;
 }
 
 /* Itens da Loja */
 
-#acougue {
+#acougue, #bebidas, #congelados, #enlatados, #hortifruti, #laticinios, #padaria, #peixaria {
     display: none;
-    flex-wrap: wrap;  
+    grid-template-columns: repeat(6, 1fr);
+    margin-left: 3rem;
     position: absolute;
     z-index: 2;
+    top: 3rem;
 }
-
-#congelados {
-    display: none;
-    flex-wrap: wrap;  
-    position: absolute;
-    z-index: 2;
-}
-#laticinios {
-    display: none;
-    flex-wrap: wrap;
-    position: absolute;
-    z-index: 2;
-}
-#padaria {
-    display: none;
-    flex-wrap: wrap;
-    position: absolute;
-    z-index: 2;
-}
-#peixaria {
-    display: none;
-    flex-wrap: wrap;
-    position: absolute;
-    z-index: 2;
-}
-#acougue .itemLoja:hover, #congelados .itemLoja:hover, #laticinios .itemLoja:hover, #padaria .itemLoja:hover, #peixaria .itemLoja:hover {
+.itemLoja:hover {
     background: rgba(255, 0, 0, 0.273);
     border-radius: 0.3rem;
     border-color: white;
     box-shadow: inset 1px 1px 20px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 20px red, -1px -1px 5px red;
 }
 .itemLoja {
-    margin: 0.5rem;
+    margin: 0.3rem;
     padding: 0.5rem;
     text-align: center;
     cursor: pointer;
@@ -347,14 +349,23 @@ body {
     width: 12vw;
 }
 .itemLoja img {
-    height: 12vh;
-    margin: 2vh 0 2vh 0;
+    height: 6rem;
+    margin: 0.5rem 0 0.5rem 0;
 }
-#acougue .itemLoja:nth-child(1) img, #padaria .itemLoja:nth-child(1) img, #peixaria .itemLoja:nth-child(1) img {
-    height: 9.8vh;
-    margin: 3vh 0 3vh 0;
+#acougue .itemLoja:nth-child(1) img {
+    height: 5rem;
+    margin: 1.5rem 0 0.5rem 0;
 }
-.itemLoja p:nth-child(3) {
+#hortifruti .itemLoja:nth-child(6) img {
+    height: 3rem;
+    margin: 3rem 0 1rem 0;
+}
+#padaria .itemLoja:nth-child(1) img, #peixaria .itemLoja:nth-child(1) img {
+    height: 4rem;
+    margin: 2rem 0 1rem 0;
+}
+.itemLoja p {
+    border-radius: 0.3rem;
     background: rgba(255, 255, 255, 0.848);
     box-shadow: inset 1px 1px 20px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 20px red, -1px -1px 15px red;
 }
@@ -365,9 +376,10 @@ body {
     height: 6rem;
     flex-direction: column;
     justify-content: space-around;
-    top: 10vh;
+    top: 4rem;
     margin-left: 0.5rem;
     padding: 1rem 0;
+    z-index: 3;
 }
 .botaoQuantidade {
     width: 10vw;
@@ -407,7 +419,7 @@ body {
     color: white;
     font-weight: bold;
 }
-#acougue #botaoComprar:hover, #congelados #botaoComprar:hover, #laticinios #botaoComprar:hover, #padaria #botaoComprar:hover, #peixaria .itemLoja:hover {
+#acougue #botaoComprar:hover, #bebidas #botaoComprar:hover, #congelados #botaoComprar:hover, #enlatados #botaoComprar:hover, #hortifruti #botaoComprar:hover, #laticinios #botaoComprar:hover, #padaria #botaoComprar:hover, #peixaria #botaoComprar:hover {
     opacity: 1;
 }
 
@@ -424,6 +436,7 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     background: red;
+    z-index: 3;
 }
 #compraItem h3, #compraAviso h3 {
     background: red;
@@ -446,9 +459,11 @@ body {
     justify-content: center;
     text-align: center;
     height: 4.8rem;
+    z-index: 3;
 }
 .itemASerComprado h1, .aviso h1 {
-    margin-top: 1.6rem;
+    margin-top: 1.2rem;
+    font-size: 2rem;
 }
 #precoSoma {
     margin-left: 0.5rem;
@@ -464,6 +479,7 @@ body {
     margin: 0.1rem 0 0 0;
     margin-left: 30%;
     border-radius: 0.5rem;
+    font-weight: bold;
 }
 #compraItem button:hover {
     background: rgba(255, 0, 0, 0.537);
@@ -636,7 +652,7 @@ body {
     transform: translate(-50%, -50%);
     z-index: 5;
     height: 45rem;
-    display: block;
+    display: none;
 }
 .geladeira {
     margin-top: -2vh;
@@ -659,6 +675,7 @@ body {
     width: 6.3rem;
     top: 1.2rem;
     left: 1rem;
+    opacity: 0.2;
 }
 .itensNaGeladeira1 #item1 img {
     height: 4.5rem
@@ -669,6 +686,7 @@ body {
     width: 2.4rem;
     top: 1.7rem;
     left: 7rem;
+    opacity: 0.2;
 }
 .itensNaGeladeira1 #item2 img {
     height: 3rem;
@@ -679,6 +697,7 @@ body {
     width: 2.4rem;
     top: 1.7rem;
     left: 9.2rem;
+    opacity: 0.2;
 }
 .itensNaGeladeira1 #item3 img {
     height: 3rem;
@@ -689,6 +708,7 @@ body {
     width: 2.4rem;
     top: 1.7rem;
     left: 11rem;
+    opacity: 0.2;
 }
 .itensNaGeladeira1 #item4 img {
     height: 3rem;
@@ -706,9 +726,11 @@ body {
 }
 .itensNaGeladeira2 #item5 {
     height: 4.6rem;
+    opacity: 0.2;
 }
 .itensNaGeladeira2 #item6 {
     height: 4.6rem;
+    opacity: 0.2;
 }
 .itensNaGeladeira2 img {
     height: 4.5rem;
@@ -730,6 +752,7 @@ body {
     width: 5rem;
     top: 2.9rem;
     left: 0rem;
+    opacity: 0.2;
 }
 .itensNaGeladeira3 #item7 img {
     height: 3rem;
@@ -740,6 +763,7 @@ body {
     width: 3.1rem;
     top: 2.1rem;
     left: 2.2rem;
+    opacity: 0.2;
 }
 .itensNaGeladeira3 #item8 img {
     height: 4rem;
@@ -750,6 +774,7 @@ body {
     width: 5rem;
     top: 2.9rem;
     left: 5rem;
+    opacity: 0.2;
 }
 .itensNaGeladeira3 #item9 img {
     height: 3rem;
@@ -760,6 +785,7 @@ body {
     width: 8.4rem;
     top: 2.4rem;
     left: 9.4rem;
+    opacity: 0.2;
 }
 .itensNaGeladeira3 #item10 img {
     height: 3.5rem;
@@ -781,6 +807,7 @@ body {
     width: 7.5rem;
     top: 1.3rem;
     left: 0rem;
+    opacity: 0.2;
 }
 .itensNaGeladeira4 #item11 img {
     height: 4rem;
@@ -791,6 +818,7 @@ body {
     width: 7.5rem;
     top: 1.3rem;
     left: 7rem;
+    opacity: 0.2;
 }
 .itensNaGeladeira4 #item12 img {
     height: 4rem;
@@ -801,9 +829,225 @@ body {
     width: 3.7rem;
     top: 0.3rem;
     left: 14.2rem;
+    opacity: 0.2;
 }
 .itensNaGeladeira4 #item13 img {
     height: 5rem;
+}
+
+.itensNaGeladeira5 {
+    position: absolute;
+    height: 5rem;
+    width: 18rem;
+    top: 29.7rem;
+    left: 2rem;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1.2rem;
+}
+.itensNaGeladeira5 #item14 {
+    position: absolute;
+    height: 2.5rem;
+    width: 2.8rem;
+    top: 2.5rem;
+    left: 0rem;
+    opacity: 0.2;
+}
+.itensNaGeladeira5 #item14 img {
+    height: 2.5rem;
+}
+.itensNaGeladeira5 #item15 {
+    position: absolute;
+    height: 3.4rem;
+    width: 2.7rem;
+    top: 1.6rem;
+    left: 2.7rem;
+    opacity: 0.2;
+}
+.itensNaGeladeira5 #item15 img {
+    height: 3.5rem;
+}
+.itensNaGeladeira5 #item16 {
+    position: absolute;
+    height: 3.4rem;
+    width: 2.6rem;
+    top: 1.5rem;
+    left: 5.6rem;
+    opacity: 0.2;
+}
+.itensNaGeladeira5 #item16 img {
+    height: 3.5rem;
+}
+.itensNaGeladeira5 #item17 {
+    position: absolute;
+    height: 3.5rem;
+    width: 2.7rem;
+    top: 1.5rem;
+    left: 8.6rem;
+    opacity: 0.2;
+}
+.itensNaGeladeira5 #item17 img {
+    height: 3.5rem;
+}
+.itensNaGeladeira5 #item18 {
+    position: absolute;
+    height: 3.5rem;
+    width: 2.6rem;
+    top: 1.5rem;
+    left: 11.5rem;
+    opacity: 0.2;
+}
+.itensNaGeladeira5 #item18 img {
+    height: 3.5rem;
+}
+.itensNaGeladeira5 #item19 {
+    position: absolute;
+    height: 2.3rem;
+    width: 2.9rem;
+    top: 2.7rem;
+    left: 14.3rem;
+    opacity: 0.2;
+}
+.itensNaGeladeira5 #item19 img {
+    height: 2.3rem;
+}
+
+.itensNaGeladeira6 {
+    position: absolute;
+    height: 3.8rem;
+    width: 18.3rem;
+    top: 35rem;
+    left: 1.8rem;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1.2rem;
+}
+.itensNaGeladeira6 #item20 {
+    position: absolute;
+    height: 3.5rem;
+    width: 4.5rem;
+    top: 0.1rem;
+    left: 0rem;
+    opacity: 0.2;
+}
+.itensNaGeladeira6 #item20 img {
+    height: 3.5rem;
+}
+.itensNaGeladeira6 #item21 {
+    position: absolute;
+    height: 1.8rem;
+    width: 6.3rem;
+    top: 1.8rem;
+    left: 3rem;
+    z-index: 2;
+    opacity: 0.2;
+}
+.itensNaGeladeira6 #item21 img {
+    height: 2rem;
+    margin-top: -0.2rem;
+}
+.itensNaGeladeira6 #item22 {
+    position: absolute;
+    height: 3.5rem;
+    width: 4.2rem;
+    top: 0.1rem;
+    left: 7.5rem; 
+    opacity: 0.2; 
+}
+.itensNaGeladeira6 #item22 img {
+    height: 3.5rem;
+}
+.itensNaGeladeira6 #item23 {
+    position: absolute;
+    height: 2.5rem;
+    width: 2.2rem;
+    top: 1rem;
+    left: 11.5rem; 
+    opacity: 0.2; 
+}
+.itensNaGeladeira6 #item23 img {
+    height: 2.5rem;
+}
+.itensNaGeladeira6 #item24 {
+    position: absolute;
+    height: 2.5rem;
+    width: 2.3rem;
+    top: 1rem;
+    left: 13.7rem;
+    opacity: 0.2;  
+}
+.itensNaGeladeira6 #item24 img {
+    height: 2.5rem;
+}
+.itensNaGeladeira6 #item25 {
+    position: absolute;
+    height: 3.5rem;
+    width: 2.7rem;
+    top: 0rem;
+    left: 15.8rem;
+    opacity: 0.2;  
+}
+.itensNaGeladeira6 #item25 img {
+    height: 3.5rem;
+}
+
+.itensNaGeladeira7 {
+    position: absolute;
+    height: 1.5rem;
+    width: 12rem;
+    top: 24.7rem;
+    left: 20rem;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1.2rem;
+    transform: rotate(5deg);
+}
+.itensNaGeladeira7 #item26 {
+    transform: rotate(-3deg);
+    position: absolute;
+    height: 5.5rem;
+    width: 2rem;
+    top: -4.1rem;
+    left: 1.2rem;
+    opacity: 0.2;
+}
+.itensNaGeladeira7 #item26 img {
+    height: 5.5rem;
+}
+.itensNaGeladeira7 #item27 {
+    transform: rotate(-3deg);
+    position: absolute;
+    height: 5.5rem;
+    width: 2rem;
+    top: -4.1rem;
+    left: 3.2rem;
+    opacity: 0.2;
+}
+.itensNaGeladeira7 #item27 img {
+    height: 5.5rem;
+}
+
+/* Parte da Porta da Geladeira */
+
+#parteDeGarrafas2 {
+    position: absolute;
+    height: 3rem;
+    top: 25.2rem;
+    left: 20rem;
+    z-index: 20;
+    opacity: 0.5;
+}
+
+/* Tampa de Baixo da Galadeira */
+
+#tampaGeladeira {
+    position: absolute;
+    height: 3.9rem;
+    top: 36rem;
+    left: 1.6rem;
+    opacity: 0.5;
+    cursor: pointer;
+    z-index: 20;
 }
 
 /* Fechar Geladeira */

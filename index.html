@@ -75,6 +75,7 @@
                 </div>
             </div>
             <section id="loja">
+                <img class="lojaFundo" src="Imagens/Loja/OIUF6C0.jpg" alt="">
                 <div class="placaLoja">
                     <img src="Imagens/Loja/46171-removebg-preview.png" alt="placaloja">
                     <p>LOJA</p>
@@ -84,7 +85,7 @@
                         <li id="mostrarAcogue" onclick="mostrarAcougue()">Açougue</li>
                         <li id="mostrarBebidas" onclick="mostrarBebidas()">Bebidas</li>
                         <li id="mostrarCongelados" onclick="mostrarCongelados()">Congelados</li>
-                        <li id="mostrarEnlatados" onclick="mostrar()">Enlatados</li>
+                        <li id="mostrarEnlatados" onclick="mostrarEnlatados()">Enlatados</li>
                     </ul>
                     <ul>
                         <li id="mostrarHortifruti" onclick="mostrarHortifruti()">Hortifrúti</li>
@@ -94,13 +95,15 @@
                     </ul>
                 </div>
                 
-                <img class="prateleira" src="Imagens/Loja/Captura_de_tela_20230115_181309-removebg-preview.png" alt="">
+                <img class="prateleira1" src="Imagens/Loja/Captura_de_tela_20230115_181309-removebg-preview.png" alt="">
+                <img class="prateleira2" src="Imagens/Loja/Captura_de_tela_20230115_181309-removebg-preview.png" alt="">
+                <img class="prateleira3" src="Imagens/Loja/Captura_de_tela_20230115_181309-removebg-preview.png" alt="">
 
                 <div id="acougue">
                     <div class="itemLoja">
                         <p>Coxa de Boi</p>
                         <img src="Imagens/Loja/Açougue/Captura_de_tela_2023-01-15_005328-removebg-preview.png" alt="">
-                        <p>R$ 20,00</p>
+                        <p>R$ 55,00</p>
                         <div id="botaoComprar">
                             <button class="comprar" onclick="comprarAcougue1()">Comprar</button>
                             <div class="botaoQuantidade">
@@ -113,20 +116,57 @@
                     <div class="itemLoja">
                         <p>Cubos de Carne</p>
                         <img src="Imagens/Loja/Açougue/Captura_de_tela_2023-01-15_005215-removebg-preview.png" alt="">
-                        <p>R$ 20,00</p>
+                        <p>R$ 5,00</p>
                         <div id="botaoComprar">
                             <button class="comprar" onclick="comprarAcougue2()">Comprar</button>
                             <div class="botaoQuantidade">
-                                <button onclick="Acougue2()">-</button>
+                                <button onclick="menosAcougue2()">-</button>
                                 <p id="quantidadeAcougue2">1</p>
-                                <button onclick="Acougue2()">+</button>
+                                <button onclick="maisAcougue2()">+</button>
                             </div>
                         </div>
                     </div>                    
                 </div>
-
                 <div id="bebidas">
-    
+                    <div class="itemLoja">
+                        <p>Água</p>
+                        <img src="Imagens/Loja/Bebidas/Captura_de_tela_20230114_164112-removebg-preview.png" alt="">
+                        <p>R$ 0,50</p>
+                        <div id="botaoComprar">
+                            <button class="comprar" onclick="comprarBebida1()">Comprar</button>
+                            <div class="botaoQuantidade">
+                                <button onclick="menosBebida1()">-</button>
+                                <p id="quantidadeBebida1">1</p>
+                                <button onclick="maisBebida1()">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="itemLoja">
+                        <p>Leite</p>
+                        <img src="Imagens/Loja/Bebidas/Captura_de_tela_20230114_164237-removebg-preview.png" alt="">
+                        <p>R$ 9,00</p>
+                        <div id="botaoComprar">
+                            <button class="comprar" onclick="comprarBebida2()">Comprar</button>
+                            <div class="botaoQuantidade">
+                                <button onclick="menosBebida2()">-</button>
+                                <p id="quantidadeBebida2">1</p>
+                                <button onclick="maisBebida2()">+</button>
+                            </div>
+                        </div>                       
+                    </div>
+                    <div class="itemLoja">
+                        <p>Refrigerante</p>
+                        <img src="Imagens/Loja/Bebidas/Captura_de_tela_20230115_182530-removebg-preview.png" alt="">
+                        <p>R$ 5,00</p>
+                        <div id="botaoComprar">
+                            <button class="comprar" onclick="comprarBebida3()">Comprar</button>
+                            <div class="botaoQuantidade">
+                                <button onclick="menosBebida3()">-</button>
+                                <p id="quantidadeBebida3">1</p>
+                                <button onclick="maisBebida3()">+</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div id="congelados">
                     <div class="itemLoja">
@@ -157,48 +197,202 @@
                     </div>
                 </div>
                 <div id="enlatados">
-    
+                    <div class="itemLoja">
+                        <p>Lata de Atum</p>
+                        <img src="Imagens/Loja/Enlatados/Captura_de_tela_20230115_005400-removebg-preview.png" alt="">
+                        <p>R$ 6,00</p>
+                        <div id="botaoComprar">
+                            <button class="comprar" onclick="comprarEnlatado1()">Comprar</button>
+                            <div class="botaoQuantidade">
+                                <button onclick="menosEnlatado1()">-</button>
+                                <p id="quantidadeEnlatado1">1</p>
+                                <button onclick="maisEnlatado1()">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="itemLoja">
+                        <p>Poupa de Manga</p>
+                        <img src="Imagens/Loja/Enlatados/Captura_de_tela_20230115_005540-removebg-preview.png" alt="">
+                        <p>R$ 5,00</p>
+                        <div id="botaoComprar">
+                            <button class="comprar" onclick="comprarEnlatado2()">Comprar</button>
+                            <div class="botaoQuantidade">
+                                <button onclick="menosEnlatado2()">-</button>
+                                <p id="quantidadeEnlatado2">1</p>
+                                <button onclick="maisEnlatado2()">+</button>
+                            </div>
+                        </div>                       
+                    </div>
+                    <div class="itemLoja">
+                        <p>Espaguete</p>
+                        <img src="Imagens/Loja/Enlatados/Captura_de_tela_20230116_181831-removebg-preview.png" alt="">
+                        <p>R$ 6,00</p>
+                        <div id="botaoComprar">
+                            <button class="comprar" onclick="comprarEnlatado3()">Comprar</button>
+                            <div class="botaoQuantidade">
+                                <button onclick="menosEnlatado3()">-</button>
+                                <p id="quantidadeEnlatado3">1</p>
+                                <button onclick="Enlatado5Enlatado3()">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="itemLoja">
+                        <p>Sopa de Tomate</p>
+                        <img src="Imagens/Loja/Enlatados/Captura_de_tela_20230116_181859-removebg-preview.png" alt="">
+                        <p>R$ 5,00</p>
+                        <div id="botaoComprar">
+                            <button class="comprar" onclick="comprarEnlatado4()">Comprar</button>
+                            <div class="botaoQuantidade">
+                                <button onclick="menosEnlatado4()">-</button>
+                                <p id="quantidadeEnlatado4">1</p>
+                                <button onclick="maisEnlatado4()">+</button>
+                            </div>
+                        </div>                       
+                    </div>
+                    <div class="itemLoja">
+                        <p>Almôndegas</p>
+                        <img src="Imagens/Loja/Enlatados/Captura_de_tela_20230116_181923-removebg-preview.png" alt="">
+                        <p>R$ 6,00</p>
+                        <div id="botaoComprar">
+                            <button class="comprar" onclick="comprarEnlatado5()">Comprar</button>
+                            <div class="botaoQuantidade">
+                                <button onclick="menosEnlatado5()">-</button>
+                                <p id="quantidadeEnlatado5">1</p>
+                                <button onclick="maisEnlatado5()">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="itemLoja">
+                        <p>Presunto</p>
+                        <img src="Imagens/Loja/Enlatados/Captura_de_tela_20230116_183532-removebg-preview.png" alt="">
+                        <p>R$ 6,00</p>
+                        <div id="botaoComprar">
+                            <button class="comprar" onclick="comprarEnlatado6()">Comprar</button>
+                            <div class="botaoQuantidade">
+                                <button onclick="menosEnlatado6()">-</button>
+                                <p id="quantidadeEnlatado6">1</p>
+                                <button onclick="maisEnlatado6()">+</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div id="hortifruti">
-    
+                    <div class="itemLoja">
+                        <p>Brócolis</p>
+                        <img src="Imagens/Loja/Hortifrúti/Captura_de_tela_20230115_010009-removebg-preview.png" alt="">
+                        <p>R$ 4,00</p>
+                        <div id="botaoComprar">
+                            <button class="comprar" onclick="comprarHortifruti1()">Comprar</button>
+                            <div class="botaoQuantidade">
+                                <button onclick="menosHortifruti1()">-</button>
+                                <p id="quantidadeHortifruti1">1</p>
+                                <button onclick="maisHortifruti1()">+</button>
+                            </div>
+                        </div>                       
+                    </div>
+                    <div class="itemLoja">
+                        <p>Maça</p>
+                        <img src="Imagens/Loja/Hortifrúti/Captura_de_tela_20230115_174336-removebg-preview.png" alt="">
+                        <p>R$ 2,50</p>
+                        <div id="botaoComprar">
+                            <button class="comprar" onclick="comprarHortifruti2()">Comprar</button>
+                            <div class="botaoQuantidade">
+                                <button onclick="menosHortifruti2()">-</button>
+                                <p id="quantidadeHortifruti2">1</p>
+                                <button onclick="maisHortifruti2()">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="itemLoja">
+                        <p>Laranja</p>
+                        <img src="Imagens/Loja/Hortifrúti/Captura_de_tela_20230115_174402-removebg-preview.png" alt="">
+                        <p>R$ 2,50</p>
+                        <div id="botaoComprar">
+                            <button class="comprar" onclick="comprarHortifruti3()">Comprar</button>
+                            <div class="botaoQuantidade">
+                                <button onclick="menosHortifruti3()">-</button>
+                                <p id="quantidadeHortifruti3">1</p>
+                                <button onclick="Enlatado5Hortifruti3()">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="itemLoja">
+                        <p>Repolho</p>
+                        <img src="Imagens/Loja/Hortifrúti/Captura_de_tela_20230117_013725-removebg-preview.png" alt="">
+                        <p>R$ 4,00</p>
+                        <div id="botaoComprar">
+                            <button class="comprar" onclick="comprarHortifruti4()">Comprar</button>
+                            <div class="botaoQuantidade">
+                                <button onclick="menosHortifruti4()">-</button>
+                                <p id="quantidadeHortifruti4">1</p>
+                                <button onclick="maisHortifruti4()">+</button>
+                            </div>
+                        </div>                       
+                    </div>
+                    <div class="itemLoja">
+                        <p>Cacho de Uvas</p>
+                        <img src="Imagens/Loja/Hortifrúti/Captura_de_tela_20230117_020823-removebg-preview.png" alt="">
+                        <p>R$ 6,00</p>
+                        <div id="botaoComprar">
+                            <button class="comprar" onclick="comprarHortifruti5()">Comprar</button>
+                            <div class="botaoQuantidade">
+                                <button onclick="menosHortifruti5()">-</button>
+                                <p id="quantidadeHortifruti5">1</p>
+                                <button onclick="maisHortifruti5()">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="itemLoja">
+                        <p>Cenoura</p>
+                        <img src="Imagens/Loja/Hortifrúti/Captura_de_tela_2023-01-17_015232-removebg-preview.png" alt="">
+                        <p>R$ 5,00</p>
+                        <div id="botaoComprar">
+                            <button class="comprar" onclick="comprarHortifruti6()">Comprar</button>
+                            <div class="botaoQuantidade">
+                                <button onclick="menosHortifruti6()">-</button>
+                                <p id="quantidadeHortifruti6">1</p>
+                                <button onclick="maisHortifruti6()">+</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div id="laticinios">
                     <div class="itemLoja">
-                        <p>Cubo de Queijo</p>
+                        <p>Cubos de Queijo</p>
                         <img src="Imagens/Loja/Laticínios/Captura_de_tela_20230115_182251-removebg-preview.png" alt="">
-                        <p>R$ 20,00</p>
+                        <p>R$ 10,00</p>
                         <div id="botaoComprar">
-                            <button class="comprar" onclick="comprarLaticinios1()">Comprar</button>
+                            <button class="comprar" onclick="comprarLaticinio1()">Comprar</button>
                             <div class="botaoQuantidade">
-                                <button onclick="menosLaticinios1()">-</button>
-                                <p id="quantidadeLaticinios1">1</p>
-                                <button onclick="maisLaticinios1()">+</button>
+                                <button onclick="menosLaticinio1()">-</button>
+                                <p id="quantidadeLaticinio1">1</p>
+                                <button onclick="maisLaticinio1()">+</button>
                             </div>
                         </div>
                     </div>
                     <div class="itemLoja">
                         <p>Queijo Gouda</p>
                         <img src="Imagens/Loja/Laticínios/Captura_de_tela_20230115_182308-removebg-preview.png" alt="">
-                        <p>R$ 20,00</p>
+                        <p>R$ 25,00</p>
                         <div id="botaoComprar">
-                            <button class="comprar" onclick="comprarLaticinios2()">Comprar</button>
+                            <button class="comprar" onclick="comprarLaticinio2()">Comprar</button>
                             <div class="botaoQuantidade">
-                                <button onclick="menosLaticinios2()">-</button>
-                                <p id="quantidadeLaticinios2">1</p>
-                                <button onclick="maisLaticinios2()">+</button>
+                                <button onclick="menosLaticinio2()">-</button>
+                                <p id="quantidadeLaticinio2">1</p>
+                                <button onclick="maisLaticinio2()">+</button>
                             </div>
                         </div>                       
                     </div>
                     <div class="itemLoja">
                         <p>Fatias de Queijo</p>
                         <img src="Imagens/Loja/Laticínios/Captura_de_tela_20230115_182317-removebg-preview.png" alt="">
-                        <p>R$ 20,00</p>
+                        <p>R$ 15,00</p>
                         <div id="botaoComprar">
-                            <button class="comprar" onclick="comprarLaticinios3()">Comprar</button>
+                            <button class="comprar" onclick="comprarLaticinio3()">Comprar</button>
                             <div class="botaoQuantidade">
-                                <button onclick="menosLaticinios3()">-</button>
-                                <p id="quantidadeLaticinios3">1</p>
-                                <button onclick="maisLaticinios3()">+</button>
+                                <button onclick="menosLaticinio3()">-</button>
+                                <p id="quantidadeLaticinio3">1</p>
+                                <button onclick="maisLaticinio3()">+</button>
                             </div>
                         </div>
                     </div>
@@ -207,7 +401,7 @@
                     <div class="itemLoja">
                         <p>Pão</p>
                         <img src="Imagens/Loja/Padaria/j0ee_0a4i_201117-removebg-preview.png" alt="">
-                        <p>R$ 20,00</p>
+                        <p>R$ 1,00</p>
                         <div id="botaoComprar">
                             <button class="comprar" onclick="comprarPadaria1()">Comprar</button>
                             <div class="botaoQuantidade">
@@ -220,7 +414,7 @@
                     <div class="itemLoja">
                         <p>Bolo de Morango</p>
                         <img src="Imagens/Loja/Padaria/Captura_de_tela_20230115_010118-removebg-preview.png" alt="">
-                        <p>R$ 20,00</p>
+                        <p>R$ 30,00</p>
                         <div id="botaoComprar">
                             <button class="comprar" onclick="comprarPadaria2()">Comprar</button>
                             <div class="botaoQuantidade">
@@ -233,7 +427,7 @@
                     <div class="itemLoja">
                         <p>Bolo de Chocolate</p>
                         <img src="Imagens/Loja/Padaria/Captura_de_tela_20230115_010138-removebg-preview.png" alt="">
-                        <p>R$ 20,00</p>
+                        <p>R$ 30,00</p>
                         <div id="botaoComprar">
                             <button class="comprar" onclick="comprarPadaria3()">Comprar</button>
                             <div class="botaoQuantidade">
@@ -243,13 +437,12 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            
+                </div>      
                 <div id="peixaria">
                     <div class="itemLoja">
                         <p>Peixe</p>
                         <img src="Imagens/Loja/Peixaria/Captura_de_tela_20230115_005815-removebg-preview.png" alt="">
-                        <p>R$ 20,00</p>
+                        <p>R$ 15,00</p>
                         <div id="botaoComprar">
                             <button class="comprar" onclick="comprarPeixaria1()">Comprar</button>
                             <div class="botaoQuantidade">
@@ -262,7 +455,7 @@
                     <div class="itemLoja">
                         <p>Sushi</p>
                         <img src="Imagens/Loja/Peixaria/Captura_de_tela_20230115_005901-removebg-preview.png" alt="">
-                        <p>R$ 20,00</p>
+                        <p>R$ 10,00</p>
                         <div id="botaoComprar">
                             <button class="comprar" onclick="comprarPeixaria2()">Comprar</button>
                             <div class="botaoQuantidade">
@@ -334,56 +527,158 @@
                 <img class="geladeira" src="Imagens/Cozinha/geladeiraVazia.png" alt="">
                 
                 <div class="itensNaGeladeira1">
-                    <div id="item1">
-                        <img src="Imagens/Loja/Açougue/Captura_de_tela_2023-01-15_005328-removebg-preview.png" alt="">
-                    </div>
-                    <div id="item2">
-                        <img src="Imagens/Loja/Açougue/Captura_de_tela_2023-01-15_005215-removebg-preview.png" alt="">
-                    </div>
-                    <div id="item3">
-                        <img src="Imagens/Loja/Peixaria/Captura_de_tela_20230115_005901-removebg-preview.png" alt="">
-                    </div>
-                    <div id="item4">
-                        <img src="Imagens/Loja/Peixaria/Captura_de_tela_20230115_005815-removebg-preview.png" alt="">
-                    </div>
+                    <abbr id="coxaDeBoi" title="Coxa de Boi: 0 UND">
+                        <div id="item1">
+                            <img src="Imagens/Loja/Açougue/Captura_de_tela_2023-01-15_005328-removebg-preview.png" alt="">
+                        </div>
+                    </abbr>
+                    <abbr id="cubosDeCarne" title="Cubos de Carne: 0 UND">
+                        <div id="item2">
+                            <img src="Imagens/Loja/Açougue/Captura_de_tela_2023-01-15_005215-removebg-preview.png" alt="">
+                        </div>
+                    </abbr>
+                    <abbr id="sushi" title="Sushi: 0 UND">
+                        <div id="item3">
+                            <img src="Imagens/Loja/Peixaria/Captura_de_tela_20230115_005901-removebg-preview.png" alt="">
+                        </div>
+                    </abbr>
+                    <abbr title="Peixe: 0 UND">
+                        <div id="item4">
+                            <img src="Imagens/Loja/Peixaria/Captura_de_tela_20230115_005815-removebg-preview.png" alt="">
+                        </div>
+                    </abbr>
                 </div>
-
                 <div class="itensNaGeladeira2">
-                    <div id="item5">
-                        <img src="Imagens/Loja/Congelados/Captura_de_tela_20230110_204015-removebg-preview.png" alt="">
-                    </div>
-                    <div id="item6">
-                        <img src="Imagens/Loja/Congelados/Captura_de_tela_20230110_204459-removebg-preview.png" alt="">
-                    </div>
+                    <abbr id="sorveteDeBlueberry" title="Sorvete de Blueberry: 0 UND">
+                        <div id="item5">
+                            <img src="Imagens/Loja/Congelados/Captura_de_tela_20230110_204015-removebg-preview.png" alt="">
+                        </div>
+                    </abbr>
+                    <abbr id="sorveteDeStrawberry" title="Sorvete de Strawberry: 0 UND">
+                        <div id="item6">
+                            <img src="Imagens/Loja/Congelados/Captura_de_tela_20230110_204459-removebg-preview.png" alt="">
+                        </div>
+                    </abbr>
                 </div>
-
                 <div class="itensNaGeladeira3">
-                    <div id="item7">
-                        <img src="Imagens/Loja/Laticínios/Captura_de_tela_20230115_182251-removebg-preview.png" alt="">
-                    </div>
-                    <div id="item8">
-                        <img src="Imagens/Loja/Laticínios/Captura_de_tela_20230115_182308-removebg-preview.png" alt="">
-                    </div>
-                    <div id="item9">
-                        <img src="Imagens/Loja/Laticínios/Captura_de_tela_20230115_182317-removebg-preview.png" alt="">
-                    </div>
-                    <div id="item10">
-                        <img src="Imagens/Loja/Padaria/j0ee_0a4i_201117-removebg-preview.png" alt="">
-                    </div>
+                    <abbr id="cubosDeQueijo" title="Cubos de Queijo: 0 UND">
+                        <div id="item7">
+                            <img src="Imagens/Loja/Laticínios/Captura_de_tela_20230115_182251-removebg-preview.png" alt="">
+                        </div>
+                    </abbr>
+                    <abbr id="queijoGouda" title="Queijo Gouda: 0 UND">
+                        <div id="item8">
+                            <img src="Imagens/Loja/Laticínios/Captura_de_tela_20230115_182308-removebg-preview.png" alt="">
+                        </div>
+                    </abbr>
+                    <abbr id="fatiasDeQueijo" title="Fatias de Queijo: 0 UND">
+                        <div id="item9">
+                            <img src="Imagens/Loja/Laticínios/Captura_de_tela_20230115_182317-removebg-preview.png" alt="">
+                        </div>
+                    </abbr>
+                    <abbr id="pao" title="Pão: 0 UND">
+                        <div id="item10">
+                            <img src="Imagens/Loja/Padaria/j0ee_0a4i_201117-removebg-preview.png" alt="">
+                        </div>
+                    </abbr>
+                </div>
+                <div class="itensNaGeladeira4">
+                    <abbr id="boloDeMorango" title="Bolo de Morango: 0 UND">
+                        <div id="item11">
+                            <img src="Imagens/Loja/Padaria/Captura_de_tela_20230115_010118-removebg-preview.png" alt="">
+                        </div>
+                    </abbr>
+                    <abbr id="boloDeChocolate" title="Bolo de Chocolate: 0 UND">
+                        <div id="item12">
+                            <img src="Imagens/Loja/Padaria/Captura_de_tela_20230115_010138-removebg-preview.png" alt="">
+                        </div>
+                    </abbr>
+                    <abbr id="leite" title="Leite: 0 UND">
+                        <div id="item13">
+                            <img src="Imagens/Loja/Bebidas/Captura_de_tela_20230114_164237-removebg-preview.png" alt="">
+                        </div>
+                    </abbr>
+                </div>
+                <div class="itensNaGeladeira5">
+                    <abbr id="lataDeAtum" title="Lata de Atum: 0 UND">
+                        <div id="item14">
+                            <img src="Imagens/Loja/Enlatados/Captura_de_tela_20230115_005400-removebg-preview.png" alt="">
+                        </div>
+                    </abbr>
+                    <abbr id="espaguete" title="Espaguete: 0 UND">
+                        <div id="item15">
+                            <img src="Imagens/Loja/Enlatados/Captura_de_tela_20230116_181831-removebg-preview.png" alt="">
+                        </div>
+                    </abbr>
+                    <abbr id="sopaDeTomate" title="Sopa de Tomate: 0 UND">
+                        <div id="item16">
+                            <img src="Imagens/Loja/Enlatados/Captura_de_tela_20230116_181859-removebg-preview.png" alt="">
+                        </div>
+                    </abbr>
+                    <abbr id="almondegas" title="Almôndegas: 0 UND">
+                        <div id="item17">
+                            <img src="Imagens/Loja/Enlatados/Captura_de_tela_20230116_181923-removebg-preview.png" alt="">
+                        </div>
+                    </abbr>
+                    <abbr id="poupaDeManga" title="Poupa de Manga: 0 UND">
+                        <div id="item18">
+                            <img src="Imagens/Loja/Enlatados/Captura_de_tela_20230115_005540-removebg-preview.png" alt="">
+                        </div>
+                    </abbr>
+                    <abbr id="presunto" title="Presunto: 0 UND">
+                        <div id="item19">
+                            <img src="Imagens/Loja/Enlatados/Captura_de_tela_20230116_183532-removebg-preview.png" alt="">
+                        </div>
+                    </abbr>
+                </div>
+                <div class="itensNaGeladeira6">
+                    <abbr id="brocolis" title="Brócolis: 0 UND">
+                        <div id="item20">
+                            <img src="Imagens/Loja/Hortifrúti/Captura_de_tela_20230115_010009-removebg-preview.png" alt="">
+                        </div>
+                    </abbr>
+                    <abbr id="cenoura" title="Cenoura: 0 UND">
+                        <div id="item21">
+                            <img src="Imagens/Loja/Hortifrúti/Captura_de_tela_2023-01-17_015232-removebg-preview.png" alt="">
+                        </div>
+                    </abbr>
+                    <abbr id="repolho" title="Repolho: 0 UND">
+                        <div id="item22">
+                            <img src="Imagens/Loja/Hortifrúti/Captura_de_tela_20230117_013725-removebg-preview.png" alt="">
+                        </div>
+                    </abbr>
+                    <abbr id="maca" title="Maça: 0 UND">
+                        <div id="item23">
+                            <img src="Imagens/Loja/Hortifrúti/Captura_de_tela_20230115_174336-removebg-preview.png" alt="">
+                        </div>
+                    </abbr>
+                    <abbr id="laranja" title="Laranja: 0 UND">
+                        <div id="item24">
+                            <img src="Imagens/Loja/Hortifrúti/Captura_de_tela_20230115_174402-removebg-preview.png" alt="">
+                        </div>
+                    </abbr>
+                    <abbr id="cachoDeUvas" title="Cacho de uvas: 0 UND">
+                        <div id="item25">
+                            <img src="Imagens/Loja/Hortifrúti/Captura_de_tela_20230117_020823-removebg-preview.png" alt="">
+                        </div>
+                    </abbr>
                 </div>
 
-                <div class="itensNaGeladeira4">
-                    <div id="item11">
-                        <img src="Imagens/Loja/Padaria/Captura_de_tela_20230115_010118-removebg-preview.png" alt="">
-                    </div>
-                    <div id="item12">
-                        <img src="Imagens/Loja/Padaria/Captura_de_tela_20230115_010138-removebg-preview.png" alt="">
-                    </div>
-                    <div id="item13">
-                        <img src="Imagens/Loja/Bebidas/Captura_de_tela_20230114_164237-removebg-preview.png" alt="">
-                    </div>
+                <div class="itensNaGeladeira7">
+                    <abbr id="agua" title="Água: 0 UND">
+                        <div id="item26">
+                            <img src="Imagens/Loja/Bebidas/Captura_de_tela_20230114_164112-removebg-preview.png" alt="">
+                        </div>
+                    </abbr>
+                    <abbr id="refrigerante" title="Refrigerante: 0 UND">
+                        <div id="item27">
+                            <img src="Imagens/Loja/Bebidas/Captura_de_tela_20230115_182530-removebg-preview.png" alt="">
+                        </div>
+                    </abbr>
                 </div>
-                
+
+                <img id="parteDeGarrafas2" onclick="abrirTampaGeladeira()" src="Imagens/Cozinha/parteDasGarrafas2.png" alt="">
+                <img id="tampaGeladeira" onclick="abrirTampaGeladeira()" src="Imagens/Cozinha/tapaDaParteDeBaixoDaGeladeira.png" alt="">
                 <div id="fecharGeladeira" onclick="fecharGeladeira()">
                         <p>x</p>
                     </div>
