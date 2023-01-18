@@ -37,8 +37,38 @@ let statusFelicidaderGb = parseFloat(localStorage.getItem("statusFelicidaderGb")
 let convPorcentagemFelicidade = parseFloat(localStorage.getItem("convPorcentagemFelicidade"))
 let rostoStatus = localStorage.getItem("rostoStatus")
 
+/** Quantidade de Itens da Geladeira */
+
+let quantidade1 = parseInt(localStorage.getItem("quantidade1"))
+let quantidade2 = parseInt(localStorage.getItem("quantidade2"))
+let quantidade3 = parseInt(localStorage.getItem("quantidade3"))
+let quantidade4 = parseInt(localStorage.getItem("quantidade4"))
+let quantidade5 = parseInt(localStorage.getItem("quantidade5"))
+let quantidade6 = parseInt(localStorage.getItem("quantidade6"))
+let quantidade7 = parseInt(localStorage.getItem("quantidade7"))
+let quantidade8 = parseInt(localStorage.getItem("quantidade8"))
+let quantidade9 = parseInt(localStorage.getItem("quantidade9"))
+let quantidade10 = parseInt(localStorage.getItem("quantidade10"))
+let quantidade11 = parseInt(localStorage.getItem("quantidade11"))
+let quantidade12 = parseInt(localStorage.getItem("quantidade12"))
+let quantidade13 = parseInt(localStorage.getItem("quantidade13"))
+let quantidade14 = parseInt(localStorage.getItem("quantidade14"))
+let quantidade15 = parseInt(localStorage.getItem("quantidade15"))
+let quantidade16 = parseInt(localStorage.getItem("quantidade16"))
+let quantidade17 = parseInt(localStorage.getItem("quantidade17"))
+let quantidade18 = parseInt(localStorage.getItem("quantidade18"))
+let quantidade19 = parseInt(localStorage.getItem("quantidade19"))
+let quantidade20 = parseInt(localStorage.getItem("quantidade20"))
+let quantidade21 = parseInt(localStorage.getItem("quantidade21"))
+let quantidade22 = parseInt(localStorage.getItem("quantidade22"))
+let quantidade23 = parseInt(localStorage.getItem("quantidade23"))
+let quantidade24 = parseInt(localStorage.getItem("quantidade24"))
+let quantidade25 = parseInt(localStorage.getItem("quantidade25"))
+let quantidade26 = parseInt(localStorage.getItem("quantidade26"))
+let quantidade27 = parseInt(localStorage.getItem("quantidade27"))
 
 /** LocalStorage  */
+
 if (localStorage.length > 0) {
 
 
@@ -87,6 +117,88 @@ if (localStorage.length > 0) {
     localStorage.setItem("convPorcentagemFelicidade", "100")
     localStorage.setItem("rostoStatus", "Imagens/Status/happy-face.png")
 
+    /** Itens da Geladeira */
+
+    localStorage.setItem("item1", "coxaDeBoi")
+    localStorage.setItem("quantidade1", "0")
+
+    localStorage.setItem("item2", "cubosDeCarne")
+    localStorage.setItem("quantidade2", "0")
+
+    localStorage.setItem("item3", "sushi")
+    localStorage.setItem("quantidade3", "0")
+
+    localStorage.setItem("item4", "peixe")
+    localStorage.setItem("quantidade4", "0")
+
+    localStorage.setItem("item5", "sorveteDeBluberry")
+    localStorage.setItem("quantidade5", "0")
+
+    localStorage.setItem("item6", "sorveteDeStrawberry")
+    localStorage.setItem("quantidade6", "0")
+
+    localStorage.setItem("item7", "cubosDeQueijo")
+    localStorage.setItem("quantidade7", "0")
+
+    localStorage.setItem("item8", "queijoGouda")
+    localStorage.setItem("quantidade8", "0")
+
+    localStorage.setItem("item9", "fatiasDeQueijo")
+    localStorage.setItem("quantidade9", "0")
+
+    localStorage.setItem("item10", "pao")
+    localStorage.setItem("quantidade10", "0")
+
+    localStorage.setItem("item11", "boloDeMorango")
+    localStorage.setItem("quantidade11", "0")
+
+    localStorage.setItem("item12", "boloDeChocolate")
+    localStorage.setItem("quantidade12", "0")
+
+    localStorage.setItem("item13", "leite")
+    localStorage.setItem("quantidade13", "0")
+
+    localStorage.setItem("item14", "lataDeAtum")
+    localStorage.setItem("quantidade14", "0")
+
+    localStorage.setItem("item15", "espaguete")
+    localStorage.setItem("quantidade15", "0")
+
+    localStorage.setItem("item16", "sopaDeTomate")
+    localStorage.setItem("quantidade16", "0")
+
+    localStorage.setItem("item17", "almondegas")
+    localStorage.setItem("quantidade17", "0")
+
+    localStorage.setItem("item18", "polpaDeManga")
+    localStorage.setItem("quantidade18", "0")
+
+    localStorage.setItem("item19", "presunto")
+    localStorage.setItem("quantidade19", "0")
+
+    localStorage.setItem("item20", "brocolis")
+    localStorage.setItem("quantidade20", "0")
+
+    localStorage.setItem("item21", "cenoura")
+    localStorage.setItem("quantidade21", "0")
+
+    localStorage.setItem("item22", "repolho")
+    localStorage.setItem("quantidade22", "0")
+
+    localStorage.setItem("item23", "maca")
+    localStorage.setItem("quantidade23", "0")
+
+    localStorage.setItem("item24", "laranja")
+    localStorage.setItem("quantidade24", "0")
+
+    localStorage.setItem("item25", "cachoDeUvas")
+    localStorage.setItem("quantidade25", "0")
+
+    localStorage.setItem("item26", "agua")
+    localStorage.setItem("quantidade26", "0")
+
+    localStorage.setItem("item27", "refrigerante")
+    localStorage.setItem("quantidade27", "0")
 }
 
 /** Status de Level */
@@ -142,6 +254,7 @@ if(geladeiraAberta == 0) {
 }
     
 function abrirGeladeira() {
+
     document.getElementById('geladeira').style.display = "block";
     document.getElementById('cozinhaFundo').style.opacity = "0.5";
     document.getElementById('alimentacaoDoPet').style.opacity = "1"
@@ -149,6 +262,34 @@ function abrirGeladeira() {
     document.getElementById('geladeiraHover').style.display = "none"
     document.getElementById('fogaoHover').style.display = "none"
     document.getElementById('microondasHover').style.display = "none"
+
+    document.getElementById('coxaDeBoi').title = "Coxa de Boi: "+ quantidade1 +" UND"
+    document.getElementById('cubosDeCarne').title = "Cubos de Carne: "+ quantidade2 +" UND"
+    document.getElementById('sushi').title = "Shushi: "+ quantidade3 +" UND"
+    document.getElementById('peixe').title = "Peixe: "+ quantidade4 +" UND"
+    document.getElementById('sorveteDeBlueberry').title = "Sorvete de Blueberry: "+ quantidade5 +" UND"
+    document.getElementById('sorveteDeStrawberry').title = "Sorvete de Strawberry: "+ quantidade6 +" UND"
+    document.getElementById('cubosDeQueijo').title = "Cubos de Queijo: "+ quantidade7 +" UND"
+    document.getElementById('queijoGouda').title = "Queijo Godua: "+ quantidade8 +" UND"
+    document.getElementById('fatiasDeQueijo').title = "Fatias de Queijo: "+ quantidade9 +" UND"
+    document.getElementById('pao').title = "Pão: "+ quantidade10 +" UND"
+    document.getElementById('boloDeMorango').title = "Bolo de Morango: "+ quantidade11 +" UND"
+    document.getElementById('boloDeChocolate').title = "Bolo de Chocolate: "+ quantidade12 +" UND"
+    document.getElementById('leite').title = "Leite: "+ quantidade13 +" UND"
+    document.getElementById('lataDeAtum').title = "Lata de Atum: "+ quantidade14 +" UND"
+    document.getElementById('espaguete').title = "Espaguete: "+ quantidade15 +" UND"
+    document.getElementById('sopaDeTomate').title = "Sopa de Tomate: "+ quantidade16 +" UND"
+    document.getElementById('almondegas').title = "Almôndegas: "+ quantidade17 +" UND"
+    document.getElementById('polpaDeManga').title = "Polpa de Manga: "+ quantidade18 +" UND"
+    document.getElementById('presunto').title = "Presunto: "+ quantidade19 +" UND"
+    document.getElementById('brocolis').title = "Brócolis: "+ quantidade20 +" UND"
+    document.getElementById('cenoura').title = "Cenoura: "+ quantidade21 +" UND"
+    document.getElementById('repolho').title = "Repolho: "+ quantidade22 +" UND"
+    document.getElementById('maca').title = "Maça: "+ quantidade23 +" UND"
+    document.getElementById('laranja').title = "Laranja: "+ quantidade24 +" UND"
+    document.getElementById('cachoDeUvas').title = "Cacho de Uvas: "+ quantidade25 +" UND"
+    document.getElementById('agua').title = "Água: "+ quantidade26 +" UND"
+    document.getElementById('refrigerante').title = "Refrigerante: "+ quantidade27 +" UND"
 
 }
 
@@ -1230,7 +1371,7 @@ function comprarEnlatado2() {
     
     document.getElementById('precoSoma').innerText = precoSoma
 
-    nomeDoItem = "Poupa de Manga"
+    nomeDoItem = "Polpa de Manga"
     quantidadeDoItem = quantidadeEnlatado2
     precoDoItem = precoSoma
     
@@ -1550,11 +1691,11 @@ function maisHortifruti5() {
 
 function comprarHortifruti5() {
 
-    const precoSoma = 5 * quantidadeHortifruti5
+    const precoSoma = 6 * quantidadeHortifruti5
     
     document.getElementById('precoSoma').innerText = precoSoma
 
-    nomeDoItem = "Cenoura"
+    nomeDoItem = "Cacho de Uvas"
     quantidadeDoItem = quantidadeHortifruti5
     precoDoItem = precoSoma
     
@@ -1566,6 +1707,42 @@ function comprarHortifruti5() {
 
     quantidadeHortifruti5 = 1
     document.getElementById('quantidadeHortifruti5').innerText = quantidadeHortifruti5;
+}
+
+/** Hortifruti 6 */
+
+let quantidadeHortifruti6 = 1
+
+function menosHortifruti6() {
+    if (quantidadeHortifruti6 > 1) {
+        --quantidadeHortifruti6
+        document.getElementById('quantidadeHortifruti6').innerText = quantidadeHortifruti6;
+    }
+}
+
+function maisHortifruti6() {
+    quantidadeHortifruti6++
+    document.getElementById('quantidadeHortifruti6').innerText = quantidadeHortifruti6;
+}
+
+function comprarHortifruti6() {
+
+    const precoSoma = 5 * quantidadeHortifruti6
+    
+    document.getElementById('precoSoma').innerText = precoSoma
+
+    nomeDoItem = "Cenoura"
+    quantidadeDoItem = quantidadeHortifruti6
+    precoDoItem = precoSoma
+    
+    if (precoSoma > dinheiro) {
+        document.getElementById('compraAviso').style.display = "block"
+    } else {
+        document.getElementById('compraItem').style.display = "block";
+    }
+
+    quantidadeHortifruti6 = 1
+    document.getElementById('quantidadeHortifruti6').innerText = quantidadeHortifruti6;
 }
 
 /** Laticinio 1 */
@@ -1910,10 +2087,13 @@ function mostrarSacola() {
     document.getElementById('fogaoHover').style.display = "none"
     document.getElementById('microondasHover').style.display = "none"
 
-    table.innerHTML = "";
+    table.innerHTML = ''
+
+    table = document.createElement("table");
+    table.classList.add("tabelaSacola");
 
     for (let i = 0; i < nomesDosItens.length; i++) {
-        
+
         const tabelaRow = document.createElement("tr");
 
         const item = document.createElement("td");
@@ -1937,11 +2117,9 @@ function mostrarSacola() {
 
 /** Tabela Sacola */
 
-const itensDaSacola = document.getElementById('itensDaSacola');
+let itensDaSacola = document.getElementById('itensDaSacola');
 let table = document.createElement("table");
 table.classList.add("tabelaSacola");
-
-itensDaSacola.appendChild(table);
 
 /** Fechar Sacola */
 
@@ -1982,7 +2160,216 @@ function fecharSacola() {
         microondasHover.style.opacity = "0";
     }); 
 
-    table.innerHTML = "";
+}
+
+/** Coletar Sacola */
+
+function coletarSacola() {
+
+    for (let i = 0; i < nomesDosItens.length; i++) {
+        
+        if(nomesDosItens[i] == "Coxa de Boi") {
+
+            quantidade1 += quantidadesDosItens[i]
+            localStorage.setItem("quantidade1", quantidade1)
+            document.getElementById('item1').style.opacity = "1"
+
+        }
+        if(nomesDosItens[i] == "Cubos de Carne") {
+
+            quantidade2 += quantidadesDosItens[i]
+            localStorage.setItem("quantidade2", quantidade2)
+            document.getElementById('item2').style.opacity = "1"
+
+        }
+        if(nomesDosItens[i] == "Sushi") {
+
+            quantidade3 += quantidadesDosItens[i]
+            localStorage.setItem("quantidade3", quantidade3)
+            document.getElementById('item3').style.opacity = "1"
+
+        }
+        if(nomesDosItens[i] == "Peixe") {
+
+            quantidade4 += quantidadesDosItens[i]
+            localStorage.setItem("quantidade4", quantidade4)
+            document.getElementById('item4').style.opacity = "1"
+
+        }
+        if(nomesDosItens[i] == "Sorvete de Blueberry") {
+
+            quantidade5 += quantidadesDosItens[i]
+            localStorage.setItem("quantidade5", quantidade5)
+            document.getElementById('item5').style.opacity = "1"
+
+        }
+        if(nomesDosItens[i] == "Sorvete de Strawberry") {
+
+            quantidade6 += quantidadesDosItens[i]
+            localStorage.setItem("quantidade6", quantidade6)
+            document.getElementById('item6').style.opacity = "1"
+
+        }
+        if(nomesDosItens[i] == "Cubos de Queijo") {
+
+            quantidade7 += quantidadesDosItens[i]
+            localStorage.setItem("quantidade7", quantidade7)
+            document.getElementById('item7').style.opacity = "1"
+
+        }
+        if(nomesDosItens[i] == "Queijo Godua") {
+
+            quantidade8 += quantidadesDosItens[i]
+            localStorage.setItem("quantidade8", quantidade8)
+            document.getElementById('item8').style.opacity = "1"
+
+        }
+        if(nomesDosItens[i] == "Fatias de Queijo") {
+
+            quantidade9 += quantidadesDosItens[i]
+            localStorage.setItem("quantidade9", quantidade9)
+            document.getElementById('item9').style.opacity = "1"
+
+        }
+        if(nomesDosItens[i] == "Pao") {
+
+            quantidade10 += quantidadesDosItens[i]
+            localStorage.setItem("quantidade10", quantidade10)
+            document.getElementById('item10').style.opacity = "1"
+
+        }
+        if(nomesDosItens[i] == "Bolo de Morango") {
+
+            quantidade11 += quantidadesDosItens[i]
+            localStorage.setItem("quantidade11", quantidade11)
+            document.getElementById('item11').style.opacity = "1"
+
+        }
+        if(nomesDosItens[i] == "Bolo de Chocolate") {
+
+            quantidade12 += quantidadesDosItens[i]
+            localStorage.setItem("quantidade12", quantidade12)
+            document.getElementById('item12').style.opacity = "1"
+
+        }
+        if(nomesDosItens[i] == "Leite") {
+
+            quantidade13 += quantidadesDosItens[i]
+            localStorage.setItem("quantidade13", quantidade13)
+            document.getElementById('item13').style.opacity = "1"
+
+        }
+        if(nomesDosItens[i] == "Lata de Atum") {
+
+            quantidade14 += quantidadesDosItens[i]
+            localStorage.setItem("quantidade14", quantidade14)
+            document.getElementById('item14').style.opacity = "1"
+
+        }
+        if(nomesDosItens[i] == "Espaguete") {
+
+            quantidade15 += quantidadesDosItens[i]
+            localStorage.setItem("quantidade15", quantidade15)
+            document.getElementById('item15').style.opacity = "1"
+
+        }
+        if(nomesDosItens[i] == "Sopa de Tomate") {
+
+            quantidade16 += quantidadesDosItens[i]
+            localStorage.setItem("quantidade16", quantidade16)
+            document.getElementById('item16').style.opacity = "1"
+
+        }
+        if(nomesDosItens[i] == "Almondegas") {
+
+            quantidade17 += quantidadesDosItens[i]
+            localStorage.setItem("quantidade17", quantidade17)
+            document.getElementById('item17').style.opacity = "1"
+
+        }
+        if(nomesDosItens[i] == "Polpa de Manga") {
+
+            quantidade18 += quantidadesDosItens[i]
+            localStorage.setItem("quantidade18", quantidade18)
+            document.getElementById('item18').style.opacity = "1"
+
+        }
+        if(nomesDosItens[i] == "Presunto") {
+
+            quantidade19 += quantidadesDosItens[i]
+            localStorage.setItem("quantidade19", quantidade19)
+            document.getElementById('item19').style.opacity = "1"
+
+        }
+        if(nomesDosItens[i] == "Brocolis") {
+
+            quantidade20 += quantidadesDosItens[i]
+            localStorage.setItem("quantidade20", quantidade20)
+            document.getElementById('item20').style.opacity = "1"
+
+        }
+        if(nomesDosItens[i] == "Cenoura") {
+
+            quantidade21 += quantidadesDosItens[i]
+            localStorage.setItem("quantidade21", quantidade21)
+            document.getElementById('item21').style.opacity = "1"
+
+        }
+        if(nomesDosItens[i] == "Repolho") {
+
+            quantidade22 += quantidadesDosItens[i]
+            localStorage.setItem("quantidade22", quantidade22)
+            document.getElementById('item22').style.opacity = "1"
+
+        }
+        if(nomesDosItens[i] == "Maca") {
+
+            quantidade23 += quantidadesDosItens[i]
+            localStorage.setItem("quantidade23", quantidade23)
+            document.getElementById('item23').style.opacity = "1"
+
+        }
+        if(nomesDosItens[i] == "Laranja") {
+
+            quantidade24 += quantidadesDosItens[i]
+            localStorage.setItem("quantidade24", quantidade24)
+            document.getElementById('item24').style.opacity = "1"
+
+        }
+        if(nomesDosItens[i] == "Cacho de Uvas") {
+
+            quantidade25 += quantidadesDosItens[i]
+            localStorage.setItem("quantidade25", quantidade25)
+            document.getElementById('item25').style.opacity = "1"
+
+        }
+        if(nomesDosItens[i] == "Agua") {
+
+            quantidade26 += quantidadesDosItens[i]
+            localStorage.setItem("quantidade26", quantidade26)
+            document.getElementById('item26').style.opacity = "1"
+
+        }
+        if(nomesDosItens[i] == "Refrigerante") {
+
+            quantidade27 += quantidadesDosItens[i]
+            localStorage.setItem("quantidade27", quantidade27)
+            document.getElementById('item27').style.opacity = "1"
+
+        }
+
+    }
+
+    document.getElementById('sacolaDeCompras').style.display = "none"
+    fecharSacola()
+
+    while(nomesDosItens.length > 0) {
+        nomesDosItens.pop();
+        quantidadesDosItens.pop();
+        precosDosItens.pop();
+    }
 
 }
+
+/** Comer */
 
