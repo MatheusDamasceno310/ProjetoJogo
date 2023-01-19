@@ -231,7 +231,7 @@ body {
     padding: 0.7rem 1.6rem;
 }
 #loja {
-    display: block;
+    display: none;
     position: absolute;
     top: 53%;
     left: 50%;
@@ -608,7 +608,6 @@ body {
     border-color: white;
     box-shadow: inset 1px 1px 20px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 20px red, -1px -1px 5px red;
     color: white;
-    font-weight: bold;
 }
 
 
@@ -653,7 +652,7 @@ body {
     transform: translate(-50%, -50%);
     z-index: 5;
     height: 45rem;
-    display: none;
+    display: block;
 }
 .geladeira {
     margin-top: -2vh;
@@ -681,6 +680,32 @@ body {
 .itensNaGeladeira1 #item1 img {
     height: 4.5rem
 }
+#opcaoComerItem1 {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    top: 1.5rem;
+    left: 2.5rem;
+    z-index: 2;
+}
+.comerItem1 {
+    height: 1.5rem;
+    width: 4rem;
+    font-weight: bold;
+    border: 3px solid rgb(255, 0, 0);
+    border-radius: 0.8rem;
+    color: red;
+    cursor: pointer;
+    box-shadow: inset 1px 1px 5px rgba(255, 0, 0, 0.453), inset -1px -1px 5px rgba(255, 0, 0, 0.453);
+    background: white;   
+}
+.comerItem1:hover {
+    background: rgba(255, 0, 0, 0.759);
+    border-color: white;
+    box-shadow: inset 1px 1px 20px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 20px red, -1px -1px 5px red;
+    color: white;
+}
+
 .itensNaGeladeira1 #item2 {
     position: absolute;
     height: 3rem;
@@ -692,6 +717,32 @@ body {
 .itensNaGeladeira1 #item2 img {
     height: 3rem;
 }
+#opcaoComerItem2 {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    top: 1.5rem;
+    left: 6.1rem;
+    z-index: 2;
+}
+.comerItem2 {
+    height: 1.5rem;
+    width: 4rem;
+    font-weight: bold;
+    border: 3px solid rgb(255, 0, 0);
+    border-radius: 0.8rem;
+    color: red;
+    cursor: pointer;
+    box-shadow: inset 1px 1px 5px rgba(255, 0, 0, 0.453), inset -1px -1px 5px rgba(255, 0, 0, 0.453);
+    background: white;   
+}
+.comerItem2:hover {
+    background: rgba(255, 0, 0, 0.759);
+    border-color: white;
+    box-shadow: inset 1px 1px 20px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 20px red, -1px -1px 5px red;
+    color: white;
+}
+
 .itensNaGeladeira1 #item3 {
     position: absolute;
     height: 3rem;
@@ -703,6 +754,32 @@ body {
 .itensNaGeladeira1 #item3 img {
     height: 3rem;
 }
+#opcaoComerItem3 {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    top: 1.5rem;
+    left: 8.3rem;
+    z-index: 2;
+}
+.comerItem3 {
+    height: 1.5rem;
+    width: 4rem;
+    font-weight: bold;
+    border: 3px solid rgb(255, 0, 0);
+    border-radius: 0.8rem;
+    color: red;
+    cursor: pointer;
+    box-shadow: inset 1px 1px 5px rgba(255, 0, 0, 0.453), inset -1px -1px 5px rgba(255, 0, 0, 0.453);
+    background: white;   
+}
+.comerItem3:hover {
+    background: rgba(255, 0, 0, 0.759);
+    border-color: white;
+    box-shadow: inset 1px 1px 20px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 20px red, -1px -1px 5px red;
+    color: white;
+}
+
 .itensNaGeladeira1 #item4 {
     position: absolute;
     height: 3rem;
@@ -713,6 +790,31 @@ body {
 }
 .itensNaGeladeira1 #item4 img {
     height: 3rem;
+}
+#opcaoComerItem4 {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    top: 1.5rem;
+    left: 12.5rem;
+    z-index: 2;
+}
+.comerItem4 {
+    height: 1.5rem;
+    width: 4rem;
+    font-weight: bold;
+    border: 3px solid rgb(255, 0, 0);
+    border-radius: 0.8rem;
+    color: red;
+    cursor: pointer;
+    box-shadow: inset 1px 1px 5px rgba(255, 0, 0, 0.453), inset -1px -1px 5px rgba(255, 0, 0, 0.453);
+    background: white;   
+}
+.comerItem4:hover {
+    background: rgba(255, 0, 0, 0.759);
+    border-color: white;
+    box-shadow: inset 1px 1px 20px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 20px red, -1px -1px 5px red;
+    color: white;
 }
 
 .itensNaGeladeira2 {
@@ -725,16 +827,68 @@ body {
     justify-content: space-around;
     margin-top: 1.2rem;
 }
+.itensNaGeladeira2 img {
+    height: 4.5rem;
+}
+
 .itensNaGeladeira2 #item5 {
     height: 4.6rem;
     opacity: 0.2;
 }
+#opcaoComerItem5 {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    top: 0.7rem;
+    left: 0.7rem;
+    z-index: 2;
+}
+.comerItem5 {
+    height: 1.5rem;
+    width: 4rem;
+    font-weight: bold;
+    border: 3px solid rgb(255, 0, 0);
+    border-radius: 0.8rem;
+    color: red;
+    cursor: pointer;
+    box-shadow: inset 1px 1px 5px rgba(255, 0, 0, 0.453), inset -1px -1px 5px rgba(255, 0, 0, 0.453);
+    background: white;   
+}
+.comerItem5:hover {
+    background: rgba(255, 0, 0, 0.759);
+    border-color: white;
+    box-shadow: inset 1px 1px 20px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 20px red, -1px -1px 5px red;
+    color: white;
+}
+
 .itensNaGeladeira2 #item6 {
     height: 4.6rem;
     opacity: 0.2;
 }
-.itensNaGeladeira2 img {
-    height: 4.5rem;
+#opcaoComerItem6 {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    top: 0.7rem;
+    left: 6.2rem;
+    z-index: 2;
+}
+.comerItem6 {
+    height: 1.5rem;
+    width: 4rem;
+    font-weight: bold;
+    border: 3px solid rgb(255, 0, 0);
+    border-radius: 0.8rem;
+    color: red;
+    cursor: pointer;
+    box-shadow: inset 1px 1px 5px rgba(255, 0, 0, 0.453), inset -1px -1px 5px rgba(255, 0, 0, 0.453);
+    background: white;   
+}
+.comerItem6:hover {
+    background: rgba(255, 0, 0, 0.759);
+    border-color: white;
+    box-shadow: inset 1px 1px 20px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 20px red, -1px -1px 5px red;
+    color: white;
 }
 
 .itensNaGeladeira3 {
@@ -758,6 +912,32 @@ body {
 .itensNaGeladeira3 #item7 img {
     height: 3rem;
 }
+#opcaoComerItem7 {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    top: 2.5rem;
+    left: -0.8rem;
+    z-index: 2;
+}
+.comerItem7 {
+    height: 1.5rem;
+    width: 4rem;
+    font-weight: bold;
+    border: 3px solid rgb(255, 0, 0);
+    border-radius: 0.8rem;
+    color: red;
+    cursor: pointer;
+    box-shadow: inset 1px 1px 5px rgba(255, 0, 0, 0.453), inset -1px -1px 5px rgba(255, 0, 0, 0.453);
+    background: white;   
+}
+.comerItem7:hover {
+    background: rgba(255, 0, 0, 0.759);
+    border-color: white;
+    box-shadow: inset 1px 1px 20px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 20px red, -1px -1px 5px red;
+    color: white;
+}
+
 .itensNaGeladeira3 #item8 {
     position: absolute;
     height: 4rem;
@@ -769,6 +949,32 @@ body {
 .itensNaGeladeira3 #item8 img {
     height: 4rem;
 }
+#opcaoComerItem8 {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    top: 2.5rem;
+    left: 1.8rem;
+    z-index: 2;
+}
+.comerItem8 {
+    height: 1.5rem;
+    width: 4rem;
+    font-weight: bold;
+    border: 3px solid rgb(255, 0, 0);
+    border-radius: 0.8rem;
+    color: red;
+    cursor: pointer;
+    box-shadow: inset 1px 1px 5px rgba(255, 0, 0, 0.453), inset -1px -1px 5px rgba(255, 0, 0, 0.453);
+    background: white;   
+}
+.comerItem8:hover {
+    background: rgba(255, 0, 0, 0.759);
+    border-color: white;
+    box-shadow: inset 1px 1px 20px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 20px red, -1px -1px 5px red;
+    color: white;
+}
+
 .itensNaGeladeira3 #item9 {
     position: absolute;
     height: 3rem;
@@ -780,6 +986,32 @@ body {
 .itensNaGeladeira3 #item9 img {
     height: 3rem;
 }
+#opcaoComerItem9 {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    top: 2.5rem;
+    left: 5.5rem;
+    z-index: 2;
+}
+.comerItem9 {
+    height: 1.5rem;
+    width: 4rem;
+    font-weight: bold;
+    border: 3px solid rgb(255, 0, 0);
+    border-radius: 0.8rem;
+    color: red;
+    cursor: pointer;
+    box-shadow: inset 1px 1px 5px rgba(255, 0, 0, 0.453), inset -1px -1px 5px rgba(255, 0, 0, 0.453);
+    background: white;   
+}
+.comerItem9:hover {
+    background: rgba(255, 0, 0, 0.759);
+    border-color: white;
+    box-shadow: inset 1px 1px 20px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 20px red, -1px -1px 5px red;
+    color: white;
+}
+
 .itensNaGeladeira3 #item10 {
     position: absolute;
     height: 3.5rem;
@@ -790,6 +1022,31 @@ body {
 }
 .itensNaGeladeira3 #item10 img {
     height: 3.5rem;
+}
+#opcaoComerItem10 {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    top: 2.5rem;
+    left: 11.8rem;
+    z-index: 2;
+}
+.comerItem10 {
+    height: 1.5rem;
+    width: 4rem;
+    font-weight: bold;
+    border: 3px solid rgb(255, 0, 0);
+    border-radius: 0.8rem;
+    color: red;
+    cursor: pointer;
+    box-shadow: inset 1px 1px 5px rgba(255, 0, 0, 0.453), inset -1px -1px 5px rgba(255, 0, 0, 0.453);
+    background: white;   
+}
+.comerItem10:hover {
+    background: rgba(255, 0, 0, 0.759);
+    border-color: white;
+    box-shadow: inset 1px 1px 20px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 20px red, -1px -1px 5px red;
+    color: white;
 }
 
 .itensNaGeladeira4 {
@@ -813,6 +1070,32 @@ body {
 .itensNaGeladeira4 #item11 img {
     height: 4rem;
 }
+#opcaoComerItem11 {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    top: 1.5rem;
+    left: 1.8rem;
+    z-index: 2;
+}
+.comerItem11 {
+    height: 1.5rem;
+    width: 4rem;
+    font-weight: bold;
+    border: 3px solid rgb(255, 0, 0);
+    border-radius: 0.8rem;
+    color: red;
+    cursor: pointer;
+    box-shadow: inset 1px 1px 5px rgba(255, 0, 0, 0.453), inset -1px -1px 5px rgba(255, 0, 0, 0.453);
+    background: white;   
+}
+.comerItem11:hover {
+    background: rgba(255, 0, 0, 0.759);
+    border-color: white;
+    box-shadow: inset 1px 1px 20px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 20px red, -1px -1px 5px red;
+    color: white;
+}
+
 .itensNaGeladeira4 #item12 {
     position: absolute;
     height: 4rem;
@@ -824,6 +1107,32 @@ body {
 .itensNaGeladeira4 #item12 img {
     height: 4rem;
 }
+#opcaoComerItem12 {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    top: 1.5rem;
+    left: 8.6rem;
+    z-index: 2;
+}
+.comerItem12 {
+    height: 1.5rem;
+    width: 4rem;
+    font-weight: bold;
+    border: 3px solid rgb(255, 0, 0);
+    border-radius: 0.8rem;
+    color: red;
+    cursor: pointer;
+    box-shadow: inset 1px 1px 5px rgba(255, 0, 0, 0.453), inset -1px -1px 5px rgba(255, 0, 0, 0.453);
+    background: white;   
+}
+.comerItem12:hover {
+    background: rgba(255, 0, 0, 0.759);
+    border-color: white;
+    box-shadow: inset 1px 1px 20px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 20px red, -1px -1px 5px red;
+    color: white;
+}
+
 .itensNaGeladeira4 #item13 {
     position: absolute;
     height: 5rem;
@@ -834,6 +1143,31 @@ body {
 }
 .itensNaGeladeira4 #item13 img {
     height: 5rem;
+}
+#opcaoComerItem13 {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    top: 1.5rem;
+    left: 14.2rem;
+    z-index: 2;
+}
+.comerItem13 {
+    height: 1.5rem;
+    width: 4rem;
+    font-weight: bold;
+    border: 3px solid rgb(255, 0, 0);
+    border-radius: 0.8rem;
+    color: red;
+    cursor: pointer;
+    box-shadow: inset 1px 1px 5px rgba(255, 0, 0, 0.453), inset -1px -1px 5px rgba(255, 0, 0, 0.453);
+    background: white;   
+}
+.comerItem13:hover {
+    background: rgba(255, 0, 0, 0.759);
+    border-color: white;
+    box-shadow: inset 1px 1px 20px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 20px red, -1px -1px 5px red;
+    color: white;
 }
 
 .itensNaGeladeira5 {
@@ -857,6 +1191,32 @@ body {
 .itensNaGeladeira5 #item14 img {
     height: 2.5rem;
 }
+#opcaoComerItem14 {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    top: 2rem;
+    left: -0.5rem;
+    z-index: 2;
+}
+.comerItem14 {
+    height: 1.5rem;
+    width: 4rem;
+    font-weight: bold;
+    border: 3px solid rgb(255, 0, 0);
+    border-radius: 0.8rem;
+    color: red;
+    cursor: pointer;
+    box-shadow: inset 1px 1px 5px rgba(255, 0, 0, 0.453), inset -1px -1px 5px rgba(255, 0, 0, 0.453);
+    background: white;   
+}
+.comerItem14:hover {
+    background: rgba(255, 0, 0, 0.759);
+    border-color: white;
+    box-shadow: inset 1px 1px 20px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 20px red, -1px -1px 5px red;
+    color: white;
+}
+
 .itensNaGeladeira5 #item15 {
     position: absolute;
     height: 3.4rem;
@@ -868,6 +1228,32 @@ body {
 .itensNaGeladeira5 #item15 img {
     height: 3.5rem;
 }
+#opcaoComerItem15 {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    top: 1.8rem;
+    left: 2rem;
+    z-index: 2;
+}
+.comerItem15 {
+    height: 1.5rem;
+    width: 4rem;
+    font-weight: bold;
+    border: 3px solid rgb(255, 0, 0);
+    border-radius: 0.8rem;
+    color: red;
+    cursor: pointer;
+    box-shadow: inset 1px 1px 5px rgba(255, 0, 0, 0.453), inset -1px -1px 5px rgba(255, 0, 0, 0.453);
+    background: white;   
+}
+.comerItem15:hover {
+    background: rgba(255, 0, 0, 0.759);
+    border-color: white;
+    box-shadow: inset 1px 1px 20px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 20px red, -1px -1px 5px red;
+    color: white;
+}
+
 .itensNaGeladeira5 #item16 {
     position: absolute;
     height: 3.4rem;
@@ -879,6 +1265,32 @@ body {
 .itensNaGeladeira5 #item16 img {
     height: 3.5rem;
 }
+#opcaoComerItem16 {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    top: 1.7rem;
+    left: 4.9rem;
+    z-index: 2;
+}
+.comerItem16 {
+    height: 1.5rem;
+    width: 4rem;
+    font-weight: bold;
+    border: 3px solid rgb(255, 0, 0);
+    border-radius: 0.8rem;
+    color: red;
+    cursor: pointer;
+    box-shadow: inset 1px 1px 5px rgba(255, 0, 0, 0.453), inset -1px -1px 5px rgba(255, 0, 0, 0.453);
+    background: white;   
+}
+.comerItem16:hover {
+    background: rgba(255, 0, 0, 0.759);
+    border-color: white;
+    box-shadow: inset 1px 1px 20px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 20px red, -1px -1px 5px red;
+    color: white;
+}
+
 .itensNaGeladeira5 #item17 {
     position: absolute;
     height: 3.5rem;
@@ -890,6 +1302,32 @@ body {
 .itensNaGeladeira5 #item17 img {
     height: 3.5rem;
 }
+#opcaoComerItem17 {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    top: 1.6rem;
+    left: 8rem;
+    z-index: 2;
+}
+.comerItem17 {
+    height: 1.5rem;
+    width: 4rem;
+    font-weight: bold;
+    border: 3px solid rgb(255, 0, 0);
+    border-radius: 0.8rem;
+    color: red;
+    cursor: pointer;
+    box-shadow: inset 1px 1px 5px rgba(255, 0, 0, 0.453), inset -1px -1px 5px rgba(255, 0, 0, 0.453);
+    background: white;   
+}
+.comerItem17:hover {
+    background: rgba(255, 0, 0, 0.759);
+    border-color: white;
+    box-shadow: inset 1px 1px 20px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 20px red, -1px -1px 5px red;
+    color: white;
+}
+
 .itensNaGeladeira5 #item18 {
     position: absolute;
     height: 3.5rem;
@@ -901,6 +1339,32 @@ body {
 .itensNaGeladeira5 #item18 img {
     height: 3.5rem;
 }
+#opcaoComerItem18 {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    top: 1.6rem;
+    left: 10.75rem;
+    z-index: 2;
+}
+.comerItem18 {
+    height: 1.5rem;
+    width: 4rem;
+    font-weight: bold;
+    border: 3px solid rgb(255, 0, 0);
+    border-radius: 0.8rem;
+    color: red;
+    cursor: pointer;
+    box-shadow: inset 1px 1px 5px rgba(255, 0, 0, 0.453), inset -1px -1px 5px rgba(255, 0, 0, 0.453);
+    background: white;   
+}
+.comerItem18:hover {
+    background: rgba(255, 0, 0, 0.759);
+    border-color: white;
+    box-shadow: inset 1px 1px 20px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 20px red, -1px -1px 5px red;
+    color: white;
+}
+
 .itensNaGeladeira5 #item19 {
     position: absolute;
     height: 2.3rem;
@@ -911,6 +1375,31 @@ body {
 }
 .itensNaGeladeira5 #item19 img {
     height: 2.3rem;
+}
+#opcaoComerItem19 {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    top: 2rem;
+    left: 13.75rem;
+    z-index: 2;
+}
+.comerItem19 {
+    height: 1.5rem;
+    width: 4rem;
+    font-weight: bold;
+    border: 3px solid rgb(255, 0, 0);
+    border-radius: 0.8rem;
+    color: red;
+    cursor: pointer;
+    box-shadow: inset 1px 1px 5px rgba(255, 0, 0, 0.453), inset -1px -1px 5px rgba(255, 0, 0, 0.453);
+    background: white;   
+}
+.comerItem19:hover {
+    background: rgba(255, 0, 0, 0.759);
+    border-color: white;
+    box-shadow: inset 1px 1px 20px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 20px red, -1px -1px 5px red;
+    color: white;
 }
 
 .itensNaGeladeira6 {
@@ -934,6 +1423,32 @@ body {
 .itensNaGeladeira6 #item20 img {
     height: 3.5rem;
 }
+#opcaoComerItem20 {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    top: 0.5rem;
+    left: 0.2rem;
+    z-index: 2;
+}
+.comerItem20 {
+    height: 1.5rem;
+    width: 4rem;
+    font-weight: bold;
+    border: 3px solid rgb(255, 0, 0);
+    border-radius: 0.8rem;
+    color: red;
+    cursor: pointer;
+    box-shadow: inset 1px 1px 5px rgba(255, 0, 0, 0.453), inset -1px -1px 5px rgba(255, 0, 0, 0.453);
+    background: white;   
+}
+.comerItem20:hover {
+    background: rgba(255, 0, 0, 0.759);
+    border-color: white;
+    box-shadow: inset 1px 1px 20px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 20px red, -1px -1px 5px red;
+    color: white;
+}
+
 .itensNaGeladeira6 #item21 {
     position: absolute;
     height: 1.8rem;
@@ -947,6 +1462,32 @@ body {
     height: 2rem;
     margin-top: -0.2rem;
 }
+#opcaoComerItem21 {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    top: 1.4rem;
+    left: 4rem;
+    z-index: 2;
+}
+.comerItem21 {
+    height: 1.5rem;
+    width: 4rem;
+    font-weight: bold;
+    border: 3px solid rgb(255, 0, 0);
+    border-radius: 0.8rem;
+    color: red;
+    cursor: pointer;
+    box-shadow: inset 1px 1px 5px rgba(255, 0, 0, 0.453), inset -1px -1px 5px rgba(255, 0, 0, 0.453);
+    background: white;   
+}
+.comerItem21:hover {
+    background: rgba(255, 0, 0, 0.759);
+    border-color: white;
+    box-shadow: inset 1px 1px 20px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 20px red, -1px -1px 5px red;
+    color: white;
+}
+
 .itensNaGeladeira6 #item22 {
     position: absolute;
     height: 3.5rem;
@@ -958,6 +1499,32 @@ body {
 .itensNaGeladeira6 #item22 img {
     height: 3.5rem;
 }
+#opcaoComerItem22 {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    top: 0.5rem;
+    left: 7.8rem;
+    z-index: 2;
+}
+.comerItem22 {
+    height: 1.5rem;
+    width: 4rem;
+    font-weight: bold;
+    border: 3px solid rgb(255, 0, 0);
+    border-radius: 0.8rem;
+    color: red;
+    cursor: pointer;
+    box-shadow: inset 1px 1px 5px rgba(255, 0, 0, 0.453), inset -1px -1px 5px rgba(255, 0, 0, 0.453);
+    background: white;   
+}
+.comerItem22:hover {
+    background: rgba(255, 0, 0, 0.759);
+    border-color: white;
+    box-shadow: inset 1px 1px 20px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 20px red, -1px -1px 5px red;
+    color: white;
+}
+
 .itensNaGeladeira6 #item23 {
     position: absolute;
     height: 2.5rem;
@@ -969,6 +1536,32 @@ body {
 .itensNaGeladeira6 #item23 img {
     height: 2.5rem;
 }
+#opcaoComerItem23 {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    top: 1rem;
+    left: 10.6rem;
+    z-index: 2;
+}
+.comerItem23 {
+    height: 1.5rem;
+    width: 4rem;
+    font-weight: bold;
+    border: 3px solid rgb(255, 0, 0);
+    border-radius: 0.8rem;
+    color: red;
+    cursor: pointer;
+    box-shadow: inset 1px 1px 5px rgba(255, 0, 0, 0.453), inset -1px -1px 5px rgba(255, 0, 0, 0.453);
+    background: white;   
+}
+.comerItem23:hover {
+    background: rgba(255, 0, 0, 0.759);
+    border-color: white;
+    box-shadow: inset 1px 1px 20px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 20px red, -1px -1px 5px red;
+    color: white;
+}
+
 .itensNaGeladeira6 #item24 {
     position: absolute;
     height: 2.5rem;
@@ -980,6 +1573,32 @@ body {
 .itensNaGeladeira6 #item24 img {
     height: 2.5rem;
 }
+#opcaoComerItem24 {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    top: 1rem;
+    left: 13rem;
+    z-index: 2;
+}
+.comerItem24 {
+    height: 1.5rem;
+    width: 4rem;
+    font-weight: bold;
+    border: 3px solid rgb(255, 0, 0);
+    border-radius: 0.8rem;
+    color: red;
+    cursor: pointer;
+    box-shadow: inset 1px 1px 5px rgba(255, 0, 0, 0.453), inset -1px -1px 5px rgba(255, 0, 0, 0.453);
+    background: white;   
+}
+.comerItem24:hover {
+    background: rgba(255, 0, 0, 0.759);
+    border-color: white;
+    box-shadow: inset 1px 1px 20px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 20px red, -1px -1px 5px red;
+    color: white;
+}
+
 .itensNaGeladeira6 #item25 {
     position: absolute;
     height: 3.5rem;
@@ -990,6 +1609,31 @@ body {
 }
 .itensNaGeladeira6 #item25 img {
     height: 3.5rem;
+}
+#opcaoComerItem25 {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    top: 0.5rem;
+    left: 15.1rem;
+    z-index: 2;
+}
+.comerItem25 {
+    height: 1.5rem;
+    width: 4rem;
+    font-weight: bold;
+    border: 3px solid rgb(255, 0, 0);
+    border-radius: 0.8rem;
+    color: red;
+    cursor: pointer;
+    box-shadow: inset 1px 1px 5px rgba(255, 0, 0, 0.453), inset -1px -1px 5px rgba(255, 0, 0, 0.453);
+    background: white;   
+}
+.comerItem25:hover {
+    background: rgba(255, 0, 0, 0.759);
+    border-color: white;
+    box-shadow: inset 1px 1px 20px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 20px red, -1px -1px 5px red;
+    color: white;
 }
 
 .itensNaGeladeira7 {
@@ -1003,6 +1647,7 @@ body {
     margin-top: 1.2rem;
     transform: rotate(5deg);
 }
+
 .itensNaGeladeira7 #item26 {
     transform: rotate(-3deg);
     position: absolute;
@@ -1015,6 +1660,33 @@ body {
 .itensNaGeladeira7 #item26 img {
     height: 5.5rem;
 }
+#opcaoComerItem26 {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    top: -3.3rem;
+    left: 0.1rem;
+    z-index: 2;
+    transform: rotate(-5deg);
+}
+.comerItem26 {
+    height: 1.5rem;
+    width: 4rem;
+    font-weight: bold;
+    border: 3px solid rgb(255, 0, 0);
+    border-radius: 0.8rem;
+    color: red;
+    cursor: pointer;
+    box-shadow: inset 1px 1px 5px rgba(255, 0, 0, 0.453), inset -1px -1px 5px rgba(255, 0, 0, 0.453);
+    background: white;   
+}
+.comerItem26:hover {
+    background: rgba(255, 0, 0, 0.759);
+    border-color: white;
+    box-shadow: inset 1px 1px 20px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 20px red, -1px -1px 5px red;
+    color: white;
+}
+
 .itensNaGeladeira7 #item27 {
     transform: rotate(-3deg);
     position: absolute;
@@ -1026,6 +1698,54 @@ body {
 }
 .itensNaGeladeira7 #item27 img {
     height: 5.5rem;
+}
+#opcaoComerItem27 {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    top: -3.3rem;
+    left: 2.1rem;
+    z-index: 2;
+    transform: rotate(-5deg);
+}
+.comerItem27 {
+    height: 1.5rem;
+    width: 4rem;
+    font-weight: bold;
+    border: 3px solid rgb(255, 0, 0);
+    border-radius: 0.8rem;
+    color: red;
+    cursor: pointer;
+    box-shadow: inset 1px 1px 5px rgba(255, 0, 0, 0.453), inset -1px -1px 5px rgba(255, 0, 0, 0.453);
+    background: white;   
+}
+.comerItem27:hover {
+    background: rgba(255, 0, 0, 0.759);
+    border-color: white;
+    box-shadow: inset 1px 1px 20px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 20px red, -1px -1px 5px red;
+    color: white;
+}
+
+/* Cancelar Comer */
+
+.cancelarComer {
+    text-align: center;
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 2rem;
+    font-weight: bold;
+    border: 2px solid rgb(255, 0, 0);
+    color: red;
+    cursor: pointer;
+    box-shadow: inset 1px 1px 5px rgba(255, 0, 0, 0.453), inset -1px -1px 5px rgba(255, 0, 0, 0.453);
+    background: white;
+    margin: 0.3rem 1.25rem;
+}
+.cancelarComer:hover {
+    background: rgba(255, 255, 255, 0.759);
+    border-color: rgb(255, 0, 0);
+    box-shadow: inset 1px 1px 20px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 20px red, -1px -1px 5px red;
+    color: white;
 }
 
 /* Parte da Porta da Geladeira */

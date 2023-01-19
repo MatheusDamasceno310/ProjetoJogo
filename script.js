@@ -252,7 +252,441 @@ if(geladeiraAberta == 0) {
         geladeiraHover.style.opacity = "0";
     });
 }
-    
+
+let temItem1 = 0
+function item1() {
+
+    if (temItem1 == 1) {
+        document.getElementById('opcaoComerItem1').style.display = "flex"
+    } else {
+        document.getElementById('opcaoComerItem1').style.display = "none"
+    }
+}
+function comerItem1() {
+
+}
+function fecharItem1() {
+    document.getElementById('opcaoComerItem1').style.display = "none"
+}
+
+let temItem2 = 0
+function item2() {
+
+    if (temItem2 == 1) {
+        document.getElementById('opcaoComerItem2').style.display = "flex"
+    } else {
+        document.getElementById('opcaoComerItem2').style.display = "none"
+    }
+}
+function comerItem2() {
+
+}
+function fecharItem2() {
+    document.getElementById('opcaoComerItem2').style.display = "none"
+}
+
+let temItem3 = 0
+function item3() {
+
+    if (temItem3 == 1) {
+        document.getElementById('opcaoComerItem3').style.display = "flex"
+    } else {
+        document.getElementById('opcaoComerItem3').style.display = "none"
+    }
+}
+function comerItem3() {
+
+}
+function fecharItem3() {
+    document.getElementById('opcaoComerItem3').style.display = "none"
+}
+
+let temItem4 = 0
+function item4() {
+
+    if (temItem4 == 1) {
+        document.getElementById('opcaoComerItem4').style.display = "flex"
+    } else {
+        document.getElementById('opcaoComerItem4').style.display = "none"
+    }
+}
+function comerItem4() {
+
+}
+function fecharItem4() {
+    document.getElementById('opcaoComerItem4').style.display = "none"
+}
+
+let temItem5 = 0
+function item5() {
+
+    if (temItem5 == 1) {
+        document.getElementById('opcaoComerItem5').style.display = "flex"
+    } else {
+        document.getElementById('opcaoComerItem5').style.display = "none"
+    }
+}
+function comerItem5() {
+
+}
+function fecharItem5() {
+    document.getElementById('opcaoComerItem5').style.display = "none"
+}
+
+let temItem6 = 0
+function item6() {
+
+    if (temItem6 == 1) {
+        document.getElementById('opcaoComerItem6').style.display = "flex"
+    } else {
+        document.getElementById('opcaoComerItem6').style.display = "none"
+    }
+}
+function comerItem6() {
+
+}
+function fecharItem6() {
+    document.getElementById('opcaoComerItem6').style.display = "none"
+}
+
+let temItem7 = 0
+function item7() {
+
+    if (temItem7 == 1) {
+        document.getElementById('opcaoComerItem7').style.display = "flex"
+    } else {
+        document.getElementById('opcaoComerItem7').style.display = "none"
+    }
+}
+function comerItem7() {
+
+}
+function fecharItem7() {
+    document.getElementById('opcaoComerItem7').style.display = "none"
+}
+
+let temItem8 = 0
+function item8() {
+
+    if (temItem8 == 1) {
+        document.getElementById('opcaoComerItem8').style.display = "flex"
+    } else {
+        document.getElementById('opcaoComerItem8').style.display = "none"
+    }
+}
+function comerItem8() {
+
+}
+function fecharItem8() {
+    document.getElementById('opcaoComerItem8').style.display = "none"
+}
+
+let temItem9 = 0
+function item9() {
+
+    if (temItem9 == 1) {
+        document.getElementById('opcaoComerItem9').style.display = "flex"
+    } else {
+        document.getElementById('opcaoComerItem9').style.display = "none"
+    }
+}
+function comerItem9() {
+
+}
+function fecharItem9() {
+    document.getElementById('opcaoComerItem9').style.display = "none"
+}
+
+let temItem10 = 0
+function item10() {
+
+    if (temItem10 == 1) {
+        document.getElementById('opcaoComerItem10').style.display = "flex"
+    } else {
+        document.getElementById('opcaoComerItem10').style.display = "none"
+    }
+}
+function comerItem10() {
+
+}
+function fecharItem10() {
+    document.getElementById('opcaoComerItem10').style.display = "none"
+}
+
+let temItem11 = 0
+function item11() {
+
+    if (temItem11 == 1) {
+        document.getElementById('opcaoComerItem11').style.display = "flex"
+    } else {
+        document.getElementById('opcaoComerItem11').style.display = "none"
+    }
+}
+function comerItem11() {
+
+}
+function fecharItem11() {
+    document.getElementById('opcaoComerItem11').style.display = "none"
+}
+
+let temItem12 = 0
+function item12() {
+
+    if (temItem12 == 1) {
+        document.getElementById('opcaoComerItem12').style.display = "flex"
+    } else {
+        document.getElementById('opcaoComerItem12').style.display = "none"
+    }
+}
+function comerItem12() {
+
+}
+function fecharItem12() {
+    document.getElementById('opcaoComerItem12').style.display = "none"
+}
+
+let temItem13 = 0
+function item13() {
+
+    if (temItem13 == 1) {
+        document.getElementById('opcaoComerItem13').style.display = "flex"
+    } else {
+        document.getElementById('opcaoComerItem13').style.display = "none"
+    }
+}
+function comerItem13() {
+
+}
+function fecharItem13() {
+    document.getElementById('opcaoComerItem13').style.display = "none"
+}
+
+let temItem14 = 0
+function item14() {
+
+    if (temItem14 == 1) {
+        document.getElementById('opcaoComerItem14').style.display = "flex"
+    } else {
+        document.getElementById('opcaoComerItem14').style.display = "none"
+    }
+}
+function comerItem14() {
+
+}
+function fecharItem14() {
+    document.getElementById('opcaoComerItem14').style.display = "none"
+}
+
+let temItem15 = 0
+function item15() {
+
+    if (temItem15 == 1) {
+        document.getElementById('opcaoComerItem15').style.display = "flex"
+    } else {
+        document.getElementById('opcaoComerItem15').style.display = "none"
+    }
+}
+function comerItem15() {
+
+}
+function fecharItem15() {
+    document.getElementById('opcaoComerItem2').style.display = "none"
+}
+
+let temItem16 = 0
+function item16() {
+
+    if (temItem16 == 1) {
+        document.getElementById('opcaoComerItem16').style.display = "flex"
+    } else {
+        document.getElementById('opcaoComerItem16').style.display = "none"
+    }
+}
+function comerItem16() {
+
+}
+function fecharItem16() {
+    document.getElementById('opcaoComerItem16').style.display = "none"
+}
+
+let temItem17 = 0
+function item17() {
+
+    if (temItem17 == 1) {
+        document.getElementById('opcaoComerItem17').style.display = "flex"
+    } else {
+        document.getElementById('opcaoComerItem17').style.display = "none"
+    }
+}
+function comerItem17() {
+
+}
+function fecharItem17() {
+    document.getElementById('opcaoComerItem17').style.display = "none"
+}
+
+let temItem18 = 0
+function item18() {
+
+    if (temItem18 == 1) {
+        document.getElementById('opcaoComerItem18').style.display = "flex"
+    } else {
+        document.getElementById('opcaoComerItem18').style.display = "none"
+    }
+}
+function comerItem18() {
+
+}
+function fecharItem18() {
+    document.getElementById('opcaoComerItem18').style.display = "none"
+}
+
+let temItem19 = 0
+function item19() {
+
+    if (temItem19 == 1) {
+        document.getElementById('opcaoComerItem19').style.display = "flex"
+    } else {
+        document.getElementById('opcaoComerItem19').style.display = "none"
+    }
+}
+function comerItem19() {
+
+}
+function fecharItem19() {
+    document.getElementById('opcaoComerItem19').style.display = "none"
+}
+
+let temItem20 = 0
+function item20() {
+
+    if (temItem20 == 1) {
+        document.getElementById('opcaoComerItem20').style.display = "flex"
+    } else {
+        document.getElementById('opcaoComerItem20').style.display = "none"
+    }
+}
+function comerItem20() {
+
+}
+function fecharItem20() {
+    document.getElementById('opcaoComerItem20').style.display = "none"
+}
+
+let temItem21 = 0
+function item21() {
+
+    if (temItem21 == 1) {
+        document.getElementById('opcaoComerItem21').style.display = "flex"
+    } else {
+        document.getElementById('opcaoComerItem21').style.display = "none"
+    }
+}
+function comerItem21() {
+
+}
+function fecharItem21() {
+    document.getElementById('opcaoComerItem21').style.display = "none"
+}
+
+let temItem22 = 0
+function item22() {
+
+    if (temItem22 == 1) {
+        document.getElementById('opcaoComerItem22').style.display = "flex"
+    } else {
+        document.getElementById('opcaoComerItem22').style.display = "none"
+    }
+}
+function comerItem22() {
+
+}
+function fecharItem22() {
+    document.getElementById('opcaoComerItem22').style.display = "none"
+}
+
+let temItem23 = 0
+function item23() {
+
+    if (temItem23 == 1) {
+        document.getElementById('opcaoComerItem23').style.display = "flex"
+    } else {
+        document.getElementById('opcaoComerItem23').style.display = "none"
+    }
+}
+function comerItem23() {
+
+}
+function fecharItem23() {
+    document.getElementById('opcaoComerItem23').style.display = "none"
+}
+
+let temItem24 = 0
+function item24() {
+
+    if (temItem24 == 1) {
+        document.getElementById('opcaoComerItem24').style.display = "flex"
+    } else {
+        document.getElementById('opcaoComerItem24').style.display = "none"
+    }
+}
+function comerItem24() {
+
+}
+function fecharItem24() {
+    document.getElementById('opcaoComerItem24').style.display = "none"
+}
+
+let temItem25 = 0
+function item25() {
+
+    if (temItem25 == 1) {
+        document.getElementById('opcaoComerItem25').style.display = "flex"
+    } else {
+        document.getElementById('opcaoComerItem25').style.display = "none"
+    }
+}
+function comerItem25() {
+
+}
+function fecharItem25() {
+    document.getElementById('opcaoComerItem25').style.display = "none"
+}
+
+let temItem26 = 0
+function item26() {
+
+    if (temItem26 == 1) {
+        document.getElementById('opcaoComerItem26').style.display = "flex"
+    } else {
+        document.getElementById('opcaoComerItem26').style.display = "none"
+    }
+}
+function comerItem26() {
+
+}
+function fecharItem26() {
+    document.getElementById('opcaoComerItem26').style.display = "none"
+}
+
+let temItem27 = 0
+function item27() {
+
+    if (temItem27 == 1) {
+        document.getElementById('opcaoComerItem27').style.display = "flex"
+    } else {
+        document.getElementById('opcaoComerItem27').style.display = "none"
+    }
+}
+function comerItem27() {
+
+}
+function fecharItem27() {
+    document.getElementById('opcaoComerItem27').style.display = "none"
+}
+
+/** Abrir Geladeira */
+
 function abrirGeladeira() {
 
     document.getElementById('geladeira').style.display = "block";
@@ -263,32 +697,301 @@ function abrirGeladeira() {
     document.getElementById('fogaoHover').style.display = "none"
     document.getElementById('microondasHover').style.display = "none"
 
+    if (quantidade1 > 0) {
+        document.getElementById('item1').style.opacity = "1"
+        document.getElementById('item1').style.cursor = "pointer"
+        temItem1 = 1
+    } else {
+        document.getElementById('item1').style.opacity = "0.2"
+        document.getElementById('item1').style.cursor = "default"
+        temItem1 = 0
+    }
     document.getElementById('coxaDeBoi').title = "Coxa de Boi: "+ quantidade1 +" UND"
+
+    if (quantidade2 > 0) {
+        document.getElementById('item2').style.opacity = "1"
+        document.getElementById('item2').style.cursor = "pointer"
+        temItem2 = 1
+    } else {
+        document.getElementById('item2').style.opacity = "0.2"
+        document.getElementById('item2').style.cursor = "default"
+        temItem2 = 0 
+    }
     document.getElementById('cubosDeCarne').title = "Cubos de Carne: "+ quantidade2 +" UND"
+
+    if (quantidade3 > 0) {
+        document.getElementById('item3').style.opacity = "1"
+        document.getElementById('item3').style.cursor = "pointer"
+        temItem3 = 1
+    } else {
+        document.getElementById('item3').style.opacity = "0.2"
+        document.getElementById('item3').style.cursor = "default"
+        temItem3 = 0
+    }
     document.getElementById('sushi').title = "Shushi: "+ quantidade3 +" UND"
+    
+    if (quantidade4 > 0) {
+        document.getElementById('item4').style.opacity = "1"
+        document.getElementById('item4').style.cursor = "pointer"
+        temItem4 = 1
+    } else {
+        document.getElementById('item4').style.opacity = "0.2"
+        document.getElementById('item4').style.cursor = "default"
+        temItem4 = 0
+    }
     document.getElementById('peixe').title = "Peixe: "+ quantidade4 +" UND"
+    
+    if (quantidade5 > 0) {
+        document.getElementById('item5').style.opacity = "1"
+        document.getElementById('item5').style.cursor = "pointer"
+        temItem5 = 1
+    } else {
+        document.getElementById('item5').style.opacity = "0.2"
+        document.getElementById('item5').style.cursor = "default"
+        temItem5 = 0
+    }
     document.getElementById('sorveteDeBlueberry').title = "Sorvete de Blueberry: "+ quantidade5 +" UND"
+    
+    if (quantidade6 > 0) {
+        document.getElementById('item6').style.opacity = "1"
+        document.getElementById('item6').style.cursor = "pointer"
+        temItem6 = 1
+    } else {
+        document.getElementById('item6').style.opacity = "0.2"
+        document.getElementById('item6').style.cursor = "default"
+        temItem6 = 0
+    }
     document.getElementById('sorveteDeStrawberry').title = "Sorvete de Strawberry: "+ quantidade6 +" UND"
+    
+    if (quantidade7 > 0) {
+        document.getElementById('item7').style.opacity = "1"
+        document.getElementById('item7').style.cursor = "pointer"
+        temItem7 = 1
+    } else {
+        document.getElementById('item7').style.opacity = "0.2"
+        document.getElementById('item7').style.cursor = "default"
+        temItem7 = 0
+    }
     document.getElementById('cubosDeQueijo').title = "Cubos de Queijo: "+ quantidade7 +" UND"
+    
+    if (quantidade8 > 0) {
+        document.getElementById('item8').style.opacity = "1"
+        document.getElementById('item8').style.cursor = "pointer"
+        temItem8 = 1
+    } else {
+        document.getElementById('item8').style.opacity = "0.2"
+        document.getElementById('item8').style.cursor = "default"
+        temItem8 = 0
+    }
     document.getElementById('queijoGouda').title = "Queijo Godua: "+ quantidade8 +" UND"
+    
+    if (quantidade9 > 0) {
+        document.getElementById('item9').style.opacity = "1"
+        document.getElementById('item9').style.cursor = "pointer"
+        temItem9 = 1
+    } else {
+        document.getElementById('item9').style.opacity = "0.2"
+        document.getElementById('item9').style.cursor = "default"
+        temItem9 = 0
+    }
     document.getElementById('fatiasDeQueijo').title = "Fatias de Queijo: "+ quantidade9 +" UND"
+    
+    if (quantidade10 > 0) {
+        document.getElementById('item10').style.opacity = "1"
+        document.getElementById('item10').style.cursor = "pointer"
+        temItem10 = 1
+    } else {
+        document.getElementById('item10').style.opacity = "0.2"
+        document.getElementById('item10').style.cursor = "default"
+        temItem10 = 0
+    }
     document.getElementById('pao').title = "Pão: "+ quantidade10 +" UND"
+    
+    if (quantidade11 > 0) {
+        document.getElementById('item11').style.opacity = "1"
+        document.getElementById('item11').style.cursor = "pointer"
+        temItem11 = 1
+    } else {
+        document.getElementById('item11').style.opacity = "0.2"
+        document.getElementById('item11').style.cursor = "default"
+        temItem11 = 0
+    }
     document.getElementById('boloDeMorango').title = "Bolo de Morango: "+ quantidade11 +" UND"
+    
+    if (quantidade12 > 0) {
+        document.getElementById('item12').style.opacity = "1"
+        document.getElementById('item12').style.cursor = "pointer"
+        temItem12 = 1
+    } else {
+        document.getElementById('item12').style.opacity = "0.2"
+        document.getElementById('item12').style.cursor = "default"
+        temItem12 = 0
+    }
     document.getElementById('boloDeChocolate').title = "Bolo de Chocolate: "+ quantidade12 +" UND"
+    
+    if (quantidade13 > 0) {
+        document.getElementById('item13').style.opacity = "1"
+        document.getElementById('item13').style.cursor = "pointer"
+        temItem13 = 1
+    } else {
+        document.getElementById('item13').style.opacity = "0.2"
+        document.getElementById('item13').style.cursor = "default"
+        temItem13 = 0
+    }
     document.getElementById('leite').title = "Leite: "+ quantidade13 +" UND"
+    
+    if (quantidade14 > 0) {
+        document.getElementById('item14').style.opacity = "1"
+        document.getElementById('item14').style.cursor = "pointer"
+        temItem14 = 1
+    } else {
+        document.getElementById('item14').style.opacity = "0.2"
+        document.getElementById('item14').style.cursor = "default"
+        temItem14 = 0
+    }
     document.getElementById('lataDeAtum').title = "Lata de Atum: "+ quantidade14 +" UND"
+    
+    if (quantidade15 > 0) {
+        document.getElementById('item15').style.opacity = "1"
+        document.getElementById('item15').style.cursor = "pointer"
+        temItem15 = 1
+    } else {
+        document.getElementById('item15').style.opacity = "0.2"
+        document.getElementById('item15').style.cursor = "default"
+        temItem15 = 0
+    }
     document.getElementById('espaguete').title = "Espaguete: "+ quantidade15 +" UND"
+    
+    if (quantidade16 > 0) {
+        document.getElementById('item16').style.opacity = "1"
+        document.getElementById('item16').style.cursor = "pointer"
+        temItem16 = 1
+    } else {
+        document.getElementById('item16').style.opacity = "0.2"
+        document.getElementById('item16').style.cursor = "default"
+        temItem16 = 0
+    }
     document.getElementById('sopaDeTomate').title = "Sopa de Tomate: "+ quantidade16 +" UND"
+    
+    if (quantidade17 > 0) {
+        document.getElementById('item17').style.opacity = "1"
+        document.getElementById('item17').style.cursor = "pointer"
+        temItem17 = 1
+    } else {
+        document.getElementById('item17').style.opacity = "0.2"
+        document.getElementById('item17').style.cursor = "default"
+        temItem17 = 0
+    }
     document.getElementById('almondegas').title = "Almôndegas: "+ quantidade17 +" UND"
+    
+    if (quantidade18 > 0) {
+        document.getElementById('item18').style.opacity = "1"
+        document.getElementById('item18').style.cursor = "pointer"
+        temItem18 = 1
+    } else {
+        document.getElementById('item18').style.opacity = "0.2"
+        document.getElementById('item18').style.cursor = "default"
+        temItem18 = 0
+    }
     document.getElementById('polpaDeManga').title = "Polpa de Manga: "+ quantidade18 +" UND"
+    
+    if (quantidade19 > 0) {
+        document.getElementById('item19').style.opacity = "1"
+        document.getElementById('item19').style.cursor = "pointer"
+        temItem19 = 1
+    } else {
+        document.getElementById('item19').style.opacity = "0.2"
+        document.getElementById('item19').style.cursor = "default"
+        temItem19 = 0
+    }
     document.getElementById('presunto').title = "Presunto: "+ quantidade19 +" UND"
+    
+    if (quantidade20 > 0) {
+        document.getElementById('item20').style.opacity = "1"
+        document.getElementById('item20').style.cursor = "pointer"
+        temItem20 = 1
+    } else {
+        document.getElementById('item20').style.opacity = "0.2"
+        document.getElementById('item20').style.cursor = "default"
+        temItem20 = 0
+    }
     document.getElementById('brocolis').title = "Brócolis: "+ quantidade20 +" UND"
+    
+    if (quantidade21 > 0) {
+        document.getElementById('item21').style.opacity = "1"
+        document.getElementById('item21').style.cursor = "pointer"
+        temItem21 = 1
+    } else {
+        document.getElementById('item21').style.opacity = "0.2"
+        document.getElementById('item21').style.cursor = "default"
+        temItem21 = 0
+    }
     document.getElementById('cenoura').title = "Cenoura: "+ quantidade21 +" UND"
+    
+    if (quantidade22 > 0) {
+        document.getElementById('item22').style.opacity = "1"
+        document.getElementById('item22').style.cursor = "pointer"
+        temItem22 = 1
+    } else {
+        document.getElementById('item22').style.opacity = "0.2"
+        document.getElementById('item22').style.cursor = "default"
+        temItem22 = 0
+    }
     document.getElementById('repolho').title = "Repolho: "+ quantidade22 +" UND"
+    
+    if (quantidade23 > 0) {
+        document.getElementById('item23').style.opacity = "1"
+        document.getElementById('item23').style.cursor = "pointer"
+        temItem23 = 1
+    } else {
+        document.getElementById('item23').style.opacity = "0.2"
+        document.getElementById('item23').style.cursor = "default"
+        temItem23 = 0
+    }3
     document.getElementById('maca').title = "Maça: "+ quantidade23 +" UND"
+    
+    if (quantidade24 > 0) {
+        document.getElementById('item24').style.opacity = "1"
+        document.getElementById('item24').style.cursor = "pointer"
+        temItem24 = 1
+    } else {
+        document.getElementById('item24').style.opacity = "0.2"
+        document.getElementById('item24').style.cursor = "default"
+        temItem24 = 0
+    }
     document.getElementById('laranja').title = "Laranja: "+ quantidade24 +" UND"
+    
+    if (quantidade25 > 0) {
+        document.getElementById('item25').style.opacity = "1"
+        document.getElementById('item25').style.cursor = "pointer"
+        temItem25 = 1
+    } else {
+        document.getElementById('item25').style.opacity = "0.2"
+        document.getElementById('item25').style.cursor = "default"
+        temItem25 = 0
+    }
     document.getElementById('cachoDeUvas').title = "Cacho de Uvas: "+ quantidade25 +" UND"
+    
+    if (quantidade26 > 0) {
+        document.getElementById('item26').style.opacity = "1"
+        document.getElementById('item26').style.cursor = "pointer"
+        temItem26 = 1
+    } else {
+        document.getElementById('item26').style.opacity = "0.2"
+        document.getElementById('item26').style.cursor = "default"
+        temItem26 = 0
+    }
     document.getElementById('agua').title = "Água: "+ quantidade26 +" UND"
+    
+    if (quantidade27 > 0) {
+        document.getElementById('item27').style.opacity = "1"
+        document.getElementById('item27').style.cursor = "pointer"
+        temItem27 = 1
+    } else {
+        document.getElementById('item27').style.opacity = "0.2"
+        document.getElementById('item27').style.cursor = "default"
+        temItem27 = 0
+    }
     document.getElementById('refrigerante').title = "Refrigerante: "+ quantidade27 +" UND"
 
 }
