@@ -37,6 +37,13 @@ let statusFelicidaderGb = parseFloat(localStorage.getItem("statusFelicidaderGb")
 let convPorcentagemFelicidade = parseFloat(localStorage.getItem("convPorcentagemFelicidade"))
 let rostoStatus = localStorage.getItem("rostoStatus")
 
+/** Status Higiene */
+
+let contStatusHigiene = parseFloat(localStorage.getItem("contStatusHigiene"))
+let statusHigieneRgb = parseFloat(localStorage.getItem("statusHigieneRgb"))
+let statusHigienerGb = parseFloat(localStorage.getItem("statusHigienerGb"))
+let convPorcentagemHigiene = parseFloat(localStorage.getItem("convPorcentagemHigiene"))
+
 /** Quantidade de Itens da Geladeira */
 
 let quantidade1 = parseInt(localStorage.getItem("quantidade1"))
@@ -66,6 +73,10 @@ let quantidade24 = parseInt(localStorage.getItem("quantidade24"))
 let quantidade25 = parseInt(localStorage.getItem("quantidade25"))
 let quantidade26 = parseInt(localStorage.getItem("quantidade26"))
 let quantidade27 = parseInt(localStorage.getItem("quantidade27"))
+
+/** Comodo */
+
+let comodo = localStorage.getItem("comodo");
 
 /** LocalStorage  */
 
@@ -117,88 +128,47 @@ if (localStorage.length > 0) {
     localStorage.setItem("convPorcentagemFelicidade", "100")
     localStorage.setItem("rostoStatus", "Imagens/Status/happy-face.png")
 
+    /** Status Higiene */
+
+    localStorage.setItem("contStatusHigiene", "0")
+    localStorage.setItem("statusHigieneRgb", "0")
+    localStorage.setItem("statusHigienerGb", "250")
+    localStorage.setItem("statusDeHigiene", "linear-gradient(rgba(255, 255, 255, 0) 0%,rgb(0, 250, 0) 0%)")
+    localStorage.setItem("convPorcentagemHigiene", "100")
+
     /** Itens da Geladeira */
 
-    localStorage.setItem("item1", "coxaDeBoi")
     localStorage.setItem("quantidade1", "0")
-
-    localStorage.setItem("item2", "cubosDeCarne")
     localStorage.setItem("quantidade2", "0")
-
-    localStorage.setItem("item3", "sushi")
     localStorage.setItem("quantidade3", "0")
-
-    localStorage.setItem("item4", "peixe")
     localStorage.setItem("quantidade4", "0")
-
-    localStorage.setItem("item5", "sorveteDeBluberry")
     localStorage.setItem("quantidade5", "0")
-
-    localStorage.setItem("item6", "sorveteDeStrawberry")
     localStorage.setItem("quantidade6", "0")
-
-    localStorage.setItem("item7", "cubosDeQueijo")
     localStorage.setItem("quantidade7", "0")
-
-    localStorage.setItem("item8", "queijoGouda")
     localStorage.setItem("quantidade8", "0")
-
-    localStorage.setItem("item9", "fatiasDeQueijo")
     localStorage.setItem("quantidade9", "0")
-
-    localStorage.setItem("item10", "pao")
     localStorage.setItem("quantidade10", "0")
-
-    localStorage.setItem("item11", "boloDeMorango")
     localStorage.setItem("quantidade11", "0")
-
-    localStorage.setItem("item12", "boloDeChocolate")
     localStorage.setItem("quantidade12", "0")
-
-    localStorage.setItem("item13", "leite")
     localStorage.setItem("quantidade13", "0")
-
-    localStorage.setItem("item14", "lataDeAtum")
     localStorage.setItem("quantidade14", "0")
-
-    localStorage.setItem("item15", "espaguete")
     localStorage.setItem("quantidade15", "0")
-
-    localStorage.setItem("item16", "sopaDeTomate")
     localStorage.setItem("quantidade16", "0")
-
-    localStorage.setItem("item17", "almondegas")
     localStorage.setItem("quantidade17", "0")
-
-    localStorage.setItem("item18", "polpaDeManga")
     localStorage.setItem("quantidade18", "0")
-
-    localStorage.setItem("item19", "presunto")
     localStorage.setItem("quantidade19", "0")
-
-    localStorage.setItem("item20", "brocolis")
     localStorage.setItem("quantidade20", "0")
-
-    localStorage.setItem("item21", "cenoura")
     localStorage.setItem("quantidade21", "0")
-
-    localStorage.setItem("item22", "repolho")
     localStorage.setItem("quantidade22", "0")
-
-    localStorage.setItem("item23", "maca")
     localStorage.setItem("quantidade23", "0")
-
-    localStorage.setItem("item24", "laranja")
     localStorage.setItem("quantidade24", "0")
-
-    localStorage.setItem("item25", "cachoDeUvas")
     localStorage.setItem("quantidade25", "0")
-
-    localStorage.setItem("item26", "agua")
     localStorage.setItem("quantidade26", "0")
-
-    localStorage.setItem("item27", "refrigerante")
     localStorage.setItem("quantidade27", "0")
+
+    /** Comodo */
+
+    localStorage.setItem("comodo", "Cozinha")
 }
 
 /** Status de Level */
@@ -238,9 +208,22 @@ document.getElementById("felicidadeDoPet").style.background = localStorage.getIt
 
 document.getElementById('rostoStatus').src = localStorage.getItem("rostoStatus")
 
+/** Status Higiene */
+
+document.getElementById('mPorcentagemDaHigiene').title = "Higiene: "+ localStorage.getItem("convPorcentagemHigiene") +"%";
+
+document.getElementById("higieneDoPet").style.background = localStorage.getItem("statusDeHigiene")
+
+/** Sem fome */
+
+function semFome() {
+    document.getElementById('semFome').style.display = "none"
+}
+
 /** Geladeira */
 
-let geladeiraAberta = 0
+if (comodo == "Cozinha") {
+    let geladeiraAberta = 0
 
 if(geladeiraAberta == 0) {
     const geladeiraHover = document.querySelector('#geladeiraHover');
@@ -264,6 +247,117 @@ function item1() {
 }
 function comerItem1() {
 
+    if (contStatusAlimentacao > 2) {
+        /** Alimentacao */
+        for (let i = 0; i < 50; i++) {
+        
+            if (contStatusAlimentacao > 0 && contStatusAlimentacao <= 100 && limiteAlimentacao == 0) {
+        
+                if(statusAlimentacaorGb >= 0 && statusAlimentacaorGb <= 245) {
+                    statusAlimentacaorGb += 5
+        
+                    localStorage.setItem("statusAlimentacaorGb", statusAlimentacaorGb.toString())
+                }
+    
+                if (contStatusAlimentacao < 25) {
+                    
+                    if(statusAlimentacaoRgb >= 10 && statusAlimentacaoRgb <= 250) {
+                        statusAlimentacaoRgb -= 10
+            
+                        localStorage.setItem("statusAlimentacaoRgb", statusAlimentacaoRgb.toString())
+                    }
+    
+                }
+        
+                --contStatusAlimentacao
+                let porcantagemAlimentacaoSoma = contStatusAlimentacao - 100 
+        
+                let convPorcentagemAlimentacao = porcantagemAlimentacaoSoma * -1
+        
+                if (contStatusAlimentacao == 0) {
+                    convPorcentagemAlimentacao = 100
+                }
+        
+                localStorage.setItem("convPorcentagemAlimentacao", convPorcentagemAlimentacao.toString())
+        
+                document.getElementById('mPorcentagemDaAlimentacao').title = "Alimentacao: "+ localStorage.getItem("convPorcentagemAlimentacao") +"%"
+        
+                localStorage.setItem("contStatusAlimentacao", contStatusAlimentacao.toString())
+        
+                const StringTempAlimentacao = contStatusAlimentacao + "%"
+        
+                if (contStatusAlimentacao <= 65) {
+        
+                    const porcentagemDaAlimentacao = "linear-gradient(rgba(255, 255, 255, 0) "+ StringTempAlimentacao+",rgb("+ statusAlimentacaoRgb.toString() +","+ statusAlimentacaorGb.toString() +", 0) 0%)"
+        
+                    localStorage.setItem("statusDeAlimentacao", porcentagemDaAlimentacao)
+        
+                }
+        
+            }
+    
+            document.getElementById("alimentacaoDoPet").style.background = localStorage.getItem("statusDeAlimentacao");         
+        }
+        /** Higiene */
+        for (let i = 0; i < 25; i++) {
+            if (contStatusHigiene >= 0 && contStatusHigiene < 100) {
+
+                if(statusHigieneRgb >= 0 && statusHigieneRgb <= 245) {
+                    statusHigieneRgb += 5
+        
+                    localStorage.setItem("statusHigieneRgb", statusHigieneRgb.toString())
+                }
+        
+                contStatusHigiene++
+        
+                let porcantagemHigieneSoma = contStatusHigiene - 100 
+        
+                let convPorcentagemHigiene = porcantagemHigieneSoma * -1
+        
+                if (contStatusHigiene == 0) {
+                    convPorcentagemHigiene = 100
+                }
+        
+                localStorage.setItem("convPorcentagemHigiene", convPorcentagemHigiene.toString())
+        
+                document.getElementById('mPorcentagemDaHigiene').title = "Higiene: "+ localStorage.getItem("convPorcentagemHigiene") +"%"
+        
+                localStorage.setItem("contStatusHigiene", contStatusHigiene.toString())
+        
+                const StringTempHigiene = contStatusHigiene + "%"
+        
+                if (contStatusHigiene > 65) {
+                    if(statusHigienerGb >= 10 && statusHigienerGb <= 250) {
+                    statusHigienerGb -= 10
+        
+                    localStorage.setItem("statusSauderGb", statusSauderGb.toString())
+                }
+                }
+        
+                    const porcentagemDaHigiene = "linear-gradient(rgba(255, 255, 255, 0) "+ StringTempHigiene +",rgb("+ statusHigieneRgb.toString() +","+ statusHigienerGb.toString() +", 0) 0%)"
+        
+                    localStorage.setItem("statusDeHigiene", porcentagemDaHigiene)
+        
+            }
+            
+            document.getElementById("higieneDoPet").style.background = localStorage.getItem("statusDeHigiene")
+        }
+
+        expComida()
+        quantidade1 -= 1
+        localStorage.setItem("quantidade1", quantidade1)
+        document.getElementById('coxaDeBoi').title = "Coxa de Boi: "+ quantidade1 +" UND"
+        document.getElementById('opcaoComerItem1').style.display = "none"
+        if(quantidade1 == 0) {
+            document.getElementById('item1').style.opacity = "0.2"
+            document.getElementById('item1').style.cursor = "default"
+            temItem1 = 0
+        }
+
+    } else {
+        document.getElementById('semFome').style.display = "block"
+    }
+
 }
 function fecharItem1() {
     document.getElementById('opcaoComerItem1').style.display = "none"
@@ -279,6 +373,117 @@ function item2() {
     }
 }
 function comerItem2() {
+
+    if (contStatusAlimentacao > 2) {
+        /** Alimentacao */
+        for (let i = 0; i < 10; i++) {
+        
+            if (contStatusAlimentacao > 0 && contStatusAlimentacao <= 100 && limiteAlimentacao == 0) {
+        
+                if(statusAlimentacaorGb >= 0 && statusAlimentacaorGb <= 245) {
+                    statusAlimentacaorGb += 5
+        
+                    localStorage.setItem("statusAlimentacaorGb", statusAlimentacaorGb.toString())
+                }
+    
+                if (contStatusAlimentacao < 25) {
+                    
+                    if(statusAlimentacaoRgb >= 10 && statusAlimentacaoRgb <= 250) {
+                        statusAlimentacaoRgb -= 10
+            
+                        localStorage.setItem("statusAlimentacaoRgb", statusAlimentacaoRgb.toString())
+                    }
+    
+                }
+        
+                --contStatusAlimentacao
+                let porcantagemAlimentacaoSoma = contStatusAlimentacao - 100 
+        
+                let convPorcentagemAlimentacao = porcantagemAlimentacaoSoma * -1
+        
+                if (contStatusAlimentacao == 0) {
+                    convPorcentagemAlimentacao = 100
+                }
+        
+                localStorage.setItem("convPorcentagemAlimentacao", convPorcentagemAlimentacao.toString())
+        
+                document.getElementById('mPorcentagemDaAlimentacao').title = "Alimentacao: "+ localStorage.getItem("convPorcentagemAlimentacao") +"%"
+        
+                localStorage.setItem("contStatusAlimentacao", contStatusAlimentacao.toString())
+        
+                const StringTempAlimentacao = contStatusAlimentacao + "%"
+        
+                if (contStatusAlimentacao <= 65) {
+        
+                    const porcentagemDaAlimentacao = "linear-gradient(rgba(255, 255, 255, 0) "+ StringTempAlimentacao+",rgb("+ statusAlimentacaoRgb.toString() +","+ statusAlimentacaorGb.toString() +", 0) 0%)"
+        
+                    localStorage.setItem("statusDeAlimentacao", porcentagemDaAlimentacao)
+        
+                }
+        
+            }
+    
+            document.getElementById("alimentacaoDoPet").style.background = localStorage.getItem("statusDeAlimentacao");         
+        }
+        /** Higiene */
+        for (let i = 0; i < 5; i++) {
+            if (contStatusHigiene >= 0 && contStatusHigiene < 100) {
+
+                if(statusHigieneRgb >= 0 && statusHigieneRgb <= 245) {
+                    statusHigieneRgb += 5
+        
+                    localStorage.setItem("statusHigieneRgb", statusHigieneRgb.toString())
+                }
+        
+                contStatusHigiene++
+        
+                let porcantagemHigieneSoma = contStatusHigiene - 100 
+        
+                let convPorcentagemHigiene = porcantagemHigieneSoma * -1
+        
+                if (contStatusHigiene == 0) {
+                    convPorcentagemHigiene = 100
+                }
+        
+                localStorage.setItem("convPorcentagemHigiene", convPorcentagemHigiene.toString())
+        
+                document.getElementById('mPorcentagemDaHigiene').title = "Higiene: "+ localStorage.getItem("convPorcentagemHigiene") +"%"
+        
+                localStorage.setItem("contStatusHigiene", contStatusHigiene.toString())
+        
+                const StringTempHigiene = contStatusHigiene + "%"
+        
+                if (contStatusHigiene > 65) {
+                    if(statusHigienerGb >= 10 && statusHigienerGb <= 250) {
+                    statusHigienerGb -= 10
+        
+                    localStorage.setItem("statusSauderGb", statusSauderGb.toString())
+                }
+                }
+        
+                    const porcentagemDaHigiene = "linear-gradient(rgba(255, 255, 255, 0) "+ StringTempHigiene +",rgb("+ statusHigieneRgb.toString() +","+ statusHigienerGb.toString() +", 0) 0%)"
+        
+                    localStorage.setItem("statusDeHigiene", porcentagemDaHigiene)
+        
+            }
+            
+            document.getElementById("higieneDoPet").style.background = localStorage.getItem("statusDeHigiene")
+        }
+
+        expComida()
+        quantidade2 -= 1
+        localStorage.setItem("quantidade2", quantidade2)
+        document.getElementById('cubosDeCarne').title = "Cubos de Carne: "+ quantidade2 +" UND"
+        document.getElementById('opcaoComerItem2').style.display = "none"
+        if(quantidade2 == 0) {
+            document.getElementById('item2').style.opacity = "0.2"
+            document.getElementById('item2').style.cursor = "default"
+            temItem2 = 0
+        }
+
+    } else {
+        document.getElementById('semFome').style.display = "block"
+    }
 
 }
 function fecharItem2() {
@@ -296,6 +501,117 @@ function item3() {
 }
 function comerItem3() {
 
+    if (contStatusAlimentacao > 2) {
+        /** Alimentacao */
+        for (let i = 0; i < 10; i++) {
+        
+            if (contStatusAlimentacao > 0 && contStatusAlimentacao <= 100 && limiteAlimentacao == 0) {
+        
+                if(statusAlimentacaorGb >= 0 && statusAlimentacaorGb <= 245) {
+                    statusAlimentacaorGb += 5
+        
+                    localStorage.setItem("statusAlimentacaorGb", statusAlimentacaorGb.toString())
+                }
+    
+                if (contStatusAlimentacao < 25) {
+                    
+                    if(statusAlimentacaoRgb >= 10 && statusAlimentacaoRgb <= 250) {
+                        statusAlimentacaoRgb -= 10
+            
+                        localStorage.setItem("statusAlimentacaoRgb", statusAlimentacaoRgb.toString())
+                    }
+    
+                }
+        
+                --contStatusAlimentacao
+                let porcantagemAlimentacaoSoma = contStatusAlimentacao - 100 
+        
+                let convPorcentagemAlimentacao = porcantagemAlimentacaoSoma * -1
+        
+                if (contStatusAlimentacao == 0) {
+                    convPorcentagemAlimentacao = 100
+                }
+        
+                localStorage.setItem("convPorcentagemAlimentacao", convPorcentagemAlimentacao.toString())
+        
+                document.getElementById('mPorcentagemDaAlimentacao').title = "Alimentacao: "+ localStorage.getItem("convPorcentagemAlimentacao") +"%"
+        
+                localStorage.setItem("contStatusAlimentacao", contStatusAlimentacao.toString())
+        
+                const StringTempAlimentacao = contStatusAlimentacao + "%"
+        
+                if (contStatusAlimentacao <= 65) {
+        
+                    const porcentagemDaAlimentacao = "linear-gradient(rgba(255, 255, 255, 0) "+ StringTempAlimentacao+",rgb("+ statusAlimentacaoRgb.toString() +","+ statusAlimentacaorGb.toString() +", 0) 0%)"
+        
+                    localStorage.setItem("statusDeAlimentacao", porcentagemDaAlimentacao)
+        
+                }
+        
+            }
+    
+            document.getElementById("alimentacaoDoPet").style.background = localStorage.getItem("statusDeAlimentacao");         
+        }
+        /** Higiene */
+        for (let i = 0; i < 5; i++) {
+            if (contStatusHigiene >= 0 && contStatusHigiene < 100) {
+
+                if(statusHigieneRgb >= 0 && statusHigieneRgb <= 245) {
+                    statusHigieneRgb += 5
+        
+                    localStorage.setItem("statusHigieneRgb", statusHigieneRgb.toString())
+                }
+        
+                contStatusHigiene++
+        
+                let porcantagemHigieneSoma = contStatusHigiene - 100 
+        
+                let convPorcentagemHigiene = porcantagemHigieneSoma * -1
+        
+                if (contStatusHigiene == 0) {
+                    convPorcentagemHigiene = 100
+                }
+        
+                localStorage.setItem("convPorcentagemHigiene", convPorcentagemHigiene.toString())
+        
+                document.getElementById('mPorcentagemDaHigiene').title = "Higiene: "+ localStorage.getItem("convPorcentagemHigiene") +"%"
+        
+                localStorage.setItem("contStatusHigiene", contStatusHigiene.toString())
+        
+                const StringTempHigiene = contStatusHigiene + "%"
+        
+                if (contStatusHigiene > 65) {
+                    if(statusHigienerGb >= 10 && statusHigienerGb <= 250) {
+                    statusHigienerGb -= 10
+        
+                    localStorage.setItem("statusSauderGb", statusSauderGb.toString())
+                }
+                }
+        
+                    const porcentagemDaHigiene = "linear-gradient(rgba(255, 255, 255, 0) "+ StringTempHigiene +",rgb("+ statusHigieneRgb.toString() +","+ statusHigienerGb.toString() +", 0) 0%)"
+        
+                    localStorage.setItem("statusDeHigiene", porcentagemDaHigiene)
+        
+            }
+            
+            document.getElementById("higieneDoPet").style.background = localStorage.getItem("statusDeHigiene")
+        }
+
+        expComida()
+        quantidade3 -= 1
+        localStorage.setItem("quantidade3", quantidade3)
+        document.getElementById('sushi').title = "Sushi: "+ quantidade3 +" UND"
+        document.getElementById('opcaoComerItem3').style.display = "none"
+        if(quantidade3 == 0) {
+            document.getElementById('item3').style.opacity = "0.2"
+            document.getElementById('item3').style.cursor = "default"
+            temItem3 = 0
+        }
+
+    } else {
+        document.getElementById('semFome').style.display = "block"
+    }
+
 }
 function fecharItem3() {
     document.getElementById('opcaoComerItem3').style.display = "none"
@@ -311,6 +627,117 @@ function item4() {
     }
 }
 function comerItem4() {
+
+    if (contStatusAlimentacao > 2) {
+        /** Alimentacao */
+        for (let i = 0; i < 30; i++) {
+        
+            if (contStatusAlimentacao > 0 && contStatusAlimentacao <= 100 && limiteAlimentacao == 0) {
+        
+                if(statusAlimentacaorGb >= 0 && statusAlimentacaorGb <= 245) {
+                    statusAlimentacaorGb += 5
+        
+                    localStorage.setItem("statusAlimentacaorGb", statusAlimentacaorGb.toString())
+                }
+    
+                if (contStatusAlimentacao < 25) {
+                    
+                    if(statusAlimentacaoRgb >= 10 && statusAlimentacaoRgb <= 250) {
+                        statusAlimentacaoRgb -= 10
+            
+                        localStorage.setItem("statusAlimentacaoRgb", statusAlimentacaoRgb.toString())
+                    }
+    
+                }
+        
+                --contStatusAlimentacao
+                let porcantagemAlimentacaoSoma = contStatusAlimentacao - 100 
+        
+                let convPorcentagemAlimentacao = porcantagemAlimentacaoSoma * -1
+        
+                if (contStatusAlimentacao == 0) {
+                    convPorcentagemAlimentacao = 100
+                }
+        
+                localStorage.setItem("convPorcentagemAlimentacao", convPorcentagemAlimentacao.toString())
+        
+                document.getElementById('mPorcentagemDaAlimentacao').title = "Alimentacao: "+ localStorage.getItem("convPorcentagemAlimentacao") +"%"
+        
+                localStorage.setItem("contStatusAlimentacao", contStatusAlimentacao.toString())
+        
+                const StringTempAlimentacao = contStatusAlimentacao + "%"
+        
+                if (contStatusAlimentacao <= 65) {
+        
+                    const porcentagemDaAlimentacao = "linear-gradient(rgba(255, 255, 255, 0) "+ StringTempAlimentacao+",rgb("+ statusAlimentacaoRgb.toString() +","+ statusAlimentacaorGb.toString() +", 0) 0%)"
+        
+                    localStorage.setItem("statusDeAlimentacao", porcentagemDaAlimentacao)
+        
+                }
+        
+            }
+    
+            document.getElementById("alimentacaoDoPet").style.background = localStorage.getItem("statusDeAlimentacao");         
+        }
+        /** Higiene */
+        for (let i = 0; i < 15; i++) {
+            if (contStatusHigiene >= 0 && contStatusHigiene < 100) {
+
+                if(statusHigieneRgb >= 0 && statusHigieneRgb <= 245) {
+                    statusHigieneRgb += 5
+        
+                    localStorage.setItem("statusHigieneRgb", statusHigieneRgb.toString())
+                }
+        
+                contStatusHigiene++
+        
+                let porcantagemHigieneSoma = contStatusHigiene - 100 
+        
+                let convPorcentagemHigiene = porcantagemHigieneSoma * -1
+        
+                if (contStatusHigiene == 0) {
+                    convPorcentagemHigiene = 100
+                }
+        
+                localStorage.setItem("convPorcentagemHigiene", convPorcentagemHigiene.toString())
+        
+                document.getElementById('mPorcentagemDaHigiene').title = "Higiene: "+ localStorage.getItem("convPorcentagemHigiene") +"%"
+        
+                localStorage.setItem("contStatusHigiene", contStatusHigiene.toString())
+        
+                const StringTempHigiene = contStatusHigiene + "%"
+        
+                if (contStatusHigiene > 65) {
+                    if(statusHigienerGb >= 10 && statusHigienerGb <= 250) {
+                    statusHigienerGb -= 10
+        
+                    localStorage.setItem("statusSauderGb", statusSauderGb.toString())
+                }
+                }
+        
+                    const porcentagemDaHigiene = "linear-gradient(rgba(255, 255, 255, 0) "+ StringTempHigiene +",rgb("+ statusHigieneRgb.toString() +","+ statusHigienerGb.toString() +", 0) 0%)"
+        
+                    localStorage.setItem("statusDeHigiene", porcentagemDaHigiene)
+        
+            }
+            
+            document.getElementById("higieneDoPet").style.background = localStorage.getItem("statusDeHigiene")
+        }
+
+        expComida()
+        quantidade4 -= 1
+        localStorage.setItem("quantidade4", quantidade4)
+        document.getElementById('peixe').title = "Peixe: "+ quantidade4 +" UND"
+        document.getElementById('opcaoComerItem4').style.display = "none"
+        if(quantidade4 == 0) {
+            document.getElementById('item4').style.opacity = "0.2"
+            document.getElementById('item4').style.cursor = "default"
+            temItem4 = 0
+        }
+
+    } else {
+        document.getElementById('semFome').style.display = "block"
+    }
 
 }
 function fecharItem4() {
@@ -328,6 +755,117 @@ function item5() {
 }
 function comerItem5() {
 
+    if (contStatusAlimentacao > 2) {
+        /** Alimentacao */
+        for (let i = 0; i < 20; i++) {
+        
+            if (contStatusAlimentacao > 0 && contStatusAlimentacao <= 100 && limiteAlimentacao == 0) {
+        
+                if(statusAlimentacaorGb >= 0 && statusAlimentacaorGb <= 245) {
+                    statusAlimentacaorGb += 5
+        
+                    localStorage.setItem("statusAlimentacaorGb", statusAlimentacaorGb.toString())
+                }
+    
+                if (contStatusAlimentacao < 25) {
+                    
+                    if(statusAlimentacaoRgb >= 10 && statusAlimentacaoRgb <= 250) {
+                        statusAlimentacaoRgb -= 10
+            
+                        localStorage.setItem("statusAlimentacaoRgb", statusAlimentacaoRgb.toString())
+                    }
+    
+                }
+        
+                --contStatusAlimentacao
+                let porcantagemAlimentacaoSoma = contStatusAlimentacao - 100 
+        
+                let convPorcentagemAlimentacao = porcantagemAlimentacaoSoma * -1
+        
+                if (contStatusAlimentacao == 0) {
+                    convPorcentagemAlimentacao = 100
+                }
+        
+                localStorage.setItem("convPorcentagemAlimentacao", convPorcentagemAlimentacao.toString())
+        
+                document.getElementById('mPorcentagemDaAlimentacao').title = "Alimentacao: "+ localStorage.getItem("convPorcentagemAlimentacao") +"%"
+        
+                localStorage.setItem("contStatusAlimentacao", contStatusAlimentacao.toString())
+        
+                const StringTempAlimentacao = contStatusAlimentacao + "%"
+        
+                if (contStatusAlimentacao <= 65) {
+        
+                    const porcentagemDaAlimentacao = "linear-gradient(rgba(255, 255, 255, 0) "+ StringTempAlimentacao+",rgb("+ statusAlimentacaoRgb.toString() +","+ statusAlimentacaorGb.toString() +", 0) 0%)"
+        
+                    localStorage.setItem("statusDeAlimentacao", porcentagemDaAlimentacao)
+        
+                }
+        
+            }
+    
+            document.getElementById("alimentacaoDoPet").style.background = localStorage.getItem("statusDeAlimentacao");         
+        }
+        /** Higiene */
+        for (let i = 0; i < 10; i++) {
+            if (contStatusHigiene >= 0 && contStatusHigiene < 100) {
+
+                if(statusHigieneRgb >= 0 && statusHigieneRgb <= 245) {
+                    statusHigieneRgb += 5
+        
+                    localStorage.setItem("statusHigieneRgb", statusHigieneRgb.toString())
+                }
+        
+                contStatusHigiene++
+        
+                let porcantagemHigieneSoma = contStatusHigiene - 100 
+        
+                let convPorcentagemHigiene = porcantagemHigieneSoma * -1
+        
+                if (contStatusHigiene == 0) {
+                    convPorcentagemHigiene = 100
+                }
+        
+                localStorage.setItem("convPorcentagemHigiene", convPorcentagemHigiene.toString())
+        
+                document.getElementById('mPorcentagemDaHigiene').title = "Higiene: "+ localStorage.getItem("convPorcentagemHigiene") +"%"
+        
+                localStorage.setItem("contStatusHigiene", contStatusHigiene.toString())
+        
+                const StringTempHigiene = contStatusHigiene + "%"
+        
+                if (contStatusHigiene > 65) {
+                    if(statusHigienerGb >= 10 && statusHigienerGb <= 250) {
+                    statusHigienerGb -= 10
+        
+                    localStorage.setItem("statusSauderGb", statusSauderGb.toString())
+                }
+                }
+        
+                    const porcentagemDaHigiene = "linear-gradient(rgba(255, 255, 255, 0) "+ StringTempHigiene +",rgb("+ statusHigieneRgb.toString() +","+ statusHigienerGb.toString() +", 0) 0%)"
+        
+                    localStorage.setItem("statusDeHigiene", porcentagemDaHigiene)
+        
+            }
+            
+            document.getElementById("higieneDoPet").style.background = localStorage.getItem("statusDeHigiene")
+        }
+
+        expComida()
+        quantidade5 -= 1
+        localStorage.setItem("quantidade5", quantidade5)
+        document.getElementById('sorveteDeBlueberry').title = "Sorvete de Blueberry: "+ quantidade5 +" UND"
+        document.getElementById('opcaoComerItem5').style.display = "none"
+        if(quantidade5 == 0) {
+            document.getElementById('item5').style.opacity = "0.2"
+            document.getElementById('item5').style.cursor = "default"
+            temItem5 = 0
+        }
+
+    } else {
+        document.getElementById('semFome').style.display = "block"
+    }
+
 }
 function fecharItem5() {
     document.getElementById('opcaoComerItem5').style.display = "none"
@@ -343,6 +881,117 @@ function item6() {
     }
 }
 function comerItem6() {
+
+    if (contStatusAlimentacao > 2) {
+        /** Alimentacao */
+        for (let i = 0; i < 20; i++) {
+        
+            if (contStatusAlimentacao > 0 && contStatusAlimentacao <= 100 && limiteAlimentacao == 0) {
+        
+                if(statusAlimentacaorGb >= 0 && statusAlimentacaorGb <= 245) {
+                    statusAlimentacaorGb += 5
+        
+                    localStorage.setItem("statusAlimentacaorGb", statusAlimentacaorGb.toString())
+                }
+    
+                if (contStatusAlimentacao < 25) {
+                    
+                    if(statusAlimentacaoRgb >= 10 && statusAlimentacaoRgb <= 250) {
+                        statusAlimentacaoRgb -= 10
+            
+                        localStorage.setItem("statusAlimentacaoRgb", statusAlimentacaoRgb.toString())
+                    }
+    
+                }
+        
+                --contStatusAlimentacao
+                let porcantagemAlimentacaoSoma = contStatusAlimentacao - 100 
+        
+                let convPorcentagemAlimentacao = porcantagemAlimentacaoSoma * -1
+        
+                if (contStatusAlimentacao == 0) {
+                    convPorcentagemAlimentacao = 100
+                }
+        
+                localStorage.setItem("convPorcentagemAlimentacao", convPorcentagemAlimentacao.toString())
+        
+                document.getElementById('mPorcentagemDaAlimentacao').title = "Alimentacao: "+ localStorage.getItem("convPorcentagemAlimentacao") +"%"
+        
+                localStorage.setItem("contStatusAlimentacao", contStatusAlimentacao.toString())
+        
+                const StringTempAlimentacao = contStatusAlimentacao + "%"
+        
+                if (contStatusAlimentacao <= 65) {
+        
+                    const porcentagemDaAlimentacao = "linear-gradient(rgba(255, 255, 255, 0) "+ StringTempAlimentacao+",rgb("+ statusAlimentacaoRgb.toString() +","+ statusAlimentacaorGb.toString() +", 0) 0%)"
+        
+                    localStorage.setItem("statusDeAlimentacao", porcentagemDaAlimentacao)
+        
+                }
+        
+            }
+    
+            document.getElementById("alimentacaoDoPet").style.background = localStorage.getItem("statusDeAlimentacao");         
+        }
+        /** Higiene */
+        for (let i = 0; i < 10; i++) {
+            if (contStatusHigiene >= 0 && contStatusHigiene < 100) {
+
+                if(statusHigieneRgb >= 0 && statusHigieneRgb <= 245) {
+                    statusHigieneRgb += 5
+        
+                    localStorage.setItem("statusHigieneRgb", statusHigieneRgb.toString())
+                }
+        
+                contStatusHigiene++
+        
+                let porcantagemHigieneSoma = contStatusHigiene - 100 
+        
+                let convPorcentagemHigiene = porcantagemHigieneSoma * -1
+        
+                if (contStatusHigiene == 0) {
+                    convPorcentagemHigiene = 100
+                }
+        
+                localStorage.setItem("convPorcentagemHigiene", convPorcentagemHigiene.toString())
+        
+                document.getElementById('mPorcentagemDaHigiene').title = "Higiene: "+ localStorage.getItem("convPorcentagemHigiene") +"%"
+        
+                localStorage.setItem("contStatusHigiene", contStatusHigiene.toString())
+        
+                const StringTempHigiene = contStatusHigiene + "%"
+        
+                if (contStatusHigiene > 65) {
+                    if(statusHigienerGb >= 10 && statusHigienerGb <= 250) {
+                    statusHigienerGb -= 10
+        
+                    localStorage.setItem("statusSauderGb", statusSauderGb.toString())
+                }
+                }
+        
+                    const porcentagemDaHigiene = "linear-gradient(rgba(255, 255, 255, 0) "+ StringTempHigiene +",rgb("+ statusHigieneRgb.toString() +","+ statusHigienerGb.toString() +", 0) 0%)"
+        
+                    localStorage.setItem("statusDeHigiene", porcentagemDaHigiene)
+        
+            }
+            
+            document.getElementById("higieneDoPet").style.background = localStorage.getItem("statusDeHigiene")
+        }
+
+        expComida()
+        quantidade6 -= 1
+        localStorage.setItem("quantidade6", quantidade6)
+        document.getElementById('sorveteDeStrawberry').title = "Sorvete de Strawberry: "+ quantidade6 +" UND"
+        document.getElementById('opcaoComerItem6').style.display = "none"
+        if(quantidade6 == 0) {
+            document.getElementById('item6').style.opacity = "0.2"
+            document.getElementById('item6').style.cursor = "default"
+            temItem6 = 0
+        }
+
+    } else {
+        document.getElementById('semFome').style.display = "block"
+    }
 
 }
 function fecharItem6() {
@@ -360,6 +1009,117 @@ function item7() {
 }
 function comerItem7() {
 
+    if (contStatusAlimentacao > 2) {
+        /** Alimentacao */
+        for (let i = 0; i < 10; i++) {
+        
+            if (contStatusAlimentacao > 0 && contStatusAlimentacao <= 100 && limiteAlimentacao == 0) {
+        
+                if(statusAlimentacaorGb >= 0 && statusAlimentacaorGb <= 245) {
+                    statusAlimentacaorGb += 5
+        
+                    localStorage.setItem("statusAlimentacaorGb", statusAlimentacaorGb.toString())
+                }
+    
+                if (contStatusAlimentacao < 25) {
+                    
+                    if(statusAlimentacaoRgb >= 10 && statusAlimentacaoRgb <= 250) {
+                        statusAlimentacaoRgb -= 10
+            
+                        localStorage.setItem("statusAlimentacaoRgb", statusAlimentacaoRgb.toString())
+                    }
+    
+                }
+        
+                --contStatusAlimentacao
+                let porcantagemAlimentacaoSoma = contStatusAlimentacao - 100 
+        
+                let convPorcentagemAlimentacao = porcantagemAlimentacaoSoma * -1
+        
+                if (contStatusAlimentacao == 0) {
+                    convPorcentagemAlimentacao = 100
+                }
+        
+                localStorage.setItem("convPorcentagemAlimentacao", convPorcentagemAlimentacao.toString())
+        
+                document.getElementById('mPorcentagemDaAlimentacao').title = "Alimentacao: "+ localStorage.getItem("convPorcentagemAlimentacao") +"%"
+        
+                localStorage.setItem("contStatusAlimentacao", contStatusAlimentacao.toString())
+        
+                const StringTempAlimentacao = contStatusAlimentacao + "%"
+        
+                if (contStatusAlimentacao <= 65) {
+        
+                    const porcentagemDaAlimentacao = "linear-gradient(rgba(255, 255, 255, 0) "+ StringTempAlimentacao+",rgb("+ statusAlimentacaoRgb.toString() +","+ statusAlimentacaorGb.toString() +", 0) 0%)"
+        
+                    localStorage.setItem("statusDeAlimentacao", porcentagemDaAlimentacao)
+        
+                }
+        
+            }
+    
+            document.getElementById("alimentacaoDoPet").style.background = localStorage.getItem("statusDeAlimentacao");         
+        }
+        /** Higiene */
+        for (let i = 0; i < 5; i++) {
+            if (contStatusHigiene >= 0 && contStatusHigiene < 100) {
+
+                if(statusHigieneRgb >= 0 && statusHigieneRgb <= 245) {
+                    statusHigieneRgb += 5
+        
+                    localStorage.setItem("statusHigieneRgb", statusHigieneRgb.toString())
+                }
+        
+                contStatusHigiene++
+        
+                let porcantagemHigieneSoma = contStatusHigiene - 100 
+        
+                let convPorcentagemHigiene = porcantagemHigieneSoma * -1
+        
+                if (contStatusHigiene == 0) {
+                    convPorcentagemHigiene = 100
+                }
+        
+                localStorage.setItem("convPorcentagemHigiene", convPorcentagemHigiene.toString())
+        
+                document.getElementById('mPorcentagemDaHigiene').title = "Higiene: "+ localStorage.getItem("convPorcentagemHigiene") +"%"
+        
+                localStorage.setItem("contStatusHigiene", contStatusHigiene.toString())
+        
+                const StringTempHigiene = contStatusHigiene + "%"
+        
+                if (contStatusHigiene > 65) {
+                    if(statusHigienerGb >= 10 && statusHigienerGb <= 250) {
+                    statusHigienerGb -= 10
+        
+                    localStorage.setItem("statusSauderGb", statusSauderGb.toString())
+                }
+                }
+        
+                    const porcentagemDaHigiene = "linear-gradient(rgba(255, 255, 255, 0) "+ StringTempHigiene +",rgb("+ statusHigieneRgb.toString() +","+ statusHigienerGb.toString() +", 0) 0%)"
+        
+                    localStorage.setItem("statusDeHigiene", porcentagemDaHigiene)
+        
+            }
+            
+            document.getElementById("higieneDoPet").style.background = localStorage.getItem("statusDeHigiene")
+        }
+
+        expComida()
+        quantidade7 -= 1
+        localStorage.setItem("quantidade7", quantidade7)
+        document.getElementById('cubosDeQueijo').title = "Cubos de Queijo: "+ quantidade7 +" UND"
+        document.getElementById('opcaoComerItem7').style.display = "none"
+        if(quantidade7 == 0) {
+            document.getElementById('item7').style.opacity = "0.2"
+            document.getElementById('item7').style.cursor = "default"
+            temItem7 = 0
+        }
+
+    } else {
+        document.getElementById('semFome').style.display = "block"
+    }
+
 }
 function fecharItem7() {
     document.getElementById('opcaoComerItem7').style.display = "none"
@@ -375,6 +1135,117 @@ function item8() {
     }
 }
 function comerItem8() {
+
+    if (contStatusAlimentacao > 2) {
+        /** Alimentacao */
+        for (let i = 0; i < 20; i++) {
+        
+            if (contStatusAlimentacao > 0 && contStatusAlimentacao <= 100 && limiteAlimentacao == 0) {
+        
+                if(statusAlimentacaorGb >= 0 && statusAlimentacaorGb <= 245) {
+                    statusAlimentacaorGb += 5
+        
+                    localStorage.setItem("statusAlimentacaorGb", statusAlimentacaorGb.toString())
+                }
+    
+                if (contStatusAlimentacao < 25) {
+                    
+                    if(statusAlimentacaoRgb >= 10 && statusAlimentacaoRgb <= 250) {
+                        statusAlimentacaoRgb -= 10
+            
+                        localStorage.setItem("statusAlimentacaoRgb", statusAlimentacaoRgb.toString())
+                    }
+    
+                }
+        
+                --contStatusAlimentacao
+                let porcantagemAlimentacaoSoma = contStatusAlimentacao - 100 
+        
+                let convPorcentagemAlimentacao = porcantagemAlimentacaoSoma * -1
+        
+                if (contStatusAlimentacao == 0) {
+                    convPorcentagemAlimentacao = 100
+                }
+        
+                localStorage.setItem("convPorcentagemAlimentacao", convPorcentagemAlimentacao.toString())
+        
+                document.getElementById('mPorcentagemDaAlimentacao').title = "Alimentacao: "+ localStorage.getItem("convPorcentagemAlimentacao") +"%"
+        
+                localStorage.setItem("contStatusAlimentacao", contStatusAlimentacao.toString())
+        
+                const StringTempAlimentacao = contStatusAlimentacao + "%"
+        
+                if (contStatusAlimentacao <= 65) {
+        
+                    const porcentagemDaAlimentacao = "linear-gradient(rgba(255, 255, 255, 0) "+ StringTempAlimentacao+",rgb("+ statusAlimentacaoRgb.toString() +","+ statusAlimentacaorGb.toString() +", 0) 0%)"
+        
+                    localStorage.setItem("statusDeAlimentacao", porcentagemDaAlimentacao)
+        
+                }
+        
+            }
+    
+            document.getElementById("alimentacaoDoPet").style.background = localStorage.getItem("statusDeAlimentacao");         
+        }
+        /** Higiene */
+        for (let i = 0; i < 10; i++) {
+            if (contStatusHigiene >= 0 && contStatusHigiene < 100) {
+
+                if(statusHigieneRgb >= 0 && statusHigieneRgb <= 245) {
+                    statusHigieneRgb += 5
+        
+                    localStorage.setItem("statusHigieneRgb", statusHigieneRgb.toString())
+                }
+        
+                contStatusHigiene++
+        
+                let porcantagemHigieneSoma = contStatusHigiene - 100 
+        
+                let convPorcentagemHigiene = porcantagemHigieneSoma * -1
+        
+                if (contStatusHigiene == 0) {
+                    convPorcentagemHigiene = 100
+                }
+        
+                localStorage.setItem("convPorcentagemHigiene", convPorcentagemHigiene.toString())
+        
+                document.getElementById('mPorcentagemDaHigiene').title = "Higiene: "+ localStorage.getItem("convPorcentagemHigiene") +"%"
+        
+                localStorage.setItem("contStatusHigiene", contStatusHigiene.toString())
+        
+                const StringTempHigiene = contStatusHigiene + "%"
+        
+                if (contStatusHigiene > 65) {
+                    if(statusHigienerGb >= 10 && statusHigienerGb <= 250) {
+                    statusHigienerGb -= 10
+        
+                    localStorage.setItem("statusSauderGb", statusSauderGb.toString())
+                }
+                }
+        
+                    const porcentagemDaHigiene = "linear-gradient(rgba(255, 255, 255, 0) "+ StringTempHigiene +",rgb("+ statusHigieneRgb.toString() +","+ statusHigienerGb.toString() +", 0) 0%)"
+        
+                    localStorage.setItem("statusDeHigiene", porcentagemDaHigiene)
+        
+            }
+            
+            document.getElementById("higieneDoPet").style.background = localStorage.getItem("statusDeHigiene")
+        }
+
+        expComida()
+        quantidade8 -= 1
+        localStorage.setItem("quantidade8", quantidade8)
+        document.getElementById('queijoGouda').title = "Queijo Gouda: "+ quantidade8 +" UND"
+        document.getElementById('opcaoComerItem8').style.display = "none"
+        if(quantidade8 == 0) {
+            document.getElementById('item8').style.opacity = "0.2"
+            document.getElementById('item8').style.cursor = "default"
+            temItem8 = 0
+        }
+
+    } else {
+        document.getElementById('semFome').style.display = "block"
+    }
 
 }
 function fecharItem8() {
@@ -392,6 +1263,117 @@ function item9() {
 }
 function comerItem9() {
 
+    if (contStatusAlimentacao > 2) {
+        /** Alimentacao */
+        for (let i = 0; i < 20; i++) {
+        
+            if (contStatusAlimentacao > 0 && contStatusAlimentacao <= 100 && limiteAlimentacao == 0) {
+        
+                if(statusAlimentacaorGb >= 0 && statusAlimentacaorGb <= 245) {
+                    statusAlimentacaorGb += 5
+        
+                    localStorage.setItem("statusAlimentacaorGb", statusAlimentacaorGb.toString())
+                }
+    
+                if (contStatusAlimentacao < 25) {
+                    
+                    if(statusAlimentacaoRgb >= 10 && statusAlimentacaoRgb <= 250) {
+                        statusAlimentacaoRgb -= 10
+            
+                        localStorage.setItem("statusAlimentacaoRgb", statusAlimentacaoRgb.toString())
+                    }
+    
+                }
+        
+                --contStatusAlimentacao
+                let porcantagemAlimentacaoSoma = contStatusAlimentacao - 100 
+        
+                let convPorcentagemAlimentacao = porcantagemAlimentacaoSoma * -1
+        
+                if (contStatusAlimentacao == 0) {
+                    convPorcentagemAlimentacao = 100
+                }
+        
+                localStorage.setItem("convPorcentagemAlimentacao", convPorcentagemAlimentacao.toString())
+        
+                document.getElementById('mPorcentagemDaAlimentacao').title = "Alimentacao: "+ localStorage.getItem("convPorcentagemAlimentacao") +"%"
+        
+                localStorage.setItem("contStatusAlimentacao", contStatusAlimentacao.toString())
+        
+                const StringTempAlimentacao = contStatusAlimentacao + "%"
+        
+                if (contStatusAlimentacao <= 65) {
+        
+                    const porcentagemDaAlimentacao = "linear-gradient(rgba(255, 255, 255, 0) "+ StringTempAlimentacao+",rgb("+ statusAlimentacaoRgb.toString() +","+ statusAlimentacaorGb.toString() +", 0) 0%)"
+        
+                    localStorage.setItem("statusDeAlimentacao", porcentagemDaAlimentacao)
+        
+                }
+        
+            }
+    
+            document.getElementById("alimentacaoDoPet").style.background = localStorage.getItem("statusDeAlimentacao");         
+        }
+        /** Higiene */
+        for (let i = 0; i < 10; i++) {
+            if (contStatusHigiene >= 0 && contStatusHigiene < 100) {
+
+                if(statusHigieneRgb >= 0 && statusHigieneRgb <= 245) {
+                    statusHigieneRgb += 5
+        
+                    localStorage.setItem("statusHigieneRgb", statusHigieneRgb.toString())
+                }
+        
+                contStatusHigiene++
+        
+                let porcantagemHigieneSoma = contStatusHigiene - 100 
+        
+                let convPorcentagemHigiene = porcantagemHigieneSoma * -1
+        
+                if (contStatusHigiene == 0) {
+                    convPorcentagemHigiene = 100
+                }
+        
+                localStorage.setItem("convPorcentagemHigiene", convPorcentagemHigiene.toString())
+        
+                document.getElementById('mPorcentagemDaHigiene').title = "Higiene: "+ localStorage.getItem("convPorcentagemHigiene") +"%"
+        
+                localStorage.setItem("contStatusHigiene", contStatusHigiene.toString())
+        
+                const StringTempHigiene = contStatusHigiene + "%"
+        
+                if (contStatusHigiene > 65) {
+                    if(statusHigienerGb >= 10 && statusHigienerGb <= 250) {
+                    statusHigienerGb -= 10
+        
+                    localStorage.setItem("statusSauderGb", statusSauderGb.toString())
+                }
+                }
+        
+                    const porcentagemDaHigiene = "linear-gradient(rgba(255, 255, 255, 0) "+ StringTempHigiene +",rgb("+ statusHigieneRgb.toString() +","+ statusHigienerGb.toString() +", 0) 0%)"
+        
+                    localStorage.setItem("statusDeHigiene", porcentagemDaHigiene)
+        
+            }
+            
+            document.getElementById("higieneDoPet").style.background = localStorage.getItem("statusDeHigiene")
+        }
+
+        expComida()
+        quantidade9 -= 1
+        localStorage.setItem("quantidade9", quantidade9)
+        document.getElementById('fatiasDeQueijo').title = "Fatias de Queijo: "+ quantidade9 +" UND"
+        document.getElementById('opcaoComerItem9').style.display = "none"
+        if(quantidade9 == 0) {
+            document.getElementById('item9').style.opacity = "0.2"
+            document.getElementById('item9').style.cursor = "default"
+            temItem9 = 0
+        }
+
+    } else {
+        document.getElementById('semFome').style.display = "block"
+    }
+
 }
 function fecharItem9() {
     document.getElementById('opcaoComerItem9').style.display = "none"
@@ -407,6 +1389,117 @@ function item10() {
     }
 }
 function comerItem10() {
+
+    if (contStatusAlimentacao > 2) {
+        /** Alimentacao */
+        for (let i = 0; i < 30; i++) {
+        
+            if (contStatusAlimentacao > 0 && contStatusAlimentacao <= 100 && limiteAlimentacao == 0) {
+        
+                if(statusAlimentacaorGb >= 0 && statusAlimentacaorGb <= 245) {
+                    statusAlimentacaorGb += 5
+        
+                    localStorage.setItem("statusAlimentacaorGb", statusAlimentacaorGb.toString())
+                }
+    
+                if (contStatusAlimentacao < 25) {
+                    
+                    if(statusAlimentacaoRgb >= 10 && statusAlimentacaoRgb <= 250) {
+                        statusAlimentacaoRgb -= 10
+            
+                        localStorage.setItem("statusAlimentacaoRgb", statusAlimentacaoRgb.toString())
+                    }
+    
+                }
+        
+                --contStatusAlimentacao
+                let porcantagemAlimentacaoSoma = contStatusAlimentacao - 100 
+        
+                let convPorcentagemAlimentacao = porcantagemAlimentacaoSoma * -1
+        
+                if (contStatusAlimentacao == 0) {
+                    convPorcentagemAlimentacao = 100
+                }
+        
+                localStorage.setItem("convPorcentagemAlimentacao", convPorcentagemAlimentacao.toString())
+        
+                document.getElementById('mPorcentagemDaAlimentacao').title = "Alimentacao: "+ localStorage.getItem("convPorcentagemAlimentacao") +"%"
+        
+                localStorage.setItem("contStatusAlimentacao", contStatusAlimentacao.toString())
+        
+                const StringTempAlimentacao = contStatusAlimentacao + "%"
+        
+                if (contStatusAlimentacao <= 65) {
+        
+                    const porcentagemDaAlimentacao = "linear-gradient(rgba(255, 255, 255, 0) "+ StringTempAlimentacao+",rgb("+ statusAlimentacaoRgb.toString() +","+ statusAlimentacaorGb.toString() +", 0) 0%)"
+        
+                    localStorage.setItem("statusDeAlimentacao", porcentagemDaAlimentacao)
+        
+                }
+        
+            }
+    
+            document.getElementById("alimentacaoDoPet").style.background = localStorage.getItem("statusDeAlimentacao");         
+        }
+        /** Higiene */
+        for (let i = 0; i < 15; i++) {
+            if (contStatusHigiene >= 0 && contStatusHigiene < 100) {
+
+                if(statusHigieneRgb >= 0 && statusHigieneRgb <= 245) {
+                    statusHigieneRgb += 5
+        
+                    localStorage.setItem("statusHigieneRgb", statusHigieneRgb.toString())
+                }
+        
+                contStatusHigiene++
+        
+                let porcantagemHigieneSoma = contStatusHigiene - 100 
+        
+                let convPorcentagemHigiene = porcantagemHigieneSoma * -1
+        
+                if (contStatusHigiene == 0) {
+                    convPorcentagemHigiene = 100
+                }
+        
+                localStorage.setItem("convPorcentagemHigiene", convPorcentagemHigiene.toString())
+        
+                document.getElementById('mPorcentagemDaHigiene').title = "Higiene: "+ localStorage.getItem("convPorcentagemHigiene") +"%"
+        
+                localStorage.setItem("contStatusHigiene", contStatusHigiene.toString())
+        
+                const StringTempHigiene = contStatusHigiene + "%"
+        
+                if (contStatusHigiene > 65) {
+                    if(statusHigienerGb >= 10 && statusHigienerGb <= 250) {
+                    statusHigienerGb -= 10
+        
+                    localStorage.setItem("statusSauderGb", statusSauderGb.toString())
+                }
+                }
+        
+                    const porcentagemDaHigiene = "linear-gradient(rgba(255, 255, 255, 0) "+ StringTempHigiene +",rgb("+ statusHigieneRgb.toString() +","+ statusHigienerGb.toString() +", 0) 0%)"
+        
+                    localStorage.setItem("statusDeHigiene", porcentagemDaHigiene)
+        
+            }
+            
+            document.getElementById("higieneDoPet").style.background = localStorage.getItem("statusDeHigiene")
+        }
+
+        expComida()
+        quantidade10 -= 1
+        localStorage.setItem("quantidade10", quantidade10)
+        document.getElementById('pao').title = "Pão: "+ quantidade10 +" UND"
+        document.getElementById('opcaoComerItem10').style.display = "none"
+        if(quantidade10 == 0) {
+            document.getElementById('item10').style.opacity = "0.2"
+            document.getElementById('item10').style.cursor = "default"
+            temItem10 = 0
+        }
+
+    } else {
+        document.getElementById('semFome').style.display = "block"
+    }
 
 }
 function fecharItem10() {
@@ -424,6 +1517,117 @@ function item11() {
 }
 function comerItem11() {
 
+    if (contStatusAlimentacao > 2) {
+        /** Alimentacao */
+        for (let i = 0; i < 40; i++) {
+        
+            if (contStatusAlimentacao > 0 && contStatusAlimentacao <= 100 && limiteAlimentacao == 0) {
+        
+                if(statusAlimentacaorGb >= 0 && statusAlimentacaorGb <= 245) {
+                    statusAlimentacaorGb += 5
+        
+                    localStorage.setItem("statusAlimentacaorGb", statusAlimentacaorGb.toString())
+                }
+    
+                if (contStatusAlimentacao < 25) {
+                    
+                    if(statusAlimentacaoRgb >= 10 && statusAlimentacaoRgb <= 250) {
+                        statusAlimentacaoRgb -= 10
+            
+                        localStorage.setItem("statusAlimentacaoRgb", statusAlimentacaoRgb.toString())
+                    }
+    
+                }
+        
+                --contStatusAlimentacao
+                let porcantagemAlimentacaoSoma = contStatusAlimentacao - 100 
+        
+                let convPorcentagemAlimentacao = porcantagemAlimentacaoSoma * -1
+        
+                if (contStatusAlimentacao == 0) {
+                    convPorcentagemAlimentacao = 100
+                }
+        
+                localStorage.setItem("convPorcentagemAlimentacao", convPorcentagemAlimentacao.toString())
+        
+                document.getElementById('mPorcentagemDaAlimentacao').title = "Alimentacao: "+ localStorage.getItem("convPorcentagemAlimentacao") +"%"
+        
+                localStorage.setItem("contStatusAlimentacao", contStatusAlimentacao.toString())
+        
+                const StringTempAlimentacao = contStatusAlimentacao + "%"
+        
+                if (contStatusAlimentacao <= 65) {
+        
+                    const porcentagemDaAlimentacao = "linear-gradient(rgba(255, 255, 255, 0) "+ StringTempAlimentacao+",rgb("+ statusAlimentacaoRgb.toString() +","+ statusAlimentacaorGb.toString() +", 0) 0%)"
+        
+                    localStorage.setItem("statusDeAlimentacao", porcentagemDaAlimentacao)
+        
+                }
+        
+            }
+    
+            document.getElementById("alimentacaoDoPet").style.background = localStorage.getItem("statusDeAlimentacao");         
+        }
+        /** Higiene */
+        for (let i = 0; i < 20; i++) {
+            if (contStatusHigiene >= 0 && contStatusHigiene < 100) {
+
+                if(statusHigieneRgb >= 0 && statusHigieneRgb <= 245) {
+                    statusHigieneRgb += 5
+        
+                    localStorage.setItem("statusHigieneRgb", statusHigieneRgb.toString())
+                }
+        
+                contStatusHigiene++
+        
+                let porcantagemHigieneSoma = contStatusHigiene - 100 
+        
+                let convPorcentagemHigiene = porcantagemHigieneSoma * -1
+        
+                if (contStatusHigiene == 0) {
+                    convPorcentagemHigiene = 100
+                }
+        
+                localStorage.setItem("convPorcentagemHigiene", convPorcentagemHigiene.toString())
+        
+                document.getElementById('mPorcentagemDaHigiene').title = "Higiene: "+ localStorage.getItem("convPorcentagemHigiene") +"%"
+        
+                localStorage.setItem("contStatusHigiene", contStatusHigiene.toString())
+        
+                const StringTempHigiene = contStatusHigiene + "%"
+        
+                if (contStatusHigiene > 65) {
+                    if(statusHigienerGb >= 10 && statusHigienerGb <= 250) {
+                    statusHigienerGb -= 10
+        
+                    localStorage.setItem("statusSauderGb", statusSauderGb.toString())
+                }
+                }
+        
+                    const porcentagemDaHigiene = "linear-gradient(rgba(255, 255, 255, 0) "+ StringTempHigiene +",rgb("+ statusHigieneRgb.toString() +","+ statusHigienerGb.toString() +", 0) 0%)"
+        
+                    localStorage.setItem("statusDeHigiene", porcentagemDaHigiene)
+        
+            }
+            
+            document.getElementById("higieneDoPet").style.background = localStorage.getItem("statusDeHigiene")
+        }
+
+        expComida()
+        quantidade11 -= 1
+        localStorage.setItem("quantidade11", quantidade11)
+        document.getElementById('boloDeMorango').title = "Bolo de Morango: "+ quantidade11 +" UND"
+        document.getElementById('opcaoComerItem11').style.display = "none"
+        if(quantidade11 == 0) {
+            document.getElementById('item11').style.opacity = "0.2"
+            document.getElementById('item11').style.cursor = "default"
+            temItem11 = 0
+        }
+
+    } else {
+        document.getElementById('semFome').style.display = "block"
+    }
+
 }
 function fecharItem11() {
     document.getElementById('opcaoComerItem11').style.display = "none"
@@ -439,6 +1643,117 @@ function item12() {
     }
 }
 function comerItem12() {
+
+    if (contStatusAlimentacao > 2) {
+        /** Alimentacao */
+        for (let i = 0; i < 40; i++) {
+        
+            if (contStatusAlimentacao > 0 && contStatusAlimentacao <= 100 && limiteAlimentacao == 0) {
+        
+                if(statusAlimentacaorGb >= 0 && statusAlimentacaorGb <= 245) {
+                    statusAlimentacaorGb += 5
+        
+                    localStorage.setItem("statusAlimentacaorGb", statusAlimentacaorGb.toString())
+                }
+    
+                if (contStatusAlimentacao < 25) {
+                    
+                    if(statusAlimentacaoRgb >= 10 && statusAlimentacaoRgb <= 250) {
+                        statusAlimentacaoRgb -= 10
+            
+                        localStorage.setItem("statusAlimentacaoRgb", statusAlimentacaoRgb.toString())
+                    }
+    
+                }
+        
+                --contStatusAlimentacao
+                let porcantagemAlimentacaoSoma = contStatusAlimentacao - 100 
+        
+                let convPorcentagemAlimentacao = porcantagemAlimentacaoSoma * -1
+        
+                if (contStatusAlimentacao == 0) {
+                    convPorcentagemAlimentacao = 100
+                }
+        
+                localStorage.setItem("convPorcentagemAlimentacao", convPorcentagemAlimentacao.toString())
+        
+                document.getElementById('mPorcentagemDaAlimentacao').title = "Alimentacao: "+ localStorage.getItem("convPorcentagemAlimentacao") +"%"
+        
+                localStorage.setItem("contStatusAlimentacao", contStatusAlimentacao.toString())
+        
+                const StringTempAlimentacao = contStatusAlimentacao + "%"
+        
+                if (contStatusAlimentacao <= 65) {
+        
+                    const porcentagemDaAlimentacao = "linear-gradient(rgba(255, 255, 255, 0) "+ StringTempAlimentacao+",rgb("+ statusAlimentacaoRgb.toString() +","+ statusAlimentacaorGb.toString() +", 0) 0%)"
+        
+                    localStorage.setItem("statusDeAlimentacao", porcentagemDaAlimentacao)
+        
+                }
+        
+            }
+    
+            document.getElementById("alimentacaoDoPet").style.background = localStorage.getItem("statusDeAlimentacao");         
+        }
+        /** Higiene */
+        for (let i = 0; i < 20; i++) {
+            if (contStatusHigiene >= 0 && contStatusHigiene < 100) {
+
+                if(statusHigieneRgb >= 0 && statusHigieneRgb <= 245) {
+                    statusHigieneRgb += 5
+        
+                    localStorage.setItem("statusHigieneRgb", statusHigieneRgb.toString())
+                }
+        
+                contStatusHigiene++
+        
+                let porcantagemHigieneSoma = contStatusHigiene - 100 
+        
+                let convPorcentagemHigiene = porcantagemHigieneSoma * -1
+        
+                if (contStatusHigiene == 0) {
+                    convPorcentagemHigiene = 100
+                }
+        
+                localStorage.setItem("convPorcentagemHigiene", convPorcentagemHigiene.toString())
+        
+                document.getElementById('mPorcentagemDaHigiene').title = "Higiene: "+ localStorage.getItem("convPorcentagemHigiene") +"%"
+        
+                localStorage.setItem("contStatusHigiene", contStatusHigiene.toString())
+        
+                const StringTempHigiene = contStatusHigiene + "%"
+        
+                if (contStatusHigiene > 65) {
+                    if(statusHigienerGb >= 10 && statusHigienerGb <= 250) {
+                    statusHigienerGb -= 10
+        
+                    localStorage.setItem("statusSauderGb", statusSauderGb.toString())
+                }
+                }
+        
+                    const porcentagemDaHigiene = "linear-gradient(rgba(255, 255, 255, 0) "+ StringTempHigiene +",rgb("+ statusHigieneRgb.toString() +","+ statusHigienerGb.toString() +", 0) 0%)"
+        
+                    localStorage.setItem("statusDeHigiene", porcentagemDaHigiene)
+        
+            }
+            
+            document.getElementById("higieneDoPet").style.background = localStorage.getItem("statusDeHigiene")
+        }
+
+        expComida()
+        quantidade12 -= 1
+        localStorage.setItem("quantidade12", quantidade12)
+        document.getElementById('boloDeChocolate').title = "Bolo de Chocolate: "+ quantidade12 +" UND"
+        document.getElementById('opcaoComerItem12').style.display = "none"
+        if(quantidade12 == 0) {
+            document.getElementById('item12').style.opacity = "0.2"
+            document.getElementById('item12').style.cursor = "default"
+            temItem12 = 0
+        }
+
+    } else {
+        document.getElementById('semFome').style.display = "block"
+    }
 
 }
 function fecharItem12() {
@@ -456,6 +1771,117 @@ function item13() {
 }
 function comerItem13() {
 
+    if (contStatusAlimentacao > 2) {
+        /** Alimentacao */
+        for (let i = 0; i < 5; i++) {
+        
+            if (contStatusAlimentacao > 0 && contStatusAlimentacao <= 100 && limiteAlimentacao == 0) {
+        
+                if(statusAlimentacaorGb >= 0 && statusAlimentacaorGb <= 245) {
+                    statusAlimentacaorGb += 5
+        
+                    localStorage.setItem("statusAlimentacaorGb", statusAlimentacaorGb.toString())
+                }
+    
+                if (contStatusAlimentacao < 25) {
+                    
+                    if(statusAlimentacaoRgb >= 10 && statusAlimentacaoRgb <= 250) {
+                        statusAlimentacaoRgb -= 10
+            
+                        localStorage.setItem("statusAlimentacaoRgb", statusAlimentacaoRgb.toString())
+                    }
+    
+                }
+        
+                --contStatusAlimentacao
+                let porcantagemAlimentacaoSoma = contStatusAlimentacao - 100 
+        
+                let convPorcentagemAlimentacao = porcantagemAlimentacaoSoma * -1
+        
+                if (contStatusAlimentacao == 0) {
+                    convPorcentagemAlimentacao = 100
+                }
+        
+                localStorage.setItem("convPorcentagemAlimentacao", convPorcentagemAlimentacao.toString())
+        
+                document.getElementById('mPorcentagemDaAlimentacao').title = "Alimentacao: "+ localStorage.getItem("convPorcentagemAlimentacao") +"%"
+        
+                localStorage.setItem("contStatusAlimentacao", contStatusAlimentacao.toString())
+        
+                const StringTempAlimentacao = contStatusAlimentacao + "%"
+        
+                if (contStatusAlimentacao <= 65) {
+        
+                    const porcentagemDaAlimentacao = "linear-gradient(rgba(255, 255, 255, 0) "+ StringTempAlimentacao+",rgb("+ statusAlimentacaoRgb.toString() +","+ statusAlimentacaorGb.toString() +", 0) 0%)"
+        
+                    localStorage.setItem("statusDeAlimentacao", porcentagemDaAlimentacao)
+        
+                }
+        
+            }
+    
+            document.getElementById("alimentacaoDoPet").style.background = localStorage.getItem("statusDeAlimentacao");         
+        }
+        /** Higiene */
+        for (let i = 0; i < 15; i++) {
+            if (contStatusHigiene >= 0 && contStatusHigiene < 100) {
+
+                if(statusHigieneRgb >= 0 && statusHigieneRgb <= 245) {
+                    statusHigieneRgb += 5
+        
+                    localStorage.setItem("statusHigieneRgb", statusHigieneRgb.toString())
+                }
+        
+                contStatusHigiene++
+        
+                let porcantagemHigieneSoma = contStatusHigiene - 100 
+        
+                let convPorcentagemHigiene = porcantagemHigieneSoma * -1
+        
+                if (contStatusHigiene == 0) {
+                    convPorcentagemHigiene = 100
+                }
+        
+                localStorage.setItem("convPorcentagemHigiene", convPorcentagemHigiene.toString())
+        
+                document.getElementById('mPorcentagemDaHigiene').title = "Higiene: "+ localStorage.getItem("convPorcentagemHigiene") +"%"
+        
+                localStorage.setItem("contStatusHigiene", contStatusHigiene.toString())
+        
+                const StringTempHigiene = contStatusHigiene + "%"
+        
+                if (contStatusHigiene > 65) {
+                    if(statusHigienerGb >= 10 && statusHigienerGb <= 250) {
+                    statusHigienerGb -= 10
+        
+                    localStorage.setItem("statusSauderGb", statusSauderGb.toString())
+                }
+                }
+        
+                    const porcentagemDaHigiene = "linear-gradient(rgba(255, 255, 255, 0) "+ StringTempHigiene +",rgb("+ statusHigieneRgb.toString() +","+ statusHigienerGb.toString() +", 0) 0%)"
+        
+                    localStorage.setItem("statusDeHigiene", porcentagemDaHigiene)
+        
+            }
+            
+            document.getElementById("higieneDoPet").style.background = localStorage.getItem("statusDeHigiene")
+        }
+
+        expComida()
+        quantidade13 -= 1
+        localStorage.setItem("quantidade13", quantidade13)
+        document.getElementById('leite').title = "Leite: "+ quantidade13 +" UND"
+        document.getElementById('opcaoComerItem13').style.display = "none"
+        if(quantidade13 == 0) {
+            document.getElementById('item13').style.opacity = "0.2"
+            document.getElementById('item13').style.cursor = "default"
+            temItem13 = 0
+        }
+
+    } else {
+        document.getElementById('semFome').style.display = "block"
+    }
+
 }
 function fecharItem13() {
     document.getElementById('opcaoComerItem13').style.display = "none"
@@ -471,6 +1897,117 @@ function item14() {
     }
 }
 function comerItem14() {
+
+    if (contStatusAlimentacao > 2) {
+        /** Alimentacao */
+        for (let i = 0; i < 20; i++) {
+        
+            if (contStatusAlimentacao > 0 && contStatusAlimentacao <= 100 && limiteAlimentacao == 0) {
+        
+                if(statusAlimentacaorGb >= 0 && statusAlimentacaorGb <= 245) {
+                    statusAlimentacaorGb += 5
+        
+                    localStorage.setItem("statusAlimentacaorGb", statusAlimentacaorGb.toString())
+                }
+    
+                if (contStatusAlimentacao < 25) {
+                    
+                    if(statusAlimentacaoRgb >= 10 && statusAlimentacaoRgb <= 250) {
+                        statusAlimentacaoRgb -= 10
+            
+                        localStorage.setItem("statusAlimentacaoRgb", statusAlimentacaoRgb.toString())
+                    }
+    
+                }
+        
+                --contStatusAlimentacao
+                let porcantagemAlimentacaoSoma = contStatusAlimentacao - 100 
+        
+                let convPorcentagemAlimentacao = porcantagemAlimentacaoSoma * -1
+        
+                if (contStatusAlimentacao == 0) {
+                    convPorcentagemAlimentacao = 100
+                }
+        
+                localStorage.setItem("convPorcentagemAlimentacao", convPorcentagemAlimentacao.toString())
+        
+                document.getElementById('mPorcentagemDaAlimentacao').title = "Alimentacao: "+ localStorage.getItem("convPorcentagemAlimentacao") +"%"
+        
+                localStorage.setItem("contStatusAlimentacao", contStatusAlimentacao.toString())
+        
+                const StringTempAlimentacao = contStatusAlimentacao + "%"
+        
+                if (contStatusAlimentacao <= 65) {
+        
+                    const porcentagemDaAlimentacao = "linear-gradient(rgba(255, 255, 255, 0) "+ StringTempAlimentacao+",rgb("+ statusAlimentacaoRgb.toString() +","+ statusAlimentacaorGb.toString() +", 0) 0%)"
+        
+                    localStorage.setItem("statusDeAlimentacao", porcentagemDaAlimentacao)
+        
+                }
+        
+            }
+    
+            document.getElementById("alimentacaoDoPet").style.background = localStorage.getItem("statusDeAlimentacao");         
+        }
+        /** Higiene */
+        for (let i = 0; i < 10; i++) {
+            if (contStatusHigiene >= 0 && contStatusHigiene < 100) {
+
+                if(statusHigieneRgb >= 0 && statusHigieneRgb <= 245) {
+                    statusHigieneRgb += 5
+        
+                    localStorage.setItem("statusHigieneRgb", statusHigieneRgb.toString())
+                }
+        
+                contStatusHigiene++
+        
+                let porcantagemHigieneSoma = contStatusHigiene - 100 
+        
+                let convPorcentagemHigiene = porcantagemHigieneSoma * -1
+        
+                if (contStatusHigiene == 0) {
+                    convPorcentagemHigiene = 100
+                }
+        
+                localStorage.setItem("convPorcentagemHigiene", convPorcentagemHigiene.toString())
+        
+                document.getElementById('mPorcentagemDaHigiene').title = "Higiene: "+ localStorage.getItem("convPorcentagemHigiene") +"%"
+        
+                localStorage.setItem("contStatusHigiene", contStatusHigiene.toString())
+        
+                const StringTempHigiene = contStatusHigiene + "%"
+        
+                if (contStatusHigiene > 65) {
+                    if(statusHigienerGb >= 10 && statusHigienerGb <= 250) {
+                    statusHigienerGb -= 10
+        
+                    localStorage.setItem("statusSauderGb", statusSauderGb.toString())
+                }
+                }
+        
+                    const porcentagemDaHigiene = "linear-gradient(rgba(255, 255, 255, 0) "+ StringTempHigiene +",rgb("+ statusHigieneRgb.toString() +","+ statusHigienerGb.toString() +", 0) 0%)"
+        
+                    localStorage.setItem("statusDeHigiene", porcentagemDaHigiene)
+        
+            }
+            
+            document.getElementById("higieneDoPet").style.background = localStorage.getItem("statusDeHigiene")
+        }
+
+        expComida()
+        quantidade14 -= 1
+        localStorage.setItem("quantidade14", quantidade14)
+        document.getElementById('lataDeAtum').title = "Lata de Atum: "+ quantidade14 +" UND"
+        document.getElementById('opcaoComerItem14').style.display = "none"
+        if(quantidade14 == 0) {
+            document.getElementById('item14').style.opacity = "0.2"
+            document.getElementById('item14').style.cursor = "default"
+            temItem14 = 0
+        }
+
+    } else {
+        document.getElementById('semFome').style.display = "block"
+    }
 
 }
 function fecharItem14() {
@@ -488,6 +2025,117 @@ function item15() {
 }
 function comerItem15() {
 
+    if (contStatusAlimentacao > 2) {
+        /** Alimentacao */
+        for (let i = 0; i < 20; i++) {
+        
+            if (contStatusAlimentacao > 0 && contStatusAlimentacao <= 100 && limiteAlimentacao == 0) {
+        
+                if(statusAlimentacaorGb >= 0 && statusAlimentacaorGb <= 245) {
+                    statusAlimentacaorGb += 5
+        
+                    localStorage.setItem("statusAlimentacaorGb", statusAlimentacaorGb.toString())
+                }
+    
+                if (contStatusAlimentacao < 25) {
+                    
+                    if(statusAlimentacaoRgb >= 10 && statusAlimentacaoRgb <= 250) {
+                        statusAlimentacaoRgb -= 10
+            
+                        localStorage.setItem("statusAlimentacaoRgb", statusAlimentacaoRgb.toString())
+                    }
+    
+                }
+        
+                --contStatusAlimentacao
+                let porcantagemAlimentacaoSoma = contStatusAlimentacao - 100 
+        
+                let convPorcentagemAlimentacao = porcantagemAlimentacaoSoma * -1
+        
+                if (contStatusAlimentacao == 0) {
+                    convPorcentagemAlimentacao = 100
+                }
+        
+                localStorage.setItem("convPorcentagemAlimentacao", convPorcentagemAlimentacao.toString())
+        
+                document.getElementById('mPorcentagemDaAlimentacao').title = "Alimentacao: "+ localStorage.getItem("convPorcentagemAlimentacao") +"%"
+        
+                localStorage.setItem("contStatusAlimentacao", contStatusAlimentacao.toString())
+        
+                const StringTempAlimentacao = contStatusAlimentacao + "%"
+        
+                if (contStatusAlimentacao <= 65) {
+        
+                    const porcentagemDaAlimentacao = "linear-gradient(rgba(255, 255, 255, 0) "+ StringTempAlimentacao+",rgb("+ statusAlimentacaoRgb.toString() +","+ statusAlimentacaorGb.toString() +", 0) 0%)"
+        
+                    localStorage.setItem("statusDeAlimentacao", porcentagemDaAlimentacao)
+        
+                }
+        
+            }
+    
+            document.getElementById("alimentacaoDoPet").style.background = localStorage.getItem("statusDeAlimentacao");         
+        }
+        /** Higiene */
+        for (let i = 0; i < 10; i++) {
+            if (contStatusHigiene >= 0 && contStatusHigiene < 100) {
+
+                if(statusHigieneRgb >= 0 && statusHigieneRgb <= 245) {
+                    statusHigieneRgb += 5
+        
+                    localStorage.setItem("statusHigieneRgb", statusHigieneRgb.toString())
+                }
+        
+                contStatusHigiene++
+        
+                let porcantagemHigieneSoma = contStatusHigiene - 100 
+        
+                let convPorcentagemHigiene = porcantagemHigieneSoma * -1
+        
+                if (contStatusHigiene == 0) {
+                    convPorcentagemHigiene = 100
+                }
+        
+                localStorage.setItem("convPorcentagemHigiene", convPorcentagemHigiene.toString())
+        
+                document.getElementById('mPorcentagemDaHigiene').title = "Higiene: "+ localStorage.getItem("convPorcentagemHigiene") +"%"
+        
+                localStorage.setItem("contStatusHigiene", contStatusHigiene.toString())
+        
+                const StringTempHigiene = contStatusHigiene + "%"
+        
+                if (contStatusHigiene > 65) {
+                    if(statusHigienerGb >= 10 && statusHigienerGb <= 250) {
+                    statusHigienerGb -= 10
+        
+                    localStorage.setItem("statusSauderGb", statusSauderGb.toString())
+                }
+                }
+        
+                    const porcentagemDaHigiene = "linear-gradient(rgba(255, 255, 255, 0) "+ StringTempHigiene +",rgb("+ statusHigieneRgb.toString() +","+ statusHigienerGb.toString() +", 0) 0%)"
+        
+                    localStorage.setItem("statusDeHigiene", porcentagemDaHigiene)
+        
+            }
+            
+            document.getElementById("higieneDoPet").style.background = localStorage.getItem("statusDeHigiene")
+        }
+
+        expComida()
+        quantidade15 -= 1
+        localStorage.setItem("quantidade15", quantidade15)
+        document.getElementById('espaguete').title = "Espaguete: "+ quantidade15 +" UND"
+        document.getElementById('opcaoComerItem15').style.display = "none"
+        if(quantidade15 == 0) {
+            document.getElementById('item15').style.opacity = "0.2"
+            document.getElementById('item15').style.cursor = "default"
+            temItem15 = 0
+        }
+
+    } else {
+        document.getElementById('semFome').style.display = "block"
+    }
+
 }
 function fecharItem15() {
     document.getElementById('opcaoComerItem2').style.display = "none"
@@ -503,6 +2151,117 @@ function item16() {
     }
 }
 function comerItem16() {
+
+    if (contStatusAlimentacao > 2) {
+        /** Alimentacao */
+        for (let i = 0; i < 20; i++) {
+        
+            if (contStatusAlimentacao > 0 && contStatusAlimentacao <= 100 && limiteAlimentacao == 0) {
+        
+                if(statusAlimentacaorGb >= 0 && statusAlimentacaorGb <= 245) {
+                    statusAlimentacaorGb += 5
+        
+                    localStorage.setItem("statusAlimentacaorGb", statusAlimentacaorGb.toString())
+                }
+    
+                if (contStatusAlimentacao < 25) {
+                    
+                    if(statusAlimentacaoRgb >= 10 && statusAlimentacaoRgb <= 250) {
+                        statusAlimentacaoRgb -= 10
+            
+                        localStorage.setItem("statusAlimentacaoRgb", statusAlimentacaoRgb.toString())
+                    }
+    
+                }
+        
+                --contStatusAlimentacao
+                let porcantagemAlimentacaoSoma = contStatusAlimentacao - 100 
+        
+                let convPorcentagemAlimentacao = porcantagemAlimentacaoSoma * -1
+        
+                if (contStatusAlimentacao == 0) {
+                    convPorcentagemAlimentacao = 100
+                }
+        
+                localStorage.setItem("convPorcentagemAlimentacao", convPorcentagemAlimentacao.toString())
+        
+                document.getElementById('mPorcentagemDaAlimentacao').title = "Alimentacao: "+ localStorage.getItem("convPorcentagemAlimentacao") +"%"
+        
+                localStorage.setItem("contStatusAlimentacao", contStatusAlimentacao.toString())
+        
+                const StringTempAlimentacao = contStatusAlimentacao + "%"
+        
+                if (contStatusAlimentacao <= 65) {
+        
+                    const porcentagemDaAlimentacao = "linear-gradient(rgba(255, 255, 255, 0) "+ StringTempAlimentacao+",rgb("+ statusAlimentacaoRgb.toString() +","+ statusAlimentacaorGb.toString() +", 0) 0%)"
+        
+                    localStorage.setItem("statusDeAlimentacao", porcentagemDaAlimentacao)
+        
+                }
+        
+            }
+    
+            document.getElementById("alimentacaoDoPet").style.background = localStorage.getItem("statusDeAlimentacao");         
+        }
+        /** Higiene */
+        for (let i = 0; i < 10; i++) {
+            if (contStatusHigiene >= 0 && contStatusHigiene < 100) {
+
+                if(statusHigieneRgb >= 0 && statusHigieneRgb <= 245) {
+                    statusHigieneRgb += 5
+        
+                    localStorage.setItem("statusHigieneRgb", statusHigieneRgb.toString())
+                }
+        
+                contStatusHigiene++
+        
+                let porcantagemHigieneSoma = contStatusHigiene - 100 
+        
+                let convPorcentagemHigiene = porcantagemHigieneSoma * -1
+        
+                if (contStatusHigiene == 0) {
+                    convPorcentagemHigiene = 100
+                }
+        
+                localStorage.setItem("convPorcentagemHigiene", convPorcentagemHigiene.toString())
+        
+                document.getElementById('mPorcentagemDaHigiene').title = "Higiene: "+ localStorage.getItem("convPorcentagemHigiene") +"%"
+        
+                localStorage.setItem("contStatusHigiene", contStatusHigiene.toString())
+        
+                const StringTempHigiene = contStatusHigiene + "%"
+        
+                if (contStatusHigiene > 65) {
+                    if(statusHigienerGb >= 10 && statusHigienerGb <= 250) {
+                    statusHigienerGb -= 10
+        
+                    localStorage.setItem("statusSauderGb", statusSauderGb.toString())
+                }
+                }
+        
+                    const porcentagemDaHigiene = "linear-gradient(rgba(255, 255, 255, 0) "+ StringTempHigiene +",rgb("+ statusHigieneRgb.toString() +","+ statusHigienerGb.toString() +", 0) 0%)"
+        
+                    localStorage.setItem("statusDeHigiene", porcentagemDaHigiene)
+        
+            }
+            
+            document.getElementById("higieneDoPet").style.background = localStorage.getItem("statusDeHigiene")
+        }
+
+        expComida()
+        quantidade16 -= 1
+        localStorage.setItem("quantidade16", quantidade16)
+        document.getElementById('sopaDeTomate').title = "Sopa de Tomate: "+ quantidade16 +" UND"
+        document.getElementById('opcaoComerItem16').style.display = "none"
+        if(quantidade16 == 0) {
+            document.getElementById('item16').style.opacity = "0.2"
+            document.getElementById('item16').style.cursor = "default"
+            temItem16 = 0
+        }
+
+    } else {
+        document.getElementById('semFome').style.display = "block"
+    }
 
 }
 function fecharItem16() {
@@ -520,6 +2279,117 @@ function item17() {
 }
 function comerItem17() {
 
+    if (contStatusAlimentacao > 2) {
+        /** Alimentacao */
+        for (let i = 0; i < 20; i++) {
+        
+            if (contStatusAlimentacao > 0 && contStatusAlimentacao <= 100 && limiteAlimentacao == 0) {
+        
+                if(statusAlimentacaorGb >= 0 && statusAlimentacaorGb <= 245) {
+                    statusAlimentacaorGb += 5
+        
+                    localStorage.setItem("statusAlimentacaorGb", statusAlimentacaorGb.toString())
+                }
+    
+                if (contStatusAlimentacao < 25) {
+                    
+                    if(statusAlimentacaoRgb >= 10 && statusAlimentacaoRgb <= 250) {
+                        statusAlimentacaoRgb -= 10
+            
+                        localStorage.setItem("statusAlimentacaoRgb", statusAlimentacaoRgb.toString())
+                    }
+    
+                }
+        
+                --contStatusAlimentacao
+                let porcantagemAlimentacaoSoma = contStatusAlimentacao - 100 
+        
+                let convPorcentagemAlimentacao = porcantagemAlimentacaoSoma * -1
+        
+                if (contStatusAlimentacao == 0) {
+                    convPorcentagemAlimentacao = 100
+                }
+        
+                localStorage.setItem("convPorcentagemAlimentacao", convPorcentagemAlimentacao.toString())
+        
+                document.getElementById('mPorcentagemDaAlimentacao').title = "Alimentacao: "+ localStorage.getItem("convPorcentagemAlimentacao") +"%"
+        
+                localStorage.setItem("contStatusAlimentacao", contStatusAlimentacao.toString())
+        
+                const StringTempAlimentacao = contStatusAlimentacao + "%"
+        
+                if (contStatusAlimentacao <= 65) {
+        
+                    const porcentagemDaAlimentacao = "linear-gradient(rgba(255, 255, 255, 0) "+ StringTempAlimentacao+",rgb("+ statusAlimentacaoRgb.toString() +","+ statusAlimentacaorGb.toString() +", 0) 0%)"
+        
+                    localStorage.setItem("statusDeAlimentacao", porcentagemDaAlimentacao)
+        
+                }
+        
+            }
+    
+            document.getElementById("alimentacaoDoPet").style.background = localStorage.getItem("statusDeAlimentacao");         
+        }
+        /** Higiene */
+        for (let i = 0; i < 10; i++) {
+            if (contStatusHigiene >= 0 && contStatusHigiene < 100) {
+
+                if(statusHigieneRgb >= 0 && statusHigieneRgb <= 245) {
+                    statusHigieneRgb += 5
+        
+                    localStorage.setItem("statusHigieneRgb", statusHigieneRgb.toString())
+                }
+        
+                contStatusHigiene++
+        
+                let porcantagemHigieneSoma = contStatusHigiene - 100 
+        
+                let convPorcentagemHigiene = porcantagemHigieneSoma * -1
+        
+                if (contStatusHigiene == 0) {
+                    convPorcentagemHigiene = 100
+                }
+        
+                localStorage.setItem("convPorcentagemHigiene", convPorcentagemHigiene.toString())
+        
+                document.getElementById('mPorcentagemDaHigiene').title = "Higiene: "+ localStorage.getItem("convPorcentagemHigiene") +"%"
+        
+                localStorage.setItem("contStatusHigiene", contStatusHigiene.toString())
+        
+                const StringTempHigiene = contStatusHigiene + "%"
+        
+                if (contStatusHigiene > 65) {
+                    if(statusHigienerGb >= 10 && statusHigienerGb <= 250) {
+                    statusHigienerGb -= 10
+        
+                    localStorage.setItem("statusSauderGb", statusSauderGb.toString())
+                }
+                }
+        
+                    const porcentagemDaHigiene = "linear-gradient(rgba(255, 255, 255, 0) "+ StringTempHigiene +",rgb("+ statusHigieneRgb.toString() +","+ statusHigienerGb.toString() +", 0) 0%)"
+        
+                    localStorage.setItem("statusDeHigiene", porcentagemDaHigiene)
+        
+            }
+            
+            document.getElementById("higieneDoPet").style.background = localStorage.getItem("statusDeHigiene")
+        }
+
+        expComida()
+        quantidade17 -= 1
+        localStorage.setItem("quantidade17", quantidade17)
+        document.getElementById('almondegas').title = "Almôndegas: "+ quantidade17 +" UND"
+        document.getElementById('opcaoComerItem17').style.display = "none"
+        if(quantidade17 == 0) {
+            document.getElementById('item17').style.opacity = "0.2"
+            document.getElementById('item17').style.cursor = "default"
+            temItem17 = 0
+        }
+
+    } else {
+        document.getElementById('semFome').style.display = "block"
+    }
+
 }
 function fecharItem17() {
     document.getElementById('opcaoComerItem17').style.display = "none"
@@ -535,6 +2405,117 @@ function item18() {
     }
 }
 function comerItem18() {
+
+    if (contStatusAlimentacao > 2) {
+        /** Alimentacao */
+        for (let i = 0; i < 10; i++) {
+        
+            if (contStatusAlimentacao > 0 && contStatusAlimentacao <= 100 && limiteAlimentacao == 0) {
+        
+                if(statusAlimentacaorGb >= 0 && statusAlimentacaorGb <= 245) {
+                    statusAlimentacaorGb += 5
+        
+                    localStorage.setItem("statusAlimentacaorGb", statusAlimentacaorGb.toString())
+                }
+    
+                if (contStatusAlimentacao < 25) {
+                    
+                    if(statusAlimentacaoRgb >= 10 && statusAlimentacaoRgb <= 250) {
+                        statusAlimentacaoRgb -= 10
+            
+                        localStorage.setItem("statusAlimentacaoRgb", statusAlimentacaoRgb.toString())
+                    }
+    
+                }
+        
+                --contStatusAlimentacao
+                let porcantagemAlimentacaoSoma = contStatusAlimentacao - 100 
+        
+                let convPorcentagemAlimentacao = porcantagemAlimentacaoSoma * -1
+        
+                if (contStatusAlimentacao == 0) {
+                    convPorcentagemAlimentacao = 100
+                }
+        
+                localStorage.setItem("convPorcentagemAlimentacao", convPorcentagemAlimentacao.toString())
+        
+                document.getElementById('mPorcentagemDaAlimentacao').title = "Alimentacao: "+ localStorage.getItem("convPorcentagemAlimentacao") +"%"
+        
+                localStorage.setItem("contStatusAlimentacao", contStatusAlimentacao.toString())
+        
+                const StringTempAlimentacao = contStatusAlimentacao + "%"
+        
+                if (contStatusAlimentacao <= 65) {
+        
+                    const porcentagemDaAlimentacao = "linear-gradient(rgba(255, 255, 255, 0) "+ StringTempAlimentacao+",rgb("+ statusAlimentacaoRgb.toString() +","+ statusAlimentacaorGb.toString() +", 0) 0%)"
+        
+                    localStorage.setItem("statusDeAlimentacao", porcentagemDaAlimentacao)
+        
+                }
+        
+            }
+    
+            document.getElementById("alimentacaoDoPet").style.background = localStorage.getItem("statusDeAlimentacao");         
+        }
+        /** Higiene */
+        for (let i = 0; i < 5; i++) {
+            if (contStatusHigiene >= 0 && contStatusHigiene < 100) {
+
+                if(statusHigieneRgb >= 0 && statusHigieneRgb <= 245) {
+                    statusHigieneRgb += 5
+        
+                    localStorage.setItem("statusHigieneRgb", statusHigieneRgb.toString())
+                }
+        
+                contStatusHigiene++
+        
+                let porcantagemHigieneSoma = contStatusHigiene - 100 
+        
+                let convPorcentagemHigiene = porcantagemHigieneSoma * -1
+        
+                if (contStatusHigiene == 0) {
+                    convPorcentagemHigiene = 100
+                }
+        
+                localStorage.setItem("convPorcentagemHigiene", convPorcentagemHigiene.toString())
+        
+                document.getElementById('mPorcentagemDaHigiene').title = "Higiene: "+ localStorage.getItem("convPorcentagemHigiene") +"%"
+        
+                localStorage.setItem("contStatusHigiene", contStatusHigiene.toString())
+        
+                const StringTempHigiene = contStatusHigiene + "%"
+        
+                if (contStatusHigiene > 65) {
+                    if(statusHigienerGb >= 10 && statusHigienerGb <= 250) {
+                    statusHigienerGb -= 10
+        
+                    localStorage.setItem("statusSauderGb", statusSauderGb.toString())
+                }
+                }
+        
+                    const porcentagemDaHigiene = "linear-gradient(rgba(255, 255, 255, 0) "+ StringTempHigiene +",rgb("+ statusHigieneRgb.toString() +","+ statusHigienerGb.toString() +", 0) 0%)"
+        
+                    localStorage.setItem("statusDeHigiene", porcentagemDaHigiene)
+        
+            }
+            
+            document.getElementById("higieneDoPet").style.background = localStorage.getItem("statusDeHigiene")
+        }
+
+        expComida()
+        quantidade18 -= 1
+        localStorage.setItem("quantidade18", quantidade18)
+        document.getElementById('polpaDeManga').title = "Polpa de Manga: "+ quantidade18 +" UND"
+        document.getElementById('opcaoComerItem18').style.display = "none"
+        if(quantidade18 == 0) {
+            document.getElementById('item18').style.opacity = "0.2"
+            document.getElementById('item18').style.cursor = "default"
+            temItem18 = 0
+        }
+
+    } else {
+        document.getElementById('semFome').style.display = "block"
+    }
 
 }
 function fecharItem18() {
@@ -552,6 +2533,117 @@ function item19() {
 }
 function comerItem19() {
 
+    if (contStatusAlimentacao > 2) {
+        /** Alimentacao */
+        for (let i = 0; i < 20; i++) {
+        
+            if (contStatusAlimentacao > 0 && contStatusAlimentacao <= 100 && limiteAlimentacao == 0) {
+        
+                if(statusAlimentacaorGb >= 0 && statusAlimentacaorGb <= 245) {
+                    statusAlimentacaorGb += 5
+        
+                    localStorage.setItem("statusAlimentacaorGb", statusAlimentacaorGb.toString())
+                }
+    
+                if (contStatusAlimentacao < 25) {
+                    
+                    if(statusAlimentacaoRgb >= 10 && statusAlimentacaoRgb <= 250) {
+                        statusAlimentacaoRgb -= 10
+            
+                        localStorage.setItem("statusAlimentacaoRgb", statusAlimentacaoRgb.toString())
+                    }
+    
+                }
+        
+                --contStatusAlimentacao
+                let porcantagemAlimentacaoSoma = contStatusAlimentacao - 100 
+        
+                let convPorcentagemAlimentacao = porcantagemAlimentacaoSoma * -1
+        
+                if (contStatusAlimentacao == 0) {
+                    convPorcentagemAlimentacao = 100
+                }
+        
+                localStorage.setItem("convPorcentagemAlimentacao", convPorcentagemAlimentacao.toString())
+        
+                document.getElementById('mPorcentagemDaAlimentacao').title = "Alimentacao: "+ localStorage.getItem("convPorcentagemAlimentacao") +"%"
+        
+                localStorage.setItem("contStatusAlimentacao", contStatusAlimentacao.toString())
+        
+                const StringTempAlimentacao = contStatusAlimentacao + "%"
+        
+                if (contStatusAlimentacao <= 65) {
+        
+                    const porcentagemDaAlimentacao = "linear-gradient(rgba(255, 255, 255, 0) "+ StringTempAlimentacao+",rgb("+ statusAlimentacaoRgb.toString() +","+ statusAlimentacaorGb.toString() +", 0) 0%)"
+        
+                    localStorage.setItem("statusDeAlimentacao", porcentagemDaAlimentacao)
+        
+                }
+        
+            }
+    
+            document.getElementById("alimentacaoDoPet").style.background = localStorage.getItem("statusDeAlimentacao");         
+        }
+        /** Higiene */
+        for (let i = 0; i < 10; i++) {
+            if (contStatusHigiene >= 0 && contStatusHigiene < 100) {
+
+                if(statusHigieneRgb >= 0 && statusHigieneRgb <= 245) {
+                    statusHigieneRgb += 5
+        
+                    localStorage.setItem("statusHigieneRgb", statusHigieneRgb.toString())
+                }
+        
+                contStatusHigiene++
+        
+                let porcantagemHigieneSoma = contStatusHigiene - 100 
+        
+                let convPorcentagemHigiene = porcantagemHigieneSoma * -1
+        
+                if (contStatusHigiene == 0) {
+                    convPorcentagemHigiene = 100
+                }
+        
+                localStorage.setItem("convPorcentagemHigiene", convPorcentagemHigiene.toString())
+        
+                document.getElementById('mPorcentagemDaHigiene').title = "Higiene: "+ localStorage.getItem("convPorcentagemHigiene") +"%"
+        
+                localStorage.setItem("contStatusHigiene", contStatusHigiene.toString())
+        
+                const StringTempHigiene = contStatusHigiene + "%"
+        
+                if (contStatusHigiene > 65) {
+                    if(statusHigienerGb >= 10 && statusHigienerGb <= 250) {
+                    statusHigienerGb -= 10
+        
+                    localStorage.setItem("statusSauderGb", statusSauderGb.toString())
+                }
+                }
+        
+                    const porcentagemDaHigiene = "linear-gradient(rgba(255, 255, 255, 0) "+ StringTempHigiene +",rgb("+ statusHigieneRgb.toString() +","+ statusHigienerGb.toString() +", 0) 0%)"
+        
+                    localStorage.setItem("statusDeHigiene", porcentagemDaHigiene)
+        
+            }
+            
+            document.getElementById("higieneDoPet").style.background = localStorage.getItem("statusDeHigiene")
+        }
+
+        expComida()
+        quantidade19 -= 1
+        localStorage.setItem("quantidade19", quantidade19)
+        document.getElementById('presunto').title = "Presunto: "+ quantidade19 +" UND"
+        document.getElementById('opcaoComerItem19').style.display = "none"
+        if(quantidade19 == 0) {
+            document.getElementById('item19').style.opacity = "0.2"
+            document.getElementById('item19').style.cursor = "default"
+            temItem19 = 0
+        }
+
+    } else {
+        document.getElementById('semFome').style.display = "block"
+    }
+
 }
 function fecharItem19() {
     document.getElementById('opcaoComerItem19').style.display = "none"
@@ -567,6 +2659,117 @@ function item20() {
     }
 }
 function comerItem20() {
+
+    if (contStatusAlimentacao > 2) {
+        /** Alimentacao */
+        for (let i = 0; i < 10; i++) {
+        
+            if (contStatusAlimentacao > 0 && contStatusAlimentacao <= 100 && limiteAlimentacao == 0) {
+        
+                if(statusAlimentacaorGb >= 0 && statusAlimentacaorGb <= 245) {
+                    statusAlimentacaorGb += 5
+        
+                    localStorage.setItem("statusAlimentacaorGb", statusAlimentacaorGb.toString())
+                }
+    
+                if (contStatusAlimentacao < 25) {
+                    
+                    if(statusAlimentacaoRgb >= 10 && statusAlimentacaoRgb <= 250) {
+                        statusAlimentacaoRgb -= 10
+            
+                        localStorage.setItem("statusAlimentacaoRgb", statusAlimentacaoRgb.toString())
+                    }
+    
+                }
+        
+                --contStatusAlimentacao
+                let porcantagemAlimentacaoSoma = contStatusAlimentacao - 100 
+        
+                let convPorcentagemAlimentacao = porcantagemAlimentacaoSoma * -1
+        
+                if (contStatusAlimentacao == 0) {
+                    convPorcentagemAlimentacao = 100
+                }
+        
+                localStorage.setItem("convPorcentagemAlimentacao", convPorcentagemAlimentacao.toString())
+        
+                document.getElementById('mPorcentagemDaAlimentacao').title = "Alimentacao: "+ localStorage.getItem("convPorcentagemAlimentacao") +"%"
+        
+                localStorage.setItem("contStatusAlimentacao", contStatusAlimentacao.toString())
+        
+                const StringTempAlimentacao = contStatusAlimentacao + "%"
+        
+                if (contStatusAlimentacao <= 65) {
+        
+                    const porcentagemDaAlimentacao = "linear-gradient(rgba(255, 255, 255, 0) "+ StringTempAlimentacao+",rgb("+ statusAlimentacaoRgb.toString() +","+ statusAlimentacaorGb.toString() +", 0) 0%)"
+        
+                    localStorage.setItem("statusDeAlimentacao", porcentagemDaAlimentacao)
+        
+                }
+        
+            }
+    
+            document.getElementById("alimentacaoDoPet").style.background = localStorage.getItem("statusDeAlimentacao");         
+        }
+        /** Higiene */
+        for (let i = 0; i < 5; i++) {
+            if (contStatusHigiene >= 0 && contStatusHigiene < 100) {
+
+                if(statusHigieneRgb >= 0 && statusHigieneRgb <= 245) {
+                    statusHigieneRgb += 5
+        
+                    localStorage.setItem("statusHigieneRgb", statusHigieneRgb.toString())
+                }
+        
+                contStatusHigiene++
+        
+                let porcantagemHigieneSoma = contStatusHigiene - 100 
+        
+                let convPorcentagemHigiene = porcantagemHigieneSoma * -1
+        
+                if (contStatusHigiene == 0) {
+                    convPorcentagemHigiene = 100
+                }
+        
+                localStorage.setItem("convPorcentagemHigiene", convPorcentagemHigiene.toString())
+        
+                document.getElementById('mPorcentagemDaHigiene').title = "Higiene: "+ localStorage.getItem("convPorcentagemHigiene") +"%"
+        
+                localStorage.setItem("contStatusHigiene", contStatusHigiene.toString())
+        
+                const StringTempHigiene = contStatusHigiene + "%"
+        
+                if (contStatusHigiene > 65) {
+                    if(statusHigienerGb >= 10 && statusHigienerGb <= 250) {
+                    statusHigienerGb -= 10
+        
+                    localStorage.setItem("statusSauderGb", statusSauderGb.toString())
+                }
+                }
+        
+                    const porcentagemDaHigiene = "linear-gradient(rgba(255, 255, 255, 0) "+ StringTempHigiene +",rgb("+ statusHigieneRgb.toString() +","+ statusHigienerGb.toString() +", 0) 0%)"
+        
+                    localStorage.setItem("statusDeHigiene", porcentagemDaHigiene)
+        
+            }
+            
+            document.getElementById("higieneDoPet").style.background = localStorage.getItem("statusDeHigiene")
+        }
+
+        expComida()
+        quantidade20 -= 1
+        localStorage.setItem("quantidade20", quantidade20)
+        document.getElementById('brocolis').title = "Brócolis: "+ quantidade20 +" UND"
+        document.getElementById('opcaoComerItem20').style.display = "none"
+        if(quantidade20 == 0) {
+            document.getElementById('item20').style.opacity = "0.2"
+            document.getElementById('item20').style.cursor = "default"
+            temItem20 = 0
+        }
+
+    } else {
+        document.getElementById('semFome').style.display = "block"
+    }
 
 }
 function fecharItem20() {
@@ -584,6 +2787,117 @@ function item21() {
 }
 function comerItem21() {
 
+    if (contStatusAlimentacao > 2) {
+        /** Alimentacao */
+        for (let i = 0; i < 10; i++) {
+        
+            if (contStatusAlimentacao > 0 && contStatusAlimentacao <= 100 && limiteAlimentacao == 0) {
+        
+                if(statusAlimentacaorGb >= 0 && statusAlimentacaorGb <= 245) {
+                    statusAlimentacaorGb += 5
+        
+                    localStorage.setItem("statusAlimentacaorGb", statusAlimentacaorGb.toString())
+                }
+    
+                if (contStatusAlimentacao < 25) {
+                    
+                    if(statusAlimentacaoRgb >= 10 && statusAlimentacaoRgb <= 250) {
+                        statusAlimentacaoRgb -= 10
+            
+                        localStorage.setItem("statusAlimentacaoRgb", statusAlimentacaoRgb.toString())
+                    }
+    
+                }
+        
+                --contStatusAlimentacao
+                let porcantagemAlimentacaoSoma = contStatusAlimentacao - 100 
+        
+                let convPorcentagemAlimentacao = porcantagemAlimentacaoSoma * -1
+        
+                if (contStatusAlimentacao == 0) {
+                    convPorcentagemAlimentacao = 100
+                }
+        
+                localStorage.setItem("convPorcentagemAlimentacao", convPorcentagemAlimentacao.toString())
+        
+                document.getElementById('mPorcentagemDaAlimentacao').title = "Alimentacao: "+ localStorage.getItem("convPorcentagemAlimentacao") +"%"
+        
+                localStorage.setItem("contStatusAlimentacao", contStatusAlimentacao.toString())
+        
+                const StringTempAlimentacao = contStatusAlimentacao + "%"
+        
+                if (contStatusAlimentacao <= 65) {
+        
+                    const porcentagemDaAlimentacao = "linear-gradient(rgba(255, 255, 255, 0) "+ StringTempAlimentacao+",rgb("+ statusAlimentacaoRgb.toString() +","+ statusAlimentacaorGb.toString() +", 0) 0%)"
+        
+                    localStorage.setItem("statusDeAlimentacao", porcentagemDaAlimentacao)
+        
+                }
+        
+            }
+    
+            document.getElementById("alimentacaoDoPet").style.background = localStorage.getItem("statusDeAlimentacao");         
+        }
+        /** Higiene */
+        for (let i = 0; i < 5; i++) {
+            if (contStatusHigiene >= 0 && contStatusHigiene < 100) {
+
+                if(statusHigieneRgb >= 0 && statusHigieneRgb <= 245) {
+                    statusHigieneRgb += 5
+        
+                    localStorage.setItem("statusHigieneRgb", statusHigieneRgb.toString())
+                }
+        
+                contStatusHigiene++
+        
+                let porcantagemHigieneSoma = contStatusHigiene - 100 
+        
+                let convPorcentagemHigiene = porcantagemHigieneSoma * -1
+        
+                if (contStatusHigiene == 0) {
+                    convPorcentagemHigiene = 100
+                }
+        
+                localStorage.setItem("convPorcentagemHigiene", convPorcentagemHigiene.toString())
+        
+                document.getElementById('mPorcentagemDaHigiene').title = "Higiene: "+ localStorage.getItem("convPorcentagemHigiene") +"%"
+        
+                localStorage.setItem("contStatusHigiene", contStatusHigiene.toString())
+        
+                const StringTempHigiene = contStatusHigiene + "%"
+        
+                if (contStatusHigiene > 65) {
+                    if(statusHigienerGb >= 10 && statusHigienerGb <= 250) {
+                    statusHigienerGb -= 10
+        
+                    localStorage.setItem("statusSauderGb", statusSauderGb.toString())
+                }
+                }
+        
+                    const porcentagemDaHigiene = "linear-gradient(rgba(255, 255, 255, 0) "+ StringTempHigiene +",rgb("+ statusHigieneRgb.toString() +","+ statusHigienerGb.toString() +", 0) 0%)"
+        
+                    localStorage.setItem("statusDeHigiene", porcentagemDaHigiene)
+        
+            }
+            
+            document.getElementById("higieneDoPet").style.background = localStorage.getItem("statusDeHigiene")
+        }
+
+        expComida()
+        quantidade21 -= 1
+        localStorage.setItem("quantidade21", quantidade21)
+        document.getElementById('cenoura').title = "Cenoura: "+ quantidade21 +" UND"
+        document.getElementById('opcaoComerItem21').style.display = "none"
+        if(quantidade21 == 0) {
+            document.getElementById('item21').style.opacity = "0.2"
+            document.getElementById('item21').style.cursor = "default"
+            temItem21 = 0
+        }
+
+    } else {
+        document.getElementById('semFome').style.display = "block"
+    }
+
 }
 function fecharItem21() {
     document.getElementById('opcaoComerItem21').style.display = "none"
@@ -599,6 +2913,117 @@ function item22() {
     }
 }
 function comerItem22() {
+
+    if (contStatusAlimentacao > 2) {
+        /** Alimentacao */
+        for (let i = 0; i < 10; i++) {
+        
+            if (contStatusAlimentacao > 0 && contStatusAlimentacao <= 100 && limiteAlimentacao == 0) {
+        
+                if(statusAlimentacaorGb >= 0 && statusAlimentacaorGb <= 245) {
+                    statusAlimentacaorGb += 5
+        
+                    localStorage.setItem("statusAlimentacaorGb", statusAlimentacaorGb.toString())
+                }
+    
+                if (contStatusAlimentacao < 25) {
+                    
+                    if(statusAlimentacaoRgb >= 10 && statusAlimentacaoRgb <= 250) {
+                        statusAlimentacaoRgb -= 10
+            
+                        localStorage.setItem("statusAlimentacaoRgb", statusAlimentacaoRgb.toString())
+                    }
+    
+                }
+        
+                --contStatusAlimentacao
+                let porcantagemAlimentacaoSoma = contStatusAlimentacao - 100 
+        
+                let convPorcentagemAlimentacao = porcantagemAlimentacaoSoma * -1
+        
+                if (contStatusAlimentacao == 0) {
+                    convPorcentagemAlimentacao = 100
+                }
+        
+                localStorage.setItem("convPorcentagemAlimentacao", convPorcentagemAlimentacao.toString())
+        
+                document.getElementById('mPorcentagemDaAlimentacao').title = "Alimentacao: "+ localStorage.getItem("convPorcentagemAlimentacao") +"%"
+        
+                localStorage.setItem("contStatusAlimentacao", contStatusAlimentacao.toString())
+        
+                const StringTempAlimentacao = contStatusAlimentacao + "%"
+        
+                if (contStatusAlimentacao <= 65) {
+        
+                    const porcentagemDaAlimentacao = "linear-gradient(rgba(255, 255, 255, 0) "+ StringTempAlimentacao+",rgb("+ statusAlimentacaoRgb.toString() +","+ statusAlimentacaorGb.toString() +", 0) 0%)"
+        
+                    localStorage.setItem("statusDeAlimentacao", porcentagemDaAlimentacao)
+        
+                }
+        
+            }
+    
+            document.getElementById("alimentacaoDoPet").style.background = localStorage.getItem("statusDeAlimentacao");         
+        }
+        /** Higiene */
+        for (let i = 0; i < 5; i++) {
+            if (contStatusHigiene >= 0 && contStatusHigiene < 100) {
+
+                if(statusHigieneRgb >= 0 && statusHigieneRgb <= 245) {
+                    statusHigieneRgb += 5
+        
+                    localStorage.setItem("statusHigieneRgb", statusHigieneRgb.toString())
+                }
+        
+                contStatusHigiene++
+        
+                let porcantagemHigieneSoma = contStatusHigiene - 100 
+        
+                let convPorcentagemHigiene = porcantagemHigieneSoma * -1
+        
+                if (contStatusHigiene == 0) {
+                    convPorcentagemHigiene = 100
+                }
+        
+                localStorage.setItem("convPorcentagemHigiene", convPorcentagemHigiene.toString())
+        
+                document.getElementById('mPorcentagemDaHigiene').title = "Higiene: "+ localStorage.getItem("convPorcentagemHigiene") +"%"
+        
+                localStorage.setItem("contStatusHigiene", contStatusHigiene.toString())
+        
+                const StringTempHigiene = contStatusHigiene + "%"
+        
+                if (contStatusHigiene > 65) {
+                    if(statusHigienerGb >= 10 && statusHigienerGb <= 250) {
+                    statusHigienerGb -= 10
+        
+                    localStorage.setItem("statusSauderGb", statusSauderGb.toString())
+                }
+                }
+        
+                    const porcentagemDaHigiene = "linear-gradient(rgba(255, 255, 255, 0) "+ StringTempHigiene +",rgb("+ statusHigieneRgb.toString() +","+ statusHigienerGb.toString() +", 0) 0%)"
+        
+                    localStorage.setItem("statusDeHigiene", porcentagemDaHigiene)
+        
+            }
+            
+            document.getElementById("higieneDoPet").style.background = localStorage.getItem("statusDeHigiene")
+        }
+
+        expComida()
+        quantidade22 -= 1
+        localStorage.setItem("quantidade22", quantidade22)
+        document.getElementById('repolho').title = "Repolho: "+ quantidade22 +" UND"
+        document.getElementById('opcaoComerItem22').style.display = "none"
+        if(quantidade22 == 0) {
+            document.getElementById('item22').style.opacity = "0.2"
+            document.getElementById('item22').style.cursor = "default"
+            temItem22 = 0
+        }
+
+    } else {
+        document.getElementById('semFome').style.display = "block"
+    }
 
 }
 function fecharItem22() {
@@ -616,6 +3041,117 @@ function item23() {
 }
 function comerItem23() {
 
+    if (contStatusAlimentacao > 2) {
+        /** Alimentacao */
+        for (let i = 0; i < 10; i++) {
+        
+            if (contStatusAlimentacao > 0 && contStatusAlimentacao <= 100 && limiteAlimentacao == 0) {
+        
+                if(statusAlimentacaorGb >= 0 && statusAlimentacaorGb <= 245) {
+                    statusAlimentacaorGb += 5
+        
+                    localStorage.setItem("statusAlimentacaorGb", statusAlimentacaorGb.toString())
+                }
+    
+                if (contStatusAlimentacao < 25) {
+                    
+                    if(statusAlimentacaoRgb >= 10 && statusAlimentacaoRgb <= 250) {
+                        statusAlimentacaoRgb -= 10
+            
+                        localStorage.setItem("statusAlimentacaoRgb", statusAlimentacaoRgb.toString())
+                    }
+    
+                }
+        
+                --contStatusAlimentacao
+                let porcantagemAlimentacaoSoma = contStatusAlimentacao - 100 
+        
+                let convPorcentagemAlimentacao = porcantagemAlimentacaoSoma * -1
+        
+                if (contStatusAlimentacao == 0) {
+                    convPorcentagemAlimentacao = 100
+                }
+        
+                localStorage.setItem("convPorcentagemAlimentacao", convPorcentagemAlimentacao.toString())
+        
+                document.getElementById('mPorcentagemDaAlimentacao').title = "Alimentacao: "+ localStorage.getItem("convPorcentagemAlimentacao") +"%"
+        
+                localStorage.setItem("contStatusAlimentacao", contStatusAlimentacao.toString())
+        
+                const StringTempAlimentacao = contStatusAlimentacao + "%"
+        
+                if (contStatusAlimentacao <= 65) {
+        
+                    const porcentagemDaAlimentacao = "linear-gradient(rgba(255, 255, 255, 0) "+ StringTempAlimentacao+",rgb("+ statusAlimentacaoRgb.toString() +","+ statusAlimentacaorGb.toString() +", 0) 0%)"
+        
+                    localStorage.setItem("statusDeAlimentacao", porcentagemDaAlimentacao)
+        
+                }
+        
+            }
+    
+            document.getElementById("alimentacaoDoPet").style.background = localStorage.getItem("statusDeAlimentacao");         
+        }
+        /** Higiene */
+        for (let i = 0; i < 5; i++) {
+            if (contStatusHigiene >= 0 && contStatusHigiene < 100) {
+
+                if(statusHigieneRgb >= 0 && statusHigieneRgb <= 245) {
+                    statusHigieneRgb += 5
+        
+                    localStorage.setItem("statusHigieneRgb", statusHigieneRgb.toString())
+                }
+        
+                contStatusHigiene++
+        
+                let porcantagemHigieneSoma = contStatusHigiene - 100 
+        
+                let convPorcentagemHigiene = porcantagemHigieneSoma * -1
+        
+                if (contStatusHigiene == 0) {
+                    convPorcentagemHigiene = 100
+                }
+        
+                localStorage.setItem("convPorcentagemHigiene", convPorcentagemHigiene.toString())
+        
+                document.getElementById('mPorcentagemDaHigiene').title = "Higiene: "+ localStorage.getItem("convPorcentagemHigiene") +"%"
+        
+                localStorage.setItem("contStatusHigiene", contStatusHigiene.toString())
+        
+                const StringTempHigiene = contStatusHigiene + "%"
+        
+                if (contStatusHigiene > 65) {
+                    if(statusHigienerGb >= 10 && statusHigienerGb <= 250) {
+                    statusHigienerGb -= 10
+        
+                    localStorage.setItem("statusSauderGb", statusSauderGb.toString())
+                }
+                }
+        
+                    const porcentagemDaHigiene = "linear-gradient(rgba(255, 255, 255, 0) "+ StringTempHigiene +",rgb("+ statusHigieneRgb.toString() +","+ statusHigienerGb.toString() +", 0) 0%)"
+        
+                    localStorage.setItem("statusDeHigiene", porcentagemDaHigiene)
+        
+            }
+            
+            document.getElementById("higieneDoPet").style.background = localStorage.getItem("statusDeHigiene")
+        }
+
+        expComida()
+        quantidade23 -= 1
+        localStorage.setItem("quantidade23", quantidade23)
+        document.getElementById('maca').title = "Maça: "+ quantidade23 +" UND"
+        document.getElementById('opcaoComerItem23').style.display = "none"
+        if(quantidade23 == 0) {
+            document.getElementById('item23').style.opacity = "0.2"
+            document.getElementById('item23').style.cursor = "default"
+            temItem23 = 0
+        }
+
+    } else {
+        document.getElementById('semFome').style.display = "block"
+    }
+
 }
 function fecharItem23() {
     document.getElementById('opcaoComerItem23').style.display = "none"
@@ -631,6 +3167,117 @@ function item24() {
     }
 }
 function comerItem24() {
+
+    if (contStatusAlimentacao > 2) {
+        /** Alimentacao */
+        for (let i = 0; i < 10; i++) {
+        
+            if (contStatusAlimentacao > 0 && contStatusAlimentacao <= 100 && limiteAlimentacao == 0) {
+        
+                if(statusAlimentacaorGb >= 0 && statusAlimentacaorGb <= 245) {
+                    statusAlimentacaorGb += 5
+        
+                    localStorage.setItem("statusAlimentacaorGb", statusAlimentacaorGb.toString())
+                }
+    
+                if (contStatusAlimentacao < 25) {
+                    
+                    if(statusAlimentacaoRgb >= 10 && statusAlimentacaoRgb <= 250) {
+                        statusAlimentacaoRgb -= 10
+            
+                        localStorage.setItem("statusAlimentacaoRgb", statusAlimentacaoRgb.toString())
+                    }
+    
+                }
+        
+                --contStatusAlimentacao
+                let porcantagemAlimentacaoSoma = contStatusAlimentacao - 100 
+        
+                let convPorcentagemAlimentacao = porcantagemAlimentacaoSoma * -1
+        
+                if (contStatusAlimentacao == 0) {
+                    convPorcentagemAlimentacao = 100
+                }
+        
+                localStorage.setItem("convPorcentagemAlimentacao", convPorcentagemAlimentacao.toString())
+        
+                document.getElementById('mPorcentagemDaAlimentacao').title = "Alimentacao: "+ localStorage.getItem("convPorcentagemAlimentacao") +"%"
+        
+                localStorage.setItem("contStatusAlimentacao", contStatusAlimentacao.toString())
+        
+                const StringTempAlimentacao = contStatusAlimentacao + "%"
+        
+                if (contStatusAlimentacao <= 65) {
+        
+                    const porcentagemDaAlimentacao = "linear-gradient(rgba(255, 255, 255, 0) "+ StringTempAlimentacao+",rgb("+ statusAlimentacaoRgb.toString() +","+ statusAlimentacaorGb.toString() +", 0) 0%)"
+        
+                    localStorage.setItem("statusDeAlimentacao", porcentagemDaAlimentacao)
+        
+                }
+        
+            }
+    
+            document.getElementById("alimentacaoDoPet").style.background = localStorage.getItem("statusDeAlimentacao");         
+        }
+        /** Higiene */
+        for (let i = 0; i < 5; i++) {
+            if (contStatusHigiene >= 0 && contStatusHigiene < 100) {
+
+                if(statusHigieneRgb >= 0 && statusHigieneRgb <= 245) {
+                    statusHigieneRgb += 5
+        
+                    localStorage.setItem("statusHigieneRgb", statusHigieneRgb.toString())
+                }
+        
+                contStatusHigiene++
+        
+                let porcantagemHigieneSoma = contStatusHigiene - 100 
+        
+                let convPorcentagemHigiene = porcantagemHigieneSoma * -1
+        
+                if (contStatusHigiene == 0) {
+                    convPorcentagemHigiene = 100
+                }
+        
+                localStorage.setItem("convPorcentagemHigiene", convPorcentagemHigiene.toString())
+        
+                document.getElementById('mPorcentagemDaHigiene').title = "Higiene: "+ localStorage.getItem("convPorcentagemHigiene") +"%"
+        
+                localStorage.setItem("contStatusHigiene", contStatusHigiene.toString())
+        
+                const StringTempHigiene = contStatusHigiene + "%"
+        
+                if (contStatusHigiene > 65) {
+                    if(statusHigienerGb >= 10 && statusHigienerGb <= 250) {
+                    statusHigienerGb -= 10
+        
+                    localStorage.setItem("statusSauderGb", statusSauderGb.toString())
+                }
+                }
+        
+                    const porcentagemDaHigiene = "linear-gradient(rgba(255, 255, 255, 0) "+ StringTempHigiene +",rgb("+ statusHigieneRgb.toString() +","+ statusHigienerGb.toString() +", 0) 0%)"
+        
+                    localStorage.setItem("statusDeHigiene", porcentagemDaHigiene)
+        
+            }
+            
+            document.getElementById("higieneDoPet").style.background = localStorage.getItem("statusDeHigiene")
+        }
+
+        expComida()
+        quantidade24 -= 1
+        localStorage.setItem("quantidade24", quantidade24)
+        document.getElementById('laranja').title = "Laranja: "+ quantidade24 +" UND"
+        document.getElementById('opcaoComerItem24').style.display = "none"
+        if(quantidade24 == 0) {
+            document.getElementById('item24').style.opacity = "0.2"
+            document.getElementById('item24').style.cursor = "default"
+            temItem24 = 0
+        }
+
+    } else {
+        document.getElementById('semFome').style.display = "block"
+    }
 
 }
 function fecharItem24() {
@@ -648,6 +3295,117 @@ function item25() {
 }
 function comerItem25() {
 
+    if (contStatusAlimentacao > 2) {
+        /** Alimentacao */
+        for (let i = 0; i < 10; i++) {
+        
+            if (contStatusAlimentacao > 0 && contStatusAlimentacao <= 100 && limiteAlimentacao == 0) {
+        
+                if(statusAlimentacaorGb >= 0 && statusAlimentacaorGb <= 245) {
+                    statusAlimentacaorGb += 5
+        
+                    localStorage.setItem("statusAlimentacaorGb", statusAlimentacaorGb.toString())
+                }
+    
+                if (contStatusAlimentacao < 25) {
+                    
+                    if(statusAlimentacaoRgb >= 10 && statusAlimentacaoRgb <= 250) {
+                        statusAlimentacaoRgb -= 10
+            
+                        localStorage.setItem("statusAlimentacaoRgb", statusAlimentacaoRgb.toString())
+                    }
+    
+                }
+        
+                --contStatusAlimentacao
+                let porcantagemAlimentacaoSoma = contStatusAlimentacao - 100 
+        
+                let convPorcentagemAlimentacao = porcantagemAlimentacaoSoma * -1
+        
+                if (contStatusAlimentacao == 0) {
+                    convPorcentagemAlimentacao = 100
+                }
+        
+                localStorage.setItem("convPorcentagemAlimentacao", convPorcentagemAlimentacao.toString())
+        
+                document.getElementById('mPorcentagemDaAlimentacao').title = "Alimentacao: "+ localStorage.getItem("convPorcentagemAlimentacao") +"%"
+        
+                localStorage.setItem("contStatusAlimentacao", contStatusAlimentacao.toString())
+        
+                const StringTempAlimentacao = contStatusAlimentacao + "%"
+        
+                if (contStatusAlimentacao <= 65) {
+        
+                    const porcentagemDaAlimentacao = "linear-gradient(rgba(255, 255, 255, 0) "+ StringTempAlimentacao+",rgb("+ statusAlimentacaoRgb.toString() +","+ statusAlimentacaorGb.toString() +", 0) 0%)"
+        
+                    localStorage.setItem("statusDeAlimentacao", porcentagemDaAlimentacao)
+        
+                }
+        
+            }
+    
+            document.getElementById("alimentacaoDoPet").style.background = localStorage.getItem("statusDeAlimentacao");         
+        }
+        /** Higiene */
+        for (let i = 0; i < 5; i++) {
+            if (contStatusHigiene >= 0 && contStatusHigiene < 100) {
+
+                if(statusHigieneRgb >= 0 && statusHigieneRgb <= 245) {
+                    statusHigieneRgb += 5
+        
+                    localStorage.setItem("statusHigieneRgb", statusHigieneRgb.toString())
+                }
+        
+                contStatusHigiene++
+        
+                let porcantagemHigieneSoma = contStatusHigiene - 100 
+        
+                let convPorcentagemHigiene = porcantagemHigieneSoma * -1
+        
+                if (contStatusHigiene == 0) {
+                    convPorcentagemHigiene = 100
+                }
+        
+                localStorage.setItem("convPorcentagemHigiene", convPorcentagemHigiene.toString())
+        
+                document.getElementById('mPorcentagemDaHigiene').title = "Higiene: "+ localStorage.getItem("convPorcentagemHigiene") +"%"
+        
+                localStorage.setItem("contStatusHigiene", contStatusHigiene.toString())
+        
+                const StringTempHigiene = contStatusHigiene + "%"
+        
+                if (contStatusHigiene > 65) {
+                    if(statusHigienerGb >= 10 && statusHigienerGb <= 250) {
+                    statusHigienerGb -= 10
+        
+                    localStorage.setItem("statusSauderGb", statusSauderGb.toString())
+                }
+                }
+        
+                    const porcentagemDaHigiene = "linear-gradient(rgba(255, 255, 255, 0) "+ StringTempHigiene +",rgb("+ statusHigieneRgb.toString() +","+ statusHigienerGb.toString() +", 0) 0%)"
+        
+                    localStorage.setItem("statusDeHigiene", porcentagemDaHigiene)
+        
+            }
+            
+            document.getElementById("higieneDoPet").style.background = localStorage.getItem("statusDeHigiene")
+        }
+
+        expComida()
+        quantidade25 -= 1
+        localStorage.setItem("quantidade25", quantidade25)
+        document.getElementById('cachoDeUvas').title = "Cacho de Uvas: "+ quantidade25 +" UND"
+        document.getElementById('opcaoComerItem25').style.display = "none"
+        if(quantidade25 == 0) {
+            document.getElementById('item25').style.opacity = "0.2"
+            document.getElementById('item25').style.cursor = "default"
+            temItem25 = 0
+        }
+
+    } else {
+        document.getElementById('semFome').style.display = "block"
+    }
+
 }
 function fecharItem25() {
     document.getElementById('opcaoComerItem25').style.display = "none"
@@ -663,6 +3421,117 @@ function item26() {
     }
 }
 function comerItem26() {
+
+    if (contStatusAlimentacao > 2) {
+        /** Alimentacao */
+        for (let i = 0; i < 5; i++) {
+        
+            if (contStatusAlimentacao > 0 && contStatusAlimentacao <= 100 && limiteAlimentacao == 0) {
+        
+                if(statusAlimentacaorGb >= 0 && statusAlimentacaorGb <= 245) {
+                    statusAlimentacaorGb += 5
+        
+                    localStorage.setItem("statusAlimentacaorGb", statusAlimentacaorGb.toString())
+                }
+    
+                if (contStatusAlimentacao < 25) {
+                    
+                    if(statusAlimentacaoRgb >= 10 && statusAlimentacaoRgb <= 250) {
+                        statusAlimentacaoRgb -= 10
+            
+                        localStorage.setItem("statusAlimentacaoRgb", statusAlimentacaoRgb.toString())
+                    }
+    
+                }
+        
+                --contStatusAlimentacao
+                let porcantagemAlimentacaoSoma = contStatusAlimentacao - 100 
+        
+                let convPorcentagemAlimentacao = porcantagemAlimentacaoSoma * -1
+        
+                if (contStatusAlimentacao == 0) {
+                    convPorcentagemAlimentacao = 100
+                }
+        
+                localStorage.setItem("convPorcentagemAlimentacao", convPorcentagemAlimentacao.toString())
+        
+                document.getElementById('mPorcentagemDaAlimentacao').title = "Alimentacao: "+ localStorage.getItem("convPorcentagemAlimentacao") +"%"
+        
+                localStorage.setItem("contStatusAlimentacao", contStatusAlimentacao.toString())
+        
+                const StringTempAlimentacao = contStatusAlimentacao + "%"
+        
+                if (contStatusAlimentacao <= 65) {
+        
+                    const porcentagemDaAlimentacao = "linear-gradient(rgba(255, 255, 255, 0) "+ StringTempAlimentacao+",rgb("+ statusAlimentacaoRgb.toString() +","+ statusAlimentacaorGb.toString() +", 0) 0%)"
+        
+                    localStorage.setItem("statusDeAlimentacao", porcentagemDaAlimentacao)
+        
+                }
+        
+            }
+    
+            document.getElementById("alimentacaoDoPet").style.background = localStorage.getItem("statusDeAlimentacao");         
+        }
+        /** Higiene */
+        for (let i = 0; i < 20; i++) {
+            if (contStatusHigiene >= 0 && contStatusHigiene < 100) {
+
+                if(statusHigieneRgb >= 0 && statusHigieneRgb <= 245) {
+                    statusHigieneRgb += 5
+        
+                    localStorage.setItem("statusHigieneRgb", statusHigieneRgb.toString())
+                }
+        
+                contStatusHigiene++
+        
+                let porcantagemHigieneSoma = contStatusHigiene - 100 
+        
+                let convPorcentagemHigiene = porcantagemHigieneSoma * -1
+        
+                if (contStatusHigiene == 0) {
+                    convPorcentagemHigiene = 100
+                }
+        
+                localStorage.setItem("convPorcentagemHigiene", convPorcentagemHigiene.toString())
+        
+                document.getElementById('mPorcentagemDaHigiene').title = "Higiene: "+ localStorage.getItem("convPorcentagemHigiene") +"%"
+        
+                localStorage.setItem("contStatusHigiene", contStatusHigiene.toString())
+        
+                const StringTempHigiene = contStatusHigiene + "%"
+        
+                if (contStatusHigiene > 65) {
+                    if(statusHigienerGb >= 10 && statusHigienerGb <= 250) {
+                    statusHigienerGb -= 10
+        
+                    localStorage.setItem("statusSauderGb", statusSauderGb.toString())
+                }
+                }
+        
+                    const porcentagemDaHigiene = "linear-gradient(rgba(255, 255, 255, 0) "+ StringTempHigiene +",rgb("+ statusHigieneRgb.toString() +","+ statusHigienerGb.toString() +", 0) 0%)"
+        
+                    localStorage.setItem("statusDeHigiene", porcentagemDaHigiene)
+        
+            }
+            
+            document.getElementById("higieneDoPet").style.background = localStorage.getItem("statusDeHigiene")
+        }
+
+        expComida()
+        quantidade26 -= 1
+        localStorage.setItem("quantidade26", quantidade26)
+        document.getElementById('agua').title = "Água: "+ quantidade26 +" UND"
+        document.getElementById('opcaoComerItem26').style.display = "none"
+        if(quantidade26 == 0) {
+            document.getElementById('item26').style.opacity = "0.2"
+            document.getElementById('item26').style.cursor = "default"
+            temItem26 = 0
+        }
+
+    } else {
+        document.getElementById('semFome').style.display = "block"
+    }
 
 }
 function fecharItem26() {
@@ -680,6 +3549,117 @@ function item27() {
 }
 function comerItem27() {
 
+    if (contStatusAlimentacao > 2) {
+        /** Alimentacao */
+        for (let i = 0; i < 5; i++) {
+        
+            if (contStatusAlimentacao > 0 && contStatusAlimentacao <= 100 && limiteAlimentacao == 0) {
+        
+                if(statusAlimentacaorGb >= 0 && statusAlimentacaorGb <= 245) {
+                    statusAlimentacaorGb += 5
+        
+                    localStorage.setItem("statusAlimentacaorGb", statusAlimentacaorGb.toString())
+                }
+    
+                if (contStatusAlimentacao < 25) {
+                    
+                    if(statusAlimentacaoRgb >= 10 && statusAlimentacaoRgb <= 250) {
+                        statusAlimentacaoRgb -= 10
+            
+                        localStorage.setItem("statusAlimentacaoRgb", statusAlimentacaoRgb.toString())
+                    }
+    
+                }
+        
+                --contStatusAlimentacao
+                let porcantagemAlimentacaoSoma = contStatusAlimentacao - 100 
+        
+                let convPorcentagemAlimentacao = porcantagemAlimentacaoSoma * -1
+        
+                if (contStatusAlimentacao == 0) {
+                    convPorcentagemAlimentacao = 100
+                }
+        
+                localStorage.setItem("convPorcentagemAlimentacao", convPorcentagemAlimentacao.toString())
+        
+                document.getElementById('mPorcentagemDaAlimentacao').title = "Alimentacao: "+ localStorage.getItem("convPorcentagemAlimentacao") +"%"
+        
+                localStorage.setItem("contStatusAlimentacao", contStatusAlimentacao.toString())
+        
+                const StringTempAlimentacao = contStatusAlimentacao + "%"
+        
+                if (contStatusAlimentacao <= 65) {
+        
+                    const porcentagemDaAlimentacao = "linear-gradient(rgba(255, 255, 255, 0) "+ StringTempAlimentacao+",rgb("+ statusAlimentacaoRgb.toString() +","+ statusAlimentacaorGb.toString() +", 0) 0%)"
+        
+                    localStorage.setItem("statusDeAlimentacao", porcentagemDaAlimentacao)
+        
+                }
+        
+            }
+    
+            document.getElementById("alimentacaoDoPet").style.background = localStorage.getItem("statusDeAlimentacao");         
+        }
+        /** Higiene */
+        for (let i = 0; i < 20; i++) {
+            if (contStatusHigiene >= 0 && contStatusHigiene < 100) {
+
+                if(statusHigieneRgb >= 0 && statusHigieneRgb <= 245) {
+                    statusHigieneRgb += 5
+        
+                    localStorage.setItem("statusHigieneRgb", statusHigieneRgb.toString())
+                }
+        
+                contStatusHigiene++
+        
+                let porcantagemHigieneSoma = contStatusHigiene - 100 
+        
+                let convPorcentagemHigiene = porcantagemHigieneSoma * -1
+        
+                if (contStatusHigiene == 0) {
+                    convPorcentagemHigiene = 100
+                }
+        
+                localStorage.setItem("convPorcentagemHigiene", convPorcentagemHigiene.toString())
+        
+                document.getElementById('mPorcentagemDaHigiene').title = "Higiene: "+ localStorage.getItem("convPorcentagemHigiene") +"%"
+        
+                localStorage.setItem("contStatusHigiene", contStatusHigiene.toString())
+        
+                const StringTempHigiene = contStatusHigiene + "%"
+        
+                if (contStatusHigiene > 65) {
+                    if(statusHigienerGb >= 10 && statusHigienerGb <= 250) {
+                    statusHigienerGb -= 10
+        
+                    localStorage.setItem("statusSauderGb", statusSauderGb.toString())
+                }
+                }
+        
+                    const porcentagemDaHigiene = "linear-gradient(rgba(255, 255, 255, 0) "+ StringTempHigiene +",rgb("+ statusHigieneRgb.toString() +","+ statusHigienerGb.toString() +", 0) 0%)"
+        
+                    localStorage.setItem("statusDeHigiene", porcentagemDaHigiene)
+        
+            }
+            
+            document.getElementById("higieneDoPet").style.background = localStorage.getItem("statusDeHigiene")
+        }
+
+        expComida()
+        quantidade27 -= 1
+        localStorage.setItem("quantidade27", quantidade27)
+        document.getElementById('refrigerante').title = "Refrigerante: "+ quantidade27 +" UND"
+        document.getElementById('opcaoComerItem27').style.display = "none"
+        if(quantidade27 == 0) {
+            document.getElementById('item27').style.opacity = "0.2"
+            document.getElementById('item27').style.cursor = "default"
+            temItem27 = 0
+        }
+
+    } else {
+        document.getElementById('semFome').style.display = "block"
+    }
+
 }
 function fecharItem27() {
     document.getElementById('opcaoComerItem27').style.display = "none"
@@ -696,6 +3676,7 @@ function abrirGeladeira() {
     document.getElementById('geladeiraHover').style.display = "none"
     document.getElementById('fogaoHover').style.display = "none"
     document.getElementById('microondasHover').style.display = "none"
+    document.getElementById('mudarDeCenario').style.display = "none"
 
     if (quantidade1 > 0) {
         document.getElementById('item1').style.opacity = "1"
@@ -1008,6 +3989,7 @@ function fecharGeladeira() {
     document.getElementById('geladeiraHover').style.display = "block"
     document.getElementById('fogaoHover').style.display = "block"
     document.getElementById('microondasHover').style.display = "block"
+    document.getElementById('mudarDeCenario').style.display = "flex"
     
     const geladeiraHover = document.querySelector('#geladeiraHover');
 
@@ -1035,6 +4017,34 @@ function fecharGeladeira() {
     microondasHover.addEventListener('mouseleave', () => {
         microondasHover.style.opacity = "0";
     }); 
+
+    document.getElementById('opcaoComerItem1').style.display = "none"
+    document.getElementById('opcaoComerItem2').style.display = "none"
+    document.getElementById('opcaoComerItem3').style.display = "none"
+    document.getElementById('opcaoComerItem4').style.display = "none"
+    document.getElementById('opcaoComerItem5').style.display = "none"
+    document.getElementById('opcaoComerItem6').style.display = "none"
+    document.getElementById('opcaoComerItem7').style.display = "none"
+    document.getElementById('opcaoComerItem8').style.display = "none"
+    document.getElementById('opcaoComerItem9').style.display = "none"
+    document.getElementById('opcaoComerItem10').style.display = "none"
+    document.getElementById('opcaoComerItem11').style.display = "none"
+    document.getElementById('opcaoComerItem12').style.display = "none"
+    document.getElementById('opcaoComerItem13').style.display = "none"
+    document.getElementById('opcaoComerItem14').style.display = "none"
+    document.getElementById('opcaoComerItem15').style.display = "none"
+    document.getElementById('opcaoComerItem16').style.display = "none"
+    document.getElementById('opcaoComerItem17').style.display = "none"
+    document.getElementById('opcaoComerItem18').style.display = "none"
+    document.getElementById('opcaoComerItem19').style.display = "none"
+    document.getElementById('opcaoComerItem20').style.display = "none"
+    document.getElementById('opcaoComerItem21').style.display = "none"
+    document.getElementById('opcaoComerItem22').style.display = "none"
+    document.getElementById('opcaoComerItem23').style.display = "none"
+    document.getElementById('opcaoComerItem24').style.display = "none"
+    document.getElementById('opcaoComerItem25').style.display = "none"
+    document.getElementById('opcaoComerItem26').style.display = "none"
+    document.getElementById('opcaoComerItem27').style.display = "none"
 }
 
 /** Fogão */
@@ -1059,6 +4069,8 @@ microondasHover.addEventListener('mouseenter', () => {
 microondasHover.addEventListener('mouseleave', () => {
     microondasHover.style.opacity = "0";
 });   
+
+}
 
 
 function receberLv() {
@@ -1093,49 +4105,81 @@ setInterval(function() {
 
 } , 1000);
 
-function mudar() {
+function expComida() {
+    if (c >= 0) {
 
-        if (contStatusAlimentacao >= 10 && contStatusAlimentacao <= 100 ) {
-        contStatusAlimentacao = contStatusAlimentacao - 10
+        const somLevel = new Audio("EfeitosSonoros/Som Level Up.m4a");
+        somLevel.play();
 
-        let porcantagemAlimentacaoSoma = contStatusAlimentacao - 100 
+        c = -100
 
-        let convPorcentagemAlimentacao = porcantagemAlimentacaoSoma * -1
-
-        if (contStatusAlimentacao == 0) {
-            convPorcentagemAlimentacao = 100
+        if(level == 0) {
+            level = 2
         }
 
-        localStorage.setItem("convPorcentagemAlimentacao", convPorcentagemAlimentacao.toString())
+        level++
+        dinheiro = dinheiro + ((level - 1) * 10)
 
-        document.getElementById('mPorcentagemDaAlimentacao').title = "Alimentação: "+ localStorage.getItem("convPorcentagemAlimentacao") +"%"
+        document.getElementById('novoNivel').innerText = level
+        document.getElementById('maisMoedas').innerText = ((level - 1) * 10)
 
-        const StringTempAlimentacao = contStatusAlimentacao + "%"
+        localStorage.setItem("dinheiro", dinheiro);
 
-        localStorage.setItem("contStatusAlimentacao", contStatusAlimentacao.toString())
+        localStorage.setItem("levelUp", level.toString())
 
-        if(statusAlimentacaorGb >= 0 && statusAlimentacaorGb <= 200) {
-            statusAlimentacaorGb += 50
+        let porcantagemLevelSoma = c + 100
 
-            localStorage.setItem("statusAlimentacaorGb", statusAlimentacaorGb.toString())
+        if(porcantagemLevelSoma == 100) {
+            porcantagemLevelSoma = 99
         }
 
-        if (contStatusAlimentacao < 25) {
-            
-            if(statusAlimentacaoRgb >= 100 && statusAlimentacaoRgb <= 250) {
-                statusAlimentacaoRgb -= 100
-    
-                localStorage.setItem("statusAlimentacaoRgb", statusAlimentacaoRgb.toString())
-            }
-        }
+        porcantagemLevel = porcantagemLevelSoma.toString() + "%"
 
-        const porcentagemDaAlimentacao = "linear-gradient(rgba(255, 255, 255, 0) "+ StringTempAlimentacao +",rgb("+ statusAlimentacaoRgb.toString() +","+ statusAlimentacaorGb.toString() +", 0) 0%)"
-
-        localStorage.setItem("statusDeAlimentacao", porcentagemDaAlimentacao)
-
-        document.getElementById("alimentacaoDoPet").style.background = localStorage.getItem("statusDeAlimentacao")
+        localStorage.setItem("porcentagemLevel", porcantagemLevel)
         
+        localStorage.setItem("progressaoDoLevel" , c.toString())
+
+        const stringAumento = c.toString() + "%";
+
+        const progressao = "translateX(" + stringAumento + ")";
+
+        localStorage.setItem("barraDeLevel", progressao)
+
+        document.getElementById('levelUp').style.display = "block"
+
+    } else {
+       
+        if (c > -10) {
+            c = 0
+        } else {
+            c = c + 10;
+        }
+
+        let porcantagemLevelSoma = c + 100
+
+        if(porcantagemLevelSoma == 100) {
+            porcantagemLevelSoma = 99
+        }
+
+        porcantagemLevel = porcantagemLevelSoma.toString() + "%"
+
+        document.getElementById('mPorcentagemDeLevel').title = porcantagemLevel;
+
+        localStorage.setItem("porcentagemLevel", porcantagemLevel)
+        
+        localStorage.setItem("progressaoDoLevel" , c.toString())
+
+        const stringAumento = c.toString() + "%";
+
+        const progressao = "translateX(" + stringAumento + ")";
+
+        document.getElementById('progressao').style.transform = progressao;
+
+        localStorage.setItem("barraDeLevel", progressao)
     }
+}
+
+function mudar() {
 
         if (c >= 0) {
 
@@ -1180,7 +4224,11 @@ function mudar() {
 
         } else {
            
-            c = c + 10;
+            if (c > -10) {
+                c = 0
+            } else {
+                c = c + 10;
+            }
 
             let porcantagemLevelSoma = c + 100
 
@@ -1415,7 +4463,7 @@ setInterval(function() {
     
     document.getElementById("alimentacaoDoPet").style.background = localStorage.getItem("statusDeAlimentacao")
 
-} , 5000);
+} , 10000);
 
 
 /** Status Inteligencia */
@@ -1595,11 +4643,6 @@ function dormir() {
     
                 localStorage.setItem("statusDeEnergia", porcentagemDaEnergia)
     
-            } else {
-
-                const porcentagemDaEnergia = "linear-gradient(rgba(255, 255, 255, 0) "+ StringTempEnergia +",rgb("+ statusEnergiaRgb.toString() +","+ statusEnergiarGb.toString() +", 0) 0%)"
-    
-                localStorage.setItem("statusDeEnergia", porcentagemDaEnergia)
             }
     
         }
@@ -2744,6 +5787,8 @@ let precosDosItens = []
 
 function confirmarCompra() {
 
+    pegarSacola = 1
+
     nomesDosItens.push(nomeDoItem)
     quantidadesDosItens.push(quantidadeDoItem)
     precosDosItens.push(precoDoItem)
@@ -2777,6 +5822,8 @@ function fecharConfirmarCompra() {
 function fecharAviso() {
     document.getElementById('compraAviso').style.display = "none"
 }
+
+let pegarSacola = 0
 
 /** Mostar Sacola */
  
@@ -3072,7 +6119,62 @@ function coletarSacola() {
         precosDosItens.pop();
     }
 
+    pegarSacola = 0
+
 }
 
-/** Comer */
+/** Pegue as Compras */
 
+function fecharAviso2() {
+    document.getElementById('avisoCompras').style.display = "none"
+}
+
+/** Ir pro Cozinha */
+
+function irPraCozinha() {
+    location.href = "index.html"
+
+    comodo = "Cozinha"
+    localStorage.setItem("comodo", comodo)
+}
+
+/** Ir pro Quarto */
+
+function irProQuarto() {
+
+    if (pegarSacola == 1) {
+        document.getElementById('avisoCompras').style.display = "block"
+    } else {
+        location.href = "quarto.html"
+
+        comodo = "Quarto"
+        localStorage.setItem("comodo", comodo)
+    }
+    
+}
+
+/** Ir pro Banheiro */
+
+function irProBanheiro() {
+
+    location.href = "banheiro.html"
+
+    comodo = "Banheiro"
+    localStorage.setItem("comodo", comodo)
+    
+}
+
+if (comodo == "Banheiro") {
+    document.getElementById('cenario').style.color = "black"
+}
+
+/** Ir pra Sala */
+
+function irPraSala() {
+
+    location.href = "sala.html"
+
+    comodo = "Sala"
+    localStorage.setItem("comodo", comodo)
+    
+}

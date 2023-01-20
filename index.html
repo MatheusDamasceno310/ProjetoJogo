@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cozinha</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -38,15 +38,21 @@
                 <abbr id="mPorcentagemDaEnergia" title="Energia: 0%">
                     <div id="energiaDoPet"><img src="Imagens/Status/energy.png" alt="Energia"></div>
                 </abbr>
-                <abbr title="Inteligência: 0%">
+                <abbr id="mPorcentagemDaInteligencia" title="Inteligência: 0%">
                     <div id="inteligenciaDoPet"><img src="Imagens/Status/book.png" alt="Inteligência"></div>
                 </abbr>
                 <abbr id="mPorcentagemDaFelicidade" title="Felicidade: 100%">
                     <div id="felicidadeDoPet"><img id="rostoStatus" src="Imagens/Status/happy-face.png" alt=""></div>
                 </abbr>
-                <abbr title="Higiene: 100%">
-                    <div id="higieneDoPet"><img src="Imagens/Status/toilet.png" alt="Higiene"></div>
+                <abbr id="mPorcentagemDaHigiene" title="Higiene: 100%">
+                    <div id="higieneDoPet"><img src="Imagens/Status/chuveiro.png" alt="Higiene"></div>
                 </abbr>
+            </section>
+            <section class="recados">
+                <div id="semFome" onclick="semFome()">
+                    <img src="Imagens/Captura_de_tela_20230119_014622-removebg-preview.png" alt="">
+                    <h3>Sem Fome</h3>
+                </div>
             </section>
             <section id="botaoLoja">
                 <img id="placaDaLoja" src="Imagens/Loja/imagem_2023-01-09_182625297-removebg-preview.png" alt="PlacaDaLoja">
@@ -57,7 +63,7 @@
             <section id="sacolaDeCompras" onclick="mostrarSacola()">
                 <img src="Imagens/Imagem_do_WhatsApp_de_2023-01-10_à_s__19.04.56-removebg-preview.png" alt="">
             </section>
-            <div id="sacola">
+            <section id="sacola">
                 <h1>Sacola</h1>
                 <div class="todaTabelaSacola">
                     <div class="titulosTabela">
@@ -73,7 +79,7 @@
                 <div class="cancelar fecharSacola" onclick="fecharSacola()">
                     <p>x</p>
                 </div>
-            </div>
+            </section>
             <section id="loja">
                 <img class="lojaFundo" src="Imagens/Loja/OIUF6C0.jpg" alt="">
                 <div class="placaLoja">
@@ -312,7 +318,7 @@
                             <div class="botaoQuantidade">
                                 <button onclick="menosHortifruti3()">-</button>
                                 <p id="quantidadeHortifruti3">1</p>
-                                <button onclick="Enlatado5Hortifruti3()">+</button>
+                                <button onclick="maisHortifruti3()">+</button>
                             </div>
                         </div>
                     </div>
@@ -514,10 +520,19 @@
                 <button class="receberLv" onclick="receberLv()">Receber</button>
             </section>
         </section>
-        
-<!-- onclick="comerItem()" -->
-        
+
         <section id="cozinha">
+
+            <div id="avisoCompras">
+                <h3>Aviso</h3>
+                <div class="aviso">
+                    <h1>Pegue as compras</h1>
+                </div>
+                <div class="cancelar" onclick="fecharAviso2()">
+                    <p>x</p>
+                </div>
+            </div>
+
             <img id="cozinhaFundo" src="Imagens/Cozinha/design-de-interiores-de-cozinha-com-moveis-e-decoracoes_1308-76245.webp" alt="cozinha">
 
             <div id="geladeiraHover" onclick="abrirGeladeira()">
@@ -800,7 +815,11 @@
 
         </section>
 
-
+        <section id="mudarDeCenario">
+            <abbr title="Quarto"><img src="Imagens/Esquerda.png" alt="" onclick="irProQuarto()"></abbr>
+            <h1 id="cenario">Cozinha</h1>
+            <abbr title="Sala"><img src="Imagens/Direita.png" alt="" onclick="irPraSala()"></abbr>
+        </section>
 
     </main>
 

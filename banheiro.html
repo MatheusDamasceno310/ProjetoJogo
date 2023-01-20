@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banheiro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button class="upar" onclick="mudar()">Upar</button>
+    <button class="dormir" onclick="dormir()">Dormir</button>
+    <main>
+        <section id="principaisCoisas">
+            <section id="levelDoPet">
+                <div class="level">
+                    <h1>Nível:</h1>
+                    <h1 id="level">1</h1>
+                </div>
+                <abbr id="mPorcentagemDeLevel" title="0%">
+                    <div id="barraDoLevel">
+                        <div id="progressao">
+                        </div>
+                    </div>
+                </abbr>
+            </section>
+            <section id="dinheiroDoPet">
+                <img src="Imagens/25498-removebg-preview.png" alt="">
+                <div class="dinheiro"><p>R$</p><p id="dinheiro">0</p></div>
+            </section>
+            <section id="statusDoPet">
+                <abbr id="mPorcentagemDaSaude" title="Saúde: 0%">
+                    <div id="saudeDoPet"><img src="Imagens/Status/heart-shape-rounded-edges-variant-with-white-details.png" alt="Saúde"></div>
+                </abbr>
+                <abbr id="mPorcentagemDaAlimentacao" title="Alimentação: 0%">
+                    <div id="alimentacaoDoPet"><img src="Imagens/Status/apple.png" alt="Alimentação" onclick="irProCozinha()"></div>
+                </abbr>
+                <abbr id="mPorcentagemDaEnergia" title="Energia: 0%">
+                    <div id="energiaDoPet"><img src="Imagens/Status/energy.png" alt="Energia"></div>
+                </abbr>
+                <abbr id="mPorcentagemDaInteligencia" title="Inteligência: 0%">
+                    <div id="inteligenciaDoPet"><img src="Imagens/Status/book.png" alt="Inteligência"></div>
+                </abbr>
+                <abbr id="mPorcentagemDaFelicidade" title="Felicidade: 100%">
+                    <div id="felicidadeDoPet"><img id="rostoStatus" src="Imagens/Status/happy-face.png" alt=""></div>
+                </abbr>
+                <abbr id="mPorcentagemDaHigiene" title="Higiene: 100%">
+                    <div id="higieneDoPet"><img src="Imagens/Status/chuveiro.png" alt="Higiene"></div>
+                </abbr>
+            </section>
+            <div class="recados">
+                <div id="semFome" onclick="semFome()">
+                    <img src="Imagens/Captura_de_tela_20230119_014622-removebg-preview.png" alt="">
+                    <h3>Sem Fome</h3>
+                </div>
+            </div>
+            <section id="levelUp">
+                <div class="tituloLevelUp">
+                    <img class="setaLevelUp" src="Imagens/Captura_de_tela_20230113_165715-removebg-preview.png" alt="">
+                    <h1>LevelUp</h1>
+                </div>
+                <h2>Recompensas:</h2>
+                <div class="recompensas">
+                    <div class="novoNivel">
+                        <h3>Novo Nível:</h3>
+                        <h4 id="novoNivel">1</h4>
+                    </div>
+                    <div class="maisMoedas">
+                        <h3>Moedas:</h3>
+                        <div class="maisMoedasComRs">
+                            <h4>R$</h4>
+                            <h4 id="maisMoedas">0</h4>
+                        </div>
+                    </div>
+                </div>
+                <button class="receberLv" onclick="receberLv()">Receber</button>
+            </section>
+        </section>
+        
+        <section id="banheiro">
+            <img id="banheiroFundo" src="Imagens/Banheiro/mki3_3jcb_210608.jpg" alt="">
+        </section>
+
+        <section id="mudarDeCenario">
+            <abbr title="Sala"><img src="Imagens/Esquerda.png" alt="" onclick="irPraSala()"></abbr>
+            <h1 id="cenario">Banheiro</h1>
+            <abbr title="Quarto"><img src="Imagens/Direita.png" alt="" onclick="irProQuarto()"></abbr>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

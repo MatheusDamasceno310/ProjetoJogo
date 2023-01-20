@@ -57,7 +57,7 @@ body {
     z-index: 3;
     border-top: 5px solid red;
     border-bottom: 5px solid red;
-    box-shadow: inset 1px 1px 20px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 20px red, -1px -1px 5px red;
+    box-shadow: inset 1px 1px 10px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 10px red, -1px -1px 5px red;
     animation: levelUp 1s linear forwards;
 }
 
@@ -134,7 +134,7 @@ body {
 }
 .receberLv:hover {
     background: rgba(255, 0, 0, 0.641);
-    box-shadow: inset 1px 1px 20px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 20px red, -1px -1px 5px red;
+    box-shadow: inset 1px 1px 10px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 10px red, -1px -1px 5px red;
     color: white;
 }
 
@@ -203,13 +203,41 @@ body {
     background: linear-gradient(rgba(255, 255, 255, 0) 100%,rgb(0, 255, 0) 0%);
 }
 #inteligenciaDoPet {
-    background: linear-gradient(rgba(255, 255, 255, 0) 100%,rgb(0, 255, 0) 0%);
+    background: linear-gradient(rgba(255, 255, 255, 0) 0%,rgb(0, 255, 0) 0%);
 }
 #felicidadeDoPet {
     background: linear-gradient(rgba(255, 255, 255, 0) 100%,rgb(0, 255, 0) 0%);
 }
 #higieneDoPet {
     background: linear-gradient(rgba(255, 255, 255, 0) 0%,rgb(0, 255, 0) 0%);
+}
+
+#semFome {
+    display: none;
+    position: absolute;
+    top: 8rem;
+    left: 6rem;
+}
+#semFome img {
+    height: 6rem;
+}
+#semFome h3 {
+    position: absolute;
+    top: 1.7rem;
+    height: 4rem;
+    width: 10rem;
+    padding: 1.2rem 0 0 1rem;
+    font-size: 1.3rem;
+    border: 1px solid red;
+    box-shadow: inset 1px 1px 10px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 4px red, -1px -1px 5px red;
+    border-radius: 1.4rem;
+    color: red;
+    cursor: default;
+}
+#semFome h3:hover {
+    box-shadow: inset 1px 1px 10px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 20px red, -1px -1px 5px red;
+    color: red;
+    cursor: pointer;
 }
 
 /* Loja */
@@ -240,7 +268,7 @@ body {
     width: 78rem;
     z-index: 5;
     border: 5px solid red;
-    box-shadow: inset 1px 1px 20px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 20px red, -1px -1px 5px red;
+    box-shadow: inset 1px 1px 10px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 10px red, -1px -1px 5px red;
     border-radius: 10px;
 }
 .lojaFundo {
@@ -278,7 +306,7 @@ body {
     padding-top: 1rem;
     width: 77.4rem;
     background: linear-gradient(to top, red, white);
-    box-shadow: inset 1px 1px 20px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 20px red, -1px -1px 5px red;
+    box-shadow: inset 1px 1px 10px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 10px red, -1px -1px 5px red;
     z-index: 2;
 }
 .cartegoriasLoja ul {
@@ -338,15 +366,15 @@ body {
     background: rgba(255, 0, 0, 0.273);
     border-radius: 0.3rem;
     border-color: white;
-    box-shadow: inset 1px 1px 20px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 20px red, -1px -1px 5px red;
+    box-shadow: inset 1px 1px 10px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 10px red, -1px -1px 5px red;
 }
 .itemLoja {
     margin: 0.3rem;
     padding: 0.5rem;
     text-align: center;
     cursor: pointer;
-    height: 24vh;
-    width: 12vw;
+    height: 10.5rem;
+    width: 11.5rem;
 }
 .itemLoja img {
     height: 6rem;
@@ -382,11 +410,11 @@ body {
     z-index: 3;
 }
 .botaoQuantidade {
-    width: 10vw;
+    width: 10rem;
     display: flex;
 }
 .botaoQuantidade p:nth-child(2) {
-    width: 50vw;
+    width: 50rem;
     background: white;
     color: red;
     border: 2px solid red;
@@ -409,13 +437,13 @@ body {
     box-shadow: inset 1px 1px 5px rgba(255, 0, 0, 0.453), inset -1px -1px 5px rgba(255, 0, 0, 0.453);
     background: white;
     padding: 0.1rem;
-    width: 10vw;
+    width: 10rem;
     border-radius: 0.5rem;
 }
 #botaoComprar button:hover {
     background: red;
     border-color: white;
-    box-shadow: inset 1px 1px 20px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 20px red, -1px -1px 5px red;
+    box-shadow: inset 1px 1px 10px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 10px red, -1px -1px 5px red;
     color: white;
     font-weight: bold;
 }
@@ -439,10 +467,11 @@ body {
     z-index: 3;
 }
 #compraItem h3, #compraAviso h3 {
+    text-align: center;
     background: red;
     color: white;
     border-radius: 0.5rem 0.5rem 0 0;
-    padding: 0.2rem;
+    font-size: 1.5rem;
 }
 .itemASerComprado {
     background: white;
@@ -484,7 +513,7 @@ body {
 #compraItem button:hover {
     background: rgba(255, 0, 0, 0.537);
     border-color: white;
-    box-shadow: inset 1px 1px 20px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 20px red, -1px -1px 5px red;
+    box-shadow: inset 1px 1px 10px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 10px red, -1px -1px 5px red;
     color: white;
     font-weight: bold;
 }
@@ -509,7 +538,7 @@ body {
     height: 38rem;
     width: 30vw;
     background: rgb(255, 255, 255);
-    box-shadow: inset 1px 1px 20px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 20px red, -1px -1px 5px red;
+    box-shadow: inset 1px 1px 10px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 10px red, -1px -1px 5px red;
     border: 2px solid red;
     border-radius: 1rem;
     cursor: default;
@@ -606,7 +635,7 @@ body {
 .coletarSacola:hover {
     background: rgba(255, 0, 0, 0.759);
     border-color: white;
-    box-shadow: inset 1px 1px 20px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 20px red, -1px -1px 5px red;
+    box-shadow: inset 1px 1px 10px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 10px red, -1px -1px 5px red;
     color: white;
 }
 
@@ -652,7 +681,7 @@ body {
     transform: translate(-50%, -50%);
     z-index: 5;
     height: 45rem;
-    display: block;
+    display: none;
 }
 .geladeira {
     margin-top: -2vh;
@@ -702,7 +731,7 @@ body {
 .comerItem1:hover {
     background: rgba(255, 0, 0, 0.759);
     border-color: white;
-    box-shadow: inset 1px 1px 20px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 20px red, -1px -1px 5px red;
+    box-shadow: inset 1px 1px 10px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 10px red, -1px -1px 5px red;
     color: white;
 }
 
@@ -739,7 +768,7 @@ body {
 .comerItem2:hover {
     background: rgba(255, 0, 0, 0.759);
     border-color: white;
-    box-shadow: inset 1px 1px 20px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 20px red, -1px -1px 5px red;
+    box-shadow: inset 1px 1px 10px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 10px red, -1px -1px 5px red;
     color: white;
 }
 
@@ -776,7 +805,7 @@ body {
 .comerItem3:hover {
     background: rgba(255, 0, 0, 0.759);
     border-color: white;
-    box-shadow: inset 1px 1px 20px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 20px red, -1px -1px 5px red;
+    box-shadow: inset 1px 1px 10px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 10px red, -1px -1px 5px red;
     color: white;
 }
 
@@ -813,7 +842,7 @@ body {
 .comerItem4:hover {
     background: rgba(255, 0, 0, 0.759);
     border-color: white;
-    box-shadow: inset 1px 1px 20px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 20px red, -1px -1px 5px red;
+    box-shadow: inset 1px 1px 10px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 10px red, -1px -1px 5px red;
     color: white;
 }
 
@@ -857,7 +886,7 @@ body {
 .comerItem5:hover {
     background: rgba(255, 0, 0, 0.759);
     border-color: white;
-    box-shadow: inset 1px 1px 20px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 20px red, -1px -1px 5px red;
+    box-shadow: inset 1px 1px 10px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 10px red, -1px -1px 5px red;
     color: white;
 }
 
@@ -887,7 +916,7 @@ body {
 .comerItem6:hover {
     background: rgba(255, 0, 0, 0.759);
     border-color: white;
-    box-shadow: inset 1px 1px 20px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 20px red, -1px -1px 5px red;
+    box-shadow: inset 1px 1px 10px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 10px red, -1px -1px 5px red;
     color: white;
 }
 
@@ -934,7 +963,7 @@ body {
 .comerItem7:hover {
     background: rgba(255, 0, 0, 0.759);
     border-color: white;
-    box-shadow: inset 1px 1px 20px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 20px red, -1px -1px 5px red;
+    box-shadow: inset 1px 1px 10px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 10px red, -1px -1px 5px red;
     color: white;
 }
 
@@ -971,7 +1000,7 @@ body {
 .comerItem8:hover {
     background: rgba(255, 0, 0, 0.759);
     border-color: white;
-    box-shadow: inset 1px 1px 20px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 20px red, -1px -1px 5px red;
+    box-shadow: inset 1px 1px 10px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 10px red, -1px -1px 5px red;
     color: white;
 }
 
@@ -1008,7 +1037,7 @@ body {
 .comerItem9:hover {
     background: rgba(255, 0, 0, 0.759);
     border-color: white;
-    box-shadow: inset 1px 1px 20px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 20px red, -1px -1px 5px red;
+    box-shadow: inset 1px 1px 10px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 10px red, -1px -1px 5px red;
     color: white;
 }
 
@@ -1045,7 +1074,7 @@ body {
 .comerItem10:hover {
     background: rgba(255, 0, 0, 0.759);
     border-color: white;
-    box-shadow: inset 1px 1px 20px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 20px red, -1px -1px 5px red;
+    box-shadow: inset 1px 1px 10px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 10px red, -1px -1px 5px red;
     color: white;
 }
 
@@ -1092,7 +1121,7 @@ body {
 .comerItem11:hover {
     background: rgba(255, 0, 0, 0.759);
     border-color: white;
-    box-shadow: inset 1px 1px 20px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 20px red, -1px -1px 5px red;
+    box-shadow: inset 1px 1px 10px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 10px red, -1px -1px 5px red;
     color: white;
 }
 
@@ -1129,7 +1158,7 @@ body {
 .comerItem12:hover {
     background: rgba(255, 0, 0, 0.759);
     border-color: white;
-    box-shadow: inset 1px 1px 20px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 20px red, -1px -1px 5px red;
+    box-shadow: inset 1px 1px 10px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 10px red, -1px -1px 5px red;
     color: white;
 }
 
@@ -1166,7 +1195,7 @@ body {
 .comerItem13:hover {
     background: rgba(255, 0, 0, 0.759);
     border-color: white;
-    box-shadow: inset 1px 1px 20px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 20px red, -1px -1px 5px red;
+    box-shadow: inset 1px 1px 10px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 10px red, -1px -1px 5px red;
     color: white;
 }
 
@@ -1213,7 +1242,7 @@ body {
 .comerItem14:hover {
     background: rgba(255, 0, 0, 0.759);
     border-color: white;
-    box-shadow: inset 1px 1px 20px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 20px red, -1px -1px 5px red;
+    box-shadow: inset 1px 1px 10px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 10px red, -1px -1px 5px red;
     color: white;
 }
 
@@ -1250,7 +1279,7 @@ body {
 .comerItem15:hover {
     background: rgba(255, 0, 0, 0.759);
     border-color: white;
-    box-shadow: inset 1px 1px 20px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 20px red, -1px -1px 5px red;
+    box-shadow: inset 1px 1px 10px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 10px red, -1px -1px 5px red;
     color: white;
 }
 
@@ -1287,7 +1316,7 @@ body {
 .comerItem16:hover {
     background: rgba(255, 0, 0, 0.759);
     border-color: white;
-    box-shadow: inset 1px 1px 20px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 20px red, -1px -1px 5px red;
+    box-shadow: inset 1px 1px 10px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 10px red, -1px -1px 5px red;
     color: white;
 }
 
@@ -1324,7 +1353,7 @@ body {
 .comerItem17:hover {
     background: rgba(255, 0, 0, 0.759);
     border-color: white;
-    box-shadow: inset 1px 1px 20px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 20px red, -1px -1px 5px red;
+    box-shadow: inset 1px 1px 10px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 10px red, -1px -1px 5px red;
     color: white;
 }
 
@@ -1361,7 +1390,7 @@ body {
 .comerItem18:hover {
     background: rgba(255, 0, 0, 0.759);
     border-color: white;
-    box-shadow: inset 1px 1px 20px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 20px red, -1px -1px 5px red;
+    box-shadow: inset 1px 1px 10px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 10px red, -1px -1px 5px red;
     color: white;
 }
 
@@ -1398,7 +1427,7 @@ body {
 .comerItem19:hover {
     background: rgba(255, 0, 0, 0.759);
     border-color: white;
-    box-shadow: inset 1px 1px 20px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 20px red, -1px -1px 5px red;
+    box-shadow: inset 1px 1px 10px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 10px red, -1px -1px 5px red;
     color: white;
 }
 
@@ -1445,7 +1474,7 @@ body {
 .comerItem20:hover {
     background: rgba(255, 0, 0, 0.759);
     border-color: white;
-    box-shadow: inset 1px 1px 20px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 20px red, -1px -1px 5px red;
+    box-shadow: inset 1px 1px 10px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 10px red, -1px -1px 5px red;
     color: white;
 }
 
@@ -1484,7 +1513,7 @@ body {
 .comerItem21:hover {
     background: rgba(255, 0, 0, 0.759);
     border-color: white;
-    box-shadow: inset 1px 1px 20px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 20px red, -1px -1px 5px red;
+    box-shadow: inset 1px 1px 10px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 10px red, -1px -1px 5px red;
     color: white;
 }
 
@@ -1521,7 +1550,7 @@ body {
 .comerItem22:hover {
     background: rgba(255, 0, 0, 0.759);
     border-color: white;
-    box-shadow: inset 1px 1px 20px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 20px red, -1px -1px 5px red;
+    box-shadow: inset 1px 1px 10px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 10px red, -1px -1px 5px red;
     color: white;
 }
 
@@ -1558,7 +1587,7 @@ body {
 .comerItem23:hover {
     background: rgba(255, 0, 0, 0.759);
     border-color: white;
-    box-shadow: inset 1px 1px 20px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 20px red, -1px -1px 5px red;
+    box-shadow: inset 1px 1px 10px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 10px red, -1px -1px 5px red;
     color: white;
 }
 
@@ -1595,7 +1624,7 @@ body {
 .comerItem24:hover {
     background: rgba(255, 0, 0, 0.759);
     border-color: white;
-    box-shadow: inset 1px 1px 20px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 20px red, -1px -1px 5px red;
+    box-shadow: inset 1px 1px 10px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 10px red, -1px -1px 5px red;
     color: white;
 }
 
@@ -1632,7 +1661,7 @@ body {
 .comerItem25:hover {
     background: rgba(255, 0, 0, 0.759);
     border-color: white;
-    box-shadow: inset 1px 1px 20px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 20px red, -1px -1px 5px red;
+    box-shadow: inset 1px 1px 10px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 10px red, -1px -1px 5px red;
     color: white;
 }
 
@@ -1683,7 +1712,7 @@ body {
 .comerItem26:hover {
     background: rgba(255, 0, 0, 0.759);
     border-color: white;
-    box-shadow: inset 1px 1px 20px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 20px red, -1px -1px 5px red;
+    box-shadow: inset 1px 1px 10px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 10px red, -1px -1px 5px red;
     color: white;
 }
 
@@ -1722,7 +1751,7 @@ body {
 .comerItem27:hover {
     background: rgba(255, 0, 0, 0.759);
     border-color: white;
-    box-shadow: inset 1px 1px 20px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 20px red, -1px -1px 5px red;
+    box-shadow: inset 1px 1px 10px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 10px red, -1px -1px 5px red;
     color: white;
 }
 
@@ -1742,9 +1771,8 @@ body {
     margin: 0.3rem 1.25rem;
 }
 .cancelarComer:hover {
-    background: rgba(255, 255, 255, 0.759);
-    border-color: rgb(255, 0, 0);
-    box-shadow: inset 1px 1px 20px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 20px red, -1px -1px 5px red;
+    background: red;
+    box-shadow: inset 1px 1px 15px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 20px red, -1px -1px 5px red;
     color: white;
 }
 
@@ -1850,9 +1878,104 @@ body {
 }
 .cancelar:hover, #fecharGeladeira:hover {
     background: red;
-    box-shadow: inset 1px 1px 20px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 20px red, -1px -1px 5px red;
+    box-shadow: inset 1px 1px 10px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 10px red, -1px -1px 5px red;
     color: white;
 }
 .cancelar p {
     margin-top: -6px;
+}
+
+/* Pegue as Commpras */
+
+#avisoCompras {
+    display: none;
+    border: 2px solid red;
+    border-radius: 0.5rem;
+    height: 8rem;
+    width: 50vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: red;
+    z-index: 3;
+}
+#avisoCompras h3 {
+    text-align: center;
+    background: red;
+    color: white;
+    border-radius: 0.5rem 0.5rem 0 0;
+    font-size: 1.5rem;
+}
+
+/* Mudar de Cenario */
+
+#mudarDeCenario {
+    position: absolute;
+    top: 95%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    z-index: 1;
+}
+#mudarDeCenario img {
+    height: 4.5rem;
+    cursor: pointer;
+    padding: 1rem;
+}
+#mudarDeCenario img:nth-child(1):hover {
+    animation: aEsquerda 0.8s ease-in-out infinite alternate;
+}
+@keyframes aEsquerda {
+    0%{
+        transform: translateX(0rem);
+    }
+    50%{
+        transform: translateX(0.5rem);
+    }
+    100%{
+        transform: translateX(-1rem);
+    }
+}
+#mudarDeCenario img:nth-child(3):hover {
+    animation: aDireita 0.8s ease-in-out infinite alternate;
+}
+@keyframes aDireita {
+    0%{
+        transform: translateX(0rem);
+    }
+    50%{
+        transform: translateX(-0.5rem);
+    }
+    100%{
+        transform: translateX(1rem);
+    }
+}
+#cenario {
+    color: white;
+    margin-top: 1.4rem;
+    height: 1.7rem;
+    padding: 0 1rem;
+    cursor: default;
+}
+
+/* Quarto */
+
+#quartoFundo {
+    height: 100vh;
+    width: 100vw;
+}
+
+/* Banheiro */
+
+#banheiroFundo {
+    height: 100vh;
+    width: 100vw;
+}
+
+/* Sala */
+
+#salaFundo {
+    height: 100vh;
+    width: 100vw;
 }
