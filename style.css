@@ -47,6 +47,7 @@ body {
 
 #levelUp {
     display: none;
+    cursor: default;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -95,6 +96,15 @@ body {
     display: flex;
     text-align: center;
     justify-content: space-evenly;
+}
+.medalhaGanha {
+    position: absolute;
+    top: 54%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.medalhaGanha img {
+    height: 7rem;
 }
 .novoNivel, .maisMoedas {
     margin-top: 3vh;
@@ -1923,7 +1933,7 @@ body {
     cursor: pointer;
     padding: 1rem;
 }
-#mudarDeCenario img:nth-child(1):hover {
+#mudarDeCenario .setaEsquerda:hover {
     animation: aEsquerda 0.8s ease-in-out infinite alternate;
 }
 @keyframes aEsquerda {
@@ -1937,7 +1947,7 @@ body {
         transform: translateX(-1rem);
     }
 }
-#mudarDeCenario img:nth-child(3):hover {
+#mudarDeCenario .setaDireita:hover {
     animation: aDireita 0.8s ease-in-out infinite alternate;
 }
 @keyframes aDireita {
@@ -1964,6 +1974,16 @@ body {
 #quartoFundo {
     height: 100vh;
     width: 100vw;
+}
+
+.mostrarMedalha {
+    position: absolute;
+    top: 50.5%;
+    left: 92.3%;
+    transform: translate(-50%, -50%);
+}
+.mostrarMedalha img {
+    height: 10vh;
 }
 
 /* Banheiro */

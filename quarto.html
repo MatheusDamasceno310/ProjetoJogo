@@ -65,6 +65,9 @@
                         <h3>Novo Nível:</h3>
                         <h4 id="novoNivel">1</h4>
                     </div>
+                    <div class="medalhaGanha">
+                        <img id="medalha" src="" alt="">
+                    </div>
                     <div class="maisMoedas">
                         <h3>Moedas:</h3>
                         <div class="maisMoedasComRs">
@@ -79,12 +82,16 @@
         
         <section id="quarto">
             <img id="quartoFundo" src="Imagens/Quarto/1327.jpg" alt="">
+
+            <div class="mostrarMedalha">
+                <img src="" alt="" id="mostrarMedalha">
+            </div>
         </section>
 
         <section id="mudarDeCenario">
-            <abbr title="Banheiro"><img src="Imagens/Esquerda.png" alt="" onclick="irProBanheiro()"></abbr>
+            <abbr title="Banheiro"><img src="Imagens/Esquerda.png" alt="" onclick="irProBanheiro()" class="setaEsquerda"></abbr>
             <h1 id="cenario">Quarto</h1>
-            <abbr title="Cozinha"><img src="Imagens/Direita.png" alt="" onclick="irPraCozinha()"></abbr>
+            <abbr title="Cozinha"><img src="Imagens/Direita.png" alt="" onclick="irPraCozinha()" class="setaDireita"></abbr>
         </section>
 
     </main>

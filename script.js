@@ -78,6 +78,10 @@ let quantidade27 = parseInt(localStorage.getItem("quantidade27"))
 
 let comodo = localStorage.getItem("comodo");
 
+/** Medalha */
+
+let medalha = localStorage.getItem("medalha")
+
 /** LocalStorage  */
 
 if (localStorage.length > 0) {
@@ -169,6 +173,10 @@ if (localStorage.length > 0) {
     /** Comodo */
 
     localStorage.setItem("comodo", "Cozinha")
+
+    /** Medalha */
+
+    localStorage.setItem("medalha", "")
 }
 
 /** Status de Level */
@@ -4118,6 +4126,48 @@ function expComida() {
         }
 
         level++
+
+        if (level == 10) {
+            document.getElementById('medalha').src = "Imagens/Medalhas/Captura_de_tela_20230119_194053-removebg-preview.png"
+            localStorage.setItem("medalha", "Imagens/Medalhas/Captura_de_tela_20230119_194053-removebg-preview.png")
+        }
+        if (level == 20) {
+            document.getElementById('medalha').src = "Imagens/Medalhas/Captura_de_tela_20230119_194118-removebg-preview.png"
+            localStorage.setItem("medalha", "Imagens/Medalhas/Captura_de_tela_20230119_194118-removebg-preview.png")
+        }
+        if (level == 30) {
+            document.getElementById('medalha').src = "Imagens/Medalhas/Captura_de_tela_20230119_194127-removebg-preview.png"
+            localStorage.setItem("medalha", "Imagens/Medalhas/Captura_de_tela_20230119_194127-removebg-preview.png")
+        }
+        if (level == 40) {
+            document.getElementById('medalha').src = "Imagens/Medalhas/Captura_de_tela_20230119_194150-removebg-preview.png"
+            localStorage.setItem("medalha", "Imagens/Medalhas/Captura_de_tela_20230119_194150-removebg-preview.png")
+        }
+        if (level == 50) {
+            document.getElementById('medalha').src = "Imagens/Medalhas/Captura_de_tela_20230119_194216-removebg-preview.png"
+            localStorage.setItem("medalha", "Imagens/Medalhas/Captura_de_tela_20230119_194216-removebg-preview.png")
+        }
+        if (level == 60) {
+            document.getElementById('medalha').src = "Imagens/Medalhas/Captura_de_tela_20230119_194228-removebg-preview.png"
+            localStorage.setItem("medalha", "Imagens/Medalhas/Captura_de_tela_20230119_194228-removebg-preview.png")
+        }
+        if (level == 70) {
+            document.getElementById('medalha').src = "Imagens/Medalhas/Captura_de_tela_20230119_194312-removebg-preview.png"
+            localStorage.setItem("medalha", "Imagens/Medalhas/Captura_de_tela_20230119_194312-removebg-preview.png")
+        }
+        if (level == 80) {
+            document.getElementById('medalha').src = "Imagens/Medalhas/Captura_de_tela_20230119_194322-removebg-preview.png"
+            localStorage.setItem("medalha", "Imagens/Medalhas/Captura_de_tela_20230119_194322-removebg-preview.png")
+        }
+        if (level == 90) {
+            document.getElementById('medalha').src = "Imagens/Medalhas/Captura_de_tela_20230119_194358-removebg-preview.png"
+            localStorage.setItem("medalha", "Imagens/Medalhas/Captura_de_tela_20230119_194358-removebg-preview.png")
+        }
+        if (level == 100) {
+            document.getElementById('medalha').src = "Imagens/Medalhas/Captura_de_tela_20230119_194417-removebg-preview.png"
+            localStorage.setItem("medalha", "Imagens/Medalhas/Captura_de_tela_20230119_194417-removebg-preview.png")
+        }
+
         dinheiro = dinheiro + ((level - 1) * 10)
 
         document.getElementById('novoNivel').innerText = level
@@ -4305,7 +4355,7 @@ setInterval(function() {
     
     document.getElementById("energiaDoPet").style.background = localStorage.getItem("statusDeEnergia")
 
-} , 60000);
+} , 10000);
 
 /** Status de Saude */
 
@@ -6145,6 +6195,9 @@ function irProQuarto() {
     if (pegarSacola == 1) {
         document.getElementById('avisoCompras').style.display = "block"
     } else {
+
+        document.getElementById('mostrarMedalha').src = comodo
+
         location.href = "quarto.html"
 
         comodo = "Quarto"
@@ -6172,9 +6225,13 @@ if (comodo == "Banheiro") {
 
 function irPraSala() {
 
-    location.href = "sala.html"
+    if (pegarSacola == 1) {
+        document.getElementById('avisoCompras').style.display = "block"
+    } else {
+        location.href = "sala.html"
 
-    comodo = "Sala"
-    localStorage.setItem("comodo", comodo)
+        comodo = "Sala"
+        localStorage.setItem("comodo", comodo)
+    }
     
 }
