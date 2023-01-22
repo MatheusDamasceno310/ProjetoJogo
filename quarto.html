@@ -33,19 +33,19 @@
                     <div id="saudeDoPet"><img src="Imagens/Status/heart-shape-rounded-edges-variant-with-white-details.png" alt="Saúde"></div>
                 </abbr>
                 <abbr id="mPorcentagemDaAlimentacao" title="Alimentação: 0%">
-                    <div id="alimentacaoDoPet"><img src="Imagens/Status/apple.png" alt="Alimentação" onclick="irProCozinha()"></div>
+                    <div id="alimentacaoDoPet"><img src="Imagens/Status/apple.png" alt="Alimentação" onclick="irPraCozinha()"></div>
                 </abbr>
                 <abbr id="mPorcentagemDaEnergia" title="Energia: 0%">
                     <div id="energiaDoPet"><img src="Imagens/Status/energy.png" alt="Energia"></div>
                 </abbr>
                 <abbr id="mPorcentagemDaInteligencia" title="Inteligência: 0%">
-                    <div id="inteligenciaDoPet"><img src="Imagens/Status/book.png" alt="Inteligência"></div>
+                    <div id="inteligenciaDoPet"><img src="Imagens/Status/book.png" alt="Inteligência" onclick="irPraSala()"></div>
                 </abbr>
                 <abbr id="mPorcentagemDaFelicidade" title="Felicidade: 100%">
                     <div id="felicidadeDoPet"><img id="rostoStatus" src="Imagens/Status/happy-face.png" alt=""></div>
                 </abbr>
                 <abbr id="mPorcentagemDaHigiene" title="Higiene: 100%">
-                    <div id="higieneDoPet"><img src="Imagens/Status/chuveiro.png" alt="Higiene"></div>
+                    <div id="higieneDoPet"><img src="Imagens/Status/chuveiro.png" alt="Higiene" onclick="irProBanheiro()"></div>
                 </abbr>
             </section>
             <div class="recados">
@@ -82,6 +82,50 @@
         
         <section id="quarto">
             <img id="quartoFundo" src="Imagens/Quarto/1327.jpg" alt="">
+
+            <div id="monitorHover" onclick="mexerNoMonitor()">
+                <img src="Imagens/Captura_de_tela_20230107_141446-removebg-preview.png" alt="">
+            </div>
+
+            <div id="monitor">
+                <div class="monitorImg">
+                    <img src="Imagens/Quarto/Monitor/Captura_de_tela_20230121_171506-removebg-preview.png" alt="">
+                </div>
+
+                <div class="areaDeTrabalhoImg">
+                    <img src="Imagens/Quarto/Monitor/area.JPEG" alt="">
+                </div>
+
+                <div class="monitorProgramas">
+                    <div class="atalhoPrograma1">
+                        <img src="Imagens/Quarto/Monitor/rede.png" alt="">
+                        <p>Internet</p>
+                    </div>
+                    <div class="atalhoPrograma2">
+                        <img src="Imagens/Quarto/Monitor/controle-de-video-game.png" alt="">
+                        <p>Jogos</p>
+                    </div>
+                    <div class="atalhoPrograma3" onclick="irProYouTube()">
+                        <img src="Imagens/Quarto/Monitor/youtube.png" alt="">
+                        <p>YouTube</p>
+                    </div>
+                </div>
+
+                <div id="programa1">
+
+                </div>
+
+            </div>
+
+            <div id="rgbMonitor">
+                <span></span>
+                <span></span>
+            </div>
+
+            <div id="desligarMonitor" onclick="desligarMonitor()">
+                <span></span>
+                <span></span>
+            </div>
 
             <div class="mostrarMedalha">
                 <img src="" alt="" id="mostrarMedalha">

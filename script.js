@@ -172,11 +172,8 @@ if (localStorage.length > 0) {
 
     /** Comodo */
 
-    localStorage.setItem("comodo", "Cozinha")
+    localStorage.setItem("comodo", "")
 
-    /** Medalha */
-
-    localStorage.setItem("medalha", "")
 }
 
 /** Status de Level */
@@ -185,6 +182,52 @@ document.getElementById('level').innerText = localStorage.getItem("levelUp");
 document.getElementById('dinheiro').innerText = dinheiro;
 document.getElementById('mPorcentagemDeLevel').title = localStorage.getItem("porcentagemLevel");
 document.getElementById('progressao').style.transform = localStorage.getItem("barraDeLevel");
+
+/** Medalha */
+
+function receberMedalha() {
+
+    if (level >= 10 && level < 20) {
+        medalha = "Imagens/Medalhas/Captura_de_tela_20230119_194053-removebg-preview.png"
+        localStorage.setItem("medalha", medalha)
+    }
+    if (level >= 20 && level < 30) {
+        medalha = "Imagens/Medalhas/Captura_de_tela_20230119_194118-removebg-preview.png"
+        localStorage.setItem("medalha", medalha)
+    }
+    if (level >= 30 && level < 40) {
+        medalha = "Imagens/Medalhas/Captura_de_tela_20230119_194127-removebg-preview.png"
+        localStorage.setItem("medalha", medalha)
+    }
+    if (level >= 40 && level < 50) {
+        medalha = "Imagens/Medalhas/Captura_de_tela_20230119_194150-removebg-preview.png"
+        localStorage.setItem("medalha", medalha)
+    }
+    if (level >= 50 && level < 60) {
+        medalha = "Imagens/Medalhas/Captura_de_tela_20230119_194216-removebg-preview.png"
+        localStorage.setItem("medalha", medalha)
+    }
+    if (level >= 60 && level < 70) {
+        medalha = "Imagens/Medalhas/Captura_de_tela_20230119_194228-removebg-preview.png"
+        localStorage.setItem("medalha", medalha)
+    }
+    if (level >= 70 && level < 80) {
+        medalha = "Imagens/Medalhas/Captura_de_tela_20230119_194312-removebg-preview.png"
+        localStorage.setItem("medalha", medalha)
+    }
+    if (level >= 80 && level < 90) {
+        medalha = "Imagens/Medalhas/Captura_de_tela_20230119_194322-removebg-preview.png"
+        localStorage.setItem("medalha", medalha)
+    }
+    if (level >= 90 && level < 100) {
+        medalha = "Imagens/Medalhas/Captura_de_tela_20230119_194358-removebg-preview.png"
+        localStorage.setItem("medalha", medalha)
+    }
+    if (level >= 100) {
+        medalha = "Imagens/Medalhas/Captura_de_tela_20230119_194417-removebg-preview.png"
+        localStorage.setItem("medalha", medalha)
+    }
+}
 
 /** Status Energia */
 
@@ -4078,6 +4121,17 @@ microondasHover.addEventListener('mouseleave', () => {
     microondasHover.style.opacity = "0";
 });   
 
+/** Panela Eletrica */
+
+const panelaEletricaHover = document.querySelector('#panelaEletricaHover');
+
+panelaEletricaHover.addEventListener('mouseenter', () => {
+    panelaEletricaHover.style.opacity = "1";
+})
+panelaEletricaHover.addEventListener('mouseleave', () => {
+    panelaEletricaHover.style.opacity = "0";
+}); 
+
 }
 
 
@@ -4090,6 +4144,12 @@ function receberLv() {
     document.getElementById('mPorcentagemDeLevel').title = porcantagemLevel;
     document.getElementById('progressao').style.transform = localStorage.getItem("barraDeLevel");
     document.getElementById('levelUp').style.display = "none"
+
+    receberMedalha()
+
+    if (comodo == "Quarto") {
+        document.getElementById('mostrarMedalha').src = medalha
+    }
 
 }
 
@@ -4129,44 +4189,36 @@ function expComida() {
 
         if (level == 10) {
             document.getElementById('medalha').src = "Imagens/Medalhas/Captura_de_tela_20230119_194053-removebg-preview.png"
-            localStorage.setItem("medalha", "Imagens/Medalhas/Captura_de_tela_20230119_194053-removebg-preview.png")
         }
         if (level == 20) {
             document.getElementById('medalha').src = "Imagens/Medalhas/Captura_de_tela_20230119_194118-removebg-preview.png"
-            localStorage.setItem("medalha", "Imagens/Medalhas/Captura_de_tela_20230119_194118-removebg-preview.png")
         }
         if (level == 30) {
             document.getElementById('medalha').src = "Imagens/Medalhas/Captura_de_tela_20230119_194127-removebg-preview.png"
-            localStorage.setItem("medalha", "Imagens/Medalhas/Captura_de_tela_20230119_194127-removebg-preview.png")
         }
         if (level == 40) {
             document.getElementById('medalha').src = "Imagens/Medalhas/Captura_de_tela_20230119_194150-removebg-preview.png"
-            localStorage.setItem("medalha", "Imagens/Medalhas/Captura_de_tela_20230119_194150-removebg-preview.png")
         }
         if (level == 50) {
             document.getElementById('medalha').src = "Imagens/Medalhas/Captura_de_tela_20230119_194216-removebg-preview.png"
-            localStorage.setItem("medalha", "Imagens/Medalhas/Captura_de_tela_20230119_194216-removebg-preview.png")
         }
         if (level == 60) {
             document.getElementById('medalha').src = "Imagens/Medalhas/Captura_de_tela_20230119_194228-removebg-preview.png"
-            localStorage.setItem("medalha", "Imagens/Medalhas/Captura_de_tela_20230119_194228-removebg-preview.png")
         }
         if (level == 70) {
             document.getElementById('medalha').src = "Imagens/Medalhas/Captura_de_tela_20230119_194312-removebg-preview.png"
-            localStorage.setItem("medalha", "Imagens/Medalhas/Captura_de_tela_20230119_194312-removebg-preview.png")
         }
         if (level == 80) {
             document.getElementById('medalha').src = "Imagens/Medalhas/Captura_de_tela_20230119_194322-removebg-preview.png"
-            localStorage.setItem("medalha", "Imagens/Medalhas/Captura_de_tela_20230119_194322-removebg-preview.png")
         }
         if (level == 90) {
             document.getElementById('medalha').src = "Imagens/Medalhas/Captura_de_tela_20230119_194358-removebg-preview.png"
-            localStorage.setItem("medalha", "Imagens/Medalhas/Captura_de_tela_20230119_194358-removebg-preview.png")
         }
         if (level == 100) {
             document.getElementById('medalha').src = "Imagens/Medalhas/Captura_de_tela_20230119_194417-removebg-preview.png"
-            localStorage.setItem("medalha", "Imagens/Medalhas/Captura_de_tela_20230119_194417-removebg-preview.png")
         }
+
+        receberMedalha()
 
         dinheiro = dinheiro + ((level - 1) * 10)
 
@@ -4227,6 +4279,61 @@ function expComida() {
 
         localStorage.setItem("barraDeLevel", progressao)
     }
+
+    for (let i = 0; i < 10; i++) {
+        
+        if (contStatusFelicidade > 60 && contStatusFelicidade <= 100 && limiteFelicidade == 0) {
+
+            if(statusFelicidaderGb >= 0 && statusFelicidaderGb <= 245) {
+                statusFelicidaderGb += 5
+    
+                localStorage.setItem("statusFelicidaderGb", statusFelicidaderGb.toString())
+            }
+    
+            --contStatusFelicidade
+    
+            let porcantagemFelicidadeSoma = contStatusFelicidade - 100 
+    
+            let convPorcentagemFelicidade = porcantagemFelicidadeSoma * -1
+    
+            if (contStatusFelicidade == 0) {
+                convPorcentagemFelicidade = 100
+            }
+    
+            localStorage.setItem("convPorcentagemFelicidade", convPorcentagemFelicidade.toString())
+    
+            document.getElementById('mPorcentagemDaFelicidade').title = "Felicidade: "+ localStorage.getItem("convPorcentagemFelicidade") +"%"
+    
+            localStorage.setItem("contStatusFelicidade", contStatusFelicidade.toString())
+    
+            const StringTempFelicidade = contStatusFelicidade + "%"
+    
+            if (contStatusFelicidade < 25) {
+        
+                if(statusFelicidadeRgb >= 10 && statusFelicidadeRgb <= 250) {
+                    statusFelicidadeRgb -= 10
+        
+                    localStorage.setItem("statuFelicidadeRgb", statusFelicidadeRgb.toString())
+                }
+    
+            }
+    
+                const porcentagemDaFelicidade = "linear-gradient(rgba(255, 255, 255, 0) "+ StringTempFelicidade +",rgb("+ statusFelicidadeRgb.toString() +","+ statusFelicidaderGb.toString() +", 0) 0%)"
+    
+                localStorage.setItem("statusDeFelicidade", porcentagemDaFelicidade)
+    
+        }
+        document.getElementById("felicidadeDoPet").style.background = localStorage.getItem("statusDeFelicidade")
+    
+        if (contStatusFelicidade >= 60) {
+            localStorage.setItem("rostoStatus", "Imagens/Status/sad-face.png")
+        } else {
+            localStorage.setItem("rostoStatus", "Imagens/Status/happy-face.png")
+        }
+    
+        document.getElementById("rostoStatus").src = localStorage.getItem("rostoStatus")
+        
+    }
 }
 
 function mudar() {
@@ -4243,6 +4350,40 @@ function mudar() {
             }
 
             level++
+
+            if (level == 10) {
+                document.getElementById('medalha').src = "Imagens/Medalhas/Captura_de_tela_20230119_194053-removebg-preview.png"
+            }
+            if (level == 20) {
+                document.getElementById('medalha').src = "Imagens/Medalhas/Captura_de_tela_20230119_194118-removebg-preview.png"
+            }
+            if (level == 30) {
+                document.getElementById('medalha').src = "Imagens/Medalhas/Captura_de_tela_20230119_194127-removebg-preview.png"
+            }
+            if (level == 40) {
+                document.getElementById('medalha').src = "Imagens/Medalhas/Captura_de_tela_20230119_194150-removebg-preview.png"
+            }
+            if (level == 50) {
+                document.getElementById('medalha').src = "Imagens/Medalhas/Captura_de_tela_20230119_194216-removebg-preview.png"
+            }
+            if (level == 60) {
+                document.getElementById('medalha').src = "Imagens/Medalhas/Captura_de_tela_20230119_194228-removebg-preview.png"
+            }
+            if (level == 70) {
+                document.getElementById('medalha').src = "Imagens/Medalhas/Captura_de_tela_20230119_194312-removebg-preview.png"
+            }
+            if (level == 80) {
+                document.getElementById('medalha').src = "Imagens/Medalhas/Captura_de_tela_20230119_194322-removebg-preview.png"
+            }
+            if (level == 90) {
+                document.getElementById('medalha').src = "Imagens/Medalhas/Captura_de_tela_20230119_194358-removebg-preview.png"
+            }
+            if (level == 100) {
+                document.getElementById('medalha').src = "Imagens/Medalhas/Captura_de_tela_20230119_194417-removebg-preview.png"
+            }
+
+            receberMedalha()
+
             dinheiro = dinheiro + ((level - 1) * 10)
 
             document.getElementById('novoNivel').innerText = level
@@ -4274,10 +4415,10 @@ function mudar() {
 
         } else {
            
-            if (c > -10) {
+            if (c > -50) {
                 c = 0
             } else {
-                c = c + 10;
+                c = c + 50;
             }
 
             let porcantagemLevelSoma = c + 100
@@ -4355,7 +4496,7 @@ setInterval(function() {
     
     document.getElementById("energiaDoPet").style.background = localStorage.getItem("statusDeEnergia")
 
-} , 10000);
+} , 20000);
 
 /** Status de Saude */
 
@@ -4411,7 +4552,7 @@ setInterval(function() {
     if (contStatusSaude == 0) {
         limiteSaude = 1
     }
-} , 1000);
+} , 5000);
 
 /** Subida */
 
@@ -4460,7 +4601,7 @@ setInterval(function() {
     }
     document.getElementById("saudeDoPet").style.background = localStorage.getItem("statusDeSaude")
 }
-}, 400);
+}, 1000);
 
 
 /** Status Alimentacao */
@@ -4582,7 +4723,7 @@ setInterval(function() {
     if (contStatusFelicidade == 0) {
         limiteFelicidade = 1
     }
-} , 80);
+} , 5000);
 
 /** Subida */
 
@@ -4640,7 +4781,7 @@ setInterval(function() {
     document.getElementById("rostoStatus").src = localStorage.getItem("rostoStatus")    
 
 }
-}, 400);
+}, 1000);
 
 /**Dormir */
 
@@ -4649,7 +4790,6 @@ function dormir() {
     limiteSaude = 0
     limiteFelicidade = 0
 
-    if (contStatusEnergia >= 70) {
         setInterval(function() {
     
         if (contStatusEnergia > 0 && contStatusEnergia <= 100 && limiteEnergia == 0) {
@@ -4702,8 +4842,7 @@ function dormir() {
         if (contStatusEnergia == 0) {
             limiteEnergia = 1
         }
-    } , 200);
-    }
+    } , 400);
     
 }
 
@@ -4715,6 +4854,7 @@ function abrirLoja() {
     document.getElementById('levelDoPet').style.opacity = "0.5";
     document.getElementById('statusDoPet').style.opacity = "0.5";
     document.getElementById('dinheiroDoPet').style.zIndex = "3"
+    document.getElementById('mudarDeCenario').style.display = "none"
 
     document.getElementById('geladeiraHover').style.display = "none"
     document.getElementById('fogaoHover').style.display = "none"
@@ -4728,6 +4868,7 @@ function fecharLoja() {
     document.getElementById('cozinhaFundo').style.opacity = "1";
     document.getElementById('levelDoPet').style.opacity = "1";
     document.getElementById('statusDoPet').style.opacity = "1";
+    document.getElementById('mudarDeCenario').style.display = "flex"
 
     document.getElementById('geladeiraHover').style.display = "block"
     document.getElementById('fogaoHover').style.display = "block"
@@ -5882,6 +6023,7 @@ function mostrarSacola() {
     document.getElementById('cozinhaFundo').style.opacity = "0.5";
     document.getElementById('levelDoPet').style.opacity = "0.5";
     document.getElementById('statusDoPet').style.opacity = "0.5";
+    document.getElementById('mudarDeCenario').style.display = "none"
 
     document.getElementById('geladeiraHover').style.display = "none"
     document.getElementById('fogaoHover').style.display = "none"
@@ -5928,6 +6070,7 @@ function fecharSacola() {
     document.getElementById('cozinhaFundo').style.opacity = "1";
     document.getElementById('levelDoPet').style.opacity = "1";
     document.getElementById('statusDoPet').style.opacity = "1";
+    document.getElementById('mudarDeCenario').style.display = "flex"
 
     document.getElementById('geladeiraHover').style.display = "block"
     document.getElementById('fogaoHover').style.display = "block"
@@ -5965,6 +6108,8 @@ function fecharSacola() {
 /** Coletar Sacola */
 
 function coletarSacola() {
+
+    document.getElementById('mudarDeCenario').style.display = "flex"
 
     for (let i = 0; i < nomesDosItens.length; i++) {
         
@@ -6190,48 +6335,212 @@ function irPraCozinha() {
 
 /** Ir pro Quarto */
 
+pegarSacola = 0
+
 function irProQuarto() {
 
-    if (pegarSacola == 1) {
-        document.getElementById('avisoCompras').style.display = "block"
+    if (comodo == "Cozinha") {
+        if (pegarSacola == 1) {
+            document.getElementById('avisoCompras').style.display = "block"
+        } else {
+            
+            location.href = "quarto.html"
+    
+            comodo = "Quarto"
+            localStorage.setItem("comodo", comodo)
+    
+        }
     } else {
-
-        document.getElementById('mostrarMedalha').src = comodo
-
         location.href = "quarto.html"
 
         comodo = "Quarto"
         localStorage.setItem("comodo", comodo)
+    }  
+}
+
+if (comodo == "Quarto") {
+    receberMedalha()
+    document.getElementById('mostrarMedalha').src = medalha
+
+    /** Monitor */
+
+    let monitorLigado = 0
+
+    if(monitorLigado == 0) {
+        const monitorHover = document.querySelector('#monitorHover');
+
+        monitorHover.addEventListener('mouseenter', () => {
+            monitorHover.style.opacity = "1";
+        })
+        monitorHover.addEventListener('mouseleave', () => {
+            monitorHover.style.opacity = "0";
+        });
     }
-    
+
+    /** Navegar no Monitor */
+
+    function mexerNoMonitor() {
+        document.getElementById('monitor').style.display = "block"
+        document.getElementById('mudarDeCenario').style.display = "none"
+        document.getElementById('quartoFundo').style.opacity = "0.2"
+        document.getElementById('mostrarMedalha').style.opacity = "0.2"
+        document.getElementById('dinheiroDoPet').style.opacity = "0.2"
+        document.getElementById('rgbMonitor').style.display = "block"
+        document.getElementById('desligarMonitor').style.display = "block"
+    }
+    function desligarMonitor() {
+        document.getElementById('monitor').style.display = "none"
+        document.getElementById('mudarDeCenario').style.display = "flex"
+        document.getElementById('quartoFundo').style.opacity = "1"
+        document.getElementById('mostrarMedalha').style.opacity = "1"
+        document.getElementById('dinheiroDoPet').style.opacity = "1"
+        document.getElementById('rgbMonitor').style.display = "none"
+        document.getElementById('desligarMonitor').style.display = "none"
+    }
+
+    /** Programas do Monitor */
+
+    /** Programa 1 */
+
+
+    /** Programa 2 */
+
+
+    /** Programa 3 */
+
+    function irProYouTube() {
+        location.href = "https://www.youtube.com"
+    }
+
+
 }
 
 /** Ir pro Banheiro */
 
 function irProBanheiro() {
 
-    location.href = "banheiro.html"
-
-    comodo = "Banheiro"
-    localStorage.setItem("comodo", comodo)
+    if (comodo == "Cozinha") {
+        if (pegarSacola == 1) {
+            document.getElementById('avisoCompras').style.display = "block"
+        } else {
+            location.href = "banheiro.html"
     
+            comodo = "Banheiro"
+            localStorage.setItem("comodo", comodo)
+        }
+    } else {
+        location.href = "banheiro.html"
+
+        comodo = "Banheiro"
+        localStorage.setItem("comodo", comodo)
+    }
 }
 
 if (comodo == "Banheiro") {
     document.getElementById('cenario').style.color = "black"
+
+    let banheiraOcupada = 0
+
+    if(banheiraOcupada == 0) {
+        const banheiraHover = document.querySelector('#banheiraHover');
+
+        banheiraHover.addEventListener('mouseenter', () => {
+            banheiraHover.style.opacity = "1";
+        })
+        banheiraHover.addEventListener('mouseleave', () => {
+            banheiraHover.style.opacity = "0";
+        });
+    }
+    const vasoSanitarioHover = document.querySelector('#vasoSanitarioHover');
+
+    vasoSanitarioHover.addEventListener('mouseenter', () => {
+        vasoSanitarioHover.style.opacity = "1";
+    })
+    vasoSanitarioHover.addEventListener('mouseleave', () => {
+        vasoSanitarioHover.style.opacity = "0";
+    }); 
+
+    /** Status Higiene */
+
+    let limiteHigiene = 0
+
+    function tomarBanho() {
+
+        setInterval(function() {
+    
+            if (contStatusHigiene > 0 && contStatusHigiene <= 100 && limiteHigiene == 0) {
+        
+                if(statusHigienerGb >= 0 && statusHigienerGb <= 245) {
+                    statusHigienerGb += 5
+        
+                    localStorage.setItem("statusHigienerGb", statusHigienerGb.toString())
+                }
+    
+                if (contStatusHigiene < 25) {
+                    
+                    if(statusHigieneRgb >= 10 && statusHigieneRgb <= 250) {
+                        statusHigieneRgb -= 10
+            
+                        localStorage.setItem("statusHigieneRgb", statusEnergiaRgb.toString())
+                    }
+    
+                }
+        
+                --contStatusHigiene
+                let porcantagemHigieneSoma = contStatusHigiene - 100 
+        
+                let convPorcentagemHigiene = porcantagemHigieneSoma * -1
+        
+                if (contStatusHigiene == 0) {
+                    convPorcentagemHigiene = 100
+                }
+        
+                localStorage.setItem("convPorcentagemHigiene", convPorcentagemHigiene.toString())
+        
+                document.getElementById('mPorcentagemDaHigiene').title = "Higiene: "+ localStorage.getItem("convPorcentagemHigiene") +"%"
+        
+                localStorage.setItem("contStatusHigiene", contStatusHigiene.toString())
+        
+                const StringTempHigiene = contStatusHigiene + "%"
+        
+                if (contStatusHigiene <= 65) {
+        
+                    const porcentagemDaHigiene = "linear-gradient(rgba(255, 255, 255, 0) "+ StringTempHigiene +",rgb("+ statusHigieneRgb.toString() +","+ statusHigienerGb.toString() +", 0) 0%)"
+        
+                    localStorage.setItem("statusDeHigiene", porcentagemDaHigiene)
+        
+                }
+        
+            }
+    
+            document.getElementById("higieneDoPet").style.background = localStorage.getItem("statusDeHigiene")
+    
+            if (contStatusHigiene == 0) {
+                limiteHigiene = 1
+            }
+        } , 400);
+
+    }
+
 }
 
 /** Ir pra Sala */
 
 function irPraSala() {
 
-    if (pegarSacola == 1) {
-        document.getElementById('avisoCompras').style.display = "block"
+    if (comodo == "Cozinha") {
+        if (pegarSacola == 1) {
+            document.getElementById('avisoCompras').style.display = "block"
+        } else {
+            location.href = "sala.html"
+    
+            comodo = "Sala"
+            localStorage.setItem("comodo", comodo)
+        }
     } else {
         location.href = "sala.html"
 
         comodo = "Sala"
         localStorage.setItem("comodo", comodo)
-    }
-    
+    } 
 }

@@ -7,6 +7,7 @@
 }
 body {
     overflow: hidden;
+    background: black;
 }
 /*Leve do Pet*/
 
@@ -219,7 +220,7 @@ body {
     background: linear-gradient(rgba(255, 255, 255, 0) 100%,rgb(0, 255, 0) 0%);
 }
 #higieneDoPet {
-    background: linear-gradient(rgba(255, 255, 255, 0) 0%,rgb(0, 255, 0) 0%);
+    background: linear-gradient(rgba(255, 255, 255, 0) 100%,rgb(0, 255, 0) 0%);
 }
 
 #semFome {
@@ -1871,6 +1872,30 @@ body {
     width: 3rem;
     opacity: 0.8;
 }
+
+/* Panela Eletrica */
+
+#panelaEletricaHover {
+    position: absolute;
+    cursor: pointer;
+    height: 11vh;
+    width: 5.8vw;
+    margin-top: -67.7vh;
+    margin-left: 91.2vw;
+    border-radius: 1.1rem 1.3rem 1.5rem 1.5rem;
+    background: rgba(255, 255, 255, 0.314);
+    opacity: 0;
+}
+#panelaEletricaHover img {
+    margin-top: 2.5vh;
+    margin-left: 1.3vw;
+    height: 3rem;
+    width: 3rem;
+    opacity: 0.8;   
+}
+
+/* Cancelar */
+
 .cancelar {
     font-size: 2rem;
     text-align: center;
@@ -1895,7 +1920,7 @@ body {
     margin-top: -6px;
 }
 
-/* Pegue as Commpras */
+/* Pegue as Compras */
 
 #avisoCompras {
     display: none;
@@ -1976,6 +2001,149 @@ body {
     width: 100vw;
 }
 
+/* Monitor */
+
+#monitorHover {
+    position: absolute;
+    cursor: pointer;
+    height: 15.6vh;
+    width: 15.1vw;
+    margin-top: -70.4vh;
+    margin-left: 28.4vw;
+    opacity: 0;
+}
+#monitorHover img {
+    margin-top: 2vh;
+    margin-left: 5.1vw;
+    height: 5rem;
+    width: 5rem;
+}
+
+/* Navegar no Monitor */
+
+#monitor {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+}
+.monitorImg img {
+    height: 40rem;
+}
+
+#rgbMonitor {
+    display: none;
+    position: absolute;
+    z-index: 3;
+    height: 39.3rem;
+    width: 65rem;
+    top: 49.5%;
+    left: 50.2%;
+    transform: translate(-50%, -50%);
+    z-index: 4;
+    border: 4px solid green;
+    border-radius: 0.3rem;
+    animation: rgbMonitor 1.5s linear infinite;
+}
+#rgbMonitor span:nth-child(1) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+    width: 100%;
+    border: inherit;
+    filter: blur(7px);
+}
+#rgbMonitor span:nth-child(2) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+    width: 100%;
+    border: inherit;
+    filter: blur(10px);
+}
+
+@keyframes rgbMonitor {
+    100%{
+        filter: hue-rotate(1turn);
+    }
+}
+
+.areaDeTrabalhoImg img {
+    position: absolute;
+    top: 49%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Programas do Monitor */
+
+.monitorProgramas {
+    position: absolute;
+    top: 2.5rem;
+    left: 3rem;
+    height: 10rem;
+    color: white;
+    text-align: center;
+    cursor: default;
+}
+.monitorProgramas img {
+    height: 3rem;
+}
+.atalhoPrograma1, .atalhoPrograma2, .atalhoPrograma3 {
+    cursor: pointer;
+    margin-top: 0.5rem;
+}
+
+/* Programa 1 */
+
+#programa1 {
+    display: none;
+    position: absolute;
+    top: 49%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 560px;
+    width: 980px;
+    z-index: 10;
+}
+
+/* Desligar Monitor */
+
+#desligarMonitor {
+    display: block;
+    position: absolute;
+    top: 90.6%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 0.8rem;
+    width: 2rem;
+    border-radius: 2rem;
+    z-index: 6;
+    background: limegreen;
+    filter: blur(2px);
+    cursor: pointer;
+}
+#desligarMonitor span:nth-child(2) {
+    position: absolute;
+    background: inherit;
+    height: 100%;
+    width: 100%;
+    filter: blur(7px);
+}
+#desligarMonitor span:nth-child(3) {
+    position: absolute;
+    background: inherit;
+    height: 100%;
+    width: 100%;
+    filter: blur(14px);
+}
+
 .mostrarMedalha {
     position: absolute;
     top: 50.5%;
@@ -1993,9 +2161,49 @@ body {
     width: 100vw;
 }
 
+/* Banheira */
+
+#banheiraHover {
+    position: absolute;
+    cursor: pointer;
+    height: 59.6vh;
+    width: 28.1vw;
+    margin-top: -93.7vh;
+    margin-left: 5.4vw;
+    border-radius: 0.7rem 0.7rem 0 0;
+    opacity: 0;
+}
+#banheiraHover img {
+    margin-top: 23vh;
+    margin-left: 10.5vw;
+    height: 7rem;
+    width: 6rem;
+}
+
+/* Vaso Sanitario */
+
+#vasoSanitarioHover {
+    position: absolute;
+    cursor: pointer;
+    height: 32.8vh;
+    width: 10.3vw;
+    margin-top: -66.9vh;
+    margin-left: 77.5vw;
+    border-radius: 6rem 6rem 6rem 6rem;
+    background: rgba(255, 255, 255, 0.314);
+    opacity: 0;
+}
+#vasoSanitarioHover img {
+    margin-top: 9.5vh;
+    margin-left: 3vw;
+    height: 5rem;
+    width: 4rem;
+    opacity: 0.8;   
+}
+
 /* Sala */
 
 #salaFundo {
     height: 100vh;
     width: 100vw;
-}
+}  
