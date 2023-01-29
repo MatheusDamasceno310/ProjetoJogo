@@ -223,6 +223,8 @@ body {
     background: linear-gradient(rgba(255, 255, 255, 0) 100%,rgb(0, 255, 0) 0%);
 }
 
+/* Recados */
+
 #semFome {
     display: none;
     position: absolute;
@@ -656,11 +658,6 @@ body {
 .upar {
     position: absolute;
     margin-top: 10rem;
-}
-.dormir {
-    position: absolute;
-    margin-top: 10rem;
-    margin-left: 5rem;
 }
 #cozinhaFundo {
     height: 100vh;
@@ -2022,7 +2019,7 @@ body {
 /* Navegar no Monitor */
 
 #monitor {
-    display: block;
+    display: none;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -2094,9 +2091,9 @@ body {
 }
 .monitorProgramas img {
     height: 3rem;
+    cursor: pointer;
 }
 .atalhoPrograma1, .atalhoPrograma2, .atalhoPrograma3 {
-    cursor: pointer;
     margin-top: 0.5rem;
 }
 
@@ -2104,6 +2101,7 @@ body {
 
 #programa1 {
     display: none;
+    background: rgb(255, 255, 255);
     position: absolute;
     top: 49%;
     left: 50%;
@@ -2113,10 +2111,187 @@ body {
     z-index: 10;
 }
 
+.site {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50rem;
+    text-align: center;
+}
+
+.letrasPesquisa {
+    display: flex;
+    justify-content: center;
+    font-size: 2.5rem;
+    height: 3rem;
+    text-align: center;
+    margin: 0 0 1rem 0;
+}
+.letrasPesquisa > div {
+    margin: 0.2rem;
+}
+.letrasPesquisa > div:nth-child(1) {
+    color: rgb(0, 0, 252);
+}
+.letrasPesquisa > div:nth-child(2) {
+    color: rgb(0, 0, 210);
+}
+.letrasPesquisa > div:nth-child(3) {
+    color: rgb(0, 0, 168);
+}
+.letrasPesquisa > div:nth-child(4) {
+    color: rgb(0, 0, 126);
+}
+.letrasPesquisa > div:nth-child(5) {
+    color: rgb(0, 0, 84);
+}
+.letrasPesquisa > div:nth-child(6) {
+    color: rgb(0 , 0, 42);
+}
+
+.pesquisa input {
+    height: 2rem;
+    width: 50rem;
+    border-radius: 0.8rem;
+    border: 2px solid rgb(0, 0, 255);
+    box-shadow: inset 1px 1px 5px rgba(0, 0, 255, 0.453), inset -1px -1px 5px rgba(0, 0, 255, 0.453);
+    padding-left: 1rem;
+    font-size: 1.2rem;
+    color: rgb(0, 0, 126);
+    caret-color: rgb(0, 0, 126);
+}
+.pesquisando {
+    box-shadow: inset 1px 1px 5px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 5px blue, -1px -1px 5px blue;
+}
+
+.pesquisa button {
+    margin-top: 1rem;
+    height: 2rem;
+    width: 8rem;
+    font-size: 1.2rem;
+    border-radius: 0.6rem;
+    border: 2px solid rgb(0, 0, 255);
+    box-shadow: inset 1px 1px 5px rgba(0, 0, 255, 0.453), inset -1px -1px 5px rgba(0, 0, 255, 0.453);
+    color: blue;
+    cursor: pointer;
+}
+.pesquisa button:hover {
+    background: rgba(0, 0, 255, 0.953);
+    box-shadow: inset 1px 1px 5px rgb(255, 255, 255), inset -1px -1px 10px rgb(255, 255, 255), 1px 1px 5px blue, -1px -1px 5px blue;
+    color: white;
+}
+
+/* Fechar Site */
+
+.cancelarSite {
+    font-size: 1.5rem;
+    text-align: center;
+    height: 1.5rem;
+    width: 3rem;
+    border: 2px solid rgb(255, 0, 0);
+    color: white;
+    cursor: pointer;
+    box-shadow: 0px 3px 1px 0px rgb(132, 9, 9);
+    background: red;
+    position: absolute;
+    top: 0rem;
+    right: 0rem;
+}
+.cancelarSite:hover {
+    background: rgba(255, 0, 0, 0.653);
+    box-shadow: inset 1px 1px 5px rgb(255, 255, 255), inset -1px -1px 5px rgb(255, 255, 255), 1px 1px 5px red, -1px -1px 5px red;
+    color: white;
+}
+.cancelarSite p {
+    margin-top: -5.5px;
+}
+
+/* Programa 2 */
+
+/* Jogo 1*/
+
+#jogo1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#jogo1 h1 {
+    color: white;
+    position: absolute;
+    top: -13%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+}
+#words1 {
+    display: grid;
+}
+#words1 input {
+    font-size: 3rem;
+    height: 4rem;
+    width: 3.5rem;
+    text-align: center;
+    align-items: center;
+    background: white;
+    margin: 0.3rem;
+    background: black;
+    border: 2px solid white;
+    border-radius: 0.3rem;
+    box-shadow: inset 2px 2px 1px red, inset -1px -1px 1px red, 2px 2px 9px red, -1px -1px 10px white;
+    color: white;
+    caret-color: transparent;
+}
+
+#linha1input {
+    order: 0;
+}
+#linha2 {
+    order: 0;
+}
+#linha3 {
+    order: 1;
+}
+#linha4 {
+    order: 2;
+}
+#linha5 {
+    order: 3;
+}
+#linha6 {
+    order: 4;
+}
+
+#words1 div {
+    font-size: 3rem;
+    height: 4rem;
+    width: 3.5rem;
+    text-align: center;
+    align-items: center;
+    margin: 0.4rem;
+    box-shadow: inset 2px 2px 1px red, inset -1px -1px 1px red, 2px 2px 9px red, -1px -1px 10px white;
+    border: 2px solid white;
+    border-radius: 0.3rem;
+    background: white;
+}
+
+#linha2, #linha3, #linha4, #linha5, #linha6 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+
+#letra1.ativo, #letra2.ativo, #letra3.ativo, #letra4.ativo, #letra5.ativo {
+    box-shadow: inset 1px -5px 1px white, inset 2px 2px 1px red, inset -1px -1px 1px red, 2px 2px 9px red, -1px -1px 10px white;
+}
+
+
+
 /* Desligar Monitor */
 
 #desligarMonitor {
-    display: block;
+    display: none;
     position: absolute;
     top: 90.6%;
     left: 50%;
@@ -2143,6 +2318,26 @@ body {
     width: 100%;
     filter: blur(14px);
 }
+
+/* Cama */
+
+#camaHover {
+    position: absolute;
+    cursor: pointer;
+    height: 15.6vh;
+    width: 14.5vw;
+    margin-top: -49.8vh;
+    margin-left: 56vw;
+    opacity: 0;
+}
+#camaHover img {
+    margin-top: 2vh;
+    margin-left: 6.5vw;
+    height: 5rem;
+    width: 5rem;
+}
+
+/* Medalha */
 
 .mostrarMedalha {
     position: absolute;

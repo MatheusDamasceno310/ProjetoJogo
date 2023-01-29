@@ -9,7 +9,6 @@
 </head>
 <body>
     <button class="upar" onclick="mudar()">Upar</button>
-    <button class="dormir" onclick="dormir()">Dormir</button>
     <main>
         <section id="principaisCoisas">
             <section id="levelDoPet">
@@ -98,21 +97,41 @@
 
                 <div class="monitorProgramas">
                     <div class="atalhoPrograma1">
-                        <img src="Imagens/Quarto/Monitor/rede.png" alt="">
+                        <img src="Imagens/Quarto/Monitor/rede.png" alt="" onclick="abrirPrograma1()">
                         <p>Internet</p>
                     </div>
                     <div class="atalhoPrograma2">
                         <img src="Imagens/Quarto/Monitor/controle-de-video-game.png" alt="">
                         <p>Jogos</p>
                     </div>
-                    <div class="atalhoPrograma3" onclick="irProYouTube()">
-                        <img src="Imagens/Quarto/Monitor/youtube.png" alt="">
+                    <div class="atalhoPrograma3">
+                        <img src="Imagens/Quarto/Monitor/youtube.png" alt="" onclick="irProYouTube()">
                         <p>YouTube</p>
                     </div>
                 </div>
 
                 <div id="programa1">
 
+                    <div class="site">
+                        <img src="Imagens/Quarto/Monitor/link-da-web.png" alt="">
+                        <div class="letrasPesquisa">
+                            <div>P</div>
+                            <div>E</div>
+                            <div>S</div>
+                            <div>K</div>
+                            <div>I</div>
+                            <div>S</div>
+                        </div>
+
+                        <div class="pesquisa">
+                            <label for="pesquisa"></label>
+                            <input type="text" name="pesquisa" id="pesquisa" onfocus="editando()" onblur="terminou()">
+                            <button onclick="pesquisar()">Pesquisar</button>
+                        </div>
+
+                    </div>
+
+                    <div class="cancelarSite" onclick="fecharPrograma1()"><p>x</p></div>
                 </div>
 
             </div>
@@ -125,6 +144,10 @@
             <div id="desligarMonitor" onclick="desligarMonitor()">
                 <span></span>
                 <span></span>
+            </div>
+
+            <div id="camaHover" onclick="dormir()">
+                <img src="Imagens/Captura_de_tela_20230107_141446-removebg-preview.png" alt="">
             </div>
 
             <div class="mostrarMedalha">
