@@ -101,7 +101,7 @@
                         <p>Internet</p>
                     </div>
                     <div class="atalhoPrograma2">
-                        <img src="Imagens/Quarto/Monitor/controle-de-video-game.png" alt="">
+                        <img src="Imagens/Quarto/Monitor/controle-de-video-game.png" alt="" onclick="abrirPrograma2()">
                         <p>Jogos</p>
                     </div>
                     <div class="atalhoPrograma3">
@@ -125,7 +125,7 @@
 
                         <div class="pesquisa">
                             <label for="pesquisa"></label>
-                            <input type="text" name="pesquisa" id="pesquisa" onfocus="editando()" onblur="terminou()">
+                            <input type="text" autocomplete="off" name="pesquisa" id="pesquisa" onfocus="editando()" onblur="terminou()">
                             <button onclick="pesquisar()">Pesquisar</button>
                         </div>
 
@@ -134,14 +134,118 @@
                     <div class="cancelarSite" onclick="fecharPrograma1()"><p>x</p></div>
                 </div>
 
+                <div id="programa2">
+                    <section id="jogos">
+                        <img class="home" src="Imagens/Quarto/Monitor/botao-de-inicio.png" alt="" onclick="programa2Home()">
+                        <h1>Jogos</h1>
+                        <div id="jogosDisponiveis">
+                            <div class="jogoWords">
+                                <img src="Imagens/Quarto/Monitor/programa2/Captura de tela_20230130_030944.png" alt="" onclick="abrirJogoWords()">
+                                <p>Words</p>
+                            </div>
+                        </div>
+                        
+                    </section>
+                    <section id="dificuldadeJogo1">
+                        <img class="home" src="Imagens/Quarto/Monitor/botao-de-inicio.png" alt="" onclick="programa2Home()">
+                        <h1>Dificuldade</h1>
+                        <div class="dificuldades1">
+                            <div class="muitoFacil" onclick="wordsMuitoFacil()">
+                                <span></span>
+                                <span></span>
+                                <p>Muito Fácil</p>
+                            </div>
+                            <div class="facil">
+                                <span></span>
+                                <span></span>
+                                <p>Fácil</p>
+                            </div>
+                            <div class="medio">
+                                <span></span>
+                                <span></span>
+                                <p>Medio</p>
+                            </div>
+                            <div class="dificil">
+                                <span></span>
+                                <span></span>
+                                <p>Difícil</p>
+                            </div>
+                            <div class="muitoDificil">
+                                <span></span>
+                                <span></span>
+                                <p>Muito Difícil</p>
+                            </div>
+                        </div>
+                    </section>
+                    <section id="jogo1"> 
+                        <img class="home" src="Imagens/Quarto/Monitor/botao-de-inicio.png" alt="" onclick="programa2Home()">
+                        <div id="words1">
+                            <section class="jogo1Titulo">
+                                <h1>Words</h1>
+                                <h1>Muito Fácil</h1>
+                            </section>
+                            <form id="linha1input" >
+                                <input id="letra1" autocomplete="off" tabindex="1" type="text" maxlength="1" onfocus="editandoWords1()" onblur="terminouWords1()" onkeydown="checkEnter(event)">
+                                <input id="letra2" autocomplete="off" tabindex="2" type="text" maxlength="1" onfocus="editandoWords2()" onblur="terminouWords2()" onkeydown="checkEnter(event)">
+                                <input id="letra3" autocomplete="off" tabindex="3" type="text" maxlength="1" onfocus="editandoWords3()" onblur="terminouWords3()" onkeydown="checkEnter(event)">
+                                <input id="letra4" autocomplete="off" tabindex="4" type="text" maxlength="1" onfocus="editandoWords4()" onblur="terminouWords4()" onkeydown="checkEnter(event)">
+                                <input id="letra5" autocomplete="off" tabindex="5" type="text" maxlength="1" onfocus="editandoWords5()" onblur="terminouWords5()" onkeydown="checkEnter(event)">
+                            </form>
+                            <section id="linha1">
+                                <div id="l1l1"></div>
+                                <div id="l1l2"></div>
+                                <div id="l1l3"></div>
+                                <div id="l1l4"></div>
+                                <div id="l1l5"></div>
+                            </section>
+                            <section id="linha2">
+                                <div id="l2l1"></div>
+                                <div id="l2l2"></div>
+                                <div id="l2l3"></div>
+                                <div id="l2l4"></div>
+                                <div id="l2l5"></div>
+                            </section>
+                            <section id="linha3">
+                                <div id="l3l1"></div>
+                                <div id="l3l2"></div>
+                                <div id="l3l3"></div>
+                                <div id="l3l4"></div>
+                                <div id="l3l5"></div>
+                            </section>
+                            <section id="linha4">
+                                <div id="l4l1"></div>
+                                <div id="l4l2"></div>
+                                <div id="l4l3"></div>
+                                <div id="l4l4"></div>
+                                <div id="l4l5"></div>
+                            </section>
+                            <section id="linha5">
+                                <div id="l5l1"></div>
+                                <div id="l5l2"></div>
+                                <div id="l5l3"></div>
+                                <div id="l5l4"></div>
+                                <div id="l5l5"></div>
+                            </section>
+                            <section id="linha6">
+                                <div id="l6l1"></div>
+                                <div id="l6l2"></div>
+                                <div id="l6l3"></div>
+                                <div id="l6l4"></div>
+                                <div id="l6l5"></div>
+                            </section>
+                        </div>
+                        <button id="fimDeJogo1" onclick="novoJogo1()">Novo Jogo</button>
+                    </section>
+                </div>
+
+                <div id="desligarMonitor" onclick="desligarMonitor()">
+                    <span></span>
+                    <span></span>
+                </div>
+
             </div>
 
             <div id="rgbMonitor">
-                <span></span>
-                <span></span>
-            </div>
-
-            <div id="desligarMonitor" onclick="desligarMonitor()">
                 <span></span>
                 <span></span>
             </div>

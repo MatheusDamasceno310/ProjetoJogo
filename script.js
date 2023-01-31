@@ -1,183 +1,189 @@
 
-let c = parseFloat(localStorage.getItem("progressaoDoLevel"))
-let level =  parseInt(localStorage.getItem("levelUp"))
-let dinheiro = parseFloat(localStorage.getItem("dinheiro"))
-let porcantagemLevel = parseFloat(localStorage.getItem("porcentagemLevel"))
+    let fazendo = localStorage.getItem("fazendo")
 
-/** Status Energia */
-
-let contStatusEnergia = parseFloat(localStorage.getItem("contStatusEnergia"))
-let statusEnergiaRgb = parseFloat(localStorage.getItem("statusEnergiaRgb"))
-let statusEnergiarGb = parseFloat(localStorage.getItem("statusEnergiarGb"))
-let convPorcentagemEnergia = parseFloat(localStorage.getItem("convPorcentagemEnergia"))
-
-/** Status Saude */
-
-let contStatusSaude = parseFloat(localStorage.getItem("contStatusSaude"))
-let statusSaudeRgb = parseFloat(localStorage.getItem("statusSaudeRgb"))
-let statusSauderGb = parseFloat(localStorage.getItem("statusSauderGb"))
-let convPorcentagemSaude = parseFloat(localStorage.getItem("convPorcentagemSaude"))
-
-/** Status Alimentacao */
-
-let contStatusAlimentacao = parseFloat(localStorage.getItem("contStatusAlimentacao"))
-let statusAlimentacaoRgb = parseFloat(localStorage.getItem("statusAlimentacaoRgb"))
-let statusAlimentacaorGb = parseFloat(localStorage.getItem("statusAlimentacaorGb"))
-let convPorcentagemAlimentacao = parseFloat(localStorage.getItem("convPorcentagemAlimentacao"))
-
-/** Status Inteligencia */
-
-
-
-/** Status Felicidade */
-
-let contStatusFelicidade = parseFloat(localStorage.getItem("contStatusFelicidade"))
-let statusFelicidadeRgb = parseFloat(localStorage.getItem("statusFelicidadeRgb"))
-let statusFelicidaderGb = parseFloat(localStorage.getItem("statusFelicidaderGb"))
-let convPorcentagemFelicidade = parseFloat(localStorage.getItem("convPorcentagemFelicidade"))
-let rostoStatus = localStorage.getItem("rostoStatus")
-
-/** Status Higiene */
-
-let contStatusHigiene = parseFloat(localStorage.getItem("contStatusHigiene"))
-let statusHigieneRgb = parseFloat(localStorage.getItem("statusHigieneRgb"))
-let statusHigienerGb = parseFloat(localStorage.getItem("statusHigienerGb"))
-let convPorcentagemHigiene = parseFloat(localStorage.getItem("convPorcentagemHigiene"))
-
-/** Quantidade de Itens da Geladeira */
-
-let quantidade1 = parseInt(localStorage.getItem("quantidade1"))
-let quantidade2 = parseInt(localStorage.getItem("quantidade2"))
-let quantidade3 = parseInt(localStorage.getItem("quantidade3"))
-let quantidade4 = parseInt(localStorage.getItem("quantidade4"))
-let quantidade5 = parseInt(localStorage.getItem("quantidade5"))
-let quantidade6 = parseInt(localStorage.getItem("quantidade6"))
-let quantidade7 = parseInt(localStorage.getItem("quantidade7"))
-let quantidade8 = parseInt(localStorage.getItem("quantidade8"))
-let quantidade9 = parseInt(localStorage.getItem("quantidade9"))
-let quantidade10 = parseInt(localStorage.getItem("quantidade10"))
-let quantidade11 = parseInt(localStorage.getItem("quantidade11"))
-let quantidade12 = parseInt(localStorage.getItem("quantidade12"))
-let quantidade13 = parseInt(localStorage.getItem("quantidade13"))
-let quantidade14 = parseInt(localStorage.getItem("quantidade14"))
-let quantidade15 = parseInt(localStorage.getItem("quantidade15"))
-let quantidade16 = parseInt(localStorage.getItem("quantidade16"))
-let quantidade17 = parseInt(localStorage.getItem("quantidade17"))
-let quantidade18 = parseInt(localStorage.getItem("quantidade18"))
-let quantidade19 = parseInt(localStorage.getItem("quantidade19"))
-let quantidade20 = parseInt(localStorage.getItem("quantidade20"))
-let quantidade21 = parseInt(localStorage.getItem("quantidade21"))
-let quantidade22 = parseInt(localStorage.getItem("quantidade22"))
-let quantidade23 = parseInt(localStorage.getItem("quantidade23"))
-let quantidade24 = parseInt(localStorage.getItem("quantidade24"))
-let quantidade25 = parseInt(localStorage.getItem("quantidade25"))
-let quantidade26 = parseInt(localStorage.getItem("quantidade26"))
-let quantidade27 = parseInt(localStorage.getItem("quantidade27"))
-
-/** Comodo */
-
-let comodo = localStorage.getItem("comodo");
-
-/** Medalha */
-
-let medalha = localStorage.getItem("medalha")
-
-/** LocalStorage  */
-
-if (localStorage.length > 0) {
-
-
-} else {
-
-    localStorage.setItem("porcentagemLevel", "0%")
-    localStorage.setItem("levelUp", "1")
-    localStorage.setItem("dinheiro", "0")
-    localStorage.setItem("progressaoDoLevel" , "-100")
-    localStorage.setItem("barraDeLevel", "translateX(-100%)")
+    let c = parseFloat(localStorage.getItem("progressaoDoLevel"))
+    let level =  parseInt(localStorage.getItem("levelUp"))
+    let dinheiro = parseFloat(localStorage.getItem("dinheiro"))
+    let porcantagemLevel = parseFloat(localStorage.getItem("porcentagemLevel"))
 
     /** Status Energia */
 
-    localStorage.setItem("contStatusEnergia", "0")
-    localStorage.setItem("statusEnergiaRgb", "0")
-    localStorage.setItem("statusEnergiarGb", "250")
-    localStorage.setItem("statusDeEnergia", "linear-gradient(rgba(255, 255, 255, 0) 0%,rgb(0, 250, 0) 0%)")
-    localStorage.setItem("convPorcentagemEnergia", "100")
+    let contStatusEnergia = parseFloat(localStorage.getItem("contStatusEnergia"))
+    let statusEnergiaRgb = parseFloat(localStorage.getItem("statusEnergiaRgb"))
+    let statusEnergiarGb = parseFloat(localStorage.getItem("statusEnergiarGb"))
+    let convPorcentagemEnergia = parseFloat(localStorage.getItem("convPorcentagemEnergia"))
 
     /** Status Saude */
 
-    localStorage.setItem("contStatusSaude", "0")
-    localStorage.setItem("statusSaudeRgb", "0")
-    localStorage.setItem("statusSauderGb", "250")
-    localStorage.setItem("statusDeSaude", "linear-gradient(rgba(255, 255, 255, 0) 0%,rgb(0, 250, 0) 0%)")
-    localStorage.setItem("convPorcentagemSaude", "100")
+    let contStatusSaude = parseFloat(localStorage.getItem("contStatusSaude"))
+    let statusSaudeRgb = parseFloat(localStorage.getItem("statusSaudeRgb"))
+    let statusSauderGb = parseFloat(localStorage.getItem("statusSauderGb"))
+    let convPorcentagemSaude = parseFloat(localStorage.getItem("convPorcentagemSaude"))
 
     /** Status Alimentacao */
 
-    localStorage.setItem("contStatusAlimentacao", "0")
-    localStorage.setItem("statusAlimentacaoRgb", "0")
-    localStorage.setItem("statusAlimentacaorGb", "250")
-    localStorage.setItem("statusDeAlimentacao", "linear-gradient(rgba(255, 255, 255, 0) 0%,rgb(0, 250, 0) 0%)")
-    localStorage.setItem("convPorcentagemAlimentacao", "100")
-    
+    let contStatusAlimentacao = parseFloat(localStorage.getItem("contStatusAlimentacao"))
+    let statusAlimentacaoRgb = parseFloat(localStorage.getItem("statusAlimentacaoRgb"))
+    let statusAlimentacaorGb = parseFloat(localStorage.getItem("statusAlimentacaorGb"))
+    let convPorcentagemAlimentacao = parseFloat(localStorage.getItem("convPorcentagemAlimentacao"))
+
     /** Status Inteligencia */
 
-
+    let contStatusInteligencia = parseFloat(localStorage.getItem("contStatusInteligencia"))
+    let convPorcentagemInteligencia = parseFloat(localStorage.getItem("convPorcentagemInteligencia"))
 
     /** Status Felicidade */
 
-    localStorage.setItem("contStatusFelicidade", "0")
-    localStorage.setItem("statusFelicidadeRgb", "0")
-    localStorage.setItem("statusFelicidaderGb", "250")
-    localStorage.setItem("statusDeFelicidade", "linear-gradient(rgba(255, 255, 255, 0) 0%,rgb(0, 250, 0) 0%)")
-    localStorage.setItem("convPorcentagemFelicidade", "100")
-    localStorage.setItem("rostoStatus", "Imagens/Status/happy-face.png")
+    let contStatusFelicidade = parseFloat(localStorage.getItem("contStatusFelicidade"))
+    let statusFelicidadeRgb = parseFloat(localStorage.getItem("statusFelicidadeRgb"))
+    let statusFelicidaderGb = parseFloat(localStorage.getItem("statusFelicidaderGb"))
+    let convPorcentagemFelicidade = parseFloat(localStorage.getItem("convPorcentagemFelicidade"))
+    let rostoStatus = localStorage.getItem("rostoStatus")
 
     /** Status Higiene */
 
-    localStorage.setItem("contStatusHigiene", "0")
-    localStorage.setItem("statusHigieneRgb", "0")
-    localStorage.setItem("statusHigienerGb", "250")
-    localStorage.setItem("statusDeHigiene", "linear-gradient(rgba(255, 255, 255, 0) 0%,rgb(0, 250, 0) 0%)")
-    localStorage.setItem("convPorcentagemHigiene", "100")
+    let contStatusHigiene = parseFloat(localStorage.getItem("contStatusHigiene"))
+    let statusHigieneRgb = parseFloat(localStorage.getItem("statusHigieneRgb"))
+    let statusHigienerGb = parseFloat(localStorage.getItem("statusHigienerGb"))
+    let convPorcentagemHigiene = parseFloat(localStorage.getItem("convPorcentagemHigiene"))
 
-    /** Itens da Geladeira */
+    /** Quantidade de Itens da Geladeira */
 
-    localStorage.setItem("quantidade1", "0")
-    localStorage.setItem("quantidade2", "0")
-    localStorage.setItem("quantidade3", "0")
-    localStorage.setItem("quantidade4", "0")
-    localStorage.setItem("quantidade5", "0")
-    localStorage.setItem("quantidade6", "0")
-    localStorage.setItem("quantidade7", "0")
-    localStorage.setItem("quantidade8", "0")
-    localStorage.setItem("quantidade9", "0")
-    localStorage.setItem("quantidade10", "0")
-    localStorage.setItem("quantidade11", "0")
-    localStorage.setItem("quantidade12", "0")
-    localStorage.setItem("quantidade13", "0")
-    localStorage.setItem("quantidade14", "0")
-    localStorage.setItem("quantidade15", "0")
-    localStorage.setItem("quantidade16", "0")
-    localStorage.setItem("quantidade17", "0")
-    localStorage.setItem("quantidade18", "0")
-    localStorage.setItem("quantidade19", "0")
-    localStorage.setItem("quantidade20", "0")
-    localStorage.setItem("quantidade21", "0")
-    localStorage.setItem("quantidade22", "0")
-    localStorage.setItem("quantidade23", "0")
-    localStorage.setItem("quantidade24", "0")
-    localStorage.setItem("quantidade25", "0")
-    localStorage.setItem("quantidade26", "0")
-    localStorage.setItem("quantidade27", "0")
+    let quantidade1 = parseInt(localStorage.getItem("quantidade1"))
+    let quantidade2 = parseInt(localStorage.getItem("quantidade2"))
+    let quantidade3 = parseInt(localStorage.getItem("quantidade3"))
+    let quantidade4 = parseInt(localStorage.getItem("quantidade4"))
+    let quantidade5 = parseInt(localStorage.getItem("quantidade5"))
+    let quantidade6 = parseInt(localStorage.getItem("quantidade6"))
+    let quantidade7 = parseInt(localStorage.getItem("quantidade7"))
+    let quantidade8 = parseInt(localStorage.getItem("quantidade8"))
+    let quantidade9 = parseInt(localStorage.getItem("quantidade9"))
+    let quantidade10 = parseInt(localStorage.getItem("quantidade10"))
+    let quantidade11 = parseInt(localStorage.getItem("quantidade11"))
+    let quantidade12 = parseInt(localStorage.getItem("quantidade12"))
+    let quantidade13 = parseInt(localStorage.getItem("quantidade13"))
+    let quantidade14 = parseInt(localStorage.getItem("quantidade14"))
+    let quantidade15 = parseInt(localStorage.getItem("quantidade15"))
+    let quantidade16 = parseInt(localStorage.getItem("quantidade16"))
+    let quantidade17 = parseInt(localStorage.getItem("quantidade17"))
+    let quantidade18 = parseInt(localStorage.getItem("quantidade18"))
+    let quantidade19 = parseInt(localStorage.getItem("quantidade19"))
+    let quantidade20 = parseInt(localStorage.getItem("quantidade20"))
+    let quantidade21 = parseInt(localStorage.getItem("quantidade21"))
+    let quantidade22 = parseInt(localStorage.getItem("quantidade22"))
+    let quantidade23 = parseInt(localStorage.getItem("quantidade23"))
+    let quantidade24 = parseInt(localStorage.getItem("quantidade24"))
+    let quantidade25 = parseInt(localStorage.getItem("quantidade25"))
+    let quantidade26 = parseInt(localStorage.getItem("quantidade26"))
+    let quantidade27 = parseInt(localStorage.getItem("quantidade27"))
 
     /** Comodo */
 
-    localStorage.setItem("comodo", "")
+    let comodo = localStorage.getItem("comodo");
 
-}
+    /** Medalha */
 
-if (comodo != "") {
- 
+    if (level >= 10) {
+        let medalha = localStorage.getItem("medalha")
+    }
+
+    /** LocalStorage  */
+
+    if (localStorage.length > 0) {
+
+    } else {
+
+        localStorage.setItem("fazendo", "Nada")
+
+        localStorage.setItem("porcentagemLevel", "0%")
+        localStorage.setItem("levelUp", "1")
+        localStorage.setItem("dinheiro", "0")
+        localStorage.setItem("progressaoDoLevel" , "-100")
+        localStorage.setItem("barraDeLevel", "translateX(-100%)")
+
+        /** Status Energia */
+
+        localStorage.setItem("contStatusEnergia", "0")
+        localStorage.setItem("statusEnergiaRgb", "0")
+        localStorage.setItem("statusEnergiarGb", "250")
+        localStorage.setItem("statusDeEnergia", "linear-gradient(rgba(255, 255, 255, 0) 0%,rgb(0, 250, 0) 0%)")
+        localStorage.setItem("convPorcentagemEnergia", "100")
+
+        /** Status Saude */
+
+        localStorage.setItem("contStatusSaude", "0")
+        localStorage.setItem("statusSaudeRgb", "0")
+        localStorage.setItem("statusSauderGb", "250")
+        localStorage.setItem("statusDeSaude", "linear-gradient(rgba(255, 255, 255, 0) 0%,rgb(0, 250, 0) 0%)")
+        localStorage.setItem("convPorcentagemSaude", "100")
+
+        /** Status Alimentacao */
+
+        localStorage.setItem("contStatusAlimentacao", "0")
+        localStorage.setItem("statusAlimentacaoRgb", "0")
+        localStorage.setItem("statusAlimentacaorGb", "250")
+        localStorage.setItem("statusDeAlimentacao", "linear-gradient(rgba(255, 255, 255, 0) 0%,rgb(0, 250, 0) 0%)")
+        localStorage.setItem("convPorcentagemAlimentacao", "100")
+        
+        /** Status Inteligencia */
+
+        localStorage.setItem("contStatusInteligencia", "100")
+        localStorage.setItem("statusDeInteligencia", "linear-gradient(rgba(255, 255, 255, 0) 0%,rgb(0, 250, 0) 0%)")
+        localStorage.setItem("convPorcentagemInteligencia", "0")
+
+        /** Status Felicidade */
+
+        localStorage.setItem("contStatusFelicidade", "0")
+        localStorage.setItem("statusFelicidadeRgb", "0")
+        localStorage.setItem("statusFelicidaderGb", "250")
+        localStorage.setItem("statusDeFelicidade", "linear-gradient(rgba(255, 255, 255, 0) 0%,rgb(0, 250, 0) 0%)")
+        localStorage.setItem("convPorcentagemFelicidade", "100")
+        localStorage.setItem("rostoStatus", "Imagens/Status/happy-face.png")
+
+        /** Status Higiene */
+
+        localStorage.setItem("contStatusHigiene", "0")
+        localStorage.setItem("statusHigieneRgb", "0")
+        localStorage.setItem("statusHigienerGb", "250")
+        localStorage.setItem("statusDeHigiene", "linear-gradient(rgba(255, 255, 255, 0) 0%,rgb(0, 250, 0) 0%)")
+        localStorage.setItem("convPorcentagemHigiene", "100")
+
+        /** Itens da Geladeira */
+
+        localStorage.setItem("quantidade1", "0")
+        localStorage.setItem("quantidade2", "0")
+        localStorage.setItem("quantidade3", "0")
+        localStorage.setItem("quantidade4", "0")
+        localStorage.setItem("quantidade5", "0")
+        localStorage.setItem("quantidade6", "0")
+        localStorage.setItem("quantidade7", "0")
+        localStorage.setItem("quantidade8", "0")
+        localStorage.setItem("quantidade9", "0")
+        localStorage.setItem("quantidade10", "0")
+        localStorage.setItem("quantidade11", "0")
+        localStorage.setItem("quantidade12", "0")
+        localStorage.setItem("quantidade13", "0")
+        localStorage.setItem("quantidade14", "0")
+        localStorage.setItem("quantidade15", "0")
+        localStorage.setItem("quantidade16", "0")
+        localStorage.setItem("quantidade17", "0")
+        localStorage.setItem("quantidade18", "0")
+        localStorage.setItem("quantidade19", "0")
+        localStorage.setItem("quantidade20", "0")
+        localStorage.setItem("quantidade21", "0")
+        localStorage.setItem("quantidade22", "0")
+        localStorage.setItem("quantidade23", "0")
+        localStorage.setItem("quantidade24", "0")
+        localStorage.setItem("quantidade25", "0")
+        localStorage.setItem("quantidade26", "0")
+        localStorage.setItem("quantidade27", "0")
+
+        /** Comodo */
+
+        localStorage.setItem("comodo", "")
+
+    }
+
     /** Status de Level */
 
     document.getElementById('level').innerText = localStorage.getItem("levelUp");
@@ -251,7 +257,9 @@ if (comodo != "") {
 
     /** Status Inteligencia */
 
+    document.getElementById('mPorcentagemDaInteligencia').title = "Inteligência: "+ localStorage.getItem("convPorcentagemInteligencia") +"%";
 
+    document.getElementById("inteligenciaDoPet").style.background = localStorage.getItem("statusDeInteligencia")
 
     /** Status Felicidade */
 
@@ -4136,7 +4144,6 @@ if (comodo != "") {
 
     }
 
-
     function receberLv() {
 
         const somMoeda = new Audio("EfeitosSonoros/Som moeda.m4a");
@@ -4150,7 +4157,9 @@ if (comodo != "") {
         receberMedalha()
 
         if (comodo == "Quarto") {
-            document.getElementById('mostrarMedalha').src = medalha
+            if (level >= 10) {
+                document.getElementById('mostrarMedalha').src = medalha
+            }
         }
 
     }
@@ -4168,9 +4177,7 @@ if (comodo != "") {
             }
             if(entrega == 10) {
                 document.getElementById('sacolaDeCompras').style.display = "block"
-            }
-            
-
+            }  
         }
 
     } , 1000);
@@ -4339,112 +4346,111 @@ if (comodo != "") {
     }
 
     function mudar() {
+        if (c >= 0) {
 
-            if (c >= 0) {
+            const somLevel = new Audio("EfeitosSonoros/Som Level Up.m4a");
+            somLevel.play();
 
-                const somLevel = new Audio("EfeitosSonoros/Som Level Up.m4a");
-                somLevel.play();
+            c = -100
 
-                c = -100
-
-                if(level == 0) {
-                    level = 2
-                }
-
-                level++
-
-                if (level == 10) {
-                    document.getElementById('medalha').src = "Imagens/Medalhas/Captura_de_tela_20230119_194053-removebg-preview.png"
-                }
-                if (level == 20) {
-                    document.getElementById('medalha').src = "Imagens/Medalhas/Captura_de_tela_20230119_194118-removebg-preview.png"
-                }
-                if (level == 30) {
-                    document.getElementById('medalha').src = "Imagens/Medalhas/Captura_de_tela_20230119_194127-removebg-preview.png"
-                }
-                if (level == 40) {
-                    document.getElementById('medalha').src = "Imagens/Medalhas/Captura_de_tela_20230119_194150-removebg-preview.png"
-                }
-                if (level == 50) {
-                    document.getElementById('medalha').src = "Imagens/Medalhas/Captura_de_tela_20230119_194216-removebg-preview.png"
-                }
-                if (level == 60) {
-                    document.getElementById('medalha').src = "Imagens/Medalhas/Captura_de_tela_20230119_194228-removebg-preview.png"
-                }
-                if (level == 70) {
-                    document.getElementById('medalha').src = "Imagens/Medalhas/Captura_de_tela_20230119_194312-removebg-preview.png"
-                }
-                if (level == 80) {
-                    document.getElementById('medalha').src = "Imagens/Medalhas/Captura_de_tela_20230119_194322-removebg-preview.png"
-                }
-                if (level == 90) {
-                    document.getElementById('medalha').src = "Imagens/Medalhas/Captura_de_tela_20230119_194358-removebg-preview.png"
-                }
-                if (level == 100) {
-                    document.getElementById('medalha').src = "Imagens/Medalhas/Captura_de_tela_20230119_194417-removebg-preview.png"
-                }
-
-                receberMedalha()
-
-                dinheiro = dinheiro + ((level - 1) * 10)
-
-                document.getElementById('novoNivel').innerText = level
-                document.getElementById('maisMoedas').innerText = ((level - 1) * 10)
-
-                localStorage.setItem("dinheiro", dinheiro);
-
-                localStorage.setItem("levelUp", level.toString())
-
-                let porcantagemLevelSoma = c + 100
-
-                if(porcantagemLevelSoma == 100) {
-                    porcantagemLevelSoma = 99
-                }
-
-                porcantagemLevel = porcantagemLevelSoma.toString() + "%"
-
-                localStorage.setItem("porcentagemLevel", porcantagemLevel)
-                
-                localStorage.setItem("progressaoDoLevel" , c.toString())
-
-                const stringAumento = c.toString() + "%";
-
-                const progressao = "translateX(" + stringAumento + ")";
-
-                localStorage.setItem("barraDeLevel", progressao)
-
-                document.getElementById('levelUp').style.display = "block"
-
-            } else {
-            
-                if (c > -50) {
-                    c = 0
-                } else {
-                    c = c + 50;
-                }
-
-                let porcantagemLevelSoma = c + 100
-
-                if(porcantagemLevelSoma == 100) {
-                    porcantagemLevelSoma = 99
-                }
-
-                porcantagemLevel = porcantagemLevelSoma.toString() + "%"
-
-                document.getElementById('mPorcentagemDeLevel').title = porcantagemLevel;
-
-                localStorage.setItem("porcentagemLevel", porcantagemLevel)
-                
-                localStorage.setItem("progressaoDoLevel" , c.toString())
-
-                const stringAumento = c.toString() + "%";
-
-                const progressao = "translateX(" + stringAumento + ")";
-
-                document.getElementById('progressao').style.transform = progressao;
-
-                localStorage.setItem("barraDeLevel", progressao)
+            if(level == 0) {
+                level = 2
             }
+
+            level++
+
+            if (level == 10) {
+                document.getElementById('medalha').src = "Imagens/Medalhas/Captura_de_tela_20230119_194053-removebg-preview.png"
+            }
+            if (level == 20) {
+                document.getElementById('medalha').src = "Imagens/Medalhas/Captura_de_tela_20230119_194118-removebg-preview.png"
+            }
+            if (level == 30) {
+                document.getElementById('medalha').src = "Imagens/Medalhas/Captura_de_tela_20230119_194127-removebg-preview.png"
+            }
+            if (level == 40) {
+                document.getElementById('medalha').src = "Imagens/Medalhas/Captura_de_tela_20230119_194150-removebg-preview.png"
+            }
+            if (level == 50) {
+                document.getElementById('medalha').src = "Imagens/Medalhas/Captura_de_tela_20230119_194216-removebg-preview.png"
+            }
+            if (level == 60) {
+                document.getElementById('medalha').src = "Imagens/Medalhas/Captura_de_tela_20230119_194228-removebg-preview.png"
+            }
+            if (level == 70) {
+                document.getElementById('medalha').src = "Imagens/Medalhas/Captura_de_tela_20230119_194312-removebg-preview.png"
+            }
+            if (level == 80) {
+                document.getElementById('medalha').src = "Imagens/Medalhas/Captura_de_tela_20230119_194322-removebg-preview.png"
+            }
+            if (level == 90) {
+                document.getElementById('medalha').src = "Imagens/Medalhas/Captura_de_tela_20230119_194358-removebg-preview.png"
+            }
+            if (level == 100) {
+                document.getElementById('medalha').src = "Imagens/Medalhas/Captura_de_tela_20230119_194417-removebg-preview.png"
+            }
+
+            receberMedalha()
+
+            dinheiro = dinheiro + ((level - 1) * 10)
+
+            document.getElementById('novoNivel').innerText = level
+            document.getElementById('maisMoedas').innerText = ((level - 1) * 10)
+
+            localStorage.setItem("dinheiro", dinheiro);
+
+            localStorage.setItem("levelUp", level.toString())
+
+            let porcantagemLevelSoma = c + 100
+
+            if(porcantagemLevelSoma == 100) {
+                porcantagemLevelSoma = 99
+            }
+
+            porcantagemLevel = porcantagemLevelSoma.toString() + "%"
+
+            localStorage.setItem("porcentagemLevel", porcantagemLevel)
+            
+            localStorage.setItem("progressaoDoLevel" , c.toString())
+
+            const stringAumento = c.toString() + "%";
+
+            const progressao = "translateX(" + stringAumento + ")";
+
+            localStorage.setItem("barraDeLevel", progressao)
+
+            document.getElementById('levelUp').style.display = "block"
+
+        } else {
+        
+            if (c > -50) {
+                c = 0
+            } else {
+                c = c + 50;
+            }
+
+            let porcantagemLevelSoma = c + 100
+
+            if(porcantagemLevelSoma == 100) {
+                porcantagemLevelSoma = 99
+            }
+
+            porcantagemLevel = porcantagemLevelSoma.toString() + "%"
+
+            document.getElementById('mPorcentagemDeLevel').title = porcantagemLevel;
+
+            localStorage.setItem("porcentagemLevel", porcantagemLevel)
+            
+            localStorage.setItem("progressaoDoLevel" , c.toString())
+
+            const stringAumento = c.toString() + "%";
+
+            const progressao = "translateX(" + stringAumento + ")";
+
+            document.getElementById('progressao').style.transform = progressao;
+
+            localStorage.setItem("barraDeLevel", progressao)
+        }
 
     }
 
@@ -4661,7 +4667,38 @@ if (comodo != "") {
 
     /** Status Inteligencia */
 
+    let limiteInteligencia = 0
 
+    function subindoInteligencia() {
+
+        if (contStatusInteligencia > 0 && contStatusInteligencia <= 100 && limiteInteligencia == 0) {
+
+            --contStatusInteligencia
+            let porcantagemInteligenciaSoma = contStatusInteligencia - 100 
+
+            let convPorcentagemInteligencia = porcantagemInteligenciaSoma * -1
+
+            if (contStatusInteligencia == 0) {
+                convPorcentagemInteligencia = 100
+            }
+
+            localStorage.setItem("convPorcentagemInteligencia", convPorcentagemInteligencia.toString())
+
+            document.getElementById('mPorcentagemDaInteligencia').title = "Inteligência: "+ localStorage.getItem("convPorcentagemInteligencia") +"%"
+
+            localStorage.setItem("contStatusInteligencia", contStatusInteligencia.toString())
+
+            const StringTempInteligencia = contStatusInteligencia + "%"
+
+            const porcentagemDaInteligencia = "linear-gradient(rgba(255, 255, 255, 0) "+ StringTempInteligencia +",rgb(0, 250, 0) 0%)"
+
+            localStorage.setItem("statusDeInteligencia", porcentagemDaInteligencia)
+
+        }
+
+        document.getElementById("inteligenciaDoPet").style.background = localStorage.getItem("statusDeInteligencia")
+
+    }
 
     /** Status Felicidade */
 
@@ -4788,6 +4825,7 @@ if (comodo != "") {
     /**Dormir */
 
     function dormir() {
+
         limiteEnergia = 0
         limiteSaude = 0
         limiteFelicidade = 0
@@ -4795,6 +4833,11 @@ if (comodo != "") {
             setInterval(function() {
         
             if (contStatusEnergia > 0 && contStatusEnergia <= 100 && limiteEnergia == 0) {
+                document.getElementById('monitorHover').style.display = "none"
+                if (contStatusEnergia == 1) {
+                    expBasico()
+                    document.getElementById('monitorHover').style.display = "block"
+                }
 
                 document.getElementById('quartoFundo').style.opacity = "0.2"
                 document.getElementById('mostrarMedalha').style.opacity = "0.2"
@@ -4856,7 +4899,6 @@ if (comodo != "") {
             }
         } , 400);
 
-        expBasico()
     }
 
     /** Loja */
@@ -6030,7 +6072,7 @@ if (comodo != "") {
     let pegarSacola = 0
 
     /** Mostar Sacola */
-    
+
     function mostrarSacola() {
         document.getElementById('sacola').style.display = "block"
         document.getElementById('cozinhaFundo').style.opacity = "0.5";
@@ -6372,8 +6414,91 @@ if (comodo != "") {
     }
 
     if (comodo == "Quarto") {
-        receberMedalha()
-        document.getElementById('mostrarMedalha').src = medalha
+        if (level >= 10) {
+            receberMedalha()
+            document.getElementById('mostrarMedalha').src = medalha
+        }
+
+        if(fazendo == "No Monitor") {
+            document.getElementById('monitor').style.display = "block"
+            document.getElementById('mudarDeCenario').style.display = "none"
+            document.getElementById('quartoFundo').style.opacity = "0.2"
+            document.getElementById('mostrarMedalha').style.opacity = "0.2"
+            document.getElementById('dinheiroDoPet').style.opacity = "0.2"
+            document.getElementById('levelDoPet').style.opacity = "0.2"
+            document.getElementById('statusDoPet').style.opacity = "0.2"
+            document.getElementById('rgbMonitor').style.display = "block"
+            document.getElementById('desligarMonitor').style.display = "block"
+        }
+        if (fazendo == "No Quarto") {
+            document.getElementById('monitor').style.display = "none"
+            document.getElementById('mudarDeCenario').style.display = "flex"
+            document.getElementById('quartoFundo').style.opacity = "1"
+            document.getElementById('mostrarMedalha').style.opacity = "1"
+            document.getElementById('dinheiroDoPet').style.opacity = "1"
+            document.getElementById('levelDoPet').style.opacity = "1"
+            document.getElementById('statusDoPet').style.opacity = "1"
+            document.getElementById('rgbMonitor').style.display = "none"
+            document.getElementById('desligarMonitor').style.display = "none"
+            document.getElementById('programa1').style.display = "none"
+            document.getElementById('programa2').style.display = "none"
+        }
+        if (fazendo == "No Programa 1") {
+            document.getElementById('monitor').style.display = "block"
+            document.getElementById('mudarDeCenario').style.display = "none"
+            document.getElementById('quartoFundo').style.opacity = "0.2"
+            document.getElementById('mostrarMedalha').style.opacity = "0.2"
+            document.getElementById('dinheiroDoPet').style.opacity = "0.2"
+            document.getElementById('levelDoPet').style.opacity = "0.2"
+            document.getElementById('statusDoPet').style.opacity = "0.2"
+            document.getElementById('rgbMonitor').style.display = "block"
+            document.getElementById('desligarMonitor').style.display = "block"
+            document.getElementById('programa1').style.display = "block"
+        }
+        if (fazendo == "No Programa 2") {
+            document.getElementById('monitor').style.display = "block"
+            document.getElementById('mudarDeCenario').style.display = "none"
+            document.getElementById('quartoFundo').style.opacity = "0.2"
+            document.getElementById('mostrarMedalha').style.opacity = "0.2"
+            document.getElementById('dinheiroDoPet').style.opacity = "0.2"
+            document.getElementById('levelDoPet').style.opacity = "0.2"
+            document.getElementById('statusDoPet').style.opacity = "0.2"
+            document.getElementById('rgbMonitor').style.display = "block"
+            document.getElementById('desligarMonitor').style.display = "block"
+            document.getElementById('programa2').style.display = "block"
+            document.getElementById('jogos').style.display = "block"
+        }
+        if (fazendo == "Selecionando Dificuldade Jogo 1") {
+            document.getElementById('monitor').style.display = "block"
+            document.getElementById('mudarDeCenario').style.display = "none"
+            document.getElementById('quartoFundo').style.opacity = "0.2"
+            document.getElementById('mostrarMedalha').style.opacity = "0.2"
+            document.getElementById('dinheiroDoPet').style.opacity = "0.2"
+            document.getElementById('levelDoPet').style.opacity = "0.2"
+            document.getElementById('statusDoPet').style.opacity = "0.2"
+            document.getElementById('rgbMonitor').style.display = "block"
+            document.getElementById('desligarMonitor').style.display = "block"
+            document.getElementById('programa2').style.display = "block"
+            document.getElementById('dificuldadeJogo1').style.display = "block"
+            document.getElementById('jogos').style.display = "none"
+        }
+        let palavraSorteada1 = ""
+        if (fazendo == "Jogo 1 Muito Facil") {
+            document.getElementById('monitor').style.display = "block"
+            document.getElementById('mudarDeCenario').style.display = "none"
+            document.getElementById('quartoFundo').style.opacity = "0.2"
+            document.getElementById('mostrarMedalha').style.opacity = "0.2"
+            document.getElementById('dinheiroDoPet').style.opacity = "0.2"
+            document.getElementById('levelDoPet').style.opacity = "0.2"
+            document.getElementById('statusDoPet').style.opacity = "0.2"
+            document.getElementById('rgbMonitor').style.display = "block"
+            document.getElementById('desligarMonitor').style.display = "block"
+            document.getElementById('programa2').style.display = "block"
+            document.getElementById('jogo1').style.display = "block"
+            document.getElementById('words1').style.display = "grid"
+            document.getElementById('desligarMonitor').style.display = "none"
+            palavraSorteada1 = "perna"
+        }
 
         /** Monitor */
 
@@ -6393,23 +6518,36 @@ if (comodo != "") {
         /** Navegar no Monitor */
 
         function mexerNoMonitor() {
+
+            fazendo = "No Monitor"
+            localStorage.setItem("fazendo", fazendo)
+
             document.getElementById('monitor').style.display = "block"
             document.getElementById('mudarDeCenario').style.display = "none"
             document.getElementById('quartoFundo').style.opacity = "0.2"
             document.getElementById('mostrarMedalha').style.opacity = "0.2"
             document.getElementById('dinheiroDoPet').style.opacity = "0.2"
+            document.getElementById('levelDoPet').style.opacity = "0.2"
+            document.getElementById('statusDoPet').style.opacity = "0.2"
             document.getElementById('rgbMonitor').style.display = "block"
             document.getElementById('desligarMonitor').style.display = "block"
             camaOcupada = 1
         }
         function desligarMonitor() {
+
+            fazendo = "No Quarto"
+            localStorage.setItem("fazendo", fazendo)
+
             document.getElementById('monitor').style.display = "none"
             document.getElementById('mudarDeCenario').style.display = "flex"
             document.getElementById('quartoFundo').style.opacity = "1"
             document.getElementById('mostrarMedalha').style.opacity = "1"
             document.getElementById('dinheiroDoPet').style.opacity = "1"
+            document.getElementById('levelDoPet').style.opacity = "1"
+            document.getElementById('statusDoPet').style.opacity = "1"
             document.getElementById('rgbMonitor').style.display = "none"
-            document.getElementById('desligarMonitor').style.display = "none"
+            document.getElementById('programa1').style.display = "none"
+            document.getElementById('programa2').style.display = "none"
             camaOcupada = 0
         }
 
@@ -6420,6 +6558,9 @@ if (comodo != "") {
         /** Abrir Programa 1 */
 
         function abrirPrograma1() {
+            fazendo = "No Programa 1"
+            localStorage.setItem("fazendo", fazendo)
+            
             document.getElementById('programa1').style.display = "block"
         }
 
@@ -6427,29 +6568,1090 @@ if (comodo != "") {
 
         function editando() {
             document.getElementById("pesquisa").classList.add("pesquisando");
-          }
-          
+            }
+            
         function terminou() {
             document.getElementById("pesquisa").classList.remove("pesquisando");
         }
 
         function pesquisar() {
-            let coisaPesquisada = document.getElementById('pesquisa').value
 
-            location.href = "https://www."+ coisaPesquisada +".com"
+            let coisaPesquisada = document.getElementById('pesquisa').value.toLowerCase()
 
-            document.getElementById('pesquisa').value = ""
+            if (coisaPesquisada.trim() == "") {
+                document.getElementById('pesquisa').value = ""
+            } else {
+                location.href = "https://www."+ coisaPesquisada +".com"
+                document.getElementById('pesquisa').value = ""
+            } 
         }
 
         /** Fechar Programa 1 */
 
         function fecharPrograma1() {
+            fazendo = "No Monitor"
+            localStorage.setItem("fazendo", fazendo)
+
             document.getElementById('programa1').style.display = "none"
         }
 
         /** Programa 2 */
 
+        /** Abrir programa 2 */
 
+        function abrirPrograma2() {
+            fazendo = "No Programa 2"
+            localStorage.setItem("fazendo", fazendo)
+
+            document.getElementById('programa2').style.display = "block"
+            document.getElementById('jogos').style.display = "block"
+        }
+
+        /** Programa 2 Home */
+
+        function programa2Home() {
+            fazendo = "No Monitor"
+            localStorage.setItem("fazendo", fazendo)
+
+            document.getElementById('programa2').style.display = "none"
+            document.getElementById('jogos').style.display = "none"
+            document.getElementById('dificuldadeJogo1').style.display = "none"
+            document.getElementById('jogo1').style.display = "none"
+            document.getElementById('words1').style.display = "none"
+            document.getElementById('desligarMonitor').style.display = "block"
+        }
+
+        /** Jogo 1 */
+
+        /** Dificuldade Jogo 1 */
+
+        function abrirJogoWords() {
+            fazendo = "Selecionando Dificuldade Jogo 1"
+            localStorage.setItem("fazendo", fazendo)
+            
+            document.getElementById('dificuldadeJogo1').style.display = "block"
+            document.getElementById('jogos').style.display = "none"
+        }
+
+        /** Jogo 1 Muito Facil */
+
+        function wordsMuitoFacil() {
+            fazendo = "Jogo 1 Muito Facil"
+            localStorage.setItem("fazendo", fazendo)
+
+            document.getElementById('dificuldadeJogo1').style.display = "none"
+            document.getElementById('jogo1').style.display = "block"
+            document.getElementById('words1').style.display = "grid"
+            document.getElementById('desligarMonitor').style.display = "none"
+            palavraSorteada1 = "perna"
+        }
+
+        let linhaNumero = 0
+
+        let palavraEscrita1 = ""
+
+        const inputs = document.querySelectorAll("input");
+
+        for (let i = 0; i < inputs.length; i++) {
+            inputs[i].addEventListener("keydown", function(event) {
+                if (event.key === "Backspace" && this.value.length === 0) {
+                inputs[i - 1].focus();
+                }
+            });
+        }
+        
+        function checkEnter(event) {
+
+            if (event.which === 39) {
+                
+                const inputs = document.getElementsByTagName("input");
+                const currentInput = event.target;
+                const currentIndex = Array.prototype.indexOf.call(inputs, currentInput);
+                if (currentIndex !== inputs.length - 1) {
+                    inputs[currentIndex + 1].focus();
+                }
+            }
+
+            document.getElementById('linha1input').classList.remove("animacaoShake")
+            if (event.which === 13) {
+                event.preventDefault();
+
+                let palavra1 = palavraSorteada1        
+
+                let letra1 = document.getElementById('letra1').value.toLowerCase()
+                let letra2 = document.getElementById('letra2').value.toLowerCase()
+                let letra3 = document.getElementById('letra3').value.toLowerCase()
+                let letra4 = document.getElementById('letra4').value.toLowerCase()
+                let letra5 = document.getElementById('letra5').value.toLowerCase()
+
+                palavraEscrita1 = letra1 + letra2 + letra3 + letra4 + letra5
+            
+                if (letra1.trim() == "" || letra2.trim() == "" || letra3.trim() == "" || letra4.trim() == "" || letra5.trim() == "") {
+                    
+                    document.getElementById('linha1input').classList.add("animacaoShake")
+
+                } else {
+
+                    linhaNumero++
+                    document.getElementById('linha1input').style.order = linhaNumero
+
+                    if (linhaNumero == 1) {
+                        /** Letra 1 */
+                        document.getElementById('l2l1').style.background = "white"
+                        document.getElementById('l2l1').style.boxShadow = "none"
+                        document.getElementById('l2l1').classList.add("animacaoDasLetras")
+                        if (letra1 == palavra1.slice(0, 1)) {
+
+                            document.getElementById('l2l1').style.color = "limegreen"
+                            document.getElementById('l2l1').style.border = "2px solid limegreen"
+        
+                            const letraDescoberta = palavra1.split("")
+                            letraDescoberta[0] = "-"
+                            palavra1 = letraDescoberta.join("")
+        
+                        }
+        
+                        /** Letra 2 */
+                        document.getElementById('l2l2').style.background = "white"
+                        document.getElementById('l2l2').style.boxShadow = "none"
+                        document.getElementById('l2l2').classList.add("animacaoDasLetras")
+                        if (letra2 == palavra1.slice(1,2)) {
+                            
+                            document.getElementById('l2l2').style.color = "limegreen"
+                            document.getElementById('l2l2').style.border = "2px solid limegreen"
+        
+                            const letraDescoberta = palavra1.split("")
+                            letraDescoberta[1] = "-"
+                            palavra1 = letraDescoberta.join("")
+        
+                        }
+        
+        
+                        /** Letra 3 */
+                        document.getElementById('l2l3').style.background = "white"
+                        document.getElementById('l2l3').style.boxShadow = "none"
+                        document.getElementById('l2l3').classList.add("animacaoDasLetras")
+                        if (letra3 == palavra1.slice(2, 3)) {
+                            
+                            document.getElementById('l2l3').style.color = "limegreen"
+                            document.getElementById('l2l3').style.border = "2px solid limegreen"
+        
+                            const letraDescoberta = palavra1.split("")
+                            letraDescoberta[2] = "-"
+                            palavra1 = letraDescoberta.join("")
+                    
+                        }
+        
+                        /** Letra 4 */
+                        document.getElementById('l2l4').style.background = "white"
+                        document.getElementById('l2l4').style.boxShadow = "none"
+                        document.getElementById('l2l4').classList.add("animacaoDasLetras")
+                        if (letra4 == palavra1.slice(3, 4)) {
+
+                            document.getElementById('l2l4').style.color = "limegreen"
+                            document.getElementById('l2l4').style.border = "2px solid limegreen"
+        
+                            const letraDescoberta = palavra1.split("")
+                            letraDescoberta[3] = "-"
+                            palavra1 = letraDescoberta.join("")
+                            
+                        }
+        
+                        /** Letra 5 */
+                        document.getElementById('l2l5').style.background = "white"
+                        document.getElementById('l2l5').style.boxShadow = "none"
+                        document.getElementById('l2l5').classList.add("animacaoDasLetras")
+                        
+                        if (letra5 == palavra1.slice(4, 5)) {
+
+                            document.getElementById('l2l5').style.color = "limegreen"
+                            document.getElementById('l2l5').style.border = "2px solid limegreen"
+
+                            const letraDescoberta = palavra1.split("")
+                            letraDescoberta[4] = "-"
+                            palavra1 = letraDescoberta.join("")
+                            
+                        } 
+                        
+                        if(palavra1 != "-----") {
+        
+                            let min = 0
+                            let max = 1
+            
+                            for (let i = 0; i < 5; i++) {
+        
+                                for (let j = 0; j < 5; j++) {
+                                    
+                                    if (letra1[i] == palavra1.slice(min, max)) {
+                                        document.getElementById('l2l1').style.color = "rgb(255, 223, 0)"
+                                        document.getElementById('l2l1').style.border = "2px solid rgb(255, 223, 0)"
+                                        const letraDescoberta = palavra1.split("")
+                                        letraDescoberta[min] = "-"
+                                        palavra1 = letraDescoberta.join("")
+                                    }
+                                    if (letra2[i] == palavra1.slice(min, max)) {
+                                        document.getElementById('l2l2').style.color = "rgb(255, 223, 0)"
+                                        document.getElementById('l2l2').style.border = "2px solid rgb(255, 223, 0)"
+                                        const letraDescoberta = palavra1.split("")
+                                        letraDescoberta[min] = "-"
+                                        palavra1 = letraDescoberta.join("")
+                                    }
+                                    if (letra3[i] == palavra1.slice(min, max)) {
+                                        document.getElementById('l2l3').style.color = "rgb(255, 223, 0)"
+                                        document.getElementById('l2l3').style.border = "2px solid rgb(255, 223, 0)"
+                                        const letraDescoberta = palavra1.split("")
+                                        letraDescoberta[min] = "-"
+                                        palavra1 = letraDescoberta.join("")
+                                    }
+                                    if (letra4[i] == palavra1.slice(min, max)) {
+                                        document.getElementById('l2l4').style.color = "rgb(255, 223, 0)"
+                                        document.getElementById('l2l4').style.border = "2px solid rgb(255, 223, 0)"
+                                        const letraDescoberta = palavra1.split("")
+                                        letraDescoberta[min] = "-"
+                                        palavra1 = letraDescoberta.join("")
+                                    }
+                                    if (letra5[i] == palavra1.slice(min, max)) {
+                                        document.getElementById('l2l5').style.color = "rgb(255, 223, 0)"
+                                        document.getElementById('l2l5').style.border = "2px solid rgb(255, 223, 0)"
+                                        const letraDescoberta = palavra1.split("")
+                                        letraDescoberta[min] = "-"
+                                        palavra1 = letraDescoberta.join("")
+                                    }
+                                    min++
+                                    max++
+                                    
+                                }
+                                
+                            }
+                        }
+        
+                        let animacaoLinha1 = 0
+                        setInterval(function() {
+                            if (animacaoLinha1 >= 0 && animacaoLinha1 <= 1) {
+                                if(animacaoLinha1 == 1) {
+                                    document.getElementById('l2l1').innerText = letra1
+                                    document.getElementById('l2l2').innerText = letra2
+                                    document.getElementById('l2l3').innerText = letra3
+                                    document.getElementById('l2l4').innerText = letra4
+                                    document.getElementById('l2l5').innerText = letra5
+                                }
+                                animacaoLinha1++ 
+                            }
+
+                        } , 250);
+        
+                }
+                    if (linhaNumero == 2) {
+            
+                        /** Letra 1 */
+                        document.getElementById('l3l1').style.background = "white"
+                        document.getElementById('l3l1').style.boxShadow = "none"
+                        document.getElementById('l3l1').classList.add("animacaoDasLetras")
+                        if (letra1 == palavra1.slice(0, 1)) {
+
+                            document.getElementById('l3l1').style.color = "limegreen"
+                            document.getElementById('l3l1').style.border = "2px solid limegreen"
+
+                            const letraDescoberta = palavra1.split("")
+                            letraDescoberta[0] = "-"
+                            palavra1 = letraDescoberta.join("")
+
+                        }
+
+
+                        /** Letra 2 */
+                        document.getElementById('l3l2').style.background = "white"
+                        document.getElementById('l3l2').style.boxShadow = "none"
+                        document.getElementById('l3l2').classList.add("animacaoDasLetras")
+                        if (letra2 == palavra1.slice(1, 2)) {
+
+                            document.getElementById('l3l2').style.color = "limegreen"
+                            document.getElementById('l3l2').style.border = "2px solid limegreen"
+
+                            const letraDescoberta = palavra1.split("")
+                            letraDescoberta[1] = "-"
+                            palavra1 = letraDescoberta.join("")
+
+                        }
+
+                        /** Letra 3 */
+                        document.getElementById('l3l3').style.background = "white"
+                        document.getElementById('l3l3').style.boxShadow = "none"
+                        document.getElementById('l3l3').classList.add("animacaoDasLetras")
+                        if (letra3 == palavra1.slice(2, 3)) {
+                            
+                            document.getElementById('l3l3').style.color = "limegreen"
+                            document.getElementById('l3l3').style.border = "2px solid limegreen"
+
+                            const letraDescoberta = palavra1.split("")
+                            letraDescoberta[2] = "-"
+                            palavra1 = letraDescoberta.join("")
+                    
+                        }
+
+                        /** Letra 4 */
+                        document.getElementById('l3l4').style.background = "white"
+                        document.getElementById('l3l4').style.boxShadow = "none"
+                        document.getElementById('l3l4').classList.add("animacaoDasLetras")
+                        if (letra4 == palavra1.slice(3, 4)) {
+                            
+                            document.getElementById('l3l4').style.color = "limegreen"
+                            document.getElementById('l3l4').style.border = "2px solid limegreen"
+
+                            const letraDescoberta = palavra1.split("")
+                            letraDescoberta[3] = "-"
+                            palavra1 = letraDescoberta.join("")
+                            
+                        }
+
+                        /** Letra 5 */
+                        document.getElementById('l3l5').style.background = "white"
+                        document.getElementById('l3l5').style.boxShadow = "none"
+                        document.getElementById('l3l5').classList.add("animacaoDasLetras")
+                        if (letra5 == palavra1.slice(4, 5)) {
+
+                            document.getElementById('l3l5').style.color = "limegreen"
+                            document.getElementById('l3l5').style.border = "2px solid limegreen"
+
+                            const letraDescoberta = palavra1.split("")
+                            letraDescoberta[4] = "-"
+                            palavra1 = letraDescoberta.join("")
+                            
+                        } 
+                        
+                        if(palavra1 != "-----") {
+
+                            let min = 0
+                            let max = 1
+            
+                            for (let i = 0; i < 5; i++) {
+
+                                for (let j = 0; j < 5; j++) {
+                                    
+                                    if (letra1[i] == palavra1.slice(min, max)) {
+                                        document.getElementById('l3l1').style.color = "rgb(255, 223, 0)"
+                                        document.getElementById('l3l1').style.border = "2px solid rgb(255, 223, 0)"
+                                        const letraDescoberta = palavra1.split("")
+                                        letraDescoberta[min] = "-"
+                                        palavra1 = letraDescoberta.join("")
+                                    }
+                                    if (letra2[i] == palavra1.slice(min, max)) {
+                                        document.getElementById('l3l2').style.color = "rgb(255, 223, 0)"
+                                        document.getElementById('l3l2').style.border = "2px solid rgb(255, 223, 0)"
+                                        const letraDescoberta = palavra1.split("")
+                                        letraDescoberta[min] = "-"
+                                        palavra1 = letraDescoberta.join("")
+                                    }
+                                    if (letra3[i] == palavra1.slice(min, max)) {
+                                        document.getElementById('l3l3').style.color = "rgb(255, 223, 0)"
+                                        document.getElementById('l3l3').style.border = "2px solid rgb(255, 223, 0)"
+                                        const letraDescoberta = palavra1.split("")
+                                        letraDescoberta[min] = "-"
+                                        palavra1 = letraDescoberta.join("")
+                                    }
+                                    if (letra4[i] == palavra1.slice(min, max)) {
+                                        document.getElementById('l3l4').style.color = "rgb(255, 223, 0)"
+                                        document.getElementById('l3l4').style.border = "2px solid rgb(255, 223, 0)"
+                                        const letraDescoberta = palavra1.split("")
+                                        letraDescoberta[min] = "-"
+                                        palavra1 = letraDescoberta.join("")
+                                    }
+                                    if (letra5[i] == palavra1.slice(min, max)) {
+                                        document.getElementById('l3l5').style.color = "rgb(255, 223, 0)"
+                                        document.getElementById('l3l5').style.border = "2px solid rgb(255, 223, 0)"
+                                        const letraDescoberta = palavra1.split("")
+                                        letraDescoberta[min] = "-"
+                                        palavra1 = letraDescoberta.join("")
+                                    }
+                                    min++
+                                    max++
+                                    
+                                }
+                                
+                            }
+                        }
+
+                        let animacaoLinha2 = 0
+                        setInterval(function() {
+                            if (animacaoLinha2 >= 0 && animacaoLinha2 <= 1) {
+                                if(animacaoLinha2 == 1) {
+                                    document.getElementById('l3l1').innerText = letra1
+                                    document.getElementById('l3l2').innerText = letra2
+                                    document.getElementById('l3l3').innerText = letra3
+                                    document.getElementById('l3l4').innerText = letra4
+                                    document.getElementById('l3l5').innerText = letra5
+                                }
+                                animacaoLinha2++ 
+                            }
+
+                        } , 250);
+
+                }
+                    if (linhaNumero == 3) {
+                
+                        /** Letra 1 */
+                        document.getElementById('l4l1').style.background = "white"
+                        document.getElementById('l4l1').style.boxShadow = "none"
+                        document.getElementById('l4l1').classList.add("animacaoDasLetras")
+                        if (letra1 == palavra1.slice(0, 1)) {
+                            document.getElementById('l4l1').style.color = "limegreen"
+                            document.getElementById('l4l1').style.border = "2px solid limegreen"
+
+                            const letraDescoberta = palavra1.split("")
+                            letraDescoberta[0] = "-"
+                            palavra1 = letraDescoberta.join("")
+
+                        }
+
+
+                        /** Letra 2 */
+                        document.getElementById('l4l2').style.background = "white"
+                        document.getElementById('l4l2').style.boxShadow = "none"
+                        document.getElementById('l4l2').classList.add("animacaoDasLetras")
+                        if (letra2 == palavra1.slice(1, 2)) {
+                            document.getElementById('l4l2').style.color = "limegreen"
+                            document.getElementById('l4l2').style.border = "2px solid limegreen"
+
+                            const letraDescoberta = palavra1.split("")
+                            letraDescoberta[1] = "-"
+                            palavra1 = letraDescoberta.join("")
+
+                        }
+
+
+                        /** Letra 3 */
+                        document.getElementById('l4l3').style.background = "white"
+                        document.getElementById('l4l3').style.boxShadow = "none"
+                        document.getElementById('l4l3').classList.add("animacaoDasLetras")
+                        if (letra3 == palavra1.slice(2, 3)) {
+                            document.getElementById('l4l3').style.color = "limegreen"
+                            document.getElementById('l4l3').style.border = "2px solid limegreen"
+
+                            const letraDescoberta = palavra1.split("")
+                            letraDescoberta[2] = "-"
+                            palavra1 = letraDescoberta.join("")
+                    
+                        }
+
+                        /** Letra 4 */
+                        document.getElementById('l4l4').style.background = "white"
+                        document.getElementById('l4l4').style.boxShadow = "none"
+                        document.getElementById('l4l4').classList.add("animacaoDasLetras")
+                        if (letra4 == palavra1.slice(3, 4)) {
+                            document.getElementById('l4l4').style.color = "limegreen"
+                            document.getElementById('l4l4').style.border = "2px solid limegreen"
+
+                            const letraDescoberta = palavra1.split("")
+                            letraDescoberta[3] = "-"
+                            palavra1 = letraDescoberta.join("")
+                            
+                        }
+
+                        /** Letra 5 */
+                        document.getElementById('l4l5').style.background = "white"
+                        document.getElementById('l4l5').style.boxShadow = "none"
+                        document.getElementById('l4l5').classList.add("animacaoDasLetras")
+                        if (letra5 == palavra1.slice(4, 5)) {
+                            document.getElementById('l4l5').style.color = "limegreen"
+                            document.getElementById('l4l5').style.border = "2px solid limegreen"
+
+                            const letraDescoberta = palavra1.split("")
+                            letraDescoberta[4] = "-"
+                            palavra1 = letraDescoberta.join("")
+                            
+                        } 
+                        
+                        if(palavra1 != "-----") {
+
+                            let min = 0
+                            let max = 1
+
+                            for (let i = 0; i < 5; i++) {
+
+                                for (let j = 0; j < 5; j++) {
+                                    
+                                    if (letra1[i] == palavra1.slice(min, max)) {
+                                        document.getElementById('l4l1').style.color = "rgb(255, 223, 0)"
+                                        document.getElementById('l4l1').style.border = "2px solid rgb(255, 223, 0)"
+                                        const letraDescoberta = palavra1.split("")
+                                        letraDescoberta[min] = "-"
+                                        palavra1 = letraDescoberta.join("")
+                                    }
+                                    if (letra2[i] == palavra1.slice(min, max)) {
+                                        document.getElementById('l4l2').style.color = "rgb(255, 223, 0)"
+                                        document.getElementById('l4l2').style.border = "2px solid rgb(255, 223, 0)"
+                                        const letraDescoberta = palavra1.split("")
+                                        letraDescoberta[min] = "-"
+                                        palavra1 = letraDescoberta.join("")
+                                    }
+                                    if (letra3[i] == palavra1.slice(min, max)) {
+                                        document.getElementById('l4l3').style.color = "rgb(255, 223, 0)"
+                                        document.getElementById('l4l3').style.border = "2px solid rgb(255, 223, 0)"
+                                        const letraDescoberta = palavra1.split("")
+                                        letraDescoberta[min] = "-"
+                                        palavra1 = letraDescoberta.join("")
+                                    }
+                                    if (letra4[i] == palavra1.slice(min, max)) {
+                                        document.getElementById('l4l4').style.color = "rgb(255, 223, 0)"
+                                        document.getElementById('l4l4').style.border = "2px solid rgb(255, 223, 0)"
+                                        const letraDescoberta = palavra1.split("")
+                                        letraDescoberta[min] = "-"
+                                        palavra1 = letraDescoberta.join("")
+                                    }
+                                    if (letra5[i] == palavra1.slice(min, max)) {
+                                        document.getElementById('l4l5').style.color = "rgb(255, 223, 0)"
+                                        document.getElementById('l4l5').style.border = "2px solid rgb(255, 223, 0)"
+                                        const letraDescoberta = palavra1.split("")
+                                        letraDescoberta[min] = "-"
+                                        palavra1 = letraDescoberta.join("")
+                                    }
+                                    min++
+                                    max++
+                                    
+                                }
+                                
+                            }
+                        }
+
+                        let animacaoLinha3 = 0
+                        setInterval(function() {
+                            if (animacaoLinha3 >= 0 && animacaoLinha3 <= 1) {
+                                if(animacaoLinha3 == 1) {
+                                    document.getElementById('l4l1').innerText = letra1
+                                    document.getElementById('l4l2').innerText = letra2
+                                    document.getElementById('l4l3').innerText = letra3
+                                    document.getElementById('l4l4').innerText = letra4
+                                    document.getElementById('l4l5').innerText = letra5
+                                }
+                                animacaoLinha3++ 
+                            }
+
+                        } , 250);
+
+                }
+                    if (linhaNumero == 4) {
+                    
+                        /** Letra 1 */
+                        document.getElementById('l5l1').style.background = "white"
+                        document.getElementById('l5l1').style.boxShadow = "none"
+                        document.getElementById('l5l1').classList.add("animacaoDasLetras")
+                        if (letra1 == palavra1.slice(0, 1)) {
+                            document.getElementById('l5l1').style.color = "limegreen"
+                            document.getElementById('l5l1').style.border = "2px solid limegreen"
+
+                            const letraDescoberta = palavra1.split("")
+                            letraDescoberta[0] = "-"
+                            palavra1 = letraDescoberta.join("")
+
+                        }
+
+
+                        /** Letra 2 */
+                        document.getElementById('l5l2').style.background = "white"
+                        document.getElementById('l5l2').style.boxShadow = "none"
+                        document.getElementById('l5l2').classList.add("animacaoDasLetras")
+                        if (letra2 == palavra1.slice(1, 2)) {
+                            document.getElementById('l5l2').style.color = "limegreen"
+                            document.getElementById('l5l2').style.border = "2px solid limegreen"
+
+                            const letraDescoberta = palavra1.split("")
+                            letraDescoberta[1] = "-"
+                            palavra1 = letraDescoberta.join("")
+
+                        }
+
+
+                        /** Letra 3 */
+                        document.getElementById('l5l3').style.background = "white"
+                        document.getElementById('l5l3').style.boxShadow = "none"
+                        document.getElementById('l5l3').classList.add("animacaoDasLetras")
+                        if (letra3 == palavra1.slice(2, 3)) {
+                            document.getElementById('l5l3').style.color = "limegreen"
+                            document.getElementById('l5l3').style.border = "2px solid limegreen"
+
+                            const letraDescoberta = palavra1.split("")
+                            letraDescoberta[2] = "-"
+                            palavra1 = letraDescoberta.join("")
+                    
+                        }
+
+                        /** Letra 4 */
+                        document.getElementById('l5l4').style.background = "white"
+                        document.getElementById('l5l4').style.boxShadow = "none"
+                        document.getElementById('l5l4').classList.add("animacaoDasLetras")
+                        if (letra4 == palavra1.slice(3, 4)) {
+                            document.getElementById('l5l4').style.color = "limegreen"
+                            document.getElementById('l5l4').style.border = "2px solid limegreen"
+
+                            const letraDescoberta = palavra1.split("")
+                            letraDescoberta[3] = "-"
+                            palavra1 = letraDescoberta.join("")
+                            
+                        }
+
+                        /** Letra 5 */
+                        document.getElementById('l5l5').style.background = "white"
+                        document.getElementById('l5l5').style.boxShadow = "none"
+                        document.getElementById('l5l5').classList.add("animacaoDasLetras")
+                        if (letra5 == palavra1.slice(4, 5)) {
+                            document.getElementById('l5l5').style.color = "limegreen"
+                            document.getElementById('l5l5').style.border = "2px solid limegreen"
+
+                            const letraDescoberta = palavra1.split("")
+                            letraDescoberta[4] = "-"
+                            palavra1 = letraDescoberta.join("")
+                            
+                        } 
+                        
+                        if(palavra1 != "-----") {
+
+                            let min = 0
+                            let max = 1
+
+                            for (let i = 0; i < 5; i++) {
+
+                                for (let j = 0; j < 5; j++) {
+                                    
+                                    if (letra1[i] == palavra1.slice(min, max)) {
+                                        document.getElementById('l5l1').style.color = "rgb(255, 223, 0)"
+                                        document.getElementById('l5l1').style.border = "2px solid rgb(255, 223, 0)"
+                                        const letraDescoberta = palavra1.split("")
+                                        letraDescoberta[min] = "-"
+                                        palavra1 = letraDescoberta.join("")
+                                    }
+                                    if (letra2[i] == palavra1.slice(min, max)) {
+                                        document.getElementById('l5l2').style.color = "rgb(255, 223, 0)"
+                                        document.getElementById('l5l2').style.border = "2px solid rgb(255, 223, 0)"
+                                        const letraDescoberta = palavra1.split("")
+                                        letraDescoberta[min] = "-"
+                                        palavra1 = letraDescoberta.join("")
+                                    }
+                                    if (letra3[i] == palavra1.slice(min, max)) {
+                                        document.getElementById('l5l3').style.color = "rgb(255, 223, 0)"
+                                        document.getElementById('l5l3').style.border = "2px solid rgb(255, 223, 0)"
+                                        const letraDescoberta = palavra1.split("")
+                                        letraDescoberta[min] = "-"
+                                        palavra1 = letraDescoberta.join("")
+                                    }
+                                    if (letra4[i] == palavra1.slice(min, max)) {
+                                        document.getElementById('l5l4').style.color = "rgb(255, 223, 0)"
+                                        document.getElementById('l5l4').style.border = "2px solid rgb(255, 223, 0)"
+                                        const letraDescoberta = palavra1.split("")
+                                        letraDescoberta[min] = "-"
+                                        palavra1 = letraDescoberta.join("")
+                                    }
+                                    if (letra5[i] == palavra1.slice(min, max)) {
+                                        document.getElementById('l5l5').style.color = "rgb(255, 223, 0)"
+                                        document.getElementById('l5l5').style.border = "2px solid rgb(255, 223, 0)"
+                                        const letraDescoberta = palavra1.split("")
+                                        letraDescoberta[min] = "-"
+                                        palavra1 = letraDescoberta.join("")
+                                    }
+                                    min++
+                                    max++
+                                    
+                                }
+                                
+                            }
+                        }
+
+                        let animacaoLinha4 = 0
+                            setInterval(function() {
+                                if (animacaoLinha4 >= 0 && animacaoLinha4 <= 1) {
+                                    if(animacaoLinha4 == 1) {
+                                        document.getElementById('l5l1').innerText = letra1
+                                        document.getElementById('l5l2').innerText = letra2
+                                        document.getElementById('l5l3').innerText = letra3
+                                        document.getElementById('l5l4').innerText = letra4
+                                        document.getElementById('l5l5').innerText = letra5
+                                    }
+                                    animacaoLinha4++ 
+                                }
+
+                            } , 250);
+
+                }
+                    if (linhaNumero == 5) {
+                        
+                        /** Letra 1 */
+                        document.getElementById('l6l1').style.background = "white"
+                        document.getElementById('l6l1').style.boxShadow = "none"
+                        document.getElementById('l6l1').classList.add("animacaoDasLetras")
+                        if (letra1 == palavra1.slice(0, 1)) {
+                            document.getElementById('l6l1').style.color = "limegreen"
+                            document.getElementById('l6l1').style.border = "2px solid limegreen"
+
+                            const letraDescoberta = palavra1.split("")
+                            letraDescoberta[0] = "-"
+                            palavra1 = letraDescoberta.join("")
+
+                        }
+
+
+                        /** Letra 2 */
+                        document.getElementById('l6l2').style.background = "white"
+                        document.getElementById('l6l2').style.boxShadow = "none"
+                        document.getElementById('l6l2').classList.add("animacaoDasLetras")
+                        if (letra2 == palavra1.slice(1, 2)) {
+                            document.getElementById('l6l2').style.color = "limegreen"
+                            document.getElementById('l6l2').style.border = "2px solid limegreen"
+
+                            const letraDescoberta = palavra1.split("")
+                            letraDescoberta[1] = "-"
+                            palavra1 = letraDescoberta.join("")
+
+                        }
+
+
+                        /** Letra 3 */
+                        document.getElementById('l6l3').style.background = "white"
+                        document.getElementById('l6l3').style.boxShadow = "none"
+                        document.getElementById('l6l3').classList.add("animacaoDasLetras")
+                        if (letra3 == palavra1.slice(2, 3)) {
+                            document.getElementById('l6l3').style.color = "limegreen"
+                            document.getElementById('l6l3').style.border = "2px solid limegreen"
+
+                            const letraDescoberta = palavra1.split("")
+                            letraDescoberta[2] = "-"
+                            palavra1 = letraDescoberta.join("")
+
+                        }
+
+                        /** Letra 4 */
+                        document.getElementById('l6l4').style.background = "white"
+                        document.getElementById('l6l4').style.boxShadow = "none"
+                        document.getElementById('l6l4').classList.add("animacaoDasLetras")
+                        if (letra4 == palavra1.slice(3, 4)) {
+                            document.getElementById('l6l4').style.color = "limegreen"
+                            document.getElementById('l6l4').style.border = "2px solid limegreen"
+
+                            const letraDescoberta = palavra1.split("")
+                            letraDescoberta[3] = "-"
+                            palavra1 = letraDescoberta.join("")
+                            
+                        }
+
+                        /** Letra 5 */
+                        document.getElementById('l6l5').style.background = "white"
+                        document.getElementById('l6l5').style.boxShadow = "none"
+                        document.getElementById('l6l5').classList.add("animacaoDasLetras")
+                        if (letra5 == palavra1.slice(4, 5)) {
+                            document.getElementById('l6l5').style.color = "limegreen"
+                            document.getElementById('l6l5').style.border = "2px solid limegreen"
+
+                            const letraDescoberta = palavra1.split("")
+                            letraDescoberta[4] = "-"
+                            palavra1 = letraDescoberta.join("")
+                            
+                        } 
+                        
+                        if(palavra1 != "-----") {
+
+                            let min = 0
+                            let max = 1
+
+                            for (let i = 0; i < 5; i++) {
+
+                                for (let j = 0; j < 5; j++) {
+                                    
+                                    if (letra1[i] == palavra1.slice(min, max)) {
+                                        document.getElementById('l6l1').style.color = "rgb(255, 223, 0)"
+                                        document.getElementById('l6l1').style.border = "2px solid rgb(255, 223, 0)"
+                                        const letraDescoberta = palavra1.split("")
+                                        letraDescoberta[min] = "-"
+                                        palavra1 = letraDescoberta.join("")
+                                    }
+                                    if (letra2[i] == palavra1.slice(min, max)) {
+                                        document.getElementById('l6l2').style.color = "rgb(255, 223, 0)"
+                                        document.getElementById('l6l2').style.border = "2px solid rgb(255, 223, 0)"
+                                        const letraDescoberta = palavra1.split("")
+                                        letraDescoberta[min] = "-"
+                                        palavra1 = letraDescoberta.join("")
+                                    }
+                                    if (letra3[i] == palavra1.slice(min, max)) {
+                                        document.getElementById('l6l3').style.color = "rgb(255, 223, 0)"
+                                        document.getElementById('l6l3').style.border = "2px solid rgb(255, 223, 0)"
+                                        const letraDescoberta = palavra1.split("")
+                                        letraDescoberta[min] = "-"
+                                        palavra1 = letraDescoberta.join("")
+                                    }
+                                    if (letra4[i] == palavra1.slice(min, max)) {
+                                        document.getElementById('l6l4').style.color = "rgb(255, 223, 0)"
+                                        document.getElementById('l6l4').style.border = "2px solid rgb(255, 223, 0)"
+                                        const letraDescoberta = palavra1.split("")
+                                        letraDescoberta[min] = "-"
+                                        palavra1 = letraDescoberta.join("")
+                                    }
+                                    if (letra5[i] == palavra1.slice(min, max)) {
+                                        document.getElementById('l6l5').style.color = "rgb(255, 223, 0)"
+                                        document.getElementById('l6l5').style.border = "2px solid rgb(255, 223, 0)"
+                                        const letraDescoberta = palavra1.split("")
+                                        letraDescoberta[min] = "-"
+                                        palavra1 = letraDescoberta.join("")
+                                    }
+                                    min++
+                                    max++
+                                    
+                                }
+                                
+                            }
+                        }
+
+                        let animacaoLinha5 = 0
+                            setInterval(function() {
+                                if (animacaoLinha5 >= 0 && animacaoLinha5 <= 1) {
+                                    if(animacaoLinha5 == 1) {
+                                        document.getElementById('l6l1').innerText = letra1
+                                        document.getElementById('l6l2').innerText = letra2
+                                        document.getElementById('l6l3').innerText = letra3
+                                        document.getElementById('l6l4').innerText = letra4
+                                        document.getElementById('l6l5').innerText = letra5
+                                    }
+                                    animacaoLinha5++ 
+                                }
+
+                            } , 250);
+
+                }
+                    if (linhaNumero == 6) {
+
+                        /** Letra 1 */
+                        document.getElementById('l1l1').style.background = "white"
+                        document.getElementById('l1l1').style.boxShadow = "none"
+                        document.getElementById('l1l1').classList.add("animacaoDasLetras")
+                        if (letra1 == palavra1.slice(0, 1)) {
+                            document.getElementById('l1l1').style.color = "limegreen"
+                            document.getElementById('l1l1').style.border = "2px solid limegreen"
+
+                            const letraDescoberta = palavra1.split("")
+                            letraDescoberta[0] = "-"
+                            palavra1 = letraDescoberta.join("")
+
+                        }
+
+
+                        /** Letra 2 */
+                        document.getElementById('l1l2').style.background = "white"
+                        document.getElementById('l1l2').style.boxShadow = "none"
+                        document.getElementById('l1l2').classList.add("animacaoDasLetras")
+                        if (letra2 == palavra1.slice(1, 2)) {
+                            document.getElementById('l1l2').style.color = "limegreen"
+                            document.getElementById('l1l2').style.border = "2px solid limegreen"
+
+                            const letraDescoberta = palavra1.split("")
+                            letraDescoberta[1] = "-"
+                            palavra1 = letraDescoberta.join("")
+
+                        }
+
+
+                        /** Letra 3 */
+                        document.getElementById('l1l3').style.background = "white"
+                        document.getElementById('l1l3').style.boxShadow = "none"
+                        document.getElementById('l1l3').classList.add("animacaoDasLetras")
+                        if (letra3 == palavra1.slice(2, 3)) {
+                            document.getElementById('l1l3').style.color = "limegreen"
+                            document.getElementById('l1l3').style.border = "2px solid limegreen"
+
+                            const letraDescoberta = palavra1.split("")
+                            letraDescoberta[2] = "-"
+                            palavra1 = letraDescoberta.join("")
+                    
+                        }
+
+                        /** Letra 4 */
+                        document.getElementById('l1l4').style.background = "white"
+                        document.getElementById('l1l4').style.boxShadow = "none"
+                        document.getElementById('l1l4').classList.add("animacaoDasLetras")
+                        if (letra4 == palavra1.slice(3, 4)) {
+                            document.getElementById('l1l4').style.color = "limegreen"
+                            document.getElementById('l1l4').style.border = "2px solid limegreen"
+
+                            const letraDescoberta = palavra1.split("")
+                            letraDescoberta[3] = "-"
+                            palavra1 = letraDescoberta.join("")
+                            
+                        }
+
+                        /** Letra 5 */
+                        document.getElementById('l1l5').style.background = "white"
+                        document.getElementById('l1l5').style.boxShadow = "none"
+                        document.getElementById('l1l5').classList.add("animacaoDasLetras")
+                        if (letra5 == palavra1.slice(4, 5)) {
+                            document.getElementById('l1l5').style.color = "limegreen"
+                            document.getElementById('l1l5').style.border = "2px solid limegreen"
+
+                            const letraDescoberta = palavra1.split("")
+                            letraDescoberta[4] = "-"
+                            palavra1 = letraDescoberta.join("")
+                            
+                        } 
+                        
+                        if(palavra1 != "-----") {
+
+                            let min = 0
+                            let max = 1
+            
+                            for (let i = 0; i < 5; i++) {
+
+                                for (let j = 0; j < 5; j++) {
+                                    
+                                    if (letra1[i] == palavra1.slice(min, max)) {
+                                        document.getElementById('l1l1').style.color = "rgb(255, 223, 0)"
+                                        document.getElementById('l1l1').style.border = "2px solid rgb(255, 223, 0)"
+                                        const letraDescoberta = palavra1.split("")
+                                        letraDescoberta[min] = "-"
+                                        palavra1 = letraDescoberta.join("")
+                                    }
+                                    if (letra2[i] == palavra1.slice(min, max)) {
+                                        document.getElementById('l1l2').style.color = "rgb(255, 223, 0)"
+                                        document.getElementById('l1l2').style.border = "2px solid rgb(255, 223, 0)"
+                                        const letraDescoberta = palavra1.split("")
+                                        letraDescoberta[min] = "-"
+                                        palavra1 = letraDescoberta.join("")
+                                    }
+                                    if (letra3[i] == palavra1.slice(min, max)) {
+                                        document.getElementById('l1l3').style.color = "rgb(255, 223, 0)"
+                                        document.getElementById('l1l3').style.border = "2px solid rgb(255, 223, 0)"
+                                        const letraDescoberta = palavra1.split("")
+                                        letraDescoberta[min] = "-"
+                                        palavra1 = letraDescoberta.join("")
+                                    }
+                                    if (letra4[i] == palavra1.slice(min, max)) {
+                                        document.getElementById('l1l4').style.color = "rgb(255, 223, 0)"
+                                        document.getElementById('l1l4').style.border = "2px solid rgb(255, 223, 0)"
+                                        const letraDescoberta = palavra1.split("")
+                                        letraDescoberta[min] = "-"
+                                        palavra1 = letraDescoberta.join("")
+                                    }
+                                    if (letra5[i] == palavra1.slice(min, max)) {
+                                        document.getElementById('l1l5').style.color = "rgb(255, 223, 0)"
+                                        document.getElementById('l1l5').style.border = "2px solid rgb(255, 223, 0)"
+                                        const letraDescoberta = palavra1.split("")
+                                        letraDescoberta[min] = "-"
+                                        palavra1 = letraDescoberta.join("")
+                                    }
+                                    min++
+                                    max++
+                                    
+                                }
+                                
+                            }
+                        }
+
+                        document.getElementById('linha1input').style.display = "none"
+                        document.getElementById('linha1').style.display = "grid"
+
+                        let animacaoLinha6 = 0
+                            setInterval(function() {
+                                if (animacaoLinha6 >= 0 && animacaoLinha6 <= 1) {
+                                    if(animacaoLinha6 == 1) {
+                                        document.getElementById('l1l1').innerText = letra1
+                                        document.getElementById('l1l2').innerText = letra2
+                                        document.getElementById('l1l3').innerText = letra3
+                                        document.getElementById('l1l4').innerText = letra4
+                                        document.getElementById('l1l5').innerText = letra5
+                                    }
+                                    animacaoLinha6++ 
+                                }
+
+                            } , 250);
+
+                }
+
+                if (palavraEscrita1 == palavraSorteada1) {
+                        
+                    document.getElementById('linha1input').style.display = "none"
+                    document.getElementById('linha1').style.display = "grid"
+                    
+                    let recompensaDoJogo1 = 60 - ((linhaNumero - 1) * 10)
+                    dinheiro += recompensaDoJogo1
+                    localStorage.setItem("dinheiro", dinheiro)
+                    let expDoJogo1 = recompensaDoJogo1 / 10
+
+                    for (let i = 0; i < expDoJogo1; i++) {  
+                        expBasico()
+                        receberLv()
+                        subindoInteligencia()
+                    }
+
+                    document.getElementById('fimDeJogo1').style.display = "block"
+
+                } 
+
+                document.getElementById('letra1').value = ""
+                document.getElementById('letra2').value = ""
+                document.getElementById('letra3').value = ""
+                document.getElementById('letra4').value = ""
+                document.getElementById('letra5').value = ""
+                document.getElementById('letra1').focus()
+
+                }
+                    
+            }
+        }
+
+        var letra1Limite = document.getElementById("letra1");
+        letra1Limite.addEventListener("input", function() {
+        this.value = this.value.replace(/[^A-Za-z]/g, "");
+        });
+        var letra2Limite = document.getElementById("letra2");
+        letra2Limite.addEventListener("input", function() {
+        this.value = this.value.replace(/[^A-Za-z]/g, "");
+        });
+        var letra3Limite = document.getElementById("letra3");
+        letra3Limite.addEventListener("input", function() {
+        this.value = this.value.replace(/[^A-Za-z]/g, "");
+        });
+        var letra4Limite = document.getElementById("letra4");
+        letra4Limite.addEventListener("input", function() {
+        this.value = this.value.replace(/[^A-Za-z]/g, "");
+        });
+        var letra5Limite = document.getElementById("letra5");
+        letra5Limite.addEventListener("input", function() {
+        this.value = this.value.replace(/[^A-Za-z]/g, "");
+        });
+
+        function editandoWords1() {
+            document.getElementById("letra1").classList.add("ativo");
+        }
+        function terminouWords1() {
+            document.getElementById("letra1").classList.remove("ativo");
+        }  
+        function editandoWords2() {
+            document.getElementById("letra2").classList.add("ativo");
+        }
+        function terminouWords2() {
+            document.getElementById("letra2").classList.remove("ativo");
+        }  
+        function editandoWords3() {
+            document.getElementById("letra3").classList.add("ativo");
+        }
+        function terminouWords3() {
+            document.getElementById("letra3").classList.remove("ativo");
+        }  
+        function editandoWords4() {
+            document.getElementById("letra4").classList.add("ativo");
+        }
+        function terminouWords4() {
+            document.getElementById("letra4").classList.remove("ativo");
+        }  
+        function editandoWords5() {
+            document.getElementById("letra5").classList.add("ativo");
+        }
+        function terminouWords5() {
+            document.getElementById("letra5").classList.remove("ativo");
+        }
+
+        /** Novo jogo 1 */
+
+        function novoJogo1() {
+
+            fazendo = "Selecionando Dificuldade Jogo 1"
+            localStorage.setItem("fazendo", fazendo)
+
+            location.reload();
+        }
 
         /** Programa 3 */
 
@@ -6609,159 +7811,6 @@ if (comodo != "") {
             localStorage.setItem("comodo", comodo)
         } 
     }
-}
 
-/** Jogo 1 */
 
-let linhaNumero = 0
-
-let palavraSorteada1 = "marte"
-
-function checkEnter(event) {
-    if (event.which === 13) {
-        event.preventDefault();
-        
-        let palavra1 = palavraSorteada1        
-
-        let letra1 = document.getElementById('letra1').value
-        let letra2 = document.getElementById('letra2').value
-        let letra3 = document.getElementById('letra3').value
-        let letra4 = document.getElementById('letra4').value
-        let letra5 = document.getElementById('letra5').value
-      
-        linhaNumero++
-        document.getElementById('linha1input').style.order = linhaNumero
-
-        if (linhaNumero == 1) {
-
-            /** Letra 1 */
-            document.getElementById('l2l1').style.background = "white"
-            document.getElementById('l2l1').style.boxShadow = "none"
-            if (letra1 == palavra1.slice(0, 1)) {
-                document.getElementById('l2l1').style.color = "limegreen"
-                document.getElementById('l2l1').style.border = "2px solid limegreen"
-                palavra1 = "-" + palavra1.substring(1)
-            } else {
-
-                let min = 0
-                let max = 1
-
-                for (let i = 0; i < 4; i++) {
-                    
-                    if (letra1 == palavra1.slice(min, max)) {
-                        document.getElementById('l2l2').style.color = "rgb(255, 223, 0)"
-                        document.getElementById('l2l2').style.border = "2px solid rgb(255, 223, 0)"
-                    }
-                    min++
-                    max++
-                }
-            }
-
-            /** Letra 2 */
-            document.getElementById('l2l2').style.background = "white"
-            document.getElementById('l2l2').style.boxShadow = "none"
-            if (letra2 == palavra1.slice(1, 2)) {
-                document.getElementById('l2l2').style.color = "limegreen"
-                document.getElementById('l2l2').style.border = "2px solid limegreen"
-                palavra1 = "-" + palavra1.substring(2)
-            } else {
-
-                let min = 0
-                let max = 1
-
-                for (let i = 0; i < 4; i++) {
-                    
-                    if (letra2 == palavra1.slice(min, max)) {
-                        document.getElementById('l2l2').style.color = "rgb(255, 223, 0)"
-                        document.getElementById('l2l2').style.border = "2px solid rgb(255, 223, 0)"
-                    }
-                    min++
-                    max++
-                }
-            }
-
-            document.getElementById('l2l3').style.background = "white"
-            document.getElementById('l2l3').style.boxShadow = "none"
-            
-
-            document.getElementById('l2l4').style.background = "white"
-            document.getElementById('l2l4').style.boxShadow = "none"
     
-
-            document.getElementById('l2l5').style.background = "white"
-            document.getElementById('l2l5').style.boxShadow = "none"
-            
-
-            document.getElementById('l2l1').innerText = letra1
-            document.getElementById('l2l2').innerText = letra2
-            document.getElementById('l2l3').innerText = letra3
-            document.getElementById('l2l4').innerText = letra4
-            document.getElementById('l2l5').innerText = letra5
-        }
-        if (linhaNumero == 2) {
-            document.getElementById('l3l1').innerText = letra1
-            document.getElementById('l3l2').innerText = letra2
-            document.getElementById('l3l3').innerText = letra3
-            document.getElementById('l3l4').innerText = letra4
-            document.getElementById('l3l5').innerText = letra5
-        }
-
-        document.getElementById('letra1').value = ""
-        document.getElementById('letra2').value = ""
-        document.getElementById('letra3').value = ""
-        document.getElementById('letra4').value = ""
-        document.getElementById('letra5').value = ""
-    }
-}
-
-var letra1Limite = document.getElementById("letra1");
-letra1Limite.addEventListener("input", function() {
-  this.value = this.value.replace(/[^A-Za-z]/g, "");
-});
-var letra2Limite = document.getElementById("letra2");
-letra2Limite.addEventListener("input", function() {
-  this.value = this.value.replace(/[^A-Za-z]/g, "");
-});
-var letra3Limite = document.getElementById("letra3");
-letra3Limite.addEventListener("input", function() {
-  this.value = this.value.replace(/[^A-Za-z]/g, "");
-});
-var letra4Limite = document.getElementById("letra4");
-letra4Limite.addEventListener("input", function() {
-  this.value = this.value.replace(/[^A-Za-z]/g, "");
-});
-var letra5Limite = document.getElementById("letra5");
-letra5Limite.addEventListener("input", function() {
-  this.value = this.value.replace(/[^A-Za-z]/g, "");
-});
-
-function editandoWords1() {
-    document.getElementById("letra1").classList.add("ativo");
-}
-function terminouWords1() {
-    document.getElementById("letra1").classList.remove("ativo");
-}  
-function editandoWords2() {
-    document.getElementById("letra2").classList.add("ativo");
-}
-function terminouWords2() {
-    document.getElementById("letra2").classList.remove("ativo");
-}  
-function editandoWords3() {
-    document.getElementById("letra3").classList.add("ativo");
-}
-function terminouWords3() {
-    document.getElementById("letra3").classList.remove("ativo");
-}  
-function editandoWords4() {
-    document.getElementById("letra4").classList.add("ativo");
-}
-function terminouWords4() {
-    document.getElementById("letra4").classList.remove("ativo");
-}  
-function editandoWords5() {
-    document.getElementById("letra5").classList.add("ativo");
-}
-function terminouWords5() {
-    document.getElementById("letra5").classList.remove("ativo");
-}  
