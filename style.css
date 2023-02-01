@@ -2425,6 +2425,27 @@ body {
               transform-origin: 0% 50%;
     }
   }
+
+#palavraCerta1 {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 10rem;
+    width: 25vw;
+    border: 2px solid black;
+    border-radius: 1rem;
+    background: white;
+    box-shadow: inset -1px 5px 1px white,inset 1px 5px 1px white,inset -1px -5px 1px white, inset -1px 5px 1px white, inset 2px 2px 1px red, inset -1px -1px 10px red, 2px 2px 9px red;
+    padding: 1rem;
+}
+#palavraCerta1 h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 1rem;
+}
    
 #fimDeJogo1 {
     display: none;
@@ -2666,8 +2687,11 @@ body {
     width: 100vw;
 }  
 
+
+
+
 .upar {
     position: absolute;
     margin-top: 10rem;
-    display: none;
+    display: block;
 }
