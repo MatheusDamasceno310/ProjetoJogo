@@ -1,4 +1,3 @@
-
 let fazendo = localStorage.getItem("fazendo")
 
 let c = parseFloat(localStorage.getItem("progressaoDoLevel"))
@@ -4819,6 +4818,8 @@ setInterval(function() {
 }
 }, 1000);
 
+let dormindo = 'n';
+
 /**Dormir */
 
 function dormir() {
@@ -4826,82 +4827,95 @@ function dormir() {
     limiteEnergia = 0
     limiteSaude = 0
     limiteFelicidade = 0
-    
+
+    if (dormindo == 'n') {
+        dormindo = 's';
         setInterval(function() {
-    
-        if (contStatusEnergia > 0 && contStatusEnergia <= 100 && limiteEnergia == 0) {
             
-            if (contStatusEnergia == 1) {
-                expBasico()
+            if (contStatusEnergia > 0 && contStatusEnergia <= 100 && limiteEnergia == 0 && dormindo == 's') {
                 
-            }
-
-            document.getElementById('monitorHover').style.display = "none"
-            document.getElementById('camaHover').style.display = "none"
-            document.getElementById('statusDoPet').style.opacity = "0.2"
-            document.getElementById('mudarDeCenario').style.display = "none"
-            document.getElementById('quartoFundo').style.opacity = "0.2"
-            document.getElementById('mostrarMedalha').style.opacity = "0.2"
-            document.getElementById('dinheiroDoPet').style.opacity = "0.2"
-            document.getElementById('levelDoPet').style.opacity = "0.2"
-    
-            if(statusEnergiarGb >= 0 && statusEnergiarGb <= 245) {
-                statusEnergiarGb += 5
-    
-                localStorage.setItem("statusEnergiarGb", statusEnergiarGb.toString())
-            }
-
-            if (contStatusEnergia < 25) {
-                
-                if(statusEnergiaRgb >= 10 && statusEnergiaRgb <= 250) {
-                    statusEnergiaRgb -= 10
-        
-                    localStorage.setItem("statusEnergiaRgb", statusEnergiaRgb.toString())
+                if (contStatusEnergia == 1) {
+                    expBasico()
+                    
                 }
 
-            }
-    
-            --contStatusEnergia
-            let porcantagemEnergiaSoma = contStatusEnergia - 100 
-    
-            let convPorcentagemEnergia = porcantagemEnergiaSoma * -1
-    
-            if (contStatusEnergia == 0) {
-                convPorcentagemEnergia = 100
-            }
-    
-            localStorage.setItem("convPorcentagemEnergia", convPorcentagemEnergia.toString())
-    
-            document.getElementById('mPorcentagemDaEnergia').title = "Energia: "+ localStorage.getItem("convPorcentagemEnergia") +"%"
-    
-            localStorage.setItem("contStatusEnergia", contStatusEnergia.toString())
-    
-            const StringTempEnergia = contStatusEnergia + "%"
-    
-            if (contStatusEnergia <= 65) {
-    
-                const porcentagemDaEnergia = "linear-gradient(rgba(255, 255, 255, 0) "+ StringTempEnergia +",rgb("+ statusEnergiaRgb.toString() +","+ statusEnergiarGb.toString() +", 0) 0%)"
-    
-                localStorage.setItem("statusDeEnergia", porcentagemDaEnergia)
-    
-            }
-    
-        }
+                document.getElementById('monitorHover').style.display = "none"
+                document.getElementById('statusDoPet').style.opacity = "0.2"
+                document.getElementById('mudarDeCenario').style.display = "none"
+                document.getElementById('quartoFundo').style.opacity = "0.2"
+                document.getElementById('mostrarMedalha').style.opacity = "0.2"
+                document.getElementById('dinheiroDoPet').style.opacity = "0.2"
+                document.getElementById('levelDoPet').style.opacity = "0.2"
+        
+                if(statusEnergiarGb >= 0 && statusEnergiarGb <= 245) {
+                    statusEnergiarGb += 5
+        
+                    localStorage.setItem("statusEnergiarGb", statusEnergiarGb.toString())
+                }
 
-        document.getElementById("energiaDoPet").style.background = localStorage.getItem("statusDeEnergia")
+                if (contStatusEnergia < 25) {
+                    
+                    if(statusEnergiaRgb >= 10 && statusEnergiaRgb <= 250) {
+                        statusEnergiaRgb -= 10
+            
+                        localStorage.setItem("statusEnergiaRgb", statusEnergiaRgb.toString())
+                    }
 
-        if (contStatusEnergia == 0) {
-            limiteEnergia = 1
-            document.getElementById('monitorHover').style.display = "block"
-            document.getElementById('camaHover').style.display = "block"
-            document.getElementById('statusDoPet').style.opacity = "1"
-            document.getElementById('mudarDeCenario').style.display = "flex"
-            document.getElementById('quartoFundo').style.opacity = "1"
-            document.getElementById('mostrarMedalha').style.opacity = "1"
-            document.getElementById('dinheiroDoPet').style.opacity = "1"
-            document.getElementById('levelDoPet').style.opacity = "1"
-        }
-    } , 400);
+                }
+        
+                --contStatusEnergia
+                let porcantagemEnergiaSoma = contStatusEnergia - 100 
+        
+                let convPorcentagemEnergia = porcantagemEnergiaSoma * -1
+        
+                if (contStatusEnergia == 0) {
+                    convPorcentagemEnergia = 100
+                }
+        
+                localStorage.setItem("convPorcentagemEnergia", convPorcentagemEnergia.toString())
+        
+                document.getElementById('mPorcentagemDaEnergia').title = "Energia: "+ localStorage.getItem("convPorcentagemEnergia") +"%"
+        
+                localStorage.setItem("contStatusEnergia", contStatusEnergia.toString())
+        
+                const StringTempEnergia = contStatusEnergia + "%"
+        
+                if (contStatusEnergia <= 65) {
+        
+                    const porcentagemDaEnergia = "linear-gradient(rgba(255, 255, 255, 0) "+ StringTempEnergia +",rgb("+ statusEnergiaRgb.toString() +","+ statusEnergiarGb.toString() +", 0) 0%)"
+        
+                    localStorage.setItem("statusDeEnergia", porcentagemDaEnergia)
+        
+                }
+        
+            }
+
+            document.getElementById("energiaDoPet").style.background = localStorage.getItem("statusDeEnergia")
+
+            if (contStatusEnergia == 0 && dormindo == 's') {
+                limiteEnergia = 1
+                document.getElementById('monitorHover').style.display = "block"
+                document.getElementById('statusDoPet').style.opacity = "1"
+                document.getElementById('mudarDeCenario').style.display = "flex"
+                document.getElementById('quartoFundo').style.opacity = "1"
+                document.getElementById('mostrarMedalha').style.opacity = "1"
+                document.getElementById('dinheiroDoPet').style.opacity = "1"
+                document.getElementById('levelDoPet').style.opacity = "1"
+            }
+            
+        } , 400);
+
+    } else {
+        dormindo = 'n';
+
+        document.getElementById('monitorHover').style.display = "block"
+        document.getElementById('statusDoPet').style.opacity = "1"
+        document.getElementById('mudarDeCenario').style.display = "flex"
+        document.getElementById('quartoFundo').style.opacity = "1"
+        document.getElementById('mostrarMedalha').style.opacity = "1"
+        document.getElementById('dinheiroDoPet').style.opacity = "1"
+        document.getElementById('levelDoPet').style.opacity = "1"
+    }
 
 }
 
@@ -7669,22 +7683,29 @@ if (comodo == "Quarto") {
         
     }
 
+    /** Programa 4 */
+
+    function abrirPrograma4() {
+        window.open('https://matheusdamasceno310.github.io/TTix/', '_blank');
+
+        for (let i = 0; i < 5; i++) {
+            expBasico()
+            receberLv()
+        }
+    }
+
 
     /** Cama */
 
-    let camaOcupada = 0
+    const camaHover = document.querySelector('#camaHover');
 
-    if(camaOcupada == 0) {
-        
-        const camaHover = document.querySelector('#camaHover');
-
-        camaHover.addEventListener('mouseenter', () => {
-            camaHover.style.opacity = "1";
-        })
-        camaHover.addEventListener('mouseleave', () => {
-            camaHover.style.opacity = "0";
-        });
-    }
+    camaHover.addEventListener('mouseenter', () => {
+        camaHover.style.opacity = "1";
+    })
+    camaHover.addEventListener('mouseleave', () => {
+        camaHover.style.opacity = "0";
+    });
+    
 
 }
 
@@ -7817,7 +7838,5 @@ function irPraSala() {
         localStorage.setItem("comodo", comodo)
 
     } 
-
-    
 
 }

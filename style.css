@@ -2086,7 +2086,7 @@ body {
     height: 3rem;
     cursor: pointer;
 }
-.atalhoPrograma1, .atalhoPrograma2, .atalhoPrograma3 {
+.atalhoPrograma1, .atalhoPrograma2, .atalhoPrograma3, .atalhoPrograma4 {
     margin-top: 0.5rem;
 }
 
@@ -2603,6 +2603,8 @@ body {
     filter: blur(14px);
 }
 
+
+
 /* Cama */
 
 #camaHover {
@@ -2693,5 +2695,5 @@ body {
 .upar {
     position: absolute;
     margin-top: 10rem;
-    display: block;
+    display: none;
 }
